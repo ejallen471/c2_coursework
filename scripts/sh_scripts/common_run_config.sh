@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+
+# Resolve the directory that contains this shared config script.
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# Resolve the repository root by going two levels up from the script directory.
+ROOT_DIR="$(cd "${SCRIPT_DIR}/../.." && pwd)"
+# Store the directory where raw CSV benchmark outputs should be written.
+RESULTS_RAW_DIR="${ROOT_DIR}/results/raw"
+# Store the directory where generated figures should be written.
+RESULTS_FIG_DIR="${ROOT_DIR}/results/figures"
+# Store the shared build directory used by the normal build and run workflows.
+SHARED_BUILD_DIR="${ROOT_DIR}/build_csd3"
+# Store the optimised CMake build type used by the normal shell workflows.
+SHARED_BUILD_TYPE="${SHARED_BUILD_TYPE:-Release}"
+# Store the path to the shared build script used to populate the optimised build directory.
+SHARED_BUILD_SCRIPT="${SCRIPT_DIR}/build_csd3.sh"
+
+# Relative path to the example executable inside a build directory.
+EXAMPLE_EXEC_REL="example/example_cholesky"
+# Relative path to the legacy performance driver inside a build directory.
+PERF_EXEC_REL="performance_tests/perf_driver"
+# Relative path to the single-run timing executable inside a build directory.
+PERF_TIME_EXEC_REL="performance_tests/perf_time"
+# Relative path to the fixed-size comparison executable inside a build directory.
+PERF_FIXED_SIZE_EXEC_REL="performance_tests/perf_fixed_size_comparison"
+# Relative path to the block-size sweep executable inside a build directory.
+PERF_BLOCK_SIZE_SWEEP_EXEC_REL="performance_tests/perf_block_size_sweep"
+# Relative path to the scaling-study executable inside a build directory.
+PERF_SCALING_EXEC_REL="performance_tests/perf_scaling"
+
+# Allow callers to disable the optional local sanity benchmark by setting an environment variable.
+RUN_LOCAL_SANITY_PERF="${RUN_LOCAL_SANITY_PERF:-1}"
+# Default matrix size for local sanity benchmark runs when not overridden.
+LOCAL_SANITY_N="${LOCAL_SANITY_N:-128}"
+# Default repeat count for local sanity benchmark runs when not overridden.
+LOCAL_SANITY_REPEATS="${LOCAL_SANITY_REPEATS:-3}"
+
+ensure_shared_release_executable() {
+    local exec_rel="$1"
+    local exec_path="${SHARED_BUILD_DIR}/${exec_rel}"
+    local cache_path="${SHARED_BUILD_DIR}/CMakeCache.txt"
+    local configured_build_type=""
+
+    if [ -f "${cache_path}" ]; then
+        configured_build_type="$(awk -F= '/^CMAKE_BUILD_TYPE:STRING=/{print $2; exit}' "${cache_path}")"
+    fi
+
+    if [ ! -x "${exec_path}" ] || [ "${configured_build_type}" != "${SHARED_BUILD_TYPE}" ]; then
+        echo "==> Ensuring ${SHARED_BUILD_TYPE} build in ${SHARED_BUILD_DIR}"
+        "${SHARED_BUILD_SCRIPT}"
+    fi
+
+    if [ ! -x "${exec_path}" ]; then
+        echo "Error: missing executable ${exec_path}" >&2
+        return 1
+    fi
+}
