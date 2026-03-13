@@ -30,6 +30,7 @@ endif()
 add_performance_tool(
     perf_time
     perf_time.cpp
+    perf_helpers.cpp
 )
 
 if(LAPACK_FOUND)
@@ -42,6 +43,7 @@ endif()
 add_performance_tool(
     perf_fixed_size_comparison
     perf_fixed_size_comparison.cpp
+    perf_helpers.cpp
 )
 
 if(LAPACK_FOUND)
@@ -54,6 +56,7 @@ endif()
 add_performance_tool(
     perf_block_size_sweep
     perf_block_size_sweep.cpp
+    perf_helpers.cpp
 )
 
 if(LAPACK_FOUND)
@@ -66,4 +69,12 @@ endif()
 add_performance_tool(
     perf_scaling
     perf_scaling.cpp
+    perf_helpers.cpp
 )
+
+if(LAPACK_FOUND)
+    target_link_libraries(perf_scaling PRIVATE ${LAPACK_LIBRARIES})
+    target_compile_definitions(perf_scaling PRIVATE MPHIL_HAVE_LAPACK=1)
+else()
+    target_compile_definitions(perf_scaling PRIVATE MPHIL_HAVE_LAPACK=0)
+endif()

@@ -2,7 +2,7 @@
 
 This module combines the raw CSV files emitted by ``perf_scaling`` for several
 optimisations, writes processed summary tables, and creates report-ready plots
-that compare runtime, speedup, and dense memory growth.
+that compare runtime and speedup.
 """
 
 from __future__ import annotations
@@ -45,9 +45,6 @@ class ComparisonPlotter:
             "repeat",
             "elapsed_seconds",
             "logdet",
-            "matrix_bytes",
-            "flop_estimate",
-            "gflops_est",
             "time_over_n3",
         }
 
@@ -68,12 +65,7 @@ class ComparisonPlotter:
             time_over_n3_std=("time_over_n3", "std"),
             logdet_mean=("logdet", "mean"),
             logdet_std=("logdet", "std"),
-            matrix_bytes=("matrix_bytes", "first"),
-            gflops_median=("gflops_est", "median"),
         )
-
-        summary["matrix_mib"] = summary["matrix_bytes"] / (1024**2)
-        summary["matrix_gib"] = summary["matrix_bytes"] / (1024**3)
 
         baseline = summary.loc[summary["tag"] == "baseline", ["n", "elapsed_median"]].rename(
             columns={"elapsed_median": "baseline_elapsed_median"}
@@ -143,31 +135,11 @@ class ComparisonPlotter:
         plt.legend()
         self._save_plot("speedup_vs_baseline.png")
 
-    def memory_growth(self) -> None:
-        """Plot dense matrix storage growth as a function of matrix size."""
-        memory = (
-            self.summary.loc[:, ["n", "matrix_gib"]]
-            .drop_duplicates()
-            .sort_values("n")
-        )
-
-        plt.figure(figsize=(7, 5))
-        plt.plot(memory["n"], memory["matrix_gib"], marker="o")
-        plt.xscale("log")
-        plt.yscale("log")
-        plt.xlabel("Matrix size n")
-        plt.ylabel("Dense matrix storage (GiB)")
-        plt.title("Dense storage growth with matrix size")
-        plt.grid(True, which="major", axis="both")
-        plt.minorticks_off()
-        self._save_plot("memory_growth.png")
-
     def plot_all(self) -> None:
         """Run the full comparison plotting pipeline."""
         self.export_summary_csv()
         self.runtime_vs_n_by_method()
         self.speedup_vs_n()
-        self.memory_growth()
 
 
 def main() -> None:

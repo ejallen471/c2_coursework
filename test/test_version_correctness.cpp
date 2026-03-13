@@ -75,8 +75,6 @@ int main()
 
     MatrixGenerationOptions options;
     options.seed = 20260310ULL;
-    options.kernel = CovarianceKernel::RandomMixture;
-    options.randomize_points = true;
 
     const int sizes[] = {4, 8, 16};
     for (const int n : sizes)

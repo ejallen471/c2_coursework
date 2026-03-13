@@ -23,8 +23,8 @@ class PerformancePlotter:
 
     The input CSV is expected to contain the benchmark columns emitted by
     ``perf_scaling``:
-    ``tag``, ``n``, ``repeat``, ``elapsed_seconds``, ``logdet``,
-    ``matrix_bytes``, ``flop_estimate``, ``gflops_est``, and ``time_over_n3``.
+    ``tag``, ``n``, ``repeat``, ``elapsed_seconds``, ``logdet``, and
+    ``time_over_n3``.
     """
 
     def __init__(self, input_csv: str | Path, output_dir: str | Path):
@@ -60,9 +60,6 @@ class PerformancePlotter:
             "repeat",
             "elapsed_seconds",
             "logdet",
-            "matrix_bytes",
-            "flop_estimate",
-            "gflops_est",
             "time_over_n3",
         }
 
@@ -75,8 +72,7 @@ class PerformancePlotter:
         """
         Export a processed summary CSV grouped by matrix size.
 
-        The summary contains aggregate timing statistics for each matrix size,
-        along with the dense matrix storage estimate in bytes and MiB.
+        The summary contains aggregate timing statistics for each matrix size.
         """
         summary = self.df.groupby("n", as_index=False).agg(
             elapsed_median=("elapsed_seconds", "median"),
@@ -88,10 +84,8 @@ class PerformancePlotter:
             time_over_n3_std=("time_over_n3", "std"),
             logdet_mean=("logdet", "mean"),
             logdet_std=("logdet", "std"),
-            matrix_bytes=("matrix_bytes", "first"),
         )
 
-        summary["matrix_mib"] = summary["matrix_bytes"] / (1024**2)
         summary.to_csv(self.output_dir / "summary_by_n.csv", index=False)
 
     def runtime_vs_n(self):

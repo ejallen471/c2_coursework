@@ -1,0 +1,12 @@
+test_small_case 2 0.00172288
+test_invalid_input 2 0.00149483
+test_identity 2 0.00139065
+test_diagonal_matrix 2 0.00150035
+test_reconstruction 2 0.00124052
+test_logdet 2 0.00110502
+test_generated_spd 2 0.00122323
+test_repeatability 2 0.00114571
+test_matrix_generation 2 0.00111615
+test_version_correctness 2 0.00135333
+test_perf_time_output 2 0.00643415
+---

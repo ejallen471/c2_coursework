@@ -2,19 +2,43 @@
 #include "runtime_cholesky.h"
 #include "test_helpers.h"
 
+#include <cmath>
 #include <iostream>
 #include <vector>
 
 namespace
 {
-bool generator_settings_preserve_spd(CovarianceKernel kernel, int n)
+bool matrix_is_strictly_diagonally_dominant(const std::vector<double>& a, int n)
 {
-    MatrixGenerationOptions options;
-    options.kernel = kernel;
-    options.seed = 20260310ULL;
-    options.randomize_points = false;
-    options.nugget = 1.0e-3;
+    for (int i = 0; i < n; ++i)
+    {
+        double offdiag_abs_sum = 0.0;
 
+        for (int j = 0; j < n; ++j)
+        {
+            if (i == j)
+            {
+                continue;
+            }
+
+            offdiag_abs_sum += std::fabs(
+                a[static_cast<std::size_t>(i) * static_cast<std::size_t>(n) +
+                  static_cast<std::size_t>(j)]);
+        }
+
+        const double diag =
+            a[static_cast<std::size_t>(i) * static_cast<std::size_t>(n) + static_cast<std::size_t>(i)];
+        if (!(diag > offdiag_abs_sum))
+        {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+bool generator_settings_preserve_spd(const MatrixGenerationOptions& options, int n)
+{
     const std::vector<double> original = make_generated_spd_matrix(n, options);
 
     if (original.size() != static_cast<std::size_t>(n) * static_cast<std::size_t>(n))
@@ -33,6 +57,13 @@ bool generator_settings_preserve_spd(CovarianceKernel kernel, int n)
     if (!diagonal_is_positive(original, n))
     {
         std::cerr << "test_matrix_generation failed: generated matrix has non-positive diagonal for n="
+                  << n << '\n';
+        return false;
+    }
+
+    if (!matrix_is_strictly_diagonally_dominant(original, n))
+    {
+        std::cerr << "test_matrix_generation failed: strict diagonal dominance theorem condition failed for n="
                   << n << '\n';
         return false;
     }
@@ -72,16 +103,17 @@ int main()
         return 1;
     }
 
-    const CovarianceKernel kernels[] = {CovarianceKernel::SquaredExponential,
-                                        CovarianceKernel::Exponential,
-                                        CovarianceKernel::RandomMixture};
     const int sizes[] = {1, 4, 12};
 
-    for (const CovarianceKernel kernel : kernels)
     {
+        MatrixGenerationOptions options;
+        options.seed = 20260310ULL;
+        options.amplitude = 1.0;
+        options.nugget = 1.0e-3;
+
         for (const int n : sizes)
         {
-            if (!generator_settings_preserve_spd(kernel, n))
+            if (!generator_settings_preserve_spd(options, n))
             {
                 return 1;
             }
@@ -91,15 +123,13 @@ int main()
     {
         MatrixGenerationOptions options;
         options.seed = 1234ULL;
-        options.kernel = CovarianceKernel::RandomMixture;
-        options.randomize_points = true;
 
         const std::vector<double> first = make_generated_spd_matrix(10, options);
         const std::vector<double> second = make_generated_spd_matrix(10, options);
 
         if (!vectors_close(first, second, 0.0, 0.0))
         {
-            std::cerr << "test_matrix_generation failed: identical seeds should reproduce the same matrix\n";
+            std::cerr << "test_matrix_generation failed: strict diagonal dominance generator should be reproducible for identical seeds\n";
             return 1;
         }
 
@@ -108,7 +138,7 @@ int main()
 
         if (vectors_close(first, third, 0.0, 0.0))
         {
-            std::cerr << "test_matrix_generation failed: different seeds should change the generated matrix\n";
+            std::cerr << "test_matrix_generation failed: strict diagonal dominance generator should change with the seed\n";
             return 1;
         }
     }

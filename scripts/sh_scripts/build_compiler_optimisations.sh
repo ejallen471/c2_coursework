@@ -28,7 +28,7 @@ echo "==> Variants: ${COMPILER_FLAGS[*]}"
 
 # Build one separate tree per compiler flag so results do not interfere with each other.
 for FLAG_NAME in "${COMPILER_FLAGS[@]}"; do
-    BUILD_DIR="${ROOT_DIR}/build_csd3_compiler_${FLAG_NAME}"
+    BUILD_DIR="${ROOT_DIR}/build_compiler_${FLAG_NAME}"
     FLAG_VALUE="-${FLAG_NAME}"
 
     # Ensure the build directory exists before configuring it.

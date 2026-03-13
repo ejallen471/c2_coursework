@@ -1,8 +1,7 @@
 #ifndef RUNTIME_CHOLESKY_H
 #define RUNTIME_CHOLESKY_H
 
-#include "cholesky_versions.h"
-#include "timer.h"
+#include "mphil_dis_cholesky.h"
 
 #include <algorithm>
 #include <cctype>
@@ -147,69 +146,7 @@ inline const char* optimisation_name(CholeskyVersion version)
 
 inline double run_cholesky_version(double* c, int n, CholeskyVersion version)
 {
-    if (c == nullptr)
-    {
-        return -1.0;
-    }
-
-    if (n <= 0 || n > 100000)
-    {
-        return -2.0;
-    }
-
-    const double t0 = wall_time_seconds();
-
-    switch (version)
-    {
-    case CholeskyVersion::Baseline:
-        cholesky_baseline(c, n);
-        break;
-
-    case CholeskyVersion::LowerTriangleOnly:
-        cholesky_lower_triangle_only(c, n);
-        break;
-
-    case CholeskyVersion::InlineMirror:
-        cholesky_inline_mirror(c, n);
-        break;
-
-    case CholeskyVersion::LoopCleanup:
-        cholesky_loop_cleanup(c, n);
-        break;
-
-    case CholeskyVersion::AccessPatternAware:
-        cholesky_access_pattern_aware(c, n);
-        break;
-
-    case CholeskyVersion::CacheBlocked:
-        cholesky_cache_blocked(c, n, kDefaultBlockedCholeskyBlockSize);
-        break;
-
-    case CholeskyVersion::VectorFriendly:
-        cholesky_vectorisation(c, n);
-        break;
-
-    case CholeskyVersion::BlockedVectorised:
-        cholesky_blocked_vectorised(c, n, kDefaultBlockedCholeskyBlockSize);
-        break;
-
-    case CholeskyVersion::OpenMP1:
-#if defined(MPHIL_HAVE_OPENMP) && MPHIL_HAVE_OPENMP
-        cholesky_openmp_1(c, n);
-        break;
-#else
-        return -4.0;
-#endif
-
-    case CholeskyVersion::OpenMP2:
-        return -4.0;
-
-    case CholeskyVersion::OpenMP3:
-        return -4.0;
-    }
-
-    const double t1 = wall_time_seconds();
-    return t1 - t0;
+    return mphil_dis_cholesky_versioned(c, n, version);
 }
 
 #endif

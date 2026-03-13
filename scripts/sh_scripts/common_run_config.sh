@@ -9,11 +9,11 @@ RESULTS_RAW_DIR="${ROOT_DIR}/results/raw"
 # Store the directory where generated figures should be written.
 RESULTS_FIG_DIR="${ROOT_DIR}/results/figures"
 # Store the shared build directory used by the normal build and run workflows.
-SHARED_BUILD_DIR="${ROOT_DIR}/build_csd3"
+SHARED_BUILD_DIR="${ROOT_DIR}/build"
 # Store the optimised CMake build type used by the normal shell workflows.
 SHARED_BUILD_TYPE="${SHARED_BUILD_TYPE:-Release}"
 # Store the path to the shared build script used to populate the optimised build directory.
-SHARED_BUILD_SCRIPT="${SCRIPT_DIR}/build_csd3.sh"
+SHARED_BUILD_SCRIPT="${SCRIPT_DIR}/build.sh"
 
 # Relative path to the example executable inside a build directory.
 EXAMPLE_EXEC_REL="example/example_cholesky"
@@ -34,6 +34,22 @@ RUN_LOCAL_SANITY_PERF="${RUN_LOCAL_SANITY_PERF:-1}"
 LOCAL_SANITY_N="${LOCAL_SANITY_N:-128}"
 # Default repeat count for local sanity benchmark runs when not overridden.
 LOCAL_SANITY_REPEATS="${LOCAL_SANITY_REPEATS:-3}"
+PERF_WARMUP="${PERF_WARMUP:-1}"
+
+perf_warmup_cli_arg() {
+    case "${PERF_WARMUP}" in
+        1|true|TRUE|on|ON|yes|YES)
+            printf '%s\n' "--warmup"
+            ;;
+        0|false|FALSE|off|OFF|no|NO)
+            printf '%s\n' "--no-warmup"
+            ;;
+        *)
+            echo "Error: PERF_WARMUP must be one of 0/1, true/false, on/off, yes/no" >&2
+            return 1
+            ;;
+    esac
+}
 
 ensure_shared_release_executable() {
     local exec_rel="$1"

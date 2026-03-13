@@ -6,8 +6,6 @@ perf_scaling.cpp does the following
 3. Write the raw timing dat to CSV
 6. Print a per size summary stats
 7. Call the python plotting script to generate graphs
-
-
 */
 
 /**
@@ -16,6 +14,7 @@ perf_scaling.cpp does the following
  */
 
 #include "matrix.h"
+#include "perf_helpers.h"
 #include "runtime_cholesky.h"
 
 #include <algorithm>
@@ -31,59 +30,7 @@ perf_scaling.cpp does the following
 
 namespace
 {
-/**
- * @brief Recover the log-determinant from an in-place Cholesky factorisation.
- *
- * The factorised storage contains the lower-triangular factor `L` such that `A = L L^T`.
- *
- * @param c Dense row-major matrix storage containing the Cholesky factor.
- * @param n Matrix dimension.
- * @return The value of `log(det(A))`.
- */
-double logdet_from_factorised_storage(const std::vector<double>& c, int n)
-{
-    double sum = 0.0;
-
-    for (int i = 0; i < n; ++i)
-    {
-        const std::size_t index =
-            static_cast<std::size_t>(i) * static_cast<std::size_t>(n) + static_cast<std::size_t>(i);
-        sum += std::log(c[index]);
-    }
-
-    // Cholesky stores A = L L^T, so log(det(A)) = 2 * sum(log(diag(L))).
-    return 2.0 * sum;
-}
-
-/**
- * @brief Compute the dense storage requirement for an `n x n` matrix in bytes.
- *
- * @param n Matrix dimension.
- * @return Number of bytes required for dense double-precision storage.
- */
-double matrix_bytes(int n)
-{
-    return static_cast<double>(n) * static_cast<double>(n) * sizeof(double);
-}
-
-/**
- * @brief Estimate the floating-point work of dense Cholesky factorisation.
- *
- * @param n Matrix dimension.
- * @return Approximate flop count using the standard `n^3 / 3` estimate.
- */
-double cholesky_flop_estimate(int n)
-{
-    // Dense Cholesky is approximately n^3 / 3 floating-point operations.
-    return (1.0 / 3.0) * static_cast<double>(n) * static_cast<double>(n) * static_cast<double>(n);
-}
-
-/**
- * @brief Compute the arithmetic mean of a list of values.
- *
- * @param values Input data.
- * @return Mean of the values, or `0.0` if the input is empty.
- */
+// Compute the mean
 double mean(const std::vector<double>& values)
 {
     if (values.empty())
@@ -95,12 +42,7 @@ double mean(const std::vector<double>& values)
     return sum / static_cast<double>(values.size());
 }
 
-/**
- * @brief Compute the median of a list of values.
- *
- * @param values Input data copied by value so it can be sorted locally.
- * @return Median of the values, or `0.0` if the input is empty.
- */
+// Compute the median
 double median(std::vector<double> values)
 {
     if (values.empty())
@@ -110,6 +52,7 @@ double median(std::vector<double> values)
 
     std::sort(values.begin(), values.end());
 
+    // handle even list length case
     const std::size_t n = values.size();
     if (n % 2 == 1)
     {
@@ -119,12 +62,7 @@ double median(std::vector<double> values)
     return 0.5 * (values[n / 2 - 1] + values[n / 2]);
 }
 
-/**
- * @brief Compute the population standard deviation of a list of values.
- *
- * @param values Input data.
- * @return Standard deviation, or `0.0` if fewer than two values are provided.
- */
+// Calculate the standard deviation
 double standard_deviation(const std::vector<double>& values)
 {
     if (values.size() < 2)
@@ -143,43 +81,35 @@ double standard_deviation(const std::vector<double>& values)
 
     return std::sqrt(sum_sq / static_cast<double>(values.size()));
 }
+} // End namespace
 
-/**
- * @brief Wrap a filesystem path in quotes for safe use in a shell command string.
- *
- * @param path Filesystem path to quote.
- * @return Quoted string representation of the path.
- */
-std::string quoted_path(const std::filesystem::path& path)
-{
-    // Quote paths before passing them to std::system so spaces do not break the command line.
-    return "\"" + path.string() + "\"";
-}
-} // namespace
+//////////////////////// MAIN FUNCTION ////////////////////////
 
-/**
- * @brief Run repeated timings for several matrix sizes and generate scaling outputs.
- *
- * Expected usage:
- * `perf_scaling <optimisation> <repeats> <raw_csv> <plot_output_dir> <n1> [n2 ...]`
- *
- * The program writes raw benchmark rows to the requested CSV, prints per-size summaries to `stderr`,
- * and finally invokes the Python plotting script to produce processed summaries and figures.
- *
- * @param argc Number of command-line arguments.
- * @param argv Command-line argument array containing the optimisation name, repeat count, output paths,
- * and one or more matrix sizes.
- * @return `0` on success, or a non-zero value if argument parsing, benchmarking, file output, or plotting fails.
- */
+/*
+The main does the following
+
+1. reads command-line inputs
+2. chooses which Cholesky version to benchmark
+3. opens the CSV output file
+4. loops over matrix sizes
+5. warms up once for each size
+6. runs timed repeats for each size
+7. writes timing data and derived metrics to CSV
+8. prints summary statistics
+9. runs a Python plotting script
+10. prints where the outputs were saved
+*/
+
 int main(int argc, char* argv[])
 {
-    if (argc < 6)
+    if (argc < 6) // check argument count - expect at least six
     {
         std::cerr << "Usage: " << argv[0]
-                  << " <optimisation> <repeats> <raw_csv> <plot_output_dir> <n1> [n2 ...]\n";
+                  << " <optimisation> <repeats> <raw_csv> <plot_output_dir> [--warmup|--no-warmup] <n1> [n2 ...]\n";
         return 1;
     }
 
+    // Create a variable that will store which Cholesky implementation to benchmark
     CholeskyVersion version;
     if (!parse_optimisation_name(argv[1], version))
     {
@@ -194,15 +124,18 @@ int main(int argc, char* argv[])
         return 1;
     }
 
+    // Read the output paths
     const std::filesystem::path raw_csv_path(argv[3]);
     const std::filesystem::path plot_output_dir(argv[4]);
 
+    // Create the directories if needed
     if (raw_csv_path.has_parent_path())
     {
         std::filesystem::create_directories(raw_csv_path.parent_path());
     }
     std::filesystem::create_directories(plot_output_dir);
 
+    // Open CSV file
     std::ofstream raw_csv(raw_csv_path);
     if (!raw_csv)
     {
@@ -210,37 +143,59 @@ int main(int argc, char* argv[])
         return 1;
     }
 
-    raw_csv << std::setprecision(16);
-    raw_csv << "tag,n,repeat,elapsed_seconds,logdet,matrix_bytes,flop_estimate,gflops_est,"
-               "time_over_n3\n";
+    raw_csv << std::setprecision(kLogDetOutputPrecision); // set the precision for writes to the CSV
+    raw_csv << "tag,n,repeat,elapsed_seconds,logdet,time_over_n3\n";
 
     const std::string tag = optimisation_name(version);
+    bool run_warmup = true;
+    std::vector<int> matrix_sizes;
+    matrix_sizes.reserve(static_cast<std::size_t>(argc - 5));
 
-    // Treat each requested matrix size as an independent benchmark group.
     for (int argi = 5; argi < argc; ++argi)
     {
-        const int n = std::atoi(argv[argi]);
-        if (n <= 0 || n > 100000)
+        if (parse_warmup_option(argv[argi], run_warmup))
+        {
+            continue;
+        }
+
+        const int n_input = std::atoi(argv[argi]);
+
+        if (n_input <= 0 || n_input > 100000)
         {
             std::cerr << "Error: invalid matrix size '" << argv[argi] << "'\n";
             return 1;
         }
 
-        const std::vector<double> original = make_generated_spd_matrix(n);
-        const double bytes = matrix_bytes(n);
-        const double flop_est = cholesky_flop_estimate(n);
+        matrix_sizes.push_back(n_input);
+    }
 
-        // Do one untimed warm-up on a copy so first-run effects do not pollute the reported
-        // repeats.
+    if (matrix_sizes.empty())
+    {
+        std::cerr << "Error: at least one matrix size is required\n";
+        return 1;
+    }
+
+    // Treat each requested matrix size as an independent benchmark group.
+    for (const int n_input : matrix_sizes)
+    {
+        const std::size_t n = static_cast<std::size_t>(n_input); // cast to std::size_t
+
+        const std::vector<double> original = make_generated_spd_matrix(n_input);
+
+        if (run_warmup)
         {
-            std::vector<double> warmup = original;
-            const double elapsed = run_cholesky_version(warmup.data(), n, version);
-
-            if (elapsed < 0.0)
+            // Do one untimed warm-up on a copy so first-run effects do not pollute the reported
+            // repeats.
             {
-                std::cerr << "Error: warm-up factorisation failed for n=" << n << " with code "
-                          << elapsed << '\n';
-                return 1;
+                std::vector<double> warmup = original;
+                const double elapsed = run_cholesky_version(warmup.data(), n, version);
+
+                if (elapsed < 0.0)
+                {
+                    std::cerr << "Error: warm-up factorisation failed for n=" << n << " with code "
+                              << elapsed << '\n';
+                    return 1;
+                }
             }
         }
 
@@ -264,13 +219,12 @@ int main(int argc, char* argv[])
 
             // Emit enough derived metrics to support later plotting and scaling analysis from CSV
             // alone.
-            const double logdet = logdet_from_factorised_storage(working, n);
-            const double gflops_est = flop_est / elapsed / 1.0e9;
+            const LogDetValue logdet = logdet_from_factorised_storage(working, n);
             const double time_over_n3 = elapsed /
                 (static_cast<double>(n) * static_cast<double>(n) * static_cast<double>(n));
 
             raw_csv << tag << ',' << n << ',' << repeat << ',' << elapsed << ',' << logdet << ','
-                    << bytes << ',' << flop_est << ',' << gflops_est << ',' << time_over_n3 << '\n';
+                    << time_over_n3 << '\n';
         }
 
         // Print a per-size summary to stderr so progress is visible even when stdout is redirected.

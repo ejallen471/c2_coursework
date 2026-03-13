@@ -4,10 +4,10 @@
  */
 
 #include "matrix.h"
+#include "perf_helpers.h"
 #include "runtime_cholesky.h"
 
 #include <algorithm>
-#include <cmath>
 #include <cstdlib>
 #include <filesystem>
 #include <fstream>
@@ -16,62 +16,19 @@
 #include <string>
 #include <vector>
 
-extern "C"
+namespace // start namespace (anonymous space)
 {
-void dpotrf_(const char* uplo, const int* n, double* a, const int* lda, int* info);
-}
-
-namespace
+struct MethodResult // Define a data structure used to store the benchmark results for one Cholesky
+                    // implementaiton
 {
-double logdet_from_factorised_storage(const std::vector<double>& c, int n)
-{
-    double sum = 0.0;
-
-    for (int i = 0; i < n; ++i)
-    {
-        const std::size_t index =
-            static_cast<std::size_t>(i) * static_cast<std::size_t>(n) + static_cast<std::size_t>(i);
-        sum += std::log(c[index]);
-    }
-
-    return 2.0 * sum;
-}
-
-double relative_difference_percent(double value, double reference)
-{
-    const double scale = std::fabs(reference);
-    if (scale == 0.0)
-    {
-        return (std::fabs(value) == 0.0) ? 0.0 : 100.0;
-    }
-
-    return 100.0 * std::fabs(value - reference) / scale;
-}
-
-bool lapack_reference_logdet(std::vector<double> c, int n, double& logdet)
-{
-    const char uplo = 'L';
-    const int lda = n;
-    int info = 0;
-
-    dpotrf_(&uplo, &n, c.data(), &lda, &info);
-    if (info != 0)
-    {
-        return false;
-    }
-
-    logdet = logdet_from_factorised_storage(c, n);
-    return true;
-}
-
-struct MethodResult
-{
-    CholeskyVersion version;
-    std::vector<double> elapsed_values;
-    std::vector<double> logdet_factor_values;
-    std::vector<double> relative_difference_values;
+    CholeskyVersion version;            // Store which version
+    std::vector<double> elapsed_values; // store runtime measurements
+    std::vector<LogDetValue>
+        logdet_factor_values; // store the log det computed from the factorised matrix
+    std::vector<LogDetValue> relative_difference_values; // store the relative difference (percentage)
 };
 
+// Function returns the list of Cholesky implementations (single threaded)
 const std::vector<CholeskyVersion>& single_thread_versions()
 {
     static const std::vector<CholeskyVersion> versions = {
@@ -83,22 +40,37 @@ const std::vector<CholeskyVersion>& single_thread_versions()
 
     return versions;
 }
-} // namespace
+} // End namespace
+
+//////////////////////// MAIN FUNCTION ////////////////////////
+
+/*
+The main function will do the following
+
+1. read input arguments
+2. generates a test matrix
+3. compute a reference result using LAPACK
+4. runs several Cholesky implementations
+5. measure runtime and accuracy
+6. writes everything to a CSV file
+
+*/
 
 int main(int argc, char* argv[])
 {
-    if (argc != 4)
+    if (argc < 4) // expects exactly four arguments else error
     {
-        std::cerr << "Usage: " << argv[0] << " <n> <repeats> <raw_csv>\n";
+        std::cerr << "Usage: " << argv[0] << " <n> <repeats> <raw_csv> [--warmup|--no-warmup]\n";
         return 1;
     }
 
-    const int n = std::atoi(argv[1]);
-    if (n <= 0 || n > 100000)
+    const int n_input = std::atoi(argv[1]);
+    if (n_input <= 0 || n_input > 100000)
     {
-        std::cerr << "Error: n must be positive and at most 100000\n";
+        std::cerr << "Error: n must be positive and at most 100000\n"; // as per coursework brief
         return 1;
     }
+    const std::size_t n = static_cast<std::size_t>(n_input); // cast to std::size_t
 
     const int repeats = std::atoi(argv[2]);
     if (repeats <= 0)
@@ -107,45 +79,71 @@ int main(int argc, char* argv[])
         return 1;
     }
 
+    // Read csv output path
     const std::filesystem::path raw_csv_path(argv[3]);
+    bool run_warmup = true;
+
+    for (int argi = 4; argi < argc; ++argi)
+    {
+        if (!parse_warmup_option(argv[argi], run_warmup))
+        {
+            std::cerr << "Error: unknown option '" << argv[argi] << "'\n";
+            return 1;
+        }
+    }
+
+    // ensure the directory exists, otherwise create a folder
     if (raw_csv_path.has_parent_path())
     {
         std::filesystem::create_directories(raw_csv_path.parent_path());
     }
 
-    const std::vector<double> original = make_generated_spd_matrix(n);
+    // generate test matrix  - this matrix is used by all matrices
+    const std::vector<double> original_matrix = make_generated_spd_matrix(n_input);
+    std::vector<double> LAPACK_matrix = original_matrix;
 
-    double logdet_library = 0.0;
-    if (!lapack_reference_logdet(original, n, logdet_library))
+    // compute results with LAPACK
+    LogDetValue logdet_library = 0.0L;
+    if (!lapack_reference_logdet(LAPACK_matrix, n_input, logdet_library))
     {
         std::cerr << "Error: LAPACK reference factorisation failed\n";
         return 1;
     }
 
+    // Prepare the storage for results
     std::vector<MethodResult> results;
     results.reserve(single_thread_versions().size());
 
+    // Loop over all Cholesky methods
     for (const CholeskyVersion version : single_thread_versions())
     {
-        std::vector<double> warmup = original;
-        const double warmup_elapsed = run_cholesky_version(warmup.data(), n, version);
-        if (warmup_elapsed < 0.0)
+        if (run_warmup)
         {
-            std::cerr << "Error: warm-up failed for " << optimisation_name(version) << " with code "
-                      << warmup_elapsed << '\n';
-            return 1;
+            // Warm-up run
+            std::vector<double> warmup_matrix = original_matrix;
+            const double warmup_elapsed = run_cholesky_version(warmup_matrix.data(), n, version);
+            if (warmup_elapsed < 0.0)
+            {
+                std::cerr << "Error: warm-up failed for " << optimisation_name(version)
+                          << " with code " << warmup_elapsed << '\n';
+                return 1;
+            }
         }
 
+        // Create results container (structure to store the results for this method)
         MethodResult result;
         result.version = version;
+
+        // Reserve the correct amount of storage
         result.elapsed_values.reserve(static_cast<std::size_t>(repeats));
         result.logdet_factor_values.reserve(static_cast<std::size_t>(repeats));
         result.relative_difference_values.reserve(static_cast<std::size_t>(repeats));
 
+        // Loop over the number of repeats
         for (int repeat = 0; repeat < repeats; ++repeat)
         {
-            std::vector<double> working = original;
-            const double elapsed = run_cholesky_version(working.data(), n, version);
+            std::vector<double> working_matrix = original_matrix;
+            const double elapsed = run_cholesky_version(working_matrix.data(), n, version);
             if (elapsed < 0.0)
             {
                 std::cerr << "Error: factorisation failed for " << optimisation_name(version)
@@ -153,8 +151,8 @@ int main(int argc, char* argv[])
                 return 1;
             }
 
-            const double logdet_factor = logdet_from_factorised_storage(working, n);
-            const double relative_difference =
+            const LogDetValue logdet_factor = logdet_from_factorised_storage(working_matrix, n);
+            const LogDetValue relative_difference =
                 relative_difference_percent(logdet_factor, logdet_library);
 
             result.elapsed_values.push_back(elapsed);
@@ -165,6 +163,7 @@ int main(int argc, char* argv[])
         results.push_back(result);
     }
 
+    // Find the baseline method
     const auto baseline_it =
         std::find_if(results.begin(), results.end(), [](const MethodResult& result)
                      { return result.version == CholeskyVersion::Baseline; });
@@ -174,6 +173,7 @@ int main(int argc, char* argv[])
         return 1;
     }
 
+    // Open CSV file
     std::ofstream raw_csv(raw_csv_path);
     if (!raw_csv)
     {
@@ -181,10 +181,12 @@ int main(int argc, char* argv[])
         return 1;
     }
 
-    raw_csv << std::setprecision(16);
+    // Write the CSV header
+    raw_csv << std::setprecision(kLogDetOutputPrecision);
     raw_csv << "optimisation,n,repeat,elapsed_seconds,speedup_factor_vs_baseline,"
                "logdet_library,logdet_factor,relative_difference_percent\n";
 
+    // Write the results
     for (const MethodResult& result : results)
     {
         for (std::size_t repeat = 0; repeat < result.elapsed_values.size(); ++repeat)

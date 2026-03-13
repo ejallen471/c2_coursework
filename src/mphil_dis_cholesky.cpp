@@ -2,50 +2,17 @@
 This file does the following
 
 1. basic input validation checks
-2. choose the configured implementation
+2. choose the requested implementation
 3. run that implementation
 4. return the runtime
 */
 
 #include "mphil_dis_cholesky.h"
+#include "cholesky_guard.h"
 #include "cholesky_versions.h"
 #include "timer.h"
 
-namespace
-{
-// Map the compile-time CMake selection onto the internal implementation enum.
-CholeskyVersion current_version()
-{
-#if !defined(MPHIL_CHOLESKY_VERSION_ID) || MPHIL_CHOLESKY_VERSION_ID == 0
-    return CholeskyVersion::Baseline;
-#elif MPHIL_CHOLESKY_VERSION_ID == 1
-    return CholeskyVersion::LowerTriangleOnly;
-#elif MPHIL_CHOLESKY_VERSION_ID == 2
-    return CholeskyVersion::InlineMirror;
-#elif MPHIL_CHOLESKY_VERSION_ID == 3
-    return CholeskyVersion::LoopCleanup;
-#elif MPHIL_CHOLESKY_VERSION_ID == 4
-    return CholeskyVersion::AccessPatternAware;
-#elif MPHIL_CHOLESKY_VERSION_ID == 5
-    return CholeskyVersion::CacheBlocked;
-#elif MPHIL_CHOLESKY_VERSION_ID == 6
-    return CholeskyVersion::VectorFriendly;
-#elif MPHIL_CHOLESKY_VERSION_ID == 7
-    return CholeskyVersion::BlockedVectorised;
-#elif MPHIL_CHOLESKY_VERSION_ID == 8
-    return CholeskyVersion::OpenMP1;
-#elif MPHIL_CHOLESKY_VERSION_ID == 9
-    return CholeskyVersion::OpenMP2;
-#elif MPHIL_CHOLESKY_VERSION_ID == 10
-    return CholeskyVersion::OpenMP3;
-#else
-#error "Invalid MPHIL_CHOLESKY_VERSION_ID"
-#endif
-}
-
-} // namespace
-
-double mphil_dis_cholesky(double* c, int n)
+double mphil_dis_cholesky_versioned(double* c, int n, CholeskyVersion version)
 {
     // Reject invalid pointers before touching matrix storage.
     if (c == nullptr)
@@ -63,7 +30,7 @@ double mphil_dis_cholesky(double* c, int n)
     const double t0 = wall_time_seconds();
 
     // Dispatch to the selected implementation. All versions factorise in place.
-    switch (current_version())
+    switch (version)
     {
     case CholeskyVersion::Baseline:
         cholesky_baseline(c, n);
@@ -86,20 +53,16 @@ double mphil_dis_cholesky(double* c, int n)
         break;
 
     case CholeskyVersion::CacheBlocked:
-    {
         cholesky_cache_blocked(c, n, kDefaultBlockedCholeskyBlockSize);
         break;
-    }
 
     case CholeskyVersion::VectorFriendly:
         cholesky_vectorisation(c, n);
         break;
 
     case CholeskyVersion::BlockedVectorised:
-    {
         cholesky_blocked_vectorised(c, n, kDefaultBlockedCholeskyBlockSize);
         break;
-    }
 
     case CholeskyVersion::OpenMP1:
 #if defined(MPHIL_HAVE_OPENMP) && MPHIL_HAVE_OPENMP
@@ -116,12 +79,19 @@ double mphil_dis_cholesky(double* c, int n)
         return -4.0;
 
     default:
-        // This should not happen if the compile-time version mapping is valid.
+        // This should not happen if the requested version is valid.
         return -3.0;
     }
 
     const double t1 = wall_time_seconds();
+    const double guard = cholesky_detail::factorised_matrix_guard(c, static_cast<std::size_t>(n));
+    cholesky_detail::consume_cholesky_guard(guard);
 
     // Return elapsed wall-clock time in seconds.
     return t1 - t0;
+}
+
+double mphil_dis_cholesky(double* c, int n)
+{
+    return mphil_dis_cholesky_versioned(c, n, CholeskyVersion::Baseline);
 }

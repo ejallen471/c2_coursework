@@ -20,12 +20,7 @@ void print_matrix(const double* c, int n)
 int main()
 {
     const int n = 4;
-
-    MatrixGenerationOptions options;
-    options.kernel = CovarianceKernel::SquaredExponential;
-    options.randomize_points = false;
-
-    std::vector<double> c = make_generated_spd_matrix(n, options);
+    std::vector<double> c = make_generated_spd_matrix(n);
 
     std::cout << "Input matrix:\n";
     print_matrix(c.data(), n);

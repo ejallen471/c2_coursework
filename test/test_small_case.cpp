@@ -67,6 +67,31 @@ int main()
         }
     }
 
+    {
+        const int n = 2;
+        std::vector<double> c = {9.0, 3.0, 3.0, 5.0};
+        const std::vector<double> expected = {3.0, 1.0, 1.0, 2.0};
+
+        const double elapsed =
+            mphil_dis_cholesky_versioned(c.data(), n, CholeskyVersion::LowerTriangleOnly);
+        if (elapsed < 0.0)
+        {
+            std::cerr << "test_small_case failed for runtime-selected lower_triangle_only: routine returned "
+                      << elapsed << '\n';
+            return 1;
+        }
+
+        for (int i = 0; i < n * n; ++i)
+        {
+            if (!nearly_equal(c[i], expected[i], 1e-12, 1e-12))
+            {
+                std::cerr << "test_small_case failed for runtime-selected lower_triangle_only at index "
+                          << i << ": got " << c[i] << ", expected " << expected[i] << '\n';
+                return 1;
+            }
+        }
+    }
+
     std::cout << "test_small_case passed\n";
     return 0;
 }

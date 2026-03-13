@@ -7,21 +7,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-set(MPHIL_CHOLESKY_VERSION "Baseline" CACHE STRING "Cholesky implementation to build")
-set_property(CACHE MPHIL_CHOLESKY_VERSION PROPERTY STRINGS
-    Baseline
-    LowerTriangleOnly
-    InlineMirror
-    LoopCleanup
-    AccessPatternAware
-    CacheBlocked
-    VectorFriendly
-    BlockedVectorised
-    OpenMP1
-    OpenMP2
-    OpenMP3
-)
-
 if(NOT CMAKE_CONFIGURATION_TYPES AND NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type (Debug, Release, RelWithDebInfo, MinSizeRel)" FORCE)
 endif()
