@@ -1,16 +1,14 @@
 add_library(mphil_dis_cholesky
     mphil_dis_cholesky.cpp
-    cholesky_baseline.cpp
-    cholesky_lower_triangle_only.cpp
-    cholesky_inline_mirror.cpp
-    cholesky_loop_cleanup.cpp
-    cholesky_access_pattern_aware.cpp
-    cholesky_cache_blocked.cpp
-    cholesky_vectorisation.cpp
-    cholesky_blocked_vectorised.cpp
-    cholesky_openmp_1.cpp
-    cholesky_openmp_2.cpp
-    cholesky_openmp_3.cpp
+    00_cholesky_baseline.cpp
+    01_cholesky_lower_triangle.cpp
+    02_cholesky_upper_triangle.cpp
+    03_cholesky_contiguous_access.cpp
+    04_cholesky_cache_blocked_1.cpp
+    05_cholesky_cache_blocked_2.cpp
+    06_cholesky_openmp_1.cpp
+    07_cholesky_openmp_2.cpp
+    08_cholesky_openmp_3.cpp
     ${PROJECT_SOURCE_DIR}/utils/timer.cpp
     ${PROJECT_SOURCE_DIR}/utils/matrix.cpp
 )

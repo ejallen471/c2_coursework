@@ -1,10 +1,11 @@
 /**
  * @file perf_fixed_size_comparison.cpp
- * @brief Fixed-size benchmark driver that compares all implemented single-threaded methods.
+ * @brief Implementation of the fixed-size comparison mode used by run_cholesky.
  */
 
 #include "matrix.h"
 #include "perf_helpers.h"
+#include "perf_modes.h"
 #include "runtime_cholesky.h"
 
 #include <algorithm>
@@ -32,35 +33,23 @@ struct MethodResult // Define a data structure used to store the benchmark resul
 const std::vector<CholeskyVersion>& single_thread_versions()
 {
     static const std::vector<CholeskyVersion> versions = {
-        CholeskyVersion::Baseline,           CholeskyVersion::LowerTriangleOnly,
-        CholeskyVersion::InlineMirror,       CholeskyVersion::LoopCleanup,
-        CholeskyVersion::AccessPatternAware, CholeskyVersion::CacheBlocked,
-        CholeskyVersion::VectorFriendly,     CholeskyVersion::BlockedVectorised,
+        CholeskyVersion::Baseline,
+        CholeskyVersion::LowerTriangleOnly,
+        CholeskyVersion::UpperTriangle,
+        CholeskyVersion::ContiguousAccess,
+        CholeskyVersion::CacheBlocked,
+        CholeskyVersion::BlockedOptimal,
     };
 
     return versions;
 }
 } // End namespace
 
-//////////////////////// MAIN FUNCTION ////////////////////////
-
-/*
-The main function will do the following
-
-1. read input arguments
-2. generates a test matrix
-3. compute a reference result using LAPACK
-4. runs several Cholesky implementations
-5. measure runtime and accuracy
-6. writes everything to a CSV file
-
-*/
-
-int main(int argc, char* argv[])
+int run_fixed_size_comparison_mode(int argc, char* argv[])
 {
     if (argc < 4) // expects exactly four arguments else error
     {
-        std::cerr << "Usage: " << argv[0] << " <n> <repeats> <raw_csv> [--warmup|--no-warmup]\n";
+        std::cerr << "Usage: " << argv[0] << " <n> <repeats> <raw_csv>\n";
         return 1;
     }
 
@@ -81,17 +70,6 @@ int main(int argc, char* argv[])
 
     // Read csv output path
     const std::filesystem::path raw_csv_path(argv[3]);
-    bool run_warmup = true;
-
-    for (int argi = 4; argi < argc; ++argi)
-    {
-        if (!parse_warmup_option(argv[argi], run_warmup))
-        {
-            std::cerr << "Error: unknown option '" << argv[argi] << "'\n";
-            return 1;
-        }
-    }
-
     // ensure the directory exists, otherwise create a folder
     if (raw_csv_path.has_parent_path())
     {
@@ -117,19 +95,6 @@ int main(int argc, char* argv[])
     // Loop over all Cholesky methods
     for (const CholeskyVersion version : single_thread_versions())
     {
-        if (run_warmup)
-        {
-            // Warm-up run
-            std::vector<double> warmup_matrix = original_matrix;
-            const double warmup_elapsed = run_cholesky_version(warmup_matrix.data(), n, version);
-            if (warmup_elapsed < 0.0)
-            {
-                std::cerr << "Error: warm-up failed for " << optimisation_name(version)
-                          << " with code " << warmup_elapsed << '\n';
-                return 1;
-            }
-        }
-
         // Create results container (structure to store the results for this method)
         MethodResult result;
         result.version = version;

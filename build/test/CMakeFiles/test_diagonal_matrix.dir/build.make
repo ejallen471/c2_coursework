@@ -53,10 +53,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/ejallen/Desktop/c2_coursework_boss
+CMAKE_SOURCE_DIR = /Users/ejallen/Desktop/c2_coursework
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/ejallen/Desktop/c2_coursework_boss/build
+CMAKE_BINARY_DIR = /Users/ejallen/Desktop/c2_coursework/build
 
 # Include any dependencies generated for this target.
 include test/CMakeFiles/test_diagonal_matrix.dir/depend.make
@@ -73,32 +73,32 @@ test/CMakeFiles/test_diagonal_matrix.dir/codegen:
 .PHONY : test/CMakeFiles/test_diagonal_matrix.dir/codegen
 
 test/CMakeFiles/test_diagonal_matrix.dir/test_diagonal_matrix.cpp.o: test/CMakeFiles/test_diagonal_matrix.dir/flags.make
-test/CMakeFiles/test_diagonal_matrix.dir/test_diagonal_matrix.cpp.o: /Users/ejallen/Desktop/c2_coursework_boss/test/test_diagonal_matrix.cpp
+test/CMakeFiles/test_diagonal_matrix.dir/test_diagonal_matrix.cpp.o: /Users/ejallen/Desktop/c2_coursework/test/test_diagonal_matrix.cpp
 test/CMakeFiles/test_diagonal_matrix.dir/test_diagonal_matrix.cpp.o: test/CMakeFiles/test_diagonal_matrix.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test/CMakeFiles/test_diagonal_matrix.dir/test_diagonal_matrix.cpp.o"
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/CMakeFiles/test_diagonal_matrix.dir/test_diagonal_matrix.cpp.o -MF CMakeFiles/test_diagonal_matrix.dir/test_diagonal_matrix.cpp.o.d -o CMakeFiles/test_diagonal_matrix.dir/test_diagonal_matrix.cpp.o -c /Users/ejallen/Desktop/c2_coursework_boss/test/test_diagonal_matrix.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test/CMakeFiles/test_diagonal_matrix.dir/test_diagonal_matrix.cpp.o"
+	cd /Users/ejallen/Desktop/c2_coursework/build/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/CMakeFiles/test_diagonal_matrix.dir/test_diagonal_matrix.cpp.o -MF CMakeFiles/test_diagonal_matrix.dir/test_diagonal_matrix.cpp.o.d -o CMakeFiles/test_diagonal_matrix.dir/test_diagonal_matrix.cpp.o -c /Users/ejallen/Desktop/c2_coursework/test/test_diagonal_matrix.cpp
 
 test/CMakeFiles/test_diagonal_matrix.dir/test_diagonal_matrix.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/test_diagonal_matrix.dir/test_diagonal_matrix.cpp.i"
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ejallen/Desktop/c2_coursework_boss/test/test_diagonal_matrix.cpp > CMakeFiles/test_diagonal_matrix.dir/test_diagonal_matrix.cpp.i
+	cd /Users/ejallen/Desktop/c2_coursework/build/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ejallen/Desktop/c2_coursework/test/test_diagonal_matrix.cpp > CMakeFiles/test_diagonal_matrix.dir/test_diagonal_matrix.cpp.i
 
 test/CMakeFiles/test_diagonal_matrix.dir/test_diagonal_matrix.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/test_diagonal_matrix.dir/test_diagonal_matrix.cpp.s"
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ejallen/Desktop/c2_coursework_boss/test/test_diagonal_matrix.cpp -o CMakeFiles/test_diagonal_matrix.dir/test_diagonal_matrix.cpp.s
+	cd /Users/ejallen/Desktop/c2_coursework/build/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ejallen/Desktop/c2_coursework/test/test_diagonal_matrix.cpp -o CMakeFiles/test_diagonal_matrix.dir/test_diagonal_matrix.cpp.s
 
 test/CMakeFiles/test_diagonal_matrix.dir/test_helpers.cpp.o: test/CMakeFiles/test_diagonal_matrix.dir/flags.make
-test/CMakeFiles/test_diagonal_matrix.dir/test_helpers.cpp.o: /Users/ejallen/Desktop/c2_coursework_boss/test/test_helpers.cpp
+test/CMakeFiles/test_diagonal_matrix.dir/test_helpers.cpp.o: /Users/ejallen/Desktop/c2_coursework/test/test_helpers.cpp
 test/CMakeFiles/test_diagonal_matrix.dir/test_helpers.cpp.o: test/CMakeFiles/test_diagonal_matrix.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object test/CMakeFiles/test_diagonal_matrix.dir/test_helpers.cpp.o"
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/CMakeFiles/test_diagonal_matrix.dir/test_helpers.cpp.o -MF CMakeFiles/test_diagonal_matrix.dir/test_helpers.cpp.o.d -o CMakeFiles/test_diagonal_matrix.dir/test_helpers.cpp.o -c /Users/ejallen/Desktop/c2_coursework_boss/test/test_helpers.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object test/CMakeFiles/test_diagonal_matrix.dir/test_helpers.cpp.o"
+	cd /Users/ejallen/Desktop/c2_coursework/build/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/CMakeFiles/test_diagonal_matrix.dir/test_helpers.cpp.o -MF CMakeFiles/test_diagonal_matrix.dir/test_helpers.cpp.o.d -o CMakeFiles/test_diagonal_matrix.dir/test_helpers.cpp.o -c /Users/ejallen/Desktop/c2_coursework/test/test_helpers.cpp
 
 test/CMakeFiles/test_diagonal_matrix.dir/test_helpers.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/test_diagonal_matrix.dir/test_helpers.cpp.i"
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ejallen/Desktop/c2_coursework_boss/test/test_helpers.cpp > CMakeFiles/test_diagonal_matrix.dir/test_helpers.cpp.i
+	cd /Users/ejallen/Desktop/c2_coursework/build/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ejallen/Desktop/c2_coursework/test/test_helpers.cpp > CMakeFiles/test_diagonal_matrix.dir/test_helpers.cpp.i
 
 test/CMakeFiles/test_diagonal_matrix.dir/test_helpers.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/test_diagonal_matrix.dir/test_helpers.cpp.s"
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ejallen/Desktop/c2_coursework_boss/test/test_helpers.cpp -o CMakeFiles/test_diagonal_matrix.dir/test_helpers.cpp.s
+	cd /Users/ejallen/Desktop/c2_coursework/build/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ejallen/Desktop/c2_coursework/test/test_helpers.cpp -o CMakeFiles/test_diagonal_matrix.dir/test_helpers.cpp.s
 
 # Object files for target test_diagonal_matrix
 test_diagonal_matrix_OBJECTS = \
@@ -113,18 +113,18 @@ test/test_diagonal_matrix: test/CMakeFiles/test_diagonal_matrix.dir/test_helpers
 test/test_diagonal_matrix: test/CMakeFiles/test_diagonal_matrix.dir/build.make
 test/test_diagonal_matrix: src/libmphil_dis_cholesky.a
 test/test_diagonal_matrix: test/CMakeFiles/test_diagonal_matrix.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable test_diagonal_matrix"
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_diagonal_matrix.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable test_diagonal_matrix"
+	cd /Users/ejallen/Desktop/c2_coursework/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_diagonal_matrix.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 test/CMakeFiles/test_diagonal_matrix.dir/build: test/test_diagonal_matrix
 .PHONY : test/CMakeFiles/test_diagonal_matrix.dir/build
 
 test/CMakeFiles/test_diagonal_matrix.dir/clean:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build/test && $(CMAKE_COMMAND) -P CMakeFiles/test_diagonal_matrix.dir/cmake_clean.cmake
+	cd /Users/ejallen/Desktop/c2_coursework/build/test && $(CMAKE_COMMAND) -P CMakeFiles/test_diagonal_matrix.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/test_diagonal_matrix.dir/clean
 
 test/CMakeFiles/test_diagonal_matrix.dir/depend:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/ejallen/Desktop/c2_coursework_boss /Users/ejallen/Desktop/c2_coursework_boss/test /Users/ejallen/Desktop/c2_coursework_boss/build /Users/ejallen/Desktop/c2_coursework_boss/build/test /Users/ejallen/Desktop/c2_coursework_boss/build/test/CMakeFiles/test_diagonal_matrix.dir/DependInfo.cmake "--color=$(COLOR)" test_diagonal_matrix
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/ejallen/Desktop/c2_coursework /Users/ejallen/Desktop/c2_coursework/test /Users/ejallen/Desktop/c2_coursework/build /Users/ejallen/Desktop/c2_coursework/build/test /Users/ejallen/Desktop/c2_coursework/build/test/CMakeFiles/test_diagonal_matrix.dir/DependInfo.cmake "--color=$(COLOR)" test_diagonal_matrix
 .PHONY : test/CMakeFiles/test_diagonal_matrix.dir/depend
 

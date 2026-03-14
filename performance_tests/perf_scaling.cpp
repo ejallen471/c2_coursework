@@ -4,23 +4,22 @@ perf_scaling.cpp does the following
 1. Take one optimisation choice, repeat count and matrix sizes
 2. Run the chosen implementation repeatedly for each size
 3. Write the raw timing dat to CSV
-6. Print a per size summary stats
-7. Call the python plotting script to generate graphs
+4. Print a per size summary stats
 */
 
 /**
  * @file perf_scaling.cpp
- * @brief Multi-size benchmark driver that records repeated timings and generates scaling plots.
+ * @brief Implementation of the matrix-scaling mode used by run_cholesky.
  */
 
 #include "matrix.h"
 #include "perf_helpers.h"
+#include "perf_modes.h"
 #include "runtime_cholesky.h"
 
 #include <algorithm>
 #include <cmath>
 #include <cstdlib>
-#include <filesystem>
 #include <fstream>
 #include <iomanip>
 #include <iostream>
@@ -83,29 +82,12 @@ double standard_deviation(const std::vector<double>& values)
 }
 } // End namespace
 
-//////////////////////// MAIN FUNCTION ////////////////////////
-
-/*
-The main does the following
-
-1. reads command-line inputs
-2. chooses which Cholesky version to benchmark
-3. opens the CSV output file
-4. loops over matrix sizes
-5. warms up once for each size
-6. runs timed repeats for each size
-7. writes timing data and derived metrics to CSV
-8. prints summary statistics
-9. runs a Python plotting script
-10. prints where the outputs were saved
-*/
-
-int main(int argc, char* argv[])
+int run_scaling_mode(int argc, char* argv[])
 {
-    if (argc < 6) // check argument count - expect at least six
+    if (argc < 5)
     {
         std::cerr << "Usage: " << argv[0]
-                  << " <optimisation> <repeats> <raw_csv> <plot_output_dir> [--warmup|--no-warmup] <n1> [n2 ...]\n";
+                  << " <optimisation> <repeats> <raw_csv> <n1> [n2 ...]\n";
         return 1;
     }
 
@@ -126,14 +108,12 @@ int main(int argc, char* argv[])
 
     // Read the output paths
     const std::filesystem::path raw_csv_path(argv[3]);
-    const std::filesystem::path plot_output_dir(argv[4]);
 
     // Create the directories if needed
     if (raw_csv_path.has_parent_path())
     {
         std::filesystem::create_directories(raw_csv_path.parent_path());
     }
-    std::filesystem::create_directories(plot_output_dir);
 
     // Open CSV file
     std::ofstream raw_csv(raw_csv_path);
@@ -147,17 +127,11 @@ int main(int argc, char* argv[])
     raw_csv << "tag,n,repeat,elapsed_seconds,logdet,time_over_n3\n";
 
     const std::string tag = optimisation_name(version);
-    bool run_warmup = true;
     std::vector<int> matrix_sizes;
-    matrix_sizes.reserve(static_cast<std::size_t>(argc - 5));
+    matrix_sizes.reserve(static_cast<std::size_t>(argc - 4));
 
-    for (int argi = 5; argi < argc; ++argi)
+    for (int argi = 4; argi < argc; ++argi)
     {
-        if (parse_warmup_option(argv[argi], run_warmup))
-        {
-            continue;
-        }
-
         const int n_input = std::atoi(argv[argi]);
 
         if (n_input <= 0 || n_input > 100000)
@@ -181,23 +155,6 @@ int main(int argc, char* argv[])
         const std::size_t n = static_cast<std::size_t>(n_input); // cast to std::size_t
 
         const std::vector<double> original = make_generated_spd_matrix(n_input);
-
-        if (run_warmup)
-        {
-            // Do one untimed warm-up on a copy so first-run effects do not pollute the reported
-            // repeats.
-            {
-                std::vector<double> warmup = original;
-                const double elapsed = run_cholesky_version(warmup.data(), n, version);
-
-                if (elapsed < 0.0)
-                {
-                    std::cerr << "Error: warm-up factorisation failed for n=" << n << " with code "
-                              << elapsed << '\n';
-                    return 1;
-                }
-            }
-        }
 
         std::vector<double> elapsed_values;
         elapsed_values.reserve(static_cast<std::size_t>(repeats));
@@ -229,30 +186,18 @@ int main(int argc, char* argv[])
 
         // Print a per-size summary to stderr so progress is visible even when stdout is redirected.
         std::cerr << std::setprecision(16);
-        std::cerr << "optimisation=" << tag << " n=" << n << " min_seconds="
-                  << *std::min_element(elapsed_values.begin(), elapsed_values.end())
-                  << " median_seconds=" << median(elapsed_values)
-                  << " mean_seconds=" << mean(elapsed_values)
-                  << " stddev_seconds=" << standard_deviation(elapsed_values) << '\n';
+        std::cerr << "optimisation=" << tag << '\n'
+                  << "n=" << n << '\n'
+                  << "min_seconds="
+                  << *std::min_element(elapsed_values.begin(), elapsed_values.end()) << '\n'
+                  << "median_seconds=" << median(elapsed_values) << '\n'
+                  << "mean_seconds=" << mean(elapsed_values) << '\n'
+                  << "stddev_seconds=" << standard_deviation(elapsed_values) << '\n';
     }
 
     raw_csv.close();
 
-    const std::filesystem::path plot_script =
-        std::filesystem::path(MPHIL_PROJECT_SOURCE_DIR) / "plot" / "plot_metrics.py";
-    // Delegate graph generation to the Python plotting script after all raw timing data is written.
-    const std::string command = "python3 " + quoted_path(plot_script) + " " +
-        quoted_path(raw_csv_path) + " " + quoted_path(plot_output_dir);
-
-    const int plot_status = std::system(command.c_str());
-    if (plot_status != 0)
-    {
-        std::cerr << "Error: plotting command failed: " << command << '\n';
-        return 1;
-    }
-
     std::cout << "raw_csv=" << raw_csv_path << '\n';
-    std::cout << "plot_output_dir=" << plot_output_dir << '\n';
 
     return 0;
 }

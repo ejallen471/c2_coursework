@@ -35,50 +35,41 @@ inline bool parse_optimisation_name(const std::string& input, CholeskyVersion& v
         return true;
     }
 
-    if (name == "lower_triangle_only" || name == "lowertriangleonly" ||
+    if (name == "lower_triangle" || name == "lowertriangle" ||
+        name == "lower_triangle_only" || name == "lowertriangleonly" ||
         name == "triangular_only")
     {
         version = CholeskyVersion::LowerTriangleOnly;
         return true;
     }
 
-    if (name == "inline_mirror" || name == "inlinemirror" || name == "mirror_in_loop" ||
-        name == "mirror_within_update")
+    if (name == "upper_triangle" || name == "uppertriangle" ||
+        name == "upper_triangle_only" || name == "uppertriangleonly" ||
+        name == "triangular_upper" || name == "triangularupper")
     {
-        version = CholeskyVersion::InlineMirror;
+        version = CholeskyVersion::UpperTriangle;
         return true;
     }
 
-    if (name == "loop_cleanup" || name == "loopcleanup")
+    if (name == "contiguous_access" || name == "contiguousaccess" ||
+        name == "access_pattern_aware" || name == "accesspatternaware" ||
+        name == "access_pattern" || name == "accesspattern")
     {
-        version = CholeskyVersion::LoopCleanup;
+        version = CholeskyVersion::ContiguousAccess;
         return true;
     }
 
-    if (name == "access_pattern" || name == "access_pattern_aware" ||
-        name == "accesspatternaware")
-    {
-        version = CholeskyVersion::AccessPatternAware;
-        return true;
-    }
-
-    if (name == "cache_blocked" || name == "cacheblocked")
+    if (name == "cache_blocked_1" || name == "cacheblocked_1" ||
+        name == "cache_blocked1" || name == "cacheblocked1")
     {
         version = CholeskyVersion::CacheBlocked;
         return true;
     }
 
-    if (name == "vectorisation" || name == "vector_friendly" || name == "vectorfriendly")
+    if (name == "cache_blocked_2" || name == "cacheblocked_2" ||
+        name == "cache_blocked2" || name == "cacheblocked2")
     {
-        version = CholeskyVersion::VectorFriendly;
-        return true;
-    }
-
-    if (name == "blocked_vectorised" || name == "blocked_vectorized" ||
-        name == "blockedvectorised" || name == "blockedvectorized" ||
-        name == "cache_blocked_vectorised" || name == "cache_blocked_vectorized")
-    {
-        version = CholeskyVersion::BlockedVectorised;
+        version = CholeskyVersion::BlockedOptimal;
         return true;
     }
 
@@ -111,25 +102,19 @@ inline const char* optimisation_name(CholeskyVersion version)
         return "baseline";
 
     case CholeskyVersion::LowerTriangleOnly:
-        return "lower_triangle_only";
+        return "lower_triangle";
 
-    case CholeskyVersion::InlineMirror:
-        return "inline_mirror";
+    case CholeskyVersion::UpperTriangle:
+        return "upper_triangle";
 
-    case CholeskyVersion::LoopCleanup:
-        return "loop_cleanup";
-
-    case CholeskyVersion::AccessPatternAware:
-        return "access_pattern";
+    case CholeskyVersion::ContiguousAccess:
+        return "contiguous_access";
 
     case CholeskyVersion::CacheBlocked:
-        return "cache_blocked";
+        return "cache_blocked_1";
 
-    case CholeskyVersion::VectorFriendly:
-        return "vectorisation";
-
-    case CholeskyVersion::BlockedVectorised:
-        return "blocked_vectorised";
+    case CholeskyVersion::BlockedOptimal:
+        return "cache_blocked_2";
 
     case CholeskyVersion::OpenMP1:
         return "openmp1";
@@ -146,7 +131,7 @@ inline const char* optimisation_name(CholeskyVersion version)
 
 inline double run_cholesky_version(double* c, int n, CholeskyVersion version)
 {
-    return mphil_dis_cholesky_versioned(c, n, version);
+    return timed_cholesky_factorisation_versioned(c, n, version);
 }
 
 #endif

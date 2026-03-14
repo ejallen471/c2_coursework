@@ -5,18 +5,16 @@ enum class CholeskyVersion
 {
     Baseline,
     LowerTriangleOnly,
-    InlineMirror,
-    LoopCleanup,
-    AccessPatternAware,
+    UpperTriangle,
+    ContiguousAccess,
     CacheBlocked,
-    VectorFriendly,
-    BlockedVectorised,
+    BlockedOptimal,
     OpenMP1,
     OpenMP2,
     OpenMP3
 };
 
-double mphil_dis_cholesky(double* c, int n);
-double mphil_dis_cholesky_versioned(double* c, int n, CholeskyVersion version);
+double timed_cholesky_factorisation(double* c, int n);
+double timed_cholesky_factorisation_versioned(double* c, int n, CholeskyVersion version);
 
 #endif

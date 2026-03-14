@@ -1,6 +1,6 @@
 performance_tests/CMakeFiles/perf_block_size_sweep.dir/perf_block_size_sweep.cpp.o: \
-  /Users/ejallen/Desktop/c2_coursework_boss/performance_tests/perf_block_size_sweep.cpp \
-  /Users/ejallen/Desktop/c2_coursework_boss/src/cholesky_guard.h \
+  /Users/ejallen/Desktop/c2_coursework/performance_tests/perf_block_size_sweep.cpp \
+  /Users/ejallen/Desktop/c2_coursework/src/cholesky_guard.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cstddef \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site \
@@ -31,9 +31,9 @@ performance_tests/CMakeFiles/perf_block_size_sweep.dir/perf_block_size_sweep.cpp
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__cstddef/nullptr_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__cstddef/ptrdiff_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__cstddef/size_t.h \
-  /Users/ejallen/Desktop/c2_coursework_boss/src/cholesky_versions.h \
-  /Users/ejallen/Desktop/c2_coursework_boss/include/mphil_dis_cholesky.h \
-  /Users/ejallen/Desktop/c2_coursework_boss/utils/matrix.h \
+  /Users/ejallen/Desktop/c2_coursework/src/cholesky_versions.h \
+  /Users/ejallen/Desktop/c2_coursework/include/mphil_dis_cholesky.h \
+  /Users/ejallen/Desktop/c2_coursework/utils/matrix.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cstdint \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/stdint.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stdint.h \
@@ -754,7 +754,7 @@ performance_tests/CMakeFiles/perf_block_size_sweep.dir/perf_block_size_sweep.cpp
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_fsfilcnt_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_nl_item.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cstdarg \
-  /Users/ejallen/Desktop/c2_coursework_boss/performance_tests/perf_helpers.h \
+  /Users/ejallen/Desktop/c2_coursework/performance_tests/perf_helpers.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/filesystem \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/copy_options.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/directory_entry.h \
@@ -813,6 +813,6 @@ performance_tests/CMakeFiles/perf_block_size_sweep.dir/perf_block_size_sweep.cpp
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/path_iterator.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/u8path.h \
-  /Users/ejallen/Desktop/c2_coursework_boss/utils/timer.h \
+  /Users/ejallen/Desktop/c2_coursework/utils/timer.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/fstream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream

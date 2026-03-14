@@ -9,7 +9,7 @@
 bool run_case(const std::string& name, std::vector<double> c, const std::vector<double>& expected,
               int n)
 {
-    const double elapsed = mphil_dis_cholesky(c.data(), n);
+    const double elapsed = timed_cholesky_factorisation(c.data(), n);
 
     if (elapsed < 0.0)
     {
@@ -73,10 +73,10 @@ int main()
         const std::vector<double> expected = {3.0, 1.0, 1.0, 2.0};
 
         const double elapsed =
-            mphil_dis_cholesky_versioned(c.data(), n, CholeskyVersion::LowerTriangleOnly);
+            timed_cholesky_factorisation_versioned(c.data(), n, CholeskyVersion::LowerTriangleOnly);
         if (elapsed < 0.0)
         {
-            std::cerr << "test_small_case failed for runtime-selected lower_triangle_only: routine returned "
+            std::cerr << "test_small_case failed for runtime-selected lower_triangle: routine returned "
                       << elapsed << '\n';
             return 1;
         }
@@ -85,7 +85,7 @@ int main()
         {
             if (!nearly_equal(c[i], expected[i], 1e-12, 1e-12))
             {
-                std::cerr << "test_small_case failed for runtime-selected lower_triangle_only at index "
+                std::cerr << "test_small_case failed for runtime-selected lower_triangle at index "
                           << i << ": got " << c[i] << ", expected " << expected[i] << '\n';
                 return 1;
             }

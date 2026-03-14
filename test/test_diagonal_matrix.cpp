@@ -11,7 +11,7 @@ int main()
 
     std::vector<double> c = make_diagonal_matrix(diag);
 
-    const double elapsed = mphil_dis_cholesky(c.data(), n);
+    const double elapsed = timed_cholesky_factorisation(c.data(), n);
     if (elapsed < 0.0)
     {
         std::cerr << "test_diagonal_matrix failed: routine returned " << elapsed << '\n';

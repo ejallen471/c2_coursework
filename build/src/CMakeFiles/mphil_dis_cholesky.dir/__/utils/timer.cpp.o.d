@@ -1,6 +1,6 @@
 src/CMakeFiles/mphil_dis_cholesky.dir/__/utils/timer.cpp.o: \
-  /Users/ejallen/Desktop/c2_coursework_boss/utils/timer.cpp \
-  /Users/ejallen/Desktop/c2_coursework_boss/utils/timer.h \
+  /Users/ejallen/Desktop/c2_coursework/utils/timer.cpp \
+  /Users/ejallen/Desktop/c2_coursework/utils/timer.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/chrono \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site \

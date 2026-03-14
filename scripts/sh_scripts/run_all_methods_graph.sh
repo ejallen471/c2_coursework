@@ -32,18 +32,15 @@ fi
 # Benchmark the currently implemented single-threaded methods.
 OPTIMISATION_METHODS=(
     baseline
-    lower_triangle_only
-    inline_mirror
-    loop_cleanup
-    access_pattern
-    cache_blocked
-    vectorisation
-    blocked_vectorised
+    lower_triangle
+    upper_triangle
+    contiguous_access
+    cache_blocked_1
+    cache_blocked_2
 )
 
 # Use the shared prebuilt project directory.
 BUILD_DIR="${SHARED_BUILD_DIR}"
-WARMUP_OPTION="$(perf_warmup_cli_arg)"
 
 # Store all-method raw CSV files in a dedicated subdirectory.
 RAW_COMPARISON_DIR="${RESULTS_RAW_DIR}/all_methods_graph"
@@ -61,7 +58,7 @@ echo "==> Sizes: ${SIZES[*]}"
 echo "==> Methods: ${OPTIMISATION_METHODS[*]}"
 
 # Ensure the shared executable exists and was built with the optimised build type.
-ensure_shared_release_executable "${PERF_SCALING_EXEC_REL}"
+ensure_shared_release_executable "${RUN_CHOLESKY_EXEC_REL}"
 
 # Stop early with a clear error if conda is not installed or not on PATH.
 if ! command -v conda >/dev/null 2>&1; then
@@ -97,14 +94,17 @@ for OPTIMISATION_METHOD in "${OPTIMISATION_METHODS[@]}"; do
 
     echo "==> Running ${OPTIMISATION_METHOD}"
 
-    MPLCONFIGDIR=/tmp/mpl_perf_graph \
-    "${BUILD_DIR}/${PERF_SCALING_EXEC_REL}" \
+    "${BUILD_DIR}/${RUN_CHOLESKY_EXEC_REL}" \
+        scaling \
         "${OPTIMISATION_METHOD}" \
         "${REPEATS}" \
         "${RAW_CSV}" \
-        "${PLOT_DIR}" \
-        "${WARMUP_OPTION}" \
         "${SIZES[@]}"
+
+    MPLCONFIGDIR=/tmp/mpl_perf_graph \
+    python3 "${ROOT_DIR}/plot/plot_metrics.py" \
+        "${RAW_CSV}" \
+        "${PLOT_DIR}"
 
     RAW_CSVS+=("${RAW_CSV}")
 done

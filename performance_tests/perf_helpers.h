@@ -14,7 +14,6 @@ inline constexpr int kLogDetOutputPrecision = std::numeric_limits<LogDetValue>::
 LogDetValue logdet_from_factorised_storage(const std::vector<double>& c, std::size_t n);
 LogDetValue relative_difference_percent(LogDetValue value, LogDetValue reference);
 bool lapack_reference_logdet(std::vector<double> c, int n, LogDetValue& logdet);
-bool parse_warmup_option(const std::string& argument, bool& run_warmup);
 std::string quoted_path(const std::filesystem::path& path);
 
 #endif

@@ -44,8 +44,8 @@ for FLAG_NAME in "${COMPILER_FLAGS[@]}"; do
         -DCMAKE_CXX_FLAGS_RELEASE="${FLAG_VALUE} -DNDEBUG"
 
     # Build only the single-run timing executable needed for the compiler-flag study.
-    cmake --build "${BUILD_DIR}" --target perf_time --parallel
+    cmake --build "${BUILD_DIR}" --target run_cholesky --parallel
 
     # Print the path to the produced executable for this compiler-flag variant.
-    echo "==> Built ${BUILD_DIR}/${PERF_TIME_EXEC_REL}"
+    echo "==> Built ${BUILD_DIR}/${RUN_CHOLESKY_EXEC_REL}"
 done

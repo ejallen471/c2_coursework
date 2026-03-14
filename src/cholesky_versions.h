@@ -7,18 +7,15 @@
 
 inline constexpr int kDefaultBlockedCholeskyBlockSize = 16;
 
-// Each implementation factorises the matrix in place. Timing callers should derive any benchmark
-// guard from the output matrix after the timed region.
-void cholesky_baseline(double* c, std::size_t n);
-void cholesky_lower_triangle_only(double* c, std::size_t n);
-void cholesky_inline_mirror(double* c, std::size_t n);
-void cholesky_loop_cleanup(double* c, std::size_t n);
-void cholesky_access_pattern_aware(double* c, std::size_t n);
-void cholesky_cache_blocked(double* c, std::size_t n, int block_size);
-void cholesky_vectorisation(double* c, std::size_t n);
-void cholesky_blocked_vectorised(double* c, std::size_t n, int block_size);
-void cholesky_openmp_1(double* c, int n);
-void cholesky_openmp_2(double* c, int n);
-void cholesky_openmp_3(double* c, int n);
+// Each implementation factorises the matrix in place.
+void cholesky_baseline(double *c, std::size_t n);
+void cholesky_lower_triangle(double *c, std::size_t n);
+void cholesky_upper_triangle(double *c, std::size_t n);
+void cholesky_contiguous_access(double *c, std::size_t n);
+void cholesky_cache_blocked_1(double *c, std::size_t n, std::size_t block_size);
+void cholesky_cache_blocked_2(double *c, std::size_t n, std::size_t block_size);
+void cholesky_openmp_1(double *c, std::size_t n);
+void cholesky_openmp_2(double *c, std::size_t n, std::size_t block_size);
+void cholesky_openmp_3(double *c, std::size_t n, std::size_t block_size);
 
 #endif

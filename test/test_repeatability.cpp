@@ -10,7 +10,7 @@ int main()
     const std::vector<double> original = make_generated_spd_matrix(n);
 
     std::vector<double> reference = original;
-    const double first_elapsed = mphil_dis_cholesky(reference.data(), n);
+    const double first_elapsed = timed_cholesky_factorisation(reference.data(), n);
     if (first_elapsed < 0.0)
     {
         std::cerr << "test_repeatability failed on first run: routine returned " << first_elapsed
@@ -21,7 +21,7 @@ int main()
     for (int run = 0; run < 5; ++run)
     {
         std::vector<double> current = original;
-        const double elapsed = mphil_dis_cholesky(current.data(), n);
+        const double elapsed = timed_cholesky_factorisation(current.data(), n);
 
         if (elapsed < 0.0)
         {

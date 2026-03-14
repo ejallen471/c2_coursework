@@ -11,7 +11,7 @@ int main()
         const int n = 2;
         std::vector<double> c = make_brief_example_matrix();
 
-        const double elapsed = mphil_dis_cholesky(c.data(), n);
+        const double elapsed = timed_cholesky_factorisation(c.data(), n);
         if (elapsed < 0.0)
         {
             std::cerr << "test_logdet failed on 2x2 example: routine returned " << elapsed << '\n';
@@ -34,7 +34,7 @@ int main()
         const int n = static_cast<int>(diag.size());
         std::vector<double> c = make_diagonal_matrix(diag);
 
-        const double elapsed = mphil_dis_cholesky(c.data(), n);
+        const double elapsed = timed_cholesky_factorisation(c.data(), n);
         if (elapsed < 0.0)
         {
             std::cerr << "test_logdet failed on diagonal example: routine returned " << elapsed

@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DMPHIL_HAVE_OPENMP=0
 
-CXX_INCLUDES = -I/Users/ejallen/Desktop/c2_coursework_boss/src -I/Users/ejallen/Desktop/c2_coursework_boss/performance_tests -I/Users/ejallen/Desktop/c2_coursework_boss/include -I/Users/ejallen/Desktop/c2_coursework_boss/utils
+CXX_INCLUDES = -I/Users/ejallen/Desktop/c2_coursework/src -I/Users/ejallen/Desktop/c2_coursework/performance_tests -I/Users/ejallen/Desktop/c2_coursework/include -I/Users/ejallen/Desktop/c2_coursework/utils
 
 CXX_FLAGSarm64 = -O3 -DNDEBUG -std=c++17 -arch arm64
 

@@ -1,7 +1,7 @@
 test/CMakeFiles/test_logdet.dir/test_helpers.cpp.o: \
-  /Users/ejallen/Desktop/c2_coursework_boss/test/test_helpers.cpp \
-  /Users/ejallen/Desktop/c2_coursework_boss/test/test_helpers.h \
-  /Users/ejallen/Desktop/c2_coursework_boss/utils/matrix.h \
+  /Users/ejallen/Desktop/c2_coursework/test/test_helpers.cpp \
+  /Users/ejallen/Desktop/c2_coursework/test/test_helpers.h \
+  /Users/ejallen/Desktop/c2_coursework/utils/matrix.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cstdint \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site \

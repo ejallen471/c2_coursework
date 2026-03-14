@@ -66,12 +66,10 @@ int main()
 {
     const CholeskyVersion versions[] = {CholeskyVersion::Baseline,
                                         CholeskyVersion::LowerTriangleOnly,
-                                        CholeskyVersion::InlineMirror,
-                                        CholeskyVersion::LoopCleanup,
-                                        CholeskyVersion::AccessPatternAware,
+                                        CholeskyVersion::UpperTriangle,
+                                        CholeskyVersion::ContiguousAccess,
                                         CholeskyVersion::CacheBlocked,
-                                        CholeskyVersion::VectorFriendly,
-                                        CholeskyVersion::BlockedVectorised};
+                                        CholeskyVersion::BlockedOptimal};
 
     MatrixGenerationOptions options;
     options.seed = 20260310ULL;

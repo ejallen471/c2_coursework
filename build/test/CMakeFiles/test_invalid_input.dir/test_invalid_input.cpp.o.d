@@ -1,6 +1,6 @@
 test/CMakeFiles/test_invalid_input.dir/test_invalid_input.cpp.o: \
-  /Users/ejallen/Desktop/c2_coursework_boss/test/test_invalid_input.cpp \
-  /Users/ejallen/Desktop/c2_coursework_boss/include/mphil_dis_cholesky.h \
+  /Users/ejallen/Desktop/c2_coursework/test/test_invalid_input.cpp \
+  /Users/ejallen/Desktop/c2_coursework/include/mphil_dis_cholesky.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site \

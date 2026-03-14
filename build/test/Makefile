@@ -57,10 +57,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/ejallen/Desktop/c2_coursework_boss
+CMAKE_SOURCE_DIR = /Users/ejallen/Desktop/c2_coursework
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/ejallen/Desktop/c2_coursework_boss/build
+CMAKE_BINARY_DIR = /Users/ejallen/Desktop/c2_coursework/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -97,14 +97,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles /Users/ejallen/Desktop/c2_coursework_boss/build/test//CMakeFiles/progress.marks
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles 0
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles /Users/ejallen/Desktop/c2_coursework/build/test//CMakeFiles/progress.marks
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/clean
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/clean
 .PHONY : clean
 
 # The main clean target
@@ -113,22 +113,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/preinstall
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/preinstall
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 test/CMakeFiles/test_small_case.dir/rule:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_small_case.dir/rule
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_small_case.dir/rule
 .PHONY : test/CMakeFiles/test_small_case.dir/rule
 
 # Convenience name for target.
@@ -137,12 +137,12 @@ test_small_case: test/CMakeFiles/test_small_case.dir/rule
 
 # fast build rule for target.
 test_small_case/fast:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_small_case.dir/build.make test/CMakeFiles/test_small_case.dir/build
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_small_case.dir/build.make test/CMakeFiles/test_small_case.dir/build
 .PHONY : test_small_case/fast
 
 # Convenience name for target.
 test/CMakeFiles/test_invalid_input.dir/rule:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_invalid_input.dir/rule
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_invalid_input.dir/rule
 .PHONY : test/CMakeFiles/test_invalid_input.dir/rule
 
 # Convenience name for target.
@@ -151,12 +151,12 @@ test_invalid_input: test/CMakeFiles/test_invalid_input.dir/rule
 
 # fast build rule for target.
 test_invalid_input/fast:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_invalid_input.dir/build.make test/CMakeFiles/test_invalid_input.dir/build
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_invalid_input.dir/build.make test/CMakeFiles/test_invalid_input.dir/build
 .PHONY : test_invalid_input/fast
 
 # Convenience name for target.
 test/CMakeFiles/test_identity.dir/rule:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_identity.dir/rule
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_identity.dir/rule
 .PHONY : test/CMakeFiles/test_identity.dir/rule
 
 # Convenience name for target.
@@ -165,12 +165,12 @@ test_identity: test/CMakeFiles/test_identity.dir/rule
 
 # fast build rule for target.
 test_identity/fast:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_identity.dir/build.make test/CMakeFiles/test_identity.dir/build
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_identity.dir/build.make test/CMakeFiles/test_identity.dir/build
 .PHONY : test_identity/fast
 
 # Convenience name for target.
 test/CMakeFiles/test_diagonal_matrix.dir/rule:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_diagonal_matrix.dir/rule
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_diagonal_matrix.dir/rule
 .PHONY : test/CMakeFiles/test_diagonal_matrix.dir/rule
 
 # Convenience name for target.
@@ -179,12 +179,12 @@ test_diagonal_matrix: test/CMakeFiles/test_diagonal_matrix.dir/rule
 
 # fast build rule for target.
 test_diagonal_matrix/fast:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_diagonal_matrix.dir/build.make test/CMakeFiles/test_diagonal_matrix.dir/build
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_diagonal_matrix.dir/build.make test/CMakeFiles/test_diagonal_matrix.dir/build
 .PHONY : test_diagonal_matrix/fast
 
 # Convenience name for target.
 test/CMakeFiles/test_reconstruction.dir/rule:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_reconstruction.dir/rule
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_reconstruction.dir/rule
 .PHONY : test/CMakeFiles/test_reconstruction.dir/rule
 
 # Convenience name for target.
@@ -193,12 +193,12 @@ test_reconstruction: test/CMakeFiles/test_reconstruction.dir/rule
 
 # fast build rule for target.
 test_reconstruction/fast:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_reconstruction.dir/build.make test/CMakeFiles/test_reconstruction.dir/build
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_reconstruction.dir/build.make test/CMakeFiles/test_reconstruction.dir/build
 .PHONY : test_reconstruction/fast
 
 # Convenience name for target.
 test/CMakeFiles/test_logdet.dir/rule:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_logdet.dir/rule
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_logdet.dir/rule
 .PHONY : test/CMakeFiles/test_logdet.dir/rule
 
 # Convenience name for target.
@@ -207,12 +207,12 @@ test_logdet: test/CMakeFiles/test_logdet.dir/rule
 
 # fast build rule for target.
 test_logdet/fast:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_logdet.dir/build.make test/CMakeFiles/test_logdet.dir/build
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_logdet.dir/build.make test/CMakeFiles/test_logdet.dir/build
 .PHONY : test_logdet/fast
 
 # Convenience name for target.
 test/CMakeFiles/test_generated_spd.dir/rule:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_generated_spd.dir/rule
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_generated_spd.dir/rule
 .PHONY : test/CMakeFiles/test_generated_spd.dir/rule
 
 # Convenience name for target.
@@ -221,12 +221,12 @@ test_generated_spd: test/CMakeFiles/test_generated_spd.dir/rule
 
 # fast build rule for target.
 test_generated_spd/fast:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_generated_spd.dir/build.make test/CMakeFiles/test_generated_spd.dir/build
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_generated_spd.dir/build.make test/CMakeFiles/test_generated_spd.dir/build
 .PHONY : test_generated_spd/fast
 
 # Convenience name for target.
 test/CMakeFiles/test_repeatability.dir/rule:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_repeatability.dir/rule
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_repeatability.dir/rule
 .PHONY : test/CMakeFiles/test_repeatability.dir/rule
 
 # Convenience name for target.
@@ -235,12 +235,12 @@ test_repeatability: test/CMakeFiles/test_repeatability.dir/rule
 
 # fast build rule for target.
 test_repeatability/fast:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_repeatability.dir/build.make test/CMakeFiles/test_repeatability.dir/build
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_repeatability.dir/build.make test/CMakeFiles/test_repeatability.dir/build
 .PHONY : test_repeatability/fast
 
 # Convenience name for target.
 test/CMakeFiles/test_matrix_generation.dir/rule:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_matrix_generation.dir/rule
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_matrix_generation.dir/rule
 .PHONY : test/CMakeFiles/test_matrix_generation.dir/rule
 
 # Convenience name for target.
@@ -249,12 +249,12 @@ test_matrix_generation: test/CMakeFiles/test_matrix_generation.dir/rule
 
 # fast build rule for target.
 test_matrix_generation/fast:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_matrix_generation.dir/build.make test/CMakeFiles/test_matrix_generation.dir/build
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_matrix_generation.dir/build.make test/CMakeFiles/test_matrix_generation.dir/build
 .PHONY : test_matrix_generation/fast
 
 # Convenience name for target.
 test/CMakeFiles/test_version_correctness.dir/rule:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_version_correctness.dir/rule
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_version_correctness.dir/rule
 .PHONY : test/CMakeFiles/test_version_correctness.dir/rule
 
 # Convenience name for target.
@@ -263,12 +263,12 @@ test_version_correctness: test/CMakeFiles/test_version_correctness.dir/rule
 
 # fast build rule for target.
 test_version_correctness/fast:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_version_correctness.dir/build.make test/CMakeFiles/test_version_correctness.dir/build
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_version_correctness.dir/build.make test/CMakeFiles/test_version_correctness.dir/build
 .PHONY : test_version_correctness/fast
 
 # Convenience name for target.
 test/CMakeFiles/test_perf_time_output.dir/rule:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_perf_time_output.dir/rule
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_perf_time_output.dir/rule
 .PHONY : test/CMakeFiles/test_perf_time_output.dir/rule
 
 # Convenience name for target.
@@ -277,7 +277,7 @@ test_perf_time_output: test/CMakeFiles/test_perf_time_output.dir/rule
 
 # fast build rule for target.
 test_perf_time_output/fast:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_perf_time_output.dir/build.make test/CMakeFiles/test_perf_time_output.dir/build
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_perf_time_output.dir/build.make test/CMakeFiles/test_perf_time_output.dir/build
 .PHONY : test_perf_time_output/fast
 
 test_diagonal_matrix.o: test_diagonal_matrix.cpp.o
@@ -285,7 +285,7 @@ test_diagonal_matrix.o: test_diagonal_matrix.cpp.o
 
 # target to build an object file
 test_diagonal_matrix.cpp.o:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_diagonal_matrix.dir/build.make test/CMakeFiles/test_diagonal_matrix.dir/test_diagonal_matrix.cpp.o
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_diagonal_matrix.dir/build.make test/CMakeFiles/test_diagonal_matrix.dir/test_diagonal_matrix.cpp.o
 .PHONY : test_diagonal_matrix.cpp.o
 
 test_diagonal_matrix.i: test_diagonal_matrix.cpp.i
@@ -293,7 +293,7 @@ test_diagonal_matrix.i: test_diagonal_matrix.cpp.i
 
 # target to preprocess a source file
 test_diagonal_matrix.cpp.i:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_diagonal_matrix.dir/build.make test/CMakeFiles/test_diagonal_matrix.dir/test_diagonal_matrix.cpp.i
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_diagonal_matrix.dir/build.make test/CMakeFiles/test_diagonal_matrix.dir/test_diagonal_matrix.cpp.i
 .PHONY : test_diagonal_matrix.cpp.i
 
 test_diagonal_matrix.s: test_diagonal_matrix.cpp.s
@@ -301,7 +301,7 @@ test_diagonal_matrix.s: test_diagonal_matrix.cpp.s
 
 # target to generate assembly for a file
 test_diagonal_matrix.cpp.s:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_diagonal_matrix.dir/build.make test/CMakeFiles/test_diagonal_matrix.dir/test_diagonal_matrix.cpp.s
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_diagonal_matrix.dir/build.make test/CMakeFiles/test_diagonal_matrix.dir/test_diagonal_matrix.cpp.s
 .PHONY : test_diagonal_matrix.cpp.s
 
 test_generated_spd.o: test_generated_spd.cpp.o
@@ -309,7 +309,7 @@ test_generated_spd.o: test_generated_spd.cpp.o
 
 # target to build an object file
 test_generated_spd.cpp.o:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_generated_spd.dir/build.make test/CMakeFiles/test_generated_spd.dir/test_generated_spd.cpp.o
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_generated_spd.dir/build.make test/CMakeFiles/test_generated_spd.dir/test_generated_spd.cpp.o
 .PHONY : test_generated_spd.cpp.o
 
 test_generated_spd.i: test_generated_spd.cpp.i
@@ -317,7 +317,7 @@ test_generated_spd.i: test_generated_spd.cpp.i
 
 # target to preprocess a source file
 test_generated_spd.cpp.i:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_generated_spd.dir/build.make test/CMakeFiles/test_generated_spd.dir/test_generated_spd.cpp.i
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_generated_spd.dir/build.make test/CMakeFiles/test_generated_spd.dir/test_generated_spd.cpp.i
 .PHONY : test_generated_spd.cpp.i
 
 test_generated_spd.s: test_generated_spd.cpp.s
@@ -325,7 +325,7 @@ test_generated_spd.s: test_generated_spd.cpp.s
 
 # target to generate assembly for a file
 test_generated_spd.cpp.s:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_generated_spd.dir/build.make test/CMakeFiles/test_generated_spd.dir/test_generated_spd.cpp.s
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_generated_spd.dir/build.make test/CMakeFiles/test_generated_spd.dir/test_generated_spd.cpp.s
 .PHONY : test_generated_spd.cpp.s
 
 test_helpers.o: test_helpers.cpp.o
@@ -333,15 +333,15 @@ test_helpers.o: test_helpers.cpp.o
 
 # target to build an object file
 test_helpers.cpp.o:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_small_case.dir/build.make test/CMakeFiles/test_small_case.dir/test_helpers.cpp.o
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_identity.dir/build.make test/CMakeFiles/test_identity.dir/test_helpers.cpp.o
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_diagonal_matrix.dir/build.make test/CMakeFiles/test_diagonal_matrix.dir/test_helpers.cpp.o
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_reconstruction.dir/build.make test/CMakeFiles/test_reconstruction.dir/test_helpers.cpp.o
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_logdet.dir/build.make test/CMakeFiles/test_logdet.dir/test_helpers.cpp.o
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_generated_spd.dir/build.make test/CMakeFiles/test_generated_spd.dir/test_helpers.cpp.o
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_repeatability.dir/build.make test/CMakeFiles/test_repeatability.dir/test_helpers.cpp.o
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_matrix_generation.dir/build.make test/CMakeFiles/test_matrix_generation.dir/test_helpers.cpp.o
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_version_correctness.dir/build.make test/CMakeFiles/test_version_correctness.dir/test_helpers.cpp.o
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_small_case.dir/build.make test/CMakeFiles/test_small_case.dir/test_helpers.cpp.o
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_identity.dir/build.make test/CMakeFiles/test_identity.dir/test_helpers.cpp.o
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_diagonal_matrix.dir/build.make test/CMakeFiles/test_diagonal_matrix.dir/test_helpers.cpp.o
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_reconstruction.dir/build.make test/CMakeFiles/test_reconstruction.dir/test_helpers.cpp.o
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_logdet.dir/build.make test/CMakeFiles/test_logdet.dir/test_helpers.cpp.o
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_generated_spd.dir/build.make test/CMakeFiles/test_generated_spd.dir/test_helpers.cpp.o
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_repeatability.dir/build.make test/CMakeFiles/test_repeatability.dir/test_helpers.cpp.o
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_matrix_generation.dir/build.make test/CMakeFiles/test_matrix_generation.dir/test_helpers.cpp.o
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_version_correctness.dir/build.make test/CMakeFiles/test_version_correctness.dir/test_helpers.cpp.o
 .PHONY : test_helpers.cpp.o
 
 test_helpers.i: test_helpers.cpp.i
@@ -349,15 +349,15 @@ test_helpers.i: test_helpers.cpp.i
 
 # target to preprocess a source file
 test_helpers.cpp.i:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_small_case.dir/build.make test/CMakeFiles/test_small_case.dir/test_helpers.cpp.i
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_identity.dir/build.make test/CMakeFiles/test_identity.dir/test_helpers.cpp.i
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_diagonal_matrix.dir/build.make test/CMakeFiles/test_diagonal_matrix.dir/test_helpers.cpp.i
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_reconstruction.dir/build.make test/CMakeFiles/test_reconstruction.dir/test_helpers.cpp.i
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_logdet.dir/build.make test/CMakeFiles/test_logdet.dir/test_helpers.cpp.i
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_generated_spd.dir/build.make test/CMakeFiles/test_generated_spd.dir/test_helpers.cpp.i
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_repeatability.dir/build.make test/CMakeFiles/test_repeatability.dir/test_helpers.cpp.i
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_matrix_generation.dir/build.make test/CMakeFiles/test_matrix_generation.dir/test_helpers.cpp.i
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_version_correctness.dir/build.make test/CMakeFiles/test_version_correctness.dir/test_helpers.cpp.i
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_small_case.dir/build.make test/CMakeFiles/test_small_case.dir/test_helpers.cpp.i
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_identity.dir/build.make test/CMakeFiles/test_identity.dir/test_helpers.cpp.i
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_diagonal_matrix.dir/build.make test/CMakeFiles/test_diagonal_matrix.dir/test_helpers.cpp.i
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_reconstruction.dir/build.make test/CMakeFiles/test_reconstruction.dir/test_helpers.cpp.i
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_logdet.dir/build.make test/CMakeFiles/test_logdet.dir/test_helpers.cpp.i
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_generated_spd.dir/build.make test/CMakeFiles/test_generated_spd.dir/test_helpers.cpp.i
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_repeatability.dir/build.make test/CMakeFiles/test_repeatability.dir/test_helpers.cpp.i
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_matrix_generation.dir/build.make test/CMakeFiles/test_matrix_generation.dir/test_helpers.cpp.i
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_version_correctness.dir/build.make test/CMakeFiles/test_version_correctness.dir/test_helpers.cpp.i
 .PHONY : test_helpers.cpp.i
 
 test_helpers.s: test_helpers.cpp.s
@@ -365,15 +365,15 @@ test_helpers.s: test_helpers.cpp.s
 
 # target to generate assembly for a file
 test_helpers.cpp.s:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_small_case.dir/build.make test/CMakeFiles/test_small_case.dir/test_helpers.cpp.s
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_identity.dir/build.make test/CMakeFiles/test_identity.dir/test_helpers.cpp.s
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_diagonal_matrix.dir/build.make test/CMakeFiles/test_diagonal_matrix.dir/test_helpers.cpp.s
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_reconstruction.dir/build.make test/CMakeFiles/test_reconstruction.dir/test_helpers.cpp.s
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_logdet.dir/build.make test/CMakeFiles/test_logdet.dir/test_helpers.cpp.s
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_generated_spd.dir/build.make test/CMakeFiles/test_generated_spd.dir/test_helpers.cpp.s
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_repeatability.dir/build.make test/CMakeFiles/test_repeatability.dir/test_helpers.cpp.s
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_matrix_generation.dir/build.make test/CMakeFiles/test_matrix_generation.dir/test_helpers.cpp.s
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_version_correctness.dir/build.make test/CMakeFiles/test_version_correctness.dir/test_helpers.cpp.s
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_small_case.dir/build.make test/CMakeFiles/test_small_case.dir/test_helpers.cpp.s
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_identity.dir/build.make test/CMakeFiles/test_identity.dir/test_helpers.cpp.s
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_diagonal_matrix.dir/build.make test/CMakeFiles/test_diagonal_matrix.dir/test_helpers.cpp.s
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_reconstruction.dir/build.make test/CMakeFiles/test_reconstruction.dir/test_helpers.cpp.s
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_logdet.dir/build.make test/CMakeFiles/test_logdet.dir/test_helpers.cpp.s
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_generated_spd.dir/build.make test/CMakeFiles/test_generated_spd.dir/test_helpers.cpp.s
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_repeatability.dir/build.make test/CMakeFiles/test_repeatability.dir/test_helpers.cpp.s
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_matrix_generation.dir/build.make test/CMakeFiles/test_matrix_generation.dir/test_helpers.cpp.s
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_version_correctness.dir/build.make test/CMakeFiles/test_version_correctness.dir/test_helpers.cpp.s
 .PHONY : test_helpers.cpp.s
 
 test_identity.o: test_identity.cpp.o
@@ -381,7 +381,7 @@ test_identity.o: test_identity.cpp.o
 
 # target to build an object file
 test_identity.cpp.o:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_identity.dir/build.make test/CMakeFiles/test_identity.dir/test_identity.cpp.o
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_identity.dir/build.make test/CMakeFiles/test_identity.dir/test_identity.cpp.o
 .PHONY : test_identity.cpp.o
 
 test_identity.i: test_identity.cpp.i
@@ -389,7 +389,7 @@ test_identity.i: test_identity.cpp.i
 
 # target to preprocess a source file
 test_identity.cpp.i:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_identity.dir/build.make test/CMakeFiles/test_identity.dir/test_identity.cpp.i
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_identity.dir/build.make test/CMakeFiles/test_identity.dir/test_identity.cpp.i
 .PHONY : test_identity.cpp.i
 
 test_identity.s: test_identity.cpp.s
@@ -397,7 +397,7 @@ test_identity.s: test_identity.cpp.s
 
 # target to generate assembly for a file
 test_identity.cpp.s:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_identity.dir/build.make test/CMakeFiles/test_identity.dir/test_identity.cpp.s
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_identity.dir/build.make test/CMakeFiles/test_identity.dir/test_identity.cpp.s
 .PHONY : test_identity.cpp.s
 
 test_invalid_input.o: test_invalid_input.cpp.o
@@ -405,7 +405,7 @@ test_invalid_input.o: test_invalid_input.cpp.o
 
 # target to build an object file
 test_invalid_input.cpp.o:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_invalid_input.dir/build.make test/CMakeFiles/test_invalid_input.dir/test_invalid_input.cpp.o
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_invalid_input.dir/build.make test/CMakeFiles/test_invalid_input.dir/test_invalid_input.cpp.o
 .PHONY : test_invalid_input.cpp.o
 
 test_invalid_input.i: test_invalid_input.cpp.i
@@ -413,7 +413,7 @@ test_invalid_input.i: test_invalid_input.cpp.i
 
 # target to preprocess a source file
 test_invalid_input.cpp.i:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_invalid_input.dir/build.make test/CMakeFiles/test_invalid_input.dir/test_invalid_input.cpp.i
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_invalid_input.dir/build.make test/CMakeFiles/test_invalid_input.dir/test_invalid_input.cpp.i
 .PHONY : test_invalid_input.cpp.i
 
 test_invalid_input.s: test_invalid_input.cpp.s
@@ -421,7 +421,7 @@ test_invalid_input.s: test_invalid_input.cpp.s
 
 # target to generate assembly for a file
 test_invalid_input.cpp.s:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_invalid_input.dir/build.make test/CMakeFiles/test_invalid_input.dir/test_invalid_input.cpp.s
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_invalid_input.dir/build.make test/CMakeFiles/test_invalid_input.dir/test_invalid_input.cpp.s
 .PHONY : test_invalid_input.cpp.s
 
 test_logdet.o: test_logdet.cpp.o
@@ -429,7 +429,7 @@ test_logdet.o: test_logdet.cpp.o
 
 # target to build an object file
 test_logdet.cpp.o:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_logdet.dir/build.make test/CMakeFiles/test_logdet.dir/test_logdet.cpp.o
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_logdet.dir/build.make test/CMakeFiles/test_logdet.dir/test_logdet.cpp.o
 .PHONY : test_logdet.cpp.o
 
 test_logdet.i: test_logdet.cpp.i
@@ -437,7 +437,7 @@ test_logdet.i: test_logdet.cpp.i
 
 # target to preprocess a source file
 test_logdet.cpp.i:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_logdet.dir/build.make test/CMakeFiles/test_logdet.dir/test_logdet.cpp.i
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_logdet.dir/build.make test/CMakeFiles/test_logdet.dir/test_logdet.cpp.i
 .PHONY : test_logdet.cpp.i
 
 test_logdet.s: test_logdet.cpp.s
@@ -445,7 +445,7 @@ test_logdet.s: test_logdet.cpp.s
 
 # target to generate assembly for a file
 test_logdet.cpp.s:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_logdet.dir/build.make test/CMakeFiles/test_logdet.dir/test_logdet.cpp.s
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_logdet.dir/build.make test/CMakeFiles/test_logdet.dir/test_logdet.cpp.s
 .PHONY : test_logdet.cpp.s
 
 test_matrix_generation.o: test_matrix_generation.cpp.o
@@ -453,7 +453,7 @@ test_matrix_generation.o: test_matrix_generation.cpp.o
 
 # target to build an object file
 test_matrix_generation.cpp.o:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_matrix_generation.dir/build.make test/CMakeFiles/test_matrix_generation.dir/test_matrix_generation.cpp.o
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_matrix_generation.dir/build.make test/CMakeFiles/test_matrix_generation.dir/test_matrix_generation.cpp.o
 .PHONY : test_matrix_generation.cpp.o
 
 test_matrix_generation.i: test_matrix_generation.cpp.i
@@ -461,7 +461,7 @@ test_matrix_generation.i: test_matrix_generation.cpp.i
 
 # target to preprocess a source file
 test_matrix_generation.cpp.i:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_matrix_generation.dir/build.make test/CMakeFiles/test_matrix_generation.dir/test_matrix_generation.cpp.i
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_matrix_generation.dir/build.make test/CMakeFiles/test_matrix_generation.dir/test_matrix_generation.cpp.i
 .PHONY : test_matrix_generation.cpp.i
 
 test_matrix_generation.s: test_matrix_generation.cpp.s
@@ -469,7 +469,7 @@ test_matrix_generation.s: test_matrix_generation.cpp.s
 
 # target to generate assembly for a file
 test_matrix_generation.cpp.s:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_matrix_generation.dir/build.make test/CMakeFiles/test_matrix_generation.dir/test_matrix_generation.cpp.s
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_matrix_generation.dir/build.make test/CMakeFiles/test_matrix_generation.dir/test_matrix_generation.cpp.s
 .PHONY : test_matrix_generation.cpp.s
 
 test_perf_time_output.o: test_perf_time_output.cpp.o
@@ -477,7 +477,7 @@ test_perf_time_output.o: test_perf_time_output.cpp.o
 
 # target to build an object file
 test_perf_time_output.cpp.o:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_perf_time_output.dir/build.make test/CMakeFiles/test_perf_time_output.dir/test_perf_time_output.cpp.o
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_perf_time_output.dir/build.make test/CMakeFiles/test_perf_time_output.dir/test_perf_time_output.cpp.o
 .PHONY : test_perf_time_output.cpp.o
 
 test_perf_time_output.i: test_perf_time_output.cpp.i
@@ -485,7 +485,7 @@ test_perf_time_output.i: test_perf_time_output.cpp.i
 
 # target to preprocess a source file
 test_perf_time_output.cpp.i:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_perf_time_output.dir/build.make test/CMakeFiles/test_perf_time_output.dir/test_perf_time_output.cpp.i
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_perf_time_output.dir/build.make test/CMakeFiles/test_perf_time_output.dir/test_perf_time_output.cpp.i
 .PHONY : test_perf_time_output.cpp.i
 
 test_perf_time_output.s: test_perf_time_output.cpp.s
@@ -493,7 +493,7 @@ test_perf_time_output.s: test_perf_time_output.cpp.s
 
 # target to generate assembly for a file
 test_perf_time_output.cpp.s:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_perf_time_output.dir/build.make test/CMakeFiles/test_perf_time_output.dir/test_perf_time_output.cpp.s
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_perf_time_output.dir/build.make test/CMakeFiles/test_perf_time_output.dir/test_perf_time_output.cpp.s
 .PHONY : test_perf_time_output.cpp.s
 
 test_reconstruction.o: test_reconstruction.cpp.o
@@ -501,7 +501,7 @@ test_reconstruction.o: test_reconstruction.cpp.o
 
 # target to build an object file
 test_reconstruction.cpp.o:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_reconstruction.dir/build.make test/CMakeFiles/test_reconstruction.dir/test_reconstruction.cpp.o
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_reconstruction.dir/build.make test/CMakeFiles/test_reconstruction.dir/test_reconstruction.cpp.o
 .PHONY : test_reconstruction.cpp.o
 
 test_reconstruction.i: test_reconstruction.cpp.i
@@ -509,7 +509,7 @@ test_reconstruction.i: test_reconstruction.cpp.i
 
 # target to preprocess a source file
 test_reconstruction.cpp.i:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_reconstruction.dir/build.make test/CMakeFiles/test_reconstruction.dir/test_reconstruction.cpp.i
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_reconstruction.dir/build.make test/CMakeFiles/test_reconstruction.dir/test_reconstruction.cpp.i
 .PHONY : test_reconstruction.cpp.i
 
 test_reconstruction.s: test_reconstruction.cpp.s
@@ -517,7 +517,7 @@ test_reconstruction.s: test_reconstruction.cpp.s
 
 # target to generate assembly for a file
 test_reconstruction.cpp.s:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_reconstruction.dir/build.make test/CMakeFiles/test_reconstruction.dir/test_reconstruction.cpp.s
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_reconstruction.dir/build.make test/CMakeFiles/test_reconstruction.dir/test_reconstruction.cpp.s
 .PHONY : test_reconstruction.cpp.s
 
 test_repeatability.o: test_repeatability.cpp.o
@@ -525,7 +525,7 @@ test_repeatability.o: test_repeatability.cpp.o
 
 # target to build an object file
 test_repeatability.cpp.o:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_repeatability.dir/build.make test/CMakeFiles/test_repeatability.dir/test_repeatability.cpp.o
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_repeatability.dir/build.make test/CMakeFiles/test_repeatability.dir/test_repeatability.cpp.o
 .PHONY : test_repeatability.cpp.o
 
 test_repeatability.i: test_repeatability.cpp.i
@@ -533,7 +533,7 @@ test_repeatability.i: test_repeatability.cpp.i
 
 # target to preprocess a source file
 test_repeatability.cpp.i:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_repeatability.dir/build.make test/CMakeFiles/test_repeatability.dir/test_repeatability.cpp.i
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_repeatability.dir/build.make test/CMakeFiles/test_repeatability.dir/test_repeatability.cpp.i
 .PHONY : test_repeatability.cpp.i
 
 test_repeatability.s: test_repeatability.cpp.s
@@ -541,7 +541,7 @@ test_repeatability.s: test_repeatability.cpp.s
 
 # target to generate assembly for a file
 test_repeatability.cpp.s:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_repeatability.dir/build.make test/CMakeFiles/test_repeatability.dir/test_repeatability.cpp.s
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_repeatability.dir/build.make test/CMakeFiles/test_repeatability.dir/test_repeatability.cpp.s
 .PHONY : test_repeatability.cpp.s
 
 test_small_case.o: test_small_case.cpp.o
@@ -549,7 +549,7 @@ test_small_case.o: test_small_case.cpp.o
 
 # target to build an object file
 test_small_case.cpp.o:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_small_case.dir/build.make test/CMakeFiles/test_small_case.dir/test_small_case.cpp.o
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_small_case.dir/build.make test/CMakeFiles/test_small_case.dir/test_small_case.cpp.o
 .PHONY : test_small_case.cpp.o
 
 test_small_case.i: test_small_case.cpp.i
@@ -557,7 +557,7 @@ test_small_case.i: test_small_case.cpp.i
 
 # target to preprocess a source file
 test_small_case.cpp.i:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_small_case.dir/build.make test/CMakeFiles/test_small_case.dir/test_small_case.cpp.i
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_small_case.dir/build.make test/CMakeFiles/test_small_case.dir/test_small_case.cpp.i
 .PHONY : test_small_case.cpp.i
 
 test_small_case.s: test_small_case.cpp.s
@@ -565,7 +565,7 @@ test_small_case.s: test_small_case.cpp.s
 
 # target to generate assembly for a file
 test_small_case.cpp.s:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_small_case.dir/build.make test/CMakeFiles/test_small_case.dir/test_small_case.cpp.s
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_small_case.dir/build.make test/CMakeFiles/test_small_case.dir/test_small_case.cpp.s
 .PHONY : test_small_case.cpp.s
 
 test_version_correctness.o: test_version_correctness.cpp.o
@@ -573,7 +573,7 @@ test_version_correctness.o: test_version_correctness.cpp.o
 
 # target to build an object file
 test_version_correctness.cpp.o:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_version_correctness.dir/build.make test/CMakeFiles/test_version_correctness.dir/test_version_correctness.cpp.o
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_version_correctness.dir/build.make test/CMakeFiles/test_version_correctness.dir/test_version_correctness.cpp.o
 .PHONY : test_version_correctness.cpp.o
 
 test_version_correctness.i: test_version_correctness.cpp.i
@@ -581,7 +581,7 @@ test_version_correctness.i: test_version_correctness.cpp.i
 
 # target to preprocess a source file
 test_version_correctness.cpp.i:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_version_correctness.dir/build.make test/CMakeFiles/test_version_correctness.dir/test_version_correctness.cpp.i
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_version_correctness.dir/build.make test/CMakeFiles/test_version_correctness.dir/test_version_correctness.cpp.i
 .PHONY : test_version_correctness.cpp.i
 
 test_version_correctness.s: test_version_correctness.cpp.s
@@ -589,7 +589,7 @@ test_version_correctness.s: test_version_correctness.cpp.s
 
 # target to generate assembly for a file
 test_version_correctness.cpp.s:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_version_correctness.dir/build.make test/CMakeFiles/test_version_correctness.dir/test_version_correctness.cpp.s
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_version_correctness.dir/build.make test/CMakeFiles/test_version_correctness.dir/test_version_correctness.cpp.s
 .PHONY : test_version_correctness.cpp.s
 
 # Help Target
@@ -659,6 +659,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

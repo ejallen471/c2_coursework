@@ -1,4 +1,4 @@
-# Install script for directory: /Users/ejallen/Desktop/c2_coursework_boss
+# Install script for directory: /Users/ejallen/Desktop/c2_coursework
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,28 +39,28 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/ejallen/Desktop/c2_coursework_boss/build/src/cmake_install.cmake")
+  include("/Users/ejallen/Desktop/c2_coursework/build/src/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/ejallen/Desktop/c2_coursework_boss/build/example/cmake_install.cmake")
+  include("/Users/ejallen/Desktop/c2_coursework/build/performance_tests/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/ejallen/Desktop/c2_coursework_boss/build/performance_tests/cmake_install.cmake")
+  include("/Users/ejallen/Desktop/c2_coursework/build/run/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/ejallen/Desktop/c2_coursework_boss/build/test/cmake_install.cmake")
+  include("/Users/ejallen/Desktop/c2_coursework/build/test/cmake_install.cmake")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/Users/ejallen/Desktop/c2_coursework_boss/build/install_local_manifest.txt"
+  file(WRITE "/Users/ejallen/Desktop/c2_coursework/build/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
 if(CMAKE_INSTALL_COMPONENT)
@@ -76,6 +76,6 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/Users/ejallen/Desktop/c2_coursework_boss/build/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "/Users/ejallen/Desktop/c2_coursework/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

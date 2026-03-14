@@ -1,6 +1,6 @@
 example/CMakeFiles/example_cholesky.dir/example_cholesky.cpp.o: \
-  /Users/ejallen/Desktop/c2_coursework_boss/example/example_cholesky.cpp \
-  /Users/ejallen/Desktop/c2_coursework_boss/utils/matrix.h \
+  /Users/ejallen/Desktop/c2_coursework/example/example_cholesky.cpp \
+  /Users/ejallen/Desktop/c2_coursework/utils/matrix.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cstdint \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site \
@@ -751,7 +751,7 @@ example/CMakeFiles/example_cholesky.dir/example_cholesky.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_fsfilcnt_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_nl_item.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cstdarg \
-  /Users/ejallen/Desktop/c2_coursework_boss/include/mphil_dis_cholesky.h \
+  /Users/ejallen/Desktop/c2_coursework/include/mphil_dis_cholesky.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__ostream/put_character_sequence.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/bitset \

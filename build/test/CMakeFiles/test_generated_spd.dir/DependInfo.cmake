@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/ejallen/Desktop/c2_coursework_boss/test/test_generated_spd.cpp" "test/CMakeFiles/test_generated_spd.dir/test_generated_spd.cpp.o" "gcc" "test/CMakeFiles/test_generated_spd.dir/test_generated_spd.cpp.o.d"
-  "/Users/ejallen/Desktop/c2_coursework_boss/test/test_helpers.cpp" "test/CMakeFiles/test_generated_spd.dir/test_helpers.cpp.o" "gcc" "test/CMakeFiles/test_generated_spd.dir/test_helpers.cpp.o.d"
+  "/Users/ejallen/Desktop/c2_coursework/test/test_generated_spd.cpp" "test/CMakeFiles/test_generated_spd.dir/test_generated_spd.cpp.o" "gcc" "test/CMakeFiles/test_generated_spd.dir/test_generated_spd.cpp.o.d"
+  "/Users/ejallen/Desktop/c2_coursework/test/test_helpers.cpp" "test/CMakeFiles/test_generated_spd.dir/test_helpers.cpp.o" "gcc" "test/CMakeFiles/test_generated_spd.dir/test_helpers.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

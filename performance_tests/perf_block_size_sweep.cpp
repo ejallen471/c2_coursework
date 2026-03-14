@@ -1,12 +1,13 @@
 /**
  * @file perf_block_size_sweep.cpp
- * @brief Benchmark blocked Cholesky variants across a user-provided list of block sizes.
+ * @brief Implementation of the block-size sweep mode used by run_cholesky.
  */
 
-#include "cholesky_guard.h"
 #include "cholesky_versions.h"
 #include "matrix.h"
 #include "perf_helpers.h"
+#include "perf_modes.h"
+#include "runtime_cholesky.h"
 #include "timer.h"
 
 #include <cstdlib>
@@ -25,8 +26,6 @@ double run_baseline(double* c, std::size_t n)
     const double t0 = wall_time_seconds();
     cholesky_baseline(c, n);
     const double t1 = wall_time_seconds();
-    const double guard = cholesky_detail::factorised_matrix_guard(c, n);
-    cholesky_detail::consume_cholesky_guard(guard); // keep the factorisation observable
     return t1 - t0;
 }
 
@@ -36,13 +35,13 @@ double run_blocked_variant(const std::string& optimisation, double* c, std::size
 {
     const double t0 = wall_time_seconds();
 
-    if (optimisation == "cache_blocked")
+    if (optimisation == "cache_blocked_1")
     {
-        cholesky_cache_blocked(c, n, block_size);
+        cholesky_cache_blocked_1(c, n, static_cast<std::size_t>(block_size));
     }
-    else if (optimisation == "blocked_vectorised")
+    else if (optimisation == "cache_blocked_2")
     {
-        cholesky_blocked_vectorised(c, n, block_size);
+        cholesky_cache_blocked_2(c, n, static_cast<std::size_t>(block_size));
     }
     else
     {
@@ -50,16 +49,35 @@ double run_blocked_variant(const std::string& optimisation, double* c, std::size
     }
 
     const double t1 = wall_time_seconds();
-    const double guard = cholesky_detail::factorised_matrix_guard(c, n);
-    cholesky_detail::consume_cholesky_guard(guard);
     return t1 - t0;
 }
 
 const std::vector<std::string>& blocked_optimisations()
 {
     // Return the list of blocked Cholesky algorithms names that the should be tested
-    static const std::vector<std::string> names = {"cache_blocked", "blocked_vectorised"};
+    static const std::vector<std::string> names = {"cache_blocked_1", "cache_blocked_2"};
     return names;
+}
+
+bool parse_blocked_optimisation(const std::string& input, std::string& optimisation)
+{
+    const std::string name = normalise_optimisation_name(input);
+
+    if (name == "cache_blocked_1" || name == "cacheblocked_1" ||
+        name == "cache_blocked1" || name == "cacheblocked1")
+    {
+        optimisation = "cache_blocked_1";
+        return true;
+    }
+
+    if (name == "cache_blocked_2" || name == "cacheblocked_2" ||
+        name == "cache_blocked2" || name == "cacheblocked2")
+    {
+        optimisation = "cache_blocked_2";
+        return true;
+    }
+
+    return false;
 }
 } // namespace
 
@@ -74,20 +92,42 @@ The main function is the driver for this file it will do
 4. run baseline timings
 5. run blocked timings for different block sizes
 6. write results to CSV
-7. call python plotting script
+7. write the CSV summary
 */
 
-int main(int argc, char* argv[])
+int run_block_size_sweep_mode(int argc, char* argv[])
 {
-    if (argc < 6) // must take 7 or more inputs, if less error and tell user
+    if (argc < 5)
     {
         std::cerr << "Usage: " << argv[0]
-                  << " <n> <repeats> <raw_csv> <plot_output_dir> [--warmup|--no-warmup] "
+                  << " <optimisation> <n> <repeats> <raw_csv> "
                      "<block_size1> [block_size2 ...]\n";
         return 1;
     }
 
-    const int n_input = std::atoi(argv[1]); // read matrix size
+    std::vector<std::string> selected_optimisations;
+    int numeric_arg_index = 1;
+
+    std::string selected_optimisation;
+    if (parse_blocked_optimisation(argv[1], selected_optimisation))
+    {
+        selected_optimisations.push_back(selected_optimisation);
+        numeric_arg_index = 2;
+    }
+    else
+    {
+        selected_optimisations.assign(blocked_optimisations().begin(), blocked_optimisations().end());
+    }
+
+    if (argc - numeric_arg_index < 4)
+    {
+        std::cerr << "Usage: " << argv[0]
+                  << " <optimisation> <n> <repeats> <raw_csv> "
+                     "<block_size1> [block_size2 ...]\n";
+        return 1;
+    }
+
+    const int n_input = std::atoi(argv[numeric_arg_index]); // read matrix size
 
     if (n_input <= 0 || n_input > 100000) // check valid - based on coursework brief
     {
@@ -96,36 +136,27 @@ int main(int argc, char* argv[])
     }
     const std::size_t n = static_cast<std::size_t>(n_input); // cast to std::size_t
 
-    const int repeats = std::atoi(argv[2]); // read repeats and ensure its positive
+    const int repeats = std::atoi(argv[numeric_arg_index + 1]); // read repeats and ensure its positive
     if (repeats <= 0)
     {
         std::cerr << "Error: repeats must be positive\n";
         return 1;
     }
 
-    const std::filesystem::path raw_csv_path(argv[3]);    // where to save the CSV
-    const std::filesystem::path plot_output_dir(argv[4]); // where to save the plots
+    const std::filesystem::path raw_csv_path(argv[numeric_arg_index + 2]); // where to save the CSV
 
     if (raw_csv_path.has_parent_path()) // check whether the CSV path includes a parent directory
     {
         std::filesystem::create_directories(
             raw_csv_path.parent_path()); // Create the folder if it doesnt already exist
     }
-    std::filesystem::create_directories(
-        plot_output_dir); // create the plot output directory as well
 
     // Create an empty vector to store all block sizes given on the cmd line
-    bool run_warmup = true;
     std::vector<int> block_sizes;
-    block_sizes.reserve(static_cast<std::size_t>(argc - 5)); // reserve enough space in advance
+    block_sizes.reserve(static_cast<std::size_t>(argc - (numeric_arg_index + 3))); // reserve enough space in advance
 
-    for (int argi = 5; argi < argc; ++argi) // read block sizes from the cmd line
+    for (int argi = numeric_arg_index + 3; argi < argc; ++argi) // read block sizes from the cmd line
     {
-        if (parse_warmup_option(argv[argi], run_warmup))
-        {
-            continue;
-        }
-
         const int block_size = std::atoi(argv[argi]);
         if (block_size <= 0)
         {
@@ -158,21 +189,6 @@ int main(int argc, char* argv[])
     std::vector<double> baseline_elapsed_values;
     baseline_elapsed_values.reserve(static_cast<std::size_t>(repeats));
 
-    if (run_warmup)
-    {
-        {
-            // Make a copy of the original matrix called warmup - we make a copy because Cholesky
-            // modifes the matrix
-            std::vector<double> warmup_matrix = original_matrix;
-            const double warmup_elapsed = run_baseline(warmup_matrix.data(), n);
-            if (warmup_elapsed < 0.0)
-            {
-                std::cerr << "Error: baseline warm-up failed\n";
-                return 1;
-            }
-        }
-    }
-
     for (int repeat = 0; repeat < repeats; ++repeat) // loop repeats times
     {
         std::vector<double> working_matrix = original_matrix;
@@ -202,27 +218,11 @@ int main(int argc, char* argv[])
                "logdet_library,logdet_factor,relative_difference_percent\n";
 
     // Loop over optimisation variants
-    for (const std::string& optimisation : blocked_optimisations())
+    for (const std::string& optimisation : selected_optimisations)
     {
         // Loop over block sizes
         for (const int block_size : block_sizes)
         {
-            if (run_warmup)
-            {
-                {
-                    // Make copy, run optimisation variant warm up with checking
-                    std::vector<double> warmup_matrix = original_matrix;
-                    const double warmup_elapsed =
-                        run_blocked_variant(optimisation, warmup_matrix.data(), n, block_size);
-                    if (warmup_elapsed < 0.0)
-                    {
-                        std::cerr << "Error: warm-up failed for " << optimisation
-                                  << " with block_size=" << block_size << '\n';
-                        return 1;
-                    }
-                }
-            }
-
             // Run the actual runs
             for (int repeat = 0; repeat < repeats; ++repeat)
             {
@@ -251,25 +251,7 @@ int main(int argc, char* argv[])
 
     raw_csv.close();
 
-    // Construct file path to python plotting script
-    const std::filesystem::path plot_script_path =
-        std::filesystem::path(MPHIL_PROJECT_SOURCE_DIR) / "plot" / "plot_block_size_metrics.py";
-
-    // build the python running cmd
-    const std::string plot_command = "python3 " + quoted_path(plot_script_path) + " " +
-        quoted_path(raw_csv_path) + " " + quoted_path(plot_output_dir);
-
-    // run the cmd
-    const int plot_status = std::system(plot_command.c_str());
-    if (plot_status != 0)
-    {
-        std::cerr << "Error: plotting command failed with status " << plot_status << '\n';
-        return 1;
-    }
-
-    // print stuff
     std::cout << "raw_csv=" << raw_csv_path << '\n';
-    std::cout << "plot_output_dir=" << plot_output_dir << '\n';
 
     return 0;
 }

@@ -20,6 +20,7 @@ events:
     names:
       - "uname"
     candidate_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -35,7 +36,9 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
     searched_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/uname"
       - "/Library/TeX/texbin/uname"
       - "/opt/anaconda3/bin/uname"
       - "/opt/anaconda3/condabin/uname"
@@ -46,6 +49,7 @@ events:
     found: "/usr/bin/uname"
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -62,6 +66,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
   -
     kind: "message-v1"
     backtrace:
@@ -90,6 +95,7 @@ events:
       - "make"
       - "smake"
     candidate_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -105,7 +111,9 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
     searched_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/gmake"
       - "/Library/TeX/texbin/gmake"
       - "/opt/anaconda3/bin/gmake"
       - "/opt/anaconda3/condabin/gmake"
@@ -121,6 +129,8 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/gmake"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/gmake"
       - "/opt/pmk/env/global/bin/gmake"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/gmake"
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/make"
       - "/Library/TeX/texbin/make"
       - "/opt/anaconda3/bin/make"
       - "/opt/anaconda3/condabin/make"
@@ -131,6 +141,7 @@ events:
     found: "/usr/bin/make"
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -147,6 +158,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
   -
     kind: "find-v1"
     backtrace:
@@ -173,6 +185,7 @@ events:
       - "icx"
       - "clang++"
     candidate_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -188,7 +201,9 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
     searched_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/c++"
       - "/Library/TeX/texbin/c++"
       - "/opt/anaconda3/bin/c++"
       - "/opt/anaconda3/condabin/c++"
@@ -199,6 +214,7 @@ events:
     found: "/usr/bin/c++"
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -215,6 +231,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
   -
     kind: "find-v1"
     backtrace:
@@ -242,6 +259,7 @@ events:
     found: "/opt/homebrew/share/cmake/Modules/CMakeCXXCompilerId.cpp.in"
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -258,6 +276,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
   -
     kind: "message-v1"
     backtrace:
@@ -278,7 +297,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
       
       The CXX compiler identification is AppleClang, found in:
-        /Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles/4.2.3/CompilerIdCXX/a.out
+        /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/4.2.3/CompilerIdCXX/a.out
       
   -
     kind: "message-v1"
@@ -342,6 +361,7 @@ events:
       - "ar"
     candidate_directories:
       - "/usr/bin/"
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -356,9 +376,11 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
     found: "/usr/bin/ar"
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -375,6 +397,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
   -
     kind: "find-v1"
     backtrace:
@@ -396,6 +419,7 @@ events:
       - "ranlib"
     candidate_directories:
       - "/usr/bin/"
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -410,9 +434,11 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
     found: "/usr/bin/ranlib"
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -429,6 +455,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
   -
     kind: "find-v1"
     backtrace:
@@ -450,6 +477,7 @@ events:
       - "strip"
     candidate_directories:
       - "/usr/bin/"
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -464,9 +492,11 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
     found: "/usr/bin/strip"
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -483,6 +513,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
   -
     kind: "find-v1"
     backtrace:
@@ -504,6 +535,7 @@ events:
       - "ld"
     candidate_directories:
       - "/usr/bin/"
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -518,9 +550,11 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
     found: "/usr/bin/ld"
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -537,6 +571,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
   -
     kind: "find-v1"
     backtrace:
@@ -558,6 +593,7 @@ events:
       - "nm"
     candidate_directories:
       - "/usr/bin/"
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -572,9 +608,11 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
     found: "/usr/bin/nm"
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -591,6 +629,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
   -
     kind: "find-v1"
     backtrace:
@@ -612,6 +651,7 @@ events:
       - "objdump"
     candidate_directories:
       - "/usr/bin/"
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -626,9 +666,11 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
     found: "/usr/bin/objdump"
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -645,6 +687,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
   -
     kind: "find-v1"
     backtrace:
@@ -666,6 +709,7 @@ events:
       - "objcopy"
     candidate_directories:
       - "/usr/bin/"
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -680,8 +724,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
     searched_directories:
       - "/usr/bin/objcopy"
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/objcopy"
       - "/Library/TeX/texbin/objcopy"
       - "/opt/anaconda3/bin/objcopy"
       - "/opt/anaconda3/condabin/objcopy"
@@ -696,9 +742,11 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/objcopy"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/objcopy"
       - "/opt/pmk/env/global/bin/objcopy"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/objcopy"
     found: false
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -715,6 +763,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
   -
     kind: "find-v1"
     backtrace:
@@ -736,6 +785,7 @@ events:
       - "readelf"
     candidate_directories:
       - "/usr/bin/"
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -750,8 +800,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
     searched_directories:
       - "/usr/bin/readelf"
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/readelf"
       - "/Library/TeX/texbin/readelf"
       - "/opt/anaconda3/bin/readelf"
       - "/opt/anaconda3/condabin/readelf"
@@ -766,9 +818,11 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/readelf"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/readelf"
       - "/opt/pmk/env/global/bin/readelf"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/readelf"
     found: false
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -785,6 +839,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
   -
     kind: "find-v1"
     backtrace:
@@ -806,6 +861,7 @@ events:
       - "dlltool"
     candidate_directories:
       - "/usr/bin/"
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -820,8 +876,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
     searched_directories:
       - "/usr/bin/dlltool"
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/dlltool"
       - "/Library/TeX/texbin/dlltool"
       - "/opt/anaconda3/bin/dlltool"
       - "/opt/anaconda3/condabin/dlltool"
@@ -836,9 +894,11 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/dlltool"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/dlltool"
       - "/opt/pmk/env/global/bin/dlltool"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/dlltool"
     found: false
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -855,6 +915,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
   -
     kind: "find-v1"
     backtrace:
@@ -876,6 +937,7 @@ events:
       - "addr2line"
     candidate_directories:
       - "/usr/bin/"
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -890,8 +952,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
     searched_directories:
       - "/usr/bin/addr2line"
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/addr2line"
       - "/Library/TeX/texbin/addr2line"
       - "/opt/anaconda3/bin/addr2line"
       - "/opt/anaconda3/condabin/addr2line"
@@ -906,9 +970,11 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/addr2line"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/addr2line"
       - "/opt/pmk/env/global/bin/addr2line"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/addr2line"
     found: false
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -925,6 +991,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
   -
     kind: "find-v1"
     backtrace:
@@ -946,6 +1013,7 @@ events:
       - "tapi"
     candidate_directories:
       - "/usr/bin/"
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -960,8 +1028,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
     searched_directories:
       - "/usr/bin/tapi"
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/tapi"
       - "/Library/TeX/texbin/tapi"
       - "/opt/anaconda3/bin/tapi"
       - "/opt/anaconda3/condabin/tapi"
@@ -976,9 +1046,11 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/tapi"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/tapi"
       - "/opt/pmk/env/global/bin/tapi"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/tapi"
     found: false
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -995,6 +1067,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
   -
     kind: "find-v1"
     backtrace:
@@ -1015,6 +1088,7 @@ events:
     names:
       - "install_name_tool"
     candidate_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -1030,11 +1104,14 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
     searched_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/install_name_tool"
       - "/Library/TeX/texbin/install_name_tool"
     found: "/opt/anaconda3/bin/install_name_tool"
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -1051,6 +1128,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
   -
     kind: "try_compile-v1"
@@ -1061,8 +1139,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles/CMakeScratch/TryCompile-P77BfK"
-      binary: "/Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles/CMakeScratch/TryCompile-P77BfK"
+      source: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-7mdPf7"
+      binary: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-7mdPf7"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1075,19 +1153,19 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles/CMakeScratch/TryCompile-P77BfK'
+        Change Dir: '/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-7mdPf7'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_6da31/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_6da31.dir/build.make CMakeFiles/cmTC_6da31.dir/build
-        Building CXX object CMakeFiles/cmTC_6da31.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/c++   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_6da31.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_6da31.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_6da31.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_123fd/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_123fd.dir/build.make CMakeFiles/cmTC_123fd.dir/build
+        Building CXX object CMakeFiles/cmTC_123fd.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -Wl,-v -MD -MT CMakeFiles/cmTC_123fd.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_123fd.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_123fd.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         Apple clang version 17.0.0 (clang-1700.6.3.2)
         Target: arm64-apple-darwin25.3.0
         Thread model: posix
         InstalledDir: /Library/Developer/CommandLineTools/usr/bin
         clang++: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"
-         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=26.2 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles/CMakeScratch/TryCompile-P77BfK -target-linker-version 1230.1 -v -fcoverage-compilation-dir=/Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles/CMakeScratch/TryCompile-P77BfK -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_6da31.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_6da31.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_6da31.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=26.2 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-7mdPf7 -target-linker-version 1230.1 -v -fcoverage-compilation-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-7mdPf7 -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_123fd.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_123fd.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_123fd.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         clang -cc1 version 17.0.0 (clang-1700.6.3.2) default target arm64-apple-darwin25.3.0
         ignoring nonexistent directory "/usr/local/include"
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"
@@ -1101,13 +1179,13 @@ events:
          /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)
          /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks (framework directory)
         End of search list.
-        Linking CXX executable cmTC_6da31
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6da31.dir/link.txt --verbose=1
+        Linking CXX executable cmTC_123fd
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_123fd.dir/link.txt --verbose=1
         Apple clang version 17.0.0 (clang-1700.6.3.2)
         Target: arm64-apple-darwin25.3.0
         Thread model: posix
         InstalledDir: /Library/Developer/CommandLineTools/usr/bin
-         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_6da31 -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_6da31.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a
+         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_123fd -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_123fd.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a
         @(#)PROGRAM:ld PROJECT:ld-1230.1
         BUILD 06:36:05 Dec  2 2025
         configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em armv8m.main armv8.1m.main
@@ -1119,7 +1197,7 @@ events:
         	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift
         Framework search paths:
         	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks
-        /usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_6da31.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_6da31
+        /usr/bin/c++ -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_123fd.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_123fd
         
       exitCode: 0
   -
@@ -1163,19 +1241,19 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles/CMakeScratch/TryCompile-P77BfK']
+        ignore line: [Change Dir: '/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-7mdPf7']
         ignore line: []
-        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_6da31/fast]
-        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_6da31.dir/build.make CMakeFiles/cmTC_6da31.dir/build]
-        ignore line: [Building CXX object CMakeFiles/cmTC_6da31.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/c++   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_6da31.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_6da31.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_6da31.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_123fd/fast]
+        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_123fd.dir/build.make CMakeFiles/cmTC_123fd.dir/build]
+        ignore line: [Building CXX object CMakeFiles/cmTC_123fd.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -v -Wl -v -MD -MT CMakeFiles/cmTC_123fd.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_123fd.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_123fd.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Apple clang version 17.0.0 (clang-1700.6.3.2)]
         ignore line: [Target: arm64-apple-darwin25.3.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
         ignore line: [clang++: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"]
-        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=26.2 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles/CMakeScratch/TryCompile-P77BfK -target-linker-version 1230.1 -v -fcoverage-compilation-dir=/Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles/CMakeScratch/TryCompile-P77BfK -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_6da31.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_6da31.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_6da31.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=26.2 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-7mdPf7 -target-linker-version 1230.1 -v -fcoverage-compilation-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-7mdPf7 -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_123fd.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_123fd.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_123fd.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [clang -cc1 version 17.0.0 (clang-1700.6.3.2) default target arm64-apple-darwin25.3.0]
         ignore line: [ignoring nonexistent directory "/usr/local/include"]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"]
@@ -1189,13 +1267,13 @@ events:
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)]
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks (framework directory)]
         ignore line: [End of search list.]
-        ignore line: [Linking CXX executable cmTC_6da31]
-        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6da31.dir/link.txt --verbose=1]
+        ignore line: [Linking CXX executable cmTC_123fd]
+        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_123fd.dir/link.txt --verbose=1]
         ignore line: [Apple clang version 17.0.0 (clang-1700.6.3.2)]
         ignore line: [Target: arm64-apple-darwin25.3.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
-        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_6da31 -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_6da31.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a]
+        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_123fd -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_123fd.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a]
           arg [/Library/Developer/CommandLineTools/usr/bin/ld] ==> ignore
           arg [-demangle] ==> ignore
           arg [-lto_library] ==> ignore, skip following value
@@ -1212,12 +1290,12 @@ events:
           arg [-mllvm] ==> ignore
           arg [-enable-linkonceodr-outlining] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_6da31] ==> ignore
+          arg [cmTC_123fd] ==> ignore
           arg [-L/usr/local/lib] ==> dir [/usr/local/lib]
           arg [-search_paths_first] ==> ignore
           arg [-headerpad_max_install_names] ==> ignore
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_6da31.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_123fd.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lc++] ==> lib [c++]
           arg [-lSystem] ==> lib [System]
           arg [/Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a] ==> lib [/Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a]
@@ -1254,11 +1332,11 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "/opt/homebrew/share/cmake/Modules/CTest.cmake:188 (find_program)"
+      - "/opt/homebrew/share/cmake/Modules/CTest.cmake:171 (find_program)"
       - "CMakeLists.txt:34 (include)"
     mode: "program"
-    variable: "MEMORYCHECK_COMMAND"
-    description: "Path to the memory checking command, used for memory error detection."
+    variable: "GITCOMMAND"
+    description: "Path to a program."
     settings:
       SearchFramework: "FIRST"
       SearchAppBundle: "FIRST"
@@ -1268,13 +1346,9 @@ events:
       CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
       CMAKE_FIND_USE_INSTALL_PREFIX: true
     names:
-      - "purify"
-      - "valgrind"
-      - "boundscheck"
-      - "drmemory"
-      - "cuda-memcheck"
-      - "compute-sanitizer"
+      - "git"
     candidate_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -1290,6 +1364,7 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/bin/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/sbin/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
@@ -1321,6 +1396,124 @@ events:
       - "/opt/local/"
       - "/Applications/"
     searched_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/git"
+      - "/Library/TeX/texbin/git"
+      - "/opt/anaconda3/bin/git"
+      - "/opt/anaconda3/condabin/git"
+      - "/opt/homebrew/bin/git"
+      - "/opt/homebrew/sbin/git"
+      - "/usr/local/bin/git"
+      - "/System/Cryptexes/App/usr/bin/git"
+    found: "/usr/bin/git"
+    search_context:
+      ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
+        - "/Library/TeX/texbin"
+        - "/opt/anaconda3/bin"
+        - "/opt/anaconda3/condabin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/sw"
+        - "/opt/local"
+      CMAKE_SYSTEM_APPBUNDLE_PATH:
+        - "/Applications"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CTest.cmake:188 (find_program)"
+      - "CMakeLists.txt:34 (include)"
+    mode: "program"
+    variable: "MEMORYCHECK_COMMAND"
+    description: "Path to the memory checking command, used for memory error detection."
+    settings:
+      SearchFramework: "FIRST"
+      SearchAppBundle: "FIRST"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "purify"
+      - "valgrind"
+      - "boundscheck"
+      - "drmemory"
+      - "cuda-memcheck"
+      - "compute-sanitizer"
+    candidate_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
+      - "/Library/TeX/texbin/"
+      - "/opt/anaconda3/bin/"
+      - "/opt/anaconda3/condabin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/bin/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/sbin/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/opt/homebrew/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/usr/bin/"
+      - "/usr/sbin/"
+      - "/usr/"
+      - "/bin/"
+      - "/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/X11R6/sbin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/bin/"
+      - "/usr/pkg/sbin/"
+      - "/usr/pkg/"
+      - "/opt/bin/"
+      - "/opt/sbin/"
+      - "/opt/"
+      - "/sw/bin/"
+      - "/sw/sbin/"
+      - "/sw/"
+      - "/opt/local/bin/"
+      - "/opt/local/sbin/"
+      - "/opt/local/"
+      - "/Applications/"
+    searched_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/purify"
       - "/Library/TeX/texbin/purify"
       - "/opt/anaconda3/bin/purify"
       - "/opt/anaconda3/condabin/purify"
@@ -1336,6 +1529,7 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/purify"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/purify"
       - "/opt/pmk/env/global/bin/purify"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/purify"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/bin/purify"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/sbin/purify"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/purify"
@@ -1366,6 +1560,7 @@ events:
       - "/opt/local/sbin/purify"
       - "/opt/local/purify"
       - "/Applications/purify"
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/valgrind"
       - "/Library/TeX/texbin/valgrind"
       - "/opt/anaconda3/bin/valgrind"
       - "/opt/anaconda3/condabin/valgrind"
@@ -1381,6 +1576,7 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/valgrind"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/valgrind"
       - "/opt/pmk/env/global/bin/valgrind"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/valgrind"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/bin/valgrind"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/sbin/valgrind"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/valgrind"
@@ -1411,6 +1607,7 @@ events:
       - "/opt/local/sbin/valgrind"
       - "/opt/local/valgrind"
       - "/Applications/valgrind"
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/boundscheck"
       - "/Library/TeX/texbin/boundscheck"
       - "/opt/anaconda3/bin/boundscheck"
       - "/opt/anaconda3/condabin/boundscheck"
@@ -1426,6 +1623,7 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/boundscheck"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/boundscheck"
       - "/opt/pmk/env/global/bin/boundscheck"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/boundscheck"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/bin/boundscheck"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/sbin/boundscheck"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/boundscheck"
@@ -1456,6 +1654,7 @@ events:
       - "/opt/local/sbin/boundscheck"
       - "/opt/local/boundscheck"
       - "/Applications/boundscheck"
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/drmemory"
       - "/Library/TeX/texbin/drmemory"
       - "/opt/anaconda3/bin/drmemory"
       - "/opt/anaconda3/condabin/drmemory"
@@ -1471,6 +1670,7 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/drmemory"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/drmemory"
       - "/opt/pmk/env/global/bin/drmemory"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/drmemory"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/bin/drmemory"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/sbin/drmemory"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/drmemory"
@@ -1501,6 +1701,7 @@ events:
       - "/opt/local/sbin/drmemory"
       - "/opt/local/drmemory"
       - "/Applications/drmemory"
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/cuda-memcheck"
       - "/Library/TeX/texbin/cuda-memcheck"
       - "/opt/anaconda3/bin/cuda-memcheck"
       - "/opt/anaconda3/condabin/cuda-memcheck"
@@ -1516,6 +1717,7 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/cuda-memcheck"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/cuda-memcheck"
       - "/opt/pmk/env/global/bin/cuda-memcheck"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/cuda-memcheck"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/bin/cuda-memcheck"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/sbin/cuda-memcheck"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/cuda-memcheck"
@@ -1546,6 +1748,7 @@ events:
       - "/opt/local/sbin/cuda-memcheck"
       - "/opt/local/cuda-memcheck"
       - "/Applications/cuda-memcheck"
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/compute-sanitizer"
       - "/Library/TeX/texbin/compute-sanitizer"
       - "/opt/anaconda3/bin/compute-sanitizer"
       - "/opt/anaconda3/condabin/compute-sanitizer"
@@ -1561,6 +1764,7 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/compute-sanitizer"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/compute-sanitizer"
       - "/opt/pmk/env/global/bin/compute-sanitizer"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/compute-sanitizer"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/bin/compute-sanitizer"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/sbin/compute-sanitizer"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/compute-sanitizer"
@@ -1594,6 +1798,7 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -1610,6 +1815,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
@@ -1645,6 +1851,7 @@ events:
     names:
       - "gcov"
     candidate_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -1660,6 +1867,7 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/bin/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/sbin/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
@@ -1691,6 +1899,7 @@ events:
       - "/opt/local/"
       - "/Applications/"
     searched_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/gcov"
       - "/Library/TeX/texbin/gcov"
       - "/opt/anaconda3/bin/gcov"
       - "/opt/anaconda3/condabin/gcov"
@@ -1701,6 +1910,7 @@ events:
     found: "/usr/bin/gcov"
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -1717,6 +1927,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
@@ -1738,11 +1949,11 @@ events:
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:333 (try_compile)"
       - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:640 (_OPENMP_GET_FLAGS)"
-      - "src/CMakeLists.txt:24 (find_package)"
+      - "src/CMakeLists.txt:23 (find_package)"
     description: "Detecting CXX OpenMP compiler info"
     directories:
-      source: "/Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles/CMakeScratch/TryCompile-KnjCSq"
-      binary: "/Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles/CMakeScratch/TryCompile-KnjCSq"
+      source: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-1J42f5"
+      binary: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-1J42f5"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1754,18 +1965,18 @@ events:
       variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
       cached: true
       stdout: |
-        Change Dir: '/Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles/CMakeScratch/TryCompile-KnjCSq'
+        Change Dir: '/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-1J42f5'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_57801/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_57801.dir/build.make CMakeFiles/cmTC_57801.dir/build
-        Building CXX object CMakeFiles/cmTC_57801.dir/OpenMPTryFlag.cpp.o
-        /usr/bin/c++   -Xclang -fopenmp -std=c++17 -arch arm64 -MD -MT CMakeFiles/cmTC_57801.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_57801.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_57801.dir/OpenMPTryFlag.cpp.o -c /Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles/CMakeScratch/TryCompile-KnjCSq/OpenMPTryFlag.cpp
-        /Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles/CMakeScratch/TryCompile-KnjCSq/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_8539c/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_8539c.dir/build.make CMakeFiles/cmTC_8539c.dir/build
+        Building CXX object CMakeFiles/cmTC_8539c.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/c++   -Xclang -fopenmp -std=c++17 -MD -MT CMakeFiles/cmTC_8539c.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_8539c.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_8539c.dir/OpenMPTryFlag.cpp.o -c /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-1J42f5/OpenMPTryFlag.cpp
+        /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-1J42f5/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
             2 | #include <omp.h>
               |          ^~~~~~~
         1 error generated.
-        make[1]: *** [CMakeFiles/cmTC_57801.dir/OpenMPTryFlag.cpp.o] Error 1
-        make: *** [cmTC_57801/fast] Error 2
+        make[1]: *** [CMakeFiles/cmTC_8539c.dir/OpenMPTryFlag.cpp.o] Error 1
+        make: *** [cmTC_8539c/fast] Error 2
         
       exitCode: 2
   -
@@ -1773,7 +1984,7 @@ events:
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:425 (find_library)"
       - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:640 (_OPENMP_GET_FLAGS)"
-      - "src/CMakeLists.txt:24 (find_package)"
+      - "src/CMakeLists.txt:23 (find_package)"
     mode: "library"
     variable: "OpenMP_libomp_LIBRARY"
     description: "Path to a library."
@@ -1792,6 +2003,7 @@ events:
     candidate_directories:
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift/"
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -1803,6 +2015,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -1818,6 +2031,7 @@ events:
     searched_directories:
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift/"
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -1829,6 +2043,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -1843,6 +2058,7 @@ events:
       - "/System/Library/Frameworks/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift/"
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -1854,6 +2070,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -1868,6 +2085,7 @@ events:
       - "/System/Library/Frameworks/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift/"
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -1879,6 +2097,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -1894,6 +2113,7 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -1910,6 +2130,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
@@ -1946,8 +2167,8 @@ events:
       - "/opt/homebrew/share/cmake/Modules/FindLAPACK.cmake:321 (_lapack_find_dependency)"
       - "performance_tests/CMakeLists.txt:21 (find_package)"
     directories:
-      source: "/Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles/CMakeScratch/TryCompile-sURF5p"
-      binary: "/Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles/CMakeScratch/TryCompile-sURF5p"
+      source: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-aCeZI6"
+      binary: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-aCeZI6"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1959,22 +2180,22 @@ events:
       variable: "BLAS_WORKS"
       cached: true
       stdout: |
-        Change Dir: '/Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles/CMakeScratch/TryCompile-sURF5p'
+        Change Dir: '/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-aCeZI6'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_0a127/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_0a127.dir/build.make CMakeFiles/cmTC_0a127.dir/build
-        Building CXX object CMakeFiles/cmTC_0a127.dir/CheckFunctionExists.cxx.o
-        /usr/bin/c++   -DCHECK_FUNCTION_EXISTS=sgemm_ -std=c++17 -arch arm64 -MD -MT CMakeFiles/cmTC_0a127.dir/CheckFunctionExists.cxx.o -MF CMakeFiles/cmTC_0a127.dir/CheckFunctionExists.cxx.o.d -o CMakeFiles/cmTC_0a127.dir/CheckFunctionExists.cxx.o -c /Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles/CMakeScratch/TryCompile-sURF5p/CheckFunctionExists.cxx
-        Linking CXX executable cmTC_0a127
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0a127.dir/link.txt --verbose=1
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_70270/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_70270.dir/build.make CMakeFiles/cmTC_70270.dir/build
+        Building CXX object CMakeFiles/cmTC_70270.dir/CheckFunctionExists.cxx.o
+        /usr/bin/c++   -DCHECK_FUNCTION_EXISTS=sgemm_ -std=c++17 -MD -MT CMakeFiles/cmTC_70270.dir/CheckFunctionExists.cxx.o -MF CMakeFiles/cmTC_70270.dir/CheckFunctionExists.cxx.o.d -o CMakeFiles/cmTC_70270.dir/CheckFunctionExists.cxx.o -c /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-aCeZI6/CheckFunctionExists.cxx
+        Linking CXX executable cmTC_70270
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_70270.dir/link.txt --verbose=1
         Undefined symbols for architecture arm64:
           "_sgemm_", referenced from:
               _main in CheckFunctionExists.cxx.o
         ld: symbol(s) not found for architecture arm64
         clang++: error: linker command failed with exit code 1 (use -v to see invocation)
-        /usr/bin/c++  -DCHECK_FUNCTION_EXISTS=sgemm_ -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_0a127.dir/CheckFunctionExists.cxx.o -o cmTC_0a127
-        make[1]: *** [cmTC_0a127] Error 1
-        make: *** [cmTC_0a127/fast] Error 2
+        /usr/bin/c++  -DCHECK_FUNCTION_EXISTS=sgemm_ -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_70270.dir/CheckFunctionExists.cxx.o -o cmTC_70270
+        make[1]: *** [cmTC_70270] Error 1
+        make: *** [cmTC_70270/fast] Error 2
         
       exitCode: 2
   -
@@ -1991,8 +2212,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "/Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles/CMakeScratch/TryCompile-J6QJlQ"
-      binary: "/Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles/CMakeScratch/TryCompile-J6QJlQ"
+      source: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-KtiRzE"
+      binary: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-KtiRzE"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -2004,15 +2225,15 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: '/Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles/CMakeScratch/TryCompile-J6QJlQ'
+        Change Dir: '/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-KtiRzE'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_2ada1/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_2ada1.dir/build.make CMakeFiles/cmTC_2ada1.dir/build
-        Building CXX object CMakeFiles/cmTC_2ada1.dir/src.cxx.o
-        /usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=c++17 -arch arm64 -MD -MT CMakeFiles/cmTC_2ada1.dir/src.cxx.o -MF CMakeFiles/cmTC_2ada1.dir/src.cxx.o.d -o CMakeFiles/cmTC_2ada1.dir/src.cxx.o -c /Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles/CMakeScratch/TryCompile-J6QJlQ/src.cxx
-        Linking CXX executable cmTC_2ada1
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2ada1.dir/link.txt --verbose=1
-        /usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_2ada1.dir/src.cxx.o -o cmTC_2ada1
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_9e5a7/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_9e5a7.dir/build.make CMakeFiles/cmTC_9e5a7.dir/build
+        Building CXX object CMakeFiles/cmTC_9e5a7.dir/src.cxx.o
+        /usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=c++17 -MD -MT CMakeFiles/cmTC_9e5a7.dir/src.cxx.o -MF CMakeFiles/cmTC_9e5a7.dir/src.cxx.o.d -o CMakeFiles/cmTC_9e5a7.dir/src.cxx.o -c /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-KtiRzE/src.cxx
+        Linking CXX executable cmTC_9e5a7
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9e5a7.dir/link.txt --verbose=1
+        /usr/bin/c++ -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_9e5a7.dir/src.cxx.o -o cmTC_9e5a7
         
       exitCode: 0
   -
@@ -2037,6 +2258,7 @@ events:
     names:
       - "mkl_intel"
     candidate_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -2048,6 +2270,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
@@ -2064,6 +2287,7 @@ events:
       - "/Library/Frameworks/"
       - "/System/Library/Frameworks/"
     searched_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -2075,6 +2299,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
@@ -2093,6 +2318,7 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -2109,6 +2335,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
@@ -2157,6 +2384,7 @@ events:
     names:
       - "mkl_intel_lp64"
     candidate_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -2168,6 +2396,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
@@ -2184,6 +2413,7 @@ events:
       - "/Library/Frameworks/"
       - "/System/Library/Frameworks/"
     searched_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -2195,6 +2425,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
@@ -2213,6 +2444,7 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -2229,6 +2461,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
@@ -2277,6 +2510,7 @@ events:
     names:
       - "mkl"
     candidate_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -2288,6 +2522,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
@@ -2304,6 +2539,7 @@ events:
       - "/Library/Frameworks/"
       - "/System/Library/Frameworks/"
     searched_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -2315,6 +2551,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
@@ -2333,6 +2570,7 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -2349,6 +2587,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
@@ -2397,6 +2636,7 @@ events:
     names:
       - "mkl_ia32"
     candidate_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -2408,6 +2648,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
@@ -2424,6 +2665,7 @@ events:
       - "/Library/Frameworks/"
       - "/System/Library/Frameworks/"
     searched_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -2435,6 +2677,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
@@ -2453,6 +2696,7 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -2469,6 +2713,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
@@ -2517,6 +2762,7 @@ events:
     names:
       - "mkl_em64t"
     candidate_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -2528,6 +2774,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
@@ -2544,6 +2791,7 @@ events:
       - "/Library/Frameworks/"
       - "/System/Library/Frameworks/"
     searched_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -2555,6 +2803,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
@@ -2573,6 +2822,7 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -2589,6 +2839,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
@@ -2637,6 +2888,7 @@ events:
     names:
       - "mkl_rt"
     candidate_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -2648,6 +2900,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
@@ -2664,6 +2917,7 @@ events:
       - "/Library/Frameworks/"
       - "/System/Library/Frameworks/"
     searched_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -2675,6 +2929,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
@@ -2693,6 +2948,7 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -2709,6 +2965,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
@@ -2757,6 +3014,7 @@ events:
     names:
       - "goto2"
     candidate_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -2768,6 +3026,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -2781,6 +3040,7 @@ events:
       - "/Library/Frameworks/"
       - "/System/Library/Frameworks/"
     searched_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -2792,6 +3052,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -2807,6 +3068,7 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -2823,6 +3085,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
@@ -2871,6 +3134,7 @@ events:
     names:
       - "flexiblas"
     candidate_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -2882,6 +3146,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -2895,6 +3160,7 @@ events:
       - "/Library/Frameworks/"
       - "/System/Library/Frameworks/"
     searched_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -2906,6 +3172,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -2921,6 +3188,7 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -2937,6 +3205,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
@@ -2985,6 +3254,7 @@ events:
     names:
       - "openblas"
     candidate_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -2996,6 +3266,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -3009,6 +3280,7 @@ events:
       - "/Library/Frameworks/"
       - "/System/Library/Frameworks/"
     searched_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -3020,6 +3292,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -3035,6 +3308,7 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -3051,6 +3325,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
@@ -3099,6 +3374,7 @@ events:
     names:
       - "armpl_lp64"
     candidate_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -3110,6 +3386,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -3123,6 +3400,7 @@ events:
       - "/Library/Frameworks/"
       - "/System/Library/Frameworks/"
     searched_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -3134,6 +3412,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -3149,6 +3428,7 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -3165,6 +3445,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
@@ -3213,6 +3494,7 @@ events:
     names:
       - "blis"
     candidate_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -3224,6 +3506,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -3237,6 +3520,7 @@ events:
       - "/Library/Frameworks/"
       - "/System/Library/Frameworks/"
     searched_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -3248,6 +3532,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -3263,6 +3548,7 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -3279,6 +3565,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
@@ -3327,6 +3614,7 @@ events:
     names:
       - "blas"
     candidate_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -3338,6 +3626,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -3351,6 +3640,7 @@ events:
       - "/Library/Frameworks/"
       - "/System/Library/Frameworks/"
     searched_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -3362,9 +3652,11 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
     found: "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libblas.tbd"
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -3381,6 +3673,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
@@ -3429,6 +3722,7 @@ events:
     names:
       - "f77blas"
     candidate_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -3440,6 +3734,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -3453,6 +3748,7 @@ events:
       - "/Library/Frameworks/"
       - "/System/Library/Frameworks/"
     searched_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -3464,6 +3760,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -3479,6 +3776,7 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -3495,6 +3793,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
@@ -3543,6 +3842,7 @@ events:
     names:
       - "sgemm"
     candidate_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -3554,6 +3854,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -3567,6 +3868,7 @@ events:
       - "/Library/Frameworks/"
       - "/System/Library/Frameworks/"
     searched_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -3578,6 +3880,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -3593,6 +3896,7 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -3609,6 +3913,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
@@ -3657,6 +3962,7 @@ events:
     names:
       - "cxml"
     candidate_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -3668,6 +3974,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -3681,6 +3988,7 @@ events:
       - "/Library/Frameworks/"
       - "/System/Library/Frameworks/"
     searched_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -3692,6 +4000,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -3707,6 +4016,7 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -3723,6 +4033,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
@@ -3771,6 +4082,7 @@ events:
     names:
       - "dxml"
     candidate_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -3782,6 +4094,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -3795,6 +4108,7 @@ events:
       - "/Library/Frameworks/"
       - "/System/Library/Frameworks/"
     searched_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -3806,6 +4120,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -3821,6 +4136,7 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -3837,6 +4153,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
@@ -3885,6 +4202,7 @@ events:
     names:
       - "sunperf"
     candidate_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -3896,6 +4214,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -3909,6 +4228,7 @@ events:
       - "/Library/Frameworks/"
       - "/System/Library/Frameworks/"
     searched_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -3920,6 +4240,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -3935,6 +4256,7 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -3951,6 +4273,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
@@ -3999,6 +4322,7 @@ events:
     names:
       - "scs"
     candidate_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -4010,6 +4334,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -4023,6 +4348,7 @@ events:
       - "/Library/Frameworks/"
       - "/System/Library/Frameworks/"
     searched_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -4034,6 +4360,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -4049,6 +4376,7 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -4065,6 +4393,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
@@ -4113,6 +4442,7 @@ events:
     names:
       - "complib.sgimath"
     candidate_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -4124,6 +4454,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -4137,6 +4468,7 @@ events:
       - "/Library/Frameworks/"
       - "/System/Library/Frameworks/"
     searched_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -4148,6 +4480,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -4163,6 +4496,7 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -4179,6 +4513,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
@@ -4227,6 +4562,7 @@ events:
     names:
       - "essl"
     candidate_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -4238,6 +4574,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -4251,6 +4588,7 @@ events:
       - "/Library/Frameworks/"
       - "/System/Library/Frameworks/"
     searched_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -4262,6 +4600,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -4277,6 +4616,7 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -4293,6 +4633,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
@@ -4341,6 +4682,7 @@ events:
     names:
       - "acml"
     candidate_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -4352,6 +4694,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -4365,6 +4708,7 @@ events:
       - "/Library/Frameworks/"
       - "/System/Library/Frameworks/"
     searched_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -4376,6 +4720,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -4391,6 +4736,7 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -4407,6 +4753,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
@@ -4455,6 +4802,7 @@ events:
     names:
       - "acml_mp"
     candidate_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -4466,6 +4814,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -4479,6 +4828,7 @@ events:
       - "/Library/Frameworks/"
       - "/System/Library/Frameworks/"
     searched_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -4490,6 +4840,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -4505,6 +4856,7 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -4521,6 +4873,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
@@ -4569,6 +4922,7 @@ events:
     names:
       - "Accelerate"
     candidate_directories:
+      - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU/"
       - "/Library/TeX/texbin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
@@ -4580,6 +4934,7 @@ events:
       - "/bin/"
       - "/usr/sbin/"
       - "/sbin/"
+      - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
       - "/opt/homebrew/lib/"
@@ -4595,6 +4950,7 @@ events:
     found: "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/Accelerate.framework"
     search_context:
       ENV{PATH}:
+        - "/Users/ejallen/.codex/tmp/arg0/codex-arg0RLFxGU"
         - "/Library/TeX/texbin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
@@ -4611,6 +4967,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/TeX/texbin"
+        - "/Users/ejallen/.vscode/extensions/openai.chatgpt-26.311.21342-darwin-arm64/bin/macos-aarch64"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
@@ -4647,8 +5004,8 @@ events:
       - "/opt/homebrew/share/cmake/Modules/FindLAPACK.cmake:321 (_lapack_find_dependency)"
       - "performance_tests/CMakeLists.txt:21 (find_package)"
     directories:
-      source: "/Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles/CMakeScratch/TryCompile-nDuQaS"
-      binary: "/Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles/CMakeScratch/TryCompile-nDuQaS"
+      source: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-dO2JtK"
+      binary: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-dO2JtK"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -4660,15 +5017,15 @@ events:
       variable: "BLAS_Accelerate_WORKS"
       cached: true
       stdout: |
-        Change Dir: '/Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles/CMakeScratch/TryCompile-nDuQaS'
+        Change Dir: '/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-dO2JtK'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_b2c60/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_b2c60.dir/build.make CMakeFiles/cmTC_b2c60.dir/build
-        Building CXX object CMakeFiles/cmTC_b2c60.dir/CheckFunctionExists.cxx.o
-        /usr/bin/c++  -F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -DCHECK_FUNCTION_EXISTS=dgemm_ -std=c++17 -arch arm64 -MD -MT CMakeFiles/cmTC_b2c60.dir/CheckFunctionExists.cxx.o -MF CMakeFiles/cmTC_b2c60.dir/CheckFunctionExists.cxx.o.d -o CMakeFiles/cmTC_b2c60.dir/CheckFunctionExists.cxx.o -c /Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles/CMakeScratch/TryCompile-nDuQaS/CheckFunctionExists.cxx
-        Linking CXX executable cmTC_b2c60
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b2c60.dir/link.txt --verbose=1
-        /usr/bin/c++  -DCHECK_FUNCTION_EXISTS=dgemm_ -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_b2c60.dir/CheckFunctionExists.cxx.o -o cmTC_b2c60  -framework Accelerate
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_73a98/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_73a98.dir/build.make CMakeFiles/cmTC_73a98.dir/build
+        Building CXX object CMakeFiles/cmTC_73a98.dir/CheckFunctionExists.cxx.o
+        /usr/bin/c++  -F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -DCHECK_FUNCTION_EXISTS=dgemm_ -std=c++17 -MD -MT CMakeFiles/cmTC_73a98.dir/CheckFunctionExists.cxx.o -MF CMakeFiles/cmTC_73a98.dir/CheckFunctionExists.cxx.o.d -o CMakeFiles/cmTC_73a98.dir/CheckFunctionExists.cxx.o -c /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-dO2JtK/CheckFunctionExists.cxx
+        Linking CXX executable cmTC_73a98
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_73a98.dir/link.txt --verbose=1
+        /usr/bin/c++  -DCHECK_FUNCTION_EXISTS=dgemm_ -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_73a98.dir/CheckFunctionExists.cxx.o -o cmTC_73a98  -framework Accelerate
         
       exitCode: 0
   -
@@ -4679,8 +5036,8 @@ events:
       - "/opt/homebrew/share/cmake/Modules/FindLAPACK.cmake:437 (check_lapack_libraries)"
       - "performance_tests/CMakeLists.txt:21 (find_package)"
     directories:
-      source: "/Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles/CMakeScratch/TryCompile-jcOZra"
-      binary: "/Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles/CMakeScratch/TryCompile-jcOZra"
+      source: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-nXcgVF"
+      binary: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-nXcgVF"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -4692,15 +5049,795 @@ events:
       variable: "LAPACK_WORKS"
       cached: true
       stdout: |
-        Change Dir: '/Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles/CMakeScratch/TryCompile-jcOZra'
+        Change Dir: '/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-nXcgVF'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_5fb35/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_5fb35.dir/build.make CMakeFiles/cmTC_5fb35.dir/build
-        Building CXX object CMakeFiles/cmTC_5fb35.dir/CheckFunctionExists.cxx.o
-        /usr/bin/c++  -F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -DCHECK_FUNCTION_EXISTS=cheev_ -std=c++17 -arch arm64 -MD -MT CMakeFiles/cmTC_5fb35.dir/CheckFunctionExists.cxx.o -MF CMakeFiles/cmTC_5fb35.dir/CheckFunctionExists.cxx.o.d -o CMakeFiles/cmTC_5fb35.dir/CheckFunctionExists.cxx.o -c /Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles/CMakeScratch/TryCompile-jcOZra/CheckFunctionExists.cxx
-        Linking CXX executable cmTC_5fb35
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5fb35.dir/link.txt --verbose=1
-        /usr/bin/c++  -DCHECK_FUNCTION_EXISTS=cheev_ -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_5fb35.dir/CheckFunctionExists.cxx.o -o cmTC_5fb35  -framework Accelerate -lm -ldl
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_4730d/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_4730d.dir/build.make CMakeFiles/cmTC_4730d.dir/build
+        Building CXX object CMakeFiles/cmTC_4730d.dir/CheckFunctionExists.cxx.o
+        /usr/bin/c++  -F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -DCHECK_FUNCTION_EXISTS=cheev_ -std=c++17 -MD -MT CMakeFiles/cmTC_4730d.dir/CheckFunctionExists.cxx.o -MF CMakeFiles/cmTC_4730d.dir/CheckFunctionExists.cxx.o.d -o CMakeFiles/cmTC_4730d.dir/CheckFunctionExists.cxx.o -c /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-nXcgVF/CheckFunctionExists.cxx
+        Linking CXX executable cmTC_4730d
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4730d.dir/link.txt --verbose=1
+        /usr/bin/c++  -DCHECK_FUNCTION_EXISTS=cheev_ -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_4730d.dir/CheckFunctionExists.cxx.o -o cmTC_4730d  -framework Accelerate -lm -ldl
         
       exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:333 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:640 (_OPENMP_GET_FLAGS)"
+      - "src/CMakeLists.txt:23 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-cyKxZi"
+      binary: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-cyKxZi"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-cyKxZi'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_dadd4/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_dadd4.dir/build.make CMakeFiles/cmTC_dadd4.dir/build
+        Building CXX object CMakeFiles/cmTC_dadd4.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/c++   -Xclang -fopenmp -std=c++17 -arch arm64 -MD -MT CMakeFiles/cmTC_dadd4.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_dadd4.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_dadd4.dir/OpenMPTryFlag.cpp.o -c /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-cyKxZi/OpenMPTryFlag.cpp
+        /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-cyKxZi/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+            2 | #include <omp.h>
+              |          ^~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_dadd4.dir/OpenMPTryFlag.cpp.o] Error 1
+        make: *** [cmTC_dadd4/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:333 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:640 (_OPENMP_GET_FLAGS)"
+      - "src/CMakeLists.txt:21 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-mmwpcx"
+      binary: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-mmwpcx"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-mmwpcx'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_ef36d/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_ef36d.dir/build.make CMakeFiles/cmTC_ef36d.dir/build
+        Building CXX object CMakeFiles/cmTC_ef36d.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/c++   -Xclang -fopenmp -std=c++17 -MD -MT CMakeFiles/cmTC_ef36d.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_ef36d.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_ef36d.dir/OpenMPTryFlag.cpp.o -c /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-mmwpcx/OpenMPTryFlag.cpp
+        /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-mmwpcx/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+            2 | #include <omp.h>
+              |          ^~~~~~~
+        1 error generated.
+        make[2]: *** [CMakeFiles/cmTC_ef36d.dir/OpenMPTryFlag.cpp.o] Error 1
+        make[1]: *** [cmTC_ef36d/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:333 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:640 (_OPENMP_GET_FLAGS)"
+      - "src/CMakeLists.txt:21 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-8N5m73"
+      binary: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-8N5m73"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-8N5m73'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_fa88e/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_fa88e.dir/build.make CMakeFiles/cmTC_fa88e.dir/build
+        Building CXX object CMakeFiles/cmTC_fa88e.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/c++   -Xclang -fopenmp -std=c++17 -arch arm64 -MD -MT CMakeFiles/cmTC_fa88e.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_fa88e.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_fa88e.dir/OpenMPTryFlag.cpp.o -c /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-8N5m73/OpenMPTryFlag.cpp
+        /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-8N5m73/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+            2 | #include <omp.h>
+              |          ^~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_fa88e.dir/OpenMPTryFlag.cpp.o] Error 1
+        make: *** [cmTC_fa88e/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:333 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:640 (_OPENMP_GET_FLAGS)"
+      - "src/CMakeLists.txt:21 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-vflWSk"
+      binary: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-vflWSk"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-vflWSk'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_60f2c/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_60f2c.dir/build.make CMakeFiles/cmTC_60f2c.dir/build
+        Building CXX object CMakeFiles/cmTC_60f2c.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/c++   -Xclang -fopenmp -std=c++17 -arch arm64 -MD -MT CMakeFiles/cmTC_60f2c.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_60f2c.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_60f2c.dir/OpenMPTryFlag.cpp.o -c /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-vflWSk/OpenMPTryFlag.cpp
+        /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-vflWSk/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+            2 | #include <omp.h>
+              |          ^~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_60f2c.dir/OpenMPTryFlag.cpp.o] Error 1
+        make: *** [cmTC_60f2c/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:333 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:640 (_OPENMP_GET_FLAGS)"
+      - "src/CMakeLists.txt:21 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-pAA5dP"
+      binary: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-pAA5dP"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-pAA5dP'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_a3977/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_a3977.dir/build.make CMakeFiles/cmTC_a3977.dir/build
+        Building CXX object CMakeFiles/cmTC_a3977.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/c++   -Xclang -fopenmp -std=c++17 -arch arm64 -MD -MT CMakeFiles/cmTC_a3977.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_a3977.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_a3977.dir/OpenMPTryFlag.cpp.o -c /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-pAA5dP/OpenMPTryFlag.cpp
+        /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-pAA5dP/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+            2 | #include <omp.h>
+              |          ^~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_a3977.dir/OpenMPTryFlag.cpp.o] Error 1
+        make: *** [cmTC_a3977/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:333 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:640 (_OPENMP_GET_FLAGS)"
+      - "src/CMakeLists.txt:21 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-x4i4Qe"
+      binary: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-x4i4Qe"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-x4i4Qe'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_ab927/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_ab927.dir/build.make CMakeFiles/cmTC_ab927.dir/build
+        Building CXX object CMakeFiles/cmTC_ab927.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/c++   -Xclang -fopenmp -std=c++17 -arch arm64 -MD -MT CMakeFiles/cmTC_ab927.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_ab927.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_ab927.dir/OpenMPTryFlag.cpp.o -c /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-x4i4Qe/OpenMPTryFlag.cpp
+        /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-x4i4Qe/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+            2 | #include <omp.h>
+              |          ^~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_ab927.dir/OpenMPTryFlag.cpp.o] Error 1
+        make: *** [cmTC_ab927/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:333 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:640 (_OPENMP_GET_FLAGS)"
+      - "src/CMakeLists.txt:21 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-bbv7xV"
+      binary: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-bbv7xV"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-bbv7xV'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_5264c/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_5264c.dir/build.make CMakeFiles/cmTC_5264c.dir/build
+        Building CXX object CMakeFiles/cmTC_5264c.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/c++   -Xclang -fopenmp -std=c++17 -arch arm64 -MD -MT CMakeFiles/cmTC_5264c.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_5264c.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_5264c.dir/OpenMPTryFlag.cpp.o -c /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-bbv7xV/OpenMPTryFlag.cpp
+        /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-bbv7xV/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+            2 | #include <omp.h>
+              |          ^~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_5264c.dir/OpenMPTryFlag.cpp.o] Error 1
+        make: *** [cmTC_5264c/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:333 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:640 (_OPENMP_GET_FLAGS)"
+      - "src/CMakeLists.txt:21 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-38UGHb"
+      binary: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-38UGHb"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-38UGHb'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_ff17e/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_ff17e.dir/build.make CMakeFiles/cmTC_ff17e.dir/build
+        Building CXX object CMakeFiles/cmTC_ff17e.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/c++   -Xclang -fopenmp -std=c++17 -arch arm64 -MD -MT CMakeFiles/cmTC_ff17e.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_ff17e.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_ff17e.dir/OpenMPTryFlag.cpp.o -c /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-38UGHb/OpenMPTryFlag.cpp
+        /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-38UGHb/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+            2 | #include <omp.h>
+              |          ^~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_ff17e.dir/OpenMPTryFlag.cpp.o] Error 1
+        make: *** [cmTC_ff17e/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:333 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:640 (_OPENMP_GET_FLAGS)"
+      - "src/CMakeLists.txt:21 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-Sjtmt1"
+      binary: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-Sjtmt1"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-Sjtmt1'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_00871/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_00871.dir/build.make CMakeFiles/cmTC_00871.dir/build
+        Building CXX object CMakeFiles/cmTC_00871.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/c++   -Xclang -fopenmp -std=c++17 -arch arm64 -MD -MT CMakeFiles/cmTC_00871.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_00871.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_00871.dir/OpenMPTryFlag.cpp.o -c /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-Sjtmt1/OpenMPTryFlag.cpp
+        /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-Sjtmt1/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+            2 | #include <omp.h>
+              |          ^~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_00871.dir/OpenMPTryFlag.cpp.o] Error 1
+        make: *** [cmTC_00871/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:333 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:640 (_OPENMP_GET_FLAGS)"
+      - "src/CMakeLists.txt:23 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-sZMGn8"
+      binary: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-sZMGn8"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-sZMGn8'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_732a2/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_732a2.dir/build.make CMakeFiles/cmTC_732a2.dir/build
+        Building CXX object CMakeFiles/cmTC_732a2.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/c++   -Xclang -fopenmp -std=c++17 -MD -MT CMakeFiles/cmTC_732a2.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_732a2.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_732a2.dir/OpenMPTryFlag.cpp.o -c /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-sZMGn8/OpenMPTryFlag.cpp
+        /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-sZMGn8/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+            2 | #include <omp.h>
+              |          ^~~~~~~
+        1 error generated.
+        make[2]: *** [CMakeFiles/cmTC_732a2.dir/OpenMPTryFlag.cpp.o] Error 1
+        make[1]: *** [cmTC_732a2/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:333 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:640 (_OPENMP_GET_FLAGS)"
+      - "src/CMakeLists.txt:23 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-4LY63Z"
+      binary: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-4LY63Z"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-4LY63Z'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_626a2/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_626a2.dir/build.make CMakeFiles/cmTC_626a2.dir/build
+        Building CXX object CMakeFiles/cmTC_626a2.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/c++   -Xclang -fopenmp -std=c++17 -arch arm64 -MD -MT CMakeFiles/cmTC_626a2.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_626a2.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_626a2.dir/OpenMPTryFlag.cpp.o -c /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-4LY63Z/OpenMPTryFlag.cpp
+        /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-4LY63Z/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+            2 | #include <omp.h>
+              |          ^~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_626a2.dir/OpenMPTryFlag.cpp.o] Error 1
+        make: *** [cmTC_626a2/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:333 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:640 (_OPENMP_GET_FLAGS)"
+      - "src/CMakeLists.txt:22 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-6QGVkB"
+      binary: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-6QGVkB"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-6QGVkB'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_02066/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_02066.dir/build.make CMakeFiles/cmTC_02066.dir/build
+        Building CXX object CMakeFiles/cmTC_02066.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/c++   -Xclang -fopenmp -std=c++17 -MD -MT CMakeFiles/cmTC_02066.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_02066.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_02066.dir/OpenMPTryFlag.cpp.o -c /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-6QGVkB/OpenMPTryFlag.cpp
+        /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-6QGVkB/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+            2 | #include <omp.h>
+              |          ^~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_02066.dir/OpenMPTryFlag.cpp.o] Error 1
+        make: *** [cmTC_02066/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:333 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:640 (_OPENMP_GET_FLAGS)"
+      - "src/CMakeLists.txt:22 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-oq9UdI"
+      binary: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-oq9UdI"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-oq9UdI'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_6112b/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_6112b.dir/build.make CMakeFiles/cmTC_6112b.dir/build
+        Building CXX object CMakeFiles/cmTC_6112b.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/c++   -Xclang -fopenmp -std=c++17 -MD -MT CMakeFiles/cmTC_6112b.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_6112b.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_6112b.dir/OpenMPTryFlag.cpp.o -c /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-oq9UdI/OpenMPTryFlag.cpp
+        /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-oq9UdI/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+            2 | #include <omp.h>
+              |          ^~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_6112b.dir/OpenMPTryFlag.cpp.o] Error 1
+        make: *** [cmTC_6112b/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:333 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:640 (_OPENMP_GET_FLAGS)"
+      - "src/CMakeLists.txt:22 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-UUanr6"
+      binary: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-UUanr6"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-UUanr6'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_32563/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_32563.dir/build.make CMakeFiles/cmTC_32563.dir/build
+        Building CXX object CMakeFiles/cmTC_32563.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/c++   -Xclang -fopenmp -std=c++17 -MD -MT CMakeFiles/cmTC_32563.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_32563.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_32563.dir/OpenMPTryFlag.cpp.o -c /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-UUanr6/OpenMPTryFlag.cpp
+        /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-UUanr6/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+            2 | #include <omp.h>
+              |          ^~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_32563.dir/OpenMPTryFlag.cpp.o] Error 1
+        make: *** [cmTC_32563/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:333 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:640 (_OPENMP_GET_FLAGS)"
+      - "src/CMakeLists.txt:22 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-2Mj2BM"
+      binary: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-2Mj2BM"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-2Mj2BM'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_09cf7/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_09cf7.dir/build.make CMakeFiles/cmTC_09cf7.dir/build
+        Building CXX object CMakeFiles/cmTC_09cf7.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/c++   -Xclang -fopenmp -std=c++17 -arch arm64 -MD -MT CMakeFiles/cmTC_09cf7.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_09cf7.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_09cf7.dir/OpenMPTryFlag.cpp.o -c /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-2Mj2BM/OpenMPTryFlag.cpp
+        /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-2Mj2BM/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+            2 | #include <omp.h>
+              |          ^~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_09cf7.dir/OpenMPTryFlag.cpp.o] Error 1
+        make: *** [cmTC_09cf7/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:333 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:640 (_OPENMP_GET_FLAGS)"
+      - "src/CMakeLists.txt:22 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-9bcDbP"
+      binary: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-9bcDbP"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-9bcDbP'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_06bf3/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_06bf3.dir/build.make CMakeFiles/cmTC_06bf3.dir/build
+        Building CXX object CMakeFiles/cmTC_06bf3.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/c++   -Xclang -fopenmp -std=c++17 -arch arm64 -MD -MT CMakeFiles/cmTC_06bf3.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_06bf3.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_06bf3.dir/OpenMPTryFlag.cpp.o -c /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-9bcDbP/OpenMPTryFlag.cpp
+        /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-9bcDbP/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+            2 | #include <omp.h>
+              |          ^~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_06bf3.dir/OpenMPTryFlag.cpp.o] Error 1
+        make: *** [cmTC_06bf3/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:333 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:640 (_OPENMP_GET_FLAGS)"
+      - "src/CMakeLists.txt:22 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-FKc3ky"
+      binary: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-FKc3ky"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-FKc3ky'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_9e0c7/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_9e0c7.dir/build.make CMakeFiles/cmTC_9e0c7.dir/build
+        Building CXX object CMakeFiles/cmTC_9e0c7.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/c++   -Xclang -fopenmp -std=c++17 -arch arm64 -MD -MT CMakeFiles/cmTC_9e0c7.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_9e0c7.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_9e0c7.dir/OpenMPTryFlag.cpp.o -c /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-FKc3ky/OpenMPTryFlag.cpp
+        /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-FKc3ky/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+            2 | #include <omp.h>
+              |          ^~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_9e0c7.dir/OpenMPTryFlag.cpp.o] Error 1
+        make: *** [cmTC_9e0c7/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:333 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:640 (_OPENMP_GET_FLAGS)"
+      - "src/CMakeLists.txt:22 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-0tWaOz"
+      binary: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-0tWaOz"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-0tWaOz'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_98676/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_98676.dir/build.make CMakeFiles/cmTC_98676.dir/build
+        Building CXX object CMakeFiles/cmTC_98676.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/c++   -Xclang -fopenmp -std=c++17 -MD -MT CMakeFiles/cmTC_98676.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_98676.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_98676.dir/OpenMPTryFlag.cpp.o -c /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-0tWaOz/OpenMPTryFlag.cpp
+        /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-0tWaOz/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+            2 | #include <omp.h>
+              |          ^~~~~~~
+        1 error generated.
+        make[2]: *** [CMakeFiles/cmTC_98676.dir/OpenMPTryFlag.cpp.o] Error 1
+        make[1]: *** [cmTC_98676/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:333 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:640 (_OPENMP_GET_FLAGS)"
+      - "src/CMakeLists.txt:22 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-ApQdJs"
+      binary: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-ApQdJs"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-ApQdJs'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_6a6d2/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_6a6d2.dir/build.make CMakeFiles/cmTC_6a6d2.dir/build
+        Building CXX object CMakeFiles/cmTC_6a6d2.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/c++   -Xclang -fopenmp -std=c++17 -arch arm64 -MD -MT CMakeFiles/cmTC_6a6d2.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_6a6d2.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_6a6d2.dir/OpenMPTryFlag.cpp.o -c /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-ApQdJs/OpenMPTryFlag.cpp
+        /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-ApQdJs/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+            2 | #include <omp.h>
+              |          ^~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_6a6d2.dir/OpenMPTryFlag.cpp.o] Error 1
+        make: *** [cmTC_6a6d2/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:333 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/FindOpenMP.cmake:640 (_OPENMP_GET_FLAGS)"
+      - "src/CMakeLists.txt:22 (find_package)"
+    description: "Detecting CXX OpenMP compiler info"
+    directories:
+      source: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-Wqp4a3"
+      binary: "/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-Wqp4a3"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "OpenMP_COMPILE_RESULT_CXX_Xclang fopenmp"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-Wqp4a3'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_bc778/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_bc778.dir/build.make CMakeFiles/cmTC_bc778.dir/build
+        Building CXX object CMakeFiles/cmTC_bc778.dir/OpenMPTryFlag.cpp.o
+        /usr/bin/c++   -Xclang -fopenmp -std=c++17 -arch arm64 -MD -MT CMakeFiles/cmTC_bc778.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_bc778.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_bc778.dir/OpenMPTryFlag.cpp.o -c /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-Wqp4a3/OpenMPTryFlag.cpp
+        /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles/CMakeScratch/TryCompile-Wqp4a3/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+            2 | #include <omp.h>
+              |          ^~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_bc778.dir/OpenMPTryFlag.cpp.o] Error 1
+        make: *** [cmTC_bc778/fast] Error 2
+        
+      exitCode: 2
 ...

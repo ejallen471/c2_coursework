@@ -57,10 +57,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/ejallen/Desktop/c2_coursework_boss
+CMAKE_SOURCE_DIR = /Users/ejallen/Desktop/c2_coursework
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/ejallen/Desktop/c2_coursework_boss/build
+CMAKE_BINARY_DIR = /Users/ejallen/Desktop/c2_coursework/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -97,9 +97,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles /Users/ejallen/Desktop/c2_coursework_boss/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles /Users/ejallen/Desktop/c2_coursework/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -504,69 +504,30 @@ mphil_dis_cholesky/fast:
 .PHONY : mphil_dis_cholesky/fast
 
 #=============================================================================
-# Target rules for targets named example_cholesky
+# Target rules for targets named coursework_perf_support
 
 # Build rule for target.
-example_cholesky: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example_cholesky
-.PHONY : example_cholesky
+coursework_perf_support: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 coursework_perf_support
+.PHONY : coursework_perf_support
 
 # fast build rule for target.
-example_cholesky/fast:
-	$(MAKE) $(MAKESILENT) -f example/CMakeFiles/example_cholesky.dir/build.make example/CMakeFiles/example_cholesky.dir/build
-.PHONY : example_cholesky/fast
+coursework_perf_support/fast:
+	$(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/coursework_perf_support.dir/build.make performance_tests/CMakeFiles/coursework_perf_support.dir/build
+.PHONY : coursework_perf_support/fast
 
 #=============================================================================
-# Target rules for targets named perf_time
+# Target rules for targets named run_cholesky
 
 # Build rule for target.
-perf_time: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 perf_time
-.PHONY : perf_time
+run_cholesky: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run_cholesky
+.PHONY : run_cholesky
 
 # fast build rule for target.
-perf_time/fast:
-	$(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/perf_time.dir/build.make performance_tests/CMakeFiles/perf_time.dir/build
-.PHONY : perf_time/fast
-
-#=============================================================================
-# Target rules for targets named perf_fixed_size_comparison
-
-# Build rule for target.
-perf_fixed_size_comparison: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 perf_fixed_size_comparison
-.PHONY : perf_fixed_size_comparison
-
-# fast build rule for target.
-perf_fixed_size_comparison/fast:
-	$(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/perf_fixed_size_comparison.dir/build.make performance_tests/CMakeFiles/perf_fixed_size_comparison.dir/build
-.PHONY : perf_fixed_size_comparison/fast
-
-#=============================================================================
-# Target rules for targets named perf_block_size_sweep
-
-# Build rule for target.
-perf_block_size_sweep: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 perf_block_size_sweep
-.PHONY : perf_block_size_sweep
-
-# fast build rule for target.
-perf_block_size_sweep/fast:
-	$(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/perf_block_size_sweep.dir/build.make performance_tests/CMakeFiles/perf_block_size_sweep.dir/build
-.PHONY : perf_block_size_sweep/fast
-
-#=============================================================================
-# Target rules for targets named perf_scaling
-
-# Build rule for target.
-perf_scaling: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 perf_scaling
-.PHONY : perf_scaling
-
-# fast build rule for target.
-perf_scaling/fast:
-	$(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/perf_scaling.dir/build.make performance_tests/CMakeFiles/perf_scaling.dir/build
-.PHONY : perf_scaling/fast
+run_cholesky/fast:
+	$(MAKE) $(MAKESILENT) -f run/CMakeFiles/run_cholesky.dir/build.make run/CMakeFiles/run_cholesky.dir/build
+.PHONY : run_cholesky/fast
 
 #=============================================================================
 # Target rules for targets named test_small_case
@@ -748,12 +709,9 @@ help:
 	@echo "... NightlySubmit"
 	@echo "... NightlyTest"
 	@echo "... NightlyUpdate"
-	@echo "... example_cholesky"
+	@echo "... coursework_perf_support"
 	@echo "... mphil_dis_cholesky"
-	@echo "... perf_block_size_sweep"
-	@echo "... perf_fixed_size_comparison"
-	@echo "... perf_scaling"
-	@echo "... perf_time"
+	@echo "... run_cholesky"
 	@echo "... test_diagonal_matrix"
 	@echo "... test_generated_spd"
 	@echo "... test_identity"

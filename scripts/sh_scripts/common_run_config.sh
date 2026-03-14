@@ -15,18 +15,8 @@ SHARED_BUILD_TYPE="${SHARED_BUILD_TYPE:-Release}"
 # Store the path to the shared build script used to populate the optimised build directory.
 SHARED_BUILD_SCRIPT="${SCRIPT_DIR}/build.sh"
 
-# Relative path to the example executable inside a build directory.
-EXAMPLE_EXEC_REL="example/example_cholesky"
-# Relative path to the legacy performance driver inside a build directory.
-PERF_EXEC_REL="performance_tests/perf_driver"
-# Relative path to the single-run timing executable inside a build directory.
-PERF_TIME_EXEC_REL="performance_tests/perf_time"
-# Relative path to the fixed-size comparison executable inside a build directory.
-PERF_FIXED_SIZE_EXEC_REL="performance_tests/perf_fixed_size_comparison"
-# Relative path to the block-size sweep executable inside a build directory.
-PERF_BLOCK_SIZE_SWEEP_EXEC_REL="performance_tests/perf_block_size_sweep"
-# Relative path to the scaling-study executable inside a build directory.
-PERF_SCALING_EXEC_REL="performance_tests/perf_scaling"
+# Relative path to the unified benchmark runner inside a build directory.
+RUN_CHOLESKY_EXEC_REL="run/run_cholesky"
 
 # Allow callers to disable the optional local sanity benchmark by setting an environment variable.
 RUN_LOCAL_SANITY_PERF="${RUN_LOCAL_SANITY_PERF:-1}"
@@ -34,22 +24,6 @@ RUN_LOCAL_SANITY_PERF="${RUN_LOCAL_SANITY_PERF:-1}"
 LOCAL_SANITY_N="${LOCAL_SANITY_N:-128}"
 # Default repeat count for local sanity benchmark runs when not overridden.
 LOCAL_SANITY_REPEATS="${LOCAL_SANITY_REPEATS:-3}"
-PERF_WARMUP="${PERF_WARMUP:-1}"
-
-perf_warmup_cli_arg() {
-    case "${PERF_WARMUP}" in
-        1|true|TRUE|on|ON|yes|YES)
-            printf '%s\n' "--warmup"
-            ;;
-        0|false|FALSE|off|OFF|no|NO)
-            printf '%s\n' "--no-warmup"
-            ;;
-        *)
-            echo "Error: PERF_WARMUP must be one of 0/1, true/false, on/off, yes/no" >&2
-            return 1
-            ;;
-    esac
-}
 
 ensure_shared_release_executable() {
     local exec_rel="$1"

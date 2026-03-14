@@ -13,7 +13,7 @@ int main()
         const std::vector<double> original = make_generated_spd_matrix(n);
         std::vector<double> c = original;
 
-        const double elapsed = mphil_dis_cholesky(c.data(), n);
+        const double elapsed = timed_cholesky_factorisation(c.data(), n);
         if (elapsed < 0.0)
         {
             std::cerr << "test_generated_spd failed for n = " << n << ": routine returned "

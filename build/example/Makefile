@@ -57,10 +57,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/ejallen/Desktop/c2_coursework_boss
+CMAKE_SOURCE_DIR = /Users/ejallen/Desktop/c2_coursework
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/ejallen/Desktop/c2_coursework_boss/build
+CMAKE_BINARY_DIR = /Users/ejallen/Desktop/c2_coursework/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -97,14 +97,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles /Users/ejallen/Desktop/c2_coursework_boss/build/example//CMakeFiles/progress.marks
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles 0
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles /Users/ejallen/Desktop/c2_coursework/build/example//CMakeFiles/progress.marks
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/clean
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/clean
 .PHONY : clean
 
 # The main clean target
@@ -113,22 +113,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/preinstall
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/preinstall
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 example/CMakeFiles/example_cholesky.dir/rule:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/CMakeFiles/example_cholesky.dir/rule
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/CMakeFiles/example_cholesky.dir/rule
 .PHONY : example/CMakeFiles/example_cholesky.dir/rule
 
 # Convenience name for target.
@@ -137,7 +137,7 @@ example_cholesky: example/CMakeFiles/example_cholesky.dir/rule
 
 # fast build rule for target.
 example_cholesky/fast:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f example/CMakeFiles/example_cholesky.dir/build.make example/CMakeFiles/example_cholesky.dir/build
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f example/CMakeFiles/example_cholesky.dir/build.make example/CMakeFiles/example_cholesky.dir/build
 .PHONY : example_cholesky/fast
 
 example_cholesky.o: example_cholesky.cpp.o
@@ -145,7 +145,7 @@ example_cholesky.o: example_cholesky.cpp.o
 
 # target to build an object file
 example_cholesky.cpp.o:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f example/CMakeFiles/example_cholesky.dir/build.make example/CMakeFiles/example_cholesky.dir/example_cholesky.cpp.o
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f example/CMakeFiles/example_cholesky.dir/build.make example/CMakeFiles/example_cholesky.dir/example_cholesky.cpp.o
 .PHONY : example_cholesky.cpp.o
 
 example_cholesky.i: example_cholesky.cpp.i
@@ -153,7 +153,7 @@ example_cholesky.i: example_cholesky.cpp.i
 
 # target to preprocess a source file
 example_cholesky.cpp.i:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f example/CMakeFiles/example_cholesky.dir/build.make example/CMakeFiles/example_cholesky.dir/example_cholesky.cpp.i
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f example/CMakeFiles/example_cholesky.dir/build.make example/CMakeFiles/example_cholesky.dir/example_cholesky.cpp.i
 .PHONY : example_cholesky.cpp.i
 
 example_cholesky.s: example_cholesky.cpp.s
@@ -161,7 +161,7 @@ example_cholesky.s: example_cholesky.cpp.s
 
 # target to generate assembly for a file
 example_cholesky.cpp.s:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f example/CMakeFiles/example_cholesky.dir/build.make example/CMakeFiles/example_cholesky.dir/example_cholesky.cpp.s
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f example/CMakeFiles/example_cholesky.dir/build.make example/CMakeFiles/example_cholesky.dir/example_cholesky.cpp.s
 .PHONY : example_cholesky.cpp.s
 
 # Help Target
@@ -188,6 +188,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

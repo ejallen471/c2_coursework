@@ -1,10 +1,10 @@
-Start testing: Mar 12 22:30 GMT
+Start testing: Mar 14 12:51 GMT
 ----------------------------------------------------------
 1/11 Testing: test_small_case
 1/11 Test: test_small_case
-Command: "/Users/ejallen/Desktop/c2_coursework_boss/build/test/test_small_case"
-Directory: /Users/ejallen/Desktop/c2_coursework_boss/build/test
-"test_small_case" start time: Mar 12 22:30 GMT
+Command: "/Users/ejallen/Desktop/c2_coursework/build/test/test_small_case"
+Directory: /Users/ejallen/Desktop/c2_coursework/build/test
+"test_small_case" start time: Mar 14 12:51 GMT
 Output:
 ----------------------------------------------------------
 test_small_case passed
@@ -12,15 +12,15 @@ test_small_case passed
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"test_small_case" end time: Mar 12 22:30 GMT
+"test_small_case" end time: Mar 14 12:51 GMT
 "test_small_case" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 2/11 Testing: test_invalid_input
 2/11 Test: test_invalid_input
-Command: "/Users/ejallen/Desktop/c2_coursework_boss/build/test/test_invalid_input"
-Directory: /Users/ejallen/Desktop/c2_coursework_boss/build/test
-"test_invalid_input" start time: Mar 12 22:30 GMT
+Command: "/Users/ejallen/Desktop/c2_coursework/build/test/test_invalid_input"
+Directory: /Users/ejallen/Desktop/c2_coursework/build/test
+"test_invalid_input" start time: Mar 14 12:51 GMT
 Output:
 ----------------------------------------------------------
 test_invalid_input passed
@@ -28,15 +28,15 @@ test_invalid_input passed
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"test_invalid_input" end time: Mar 12 22:30 GMT
+"test_invalid_input" end time: Mar 14 12:51 GMT
 "test_invalid_input" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 3/11 Testing: test_identity
 3/11 Test: test_identity
-Command: "/Users/ejallen/Desktop/c2_coursework_boss/build/test/test_identity"
-Directory: /Users/ejallen/Desktop/c2_coursework_boss/build/test
-"test_identity" start time: Mar 12 22:30 GMT
+Command: "/Users/ejallen/Desktop/c2_coursework/build/test/test_identity"
+Directory: /Users/ejallen/Desktop/c2_coursework/build/test
+"test_identity" start time: Mar 14 12:51 GMT
 Output:
 ----------------------------------------------------------
 test_identity passed
@@ -44,15 +44,15 @@ test_identity passed
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"test_identity" end time: Mar 12 22:30 GMT
+"test_identity" end time: Mar 14 12:51 GMT
 "test_identity" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 4/11 Testing: test_diagonal_matrix
 4/11 Test: test_diagonal_matrix
-Command: "/Users/ejallen/Desktop/c2_coursework_boss/build/test/test_diagonal_matrix"
-Directory: /Users/ejallen/Desktop/c2_coursework_boss/build/test
-"test_diagonal_matrix" start time: Mar 12 22:30 GMT
+Command: "/Users/ejallen/Desktop/c2_coursework/build/test/test_diagonal_matrix"
+Directory: /Users/ejallen/Desktop/c2_coursework/build/test
+"test_diagonal_matrix" start time: Mar 14 12:51 GMT
 Output:
 ----------------------------------------------------------
 test_diagonal_matrix passed
@@ -60,15 +60,15 @@ test_diagonal_matrix passed
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"test_diagonal_matrix" end time: Mar 12 22:30 GMT
+"test_diagonal_matrix" end time: Mar 14 12:51 GMT
 "test_diagonal_matrix" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 5/11 Testing: test_reconstruction
 5/11 Test: test_reconstruction
-Command: "/Users/ejallen/Desktop/c2_coursework_boss/build/test/test_reconstruction"
-Directory: /Users/ejallen/Desktop/c2_coursework_boss/build/test
-"test_reconstruction" start time: Mar 12 22:30 GMT
+Command: "/Users/ejallen/Desktop/c2_coursework/build/test/test_reconstruction"
+Directory: /Users/ejallen/Desktop/c2_coursework/build/test
+"test_reconstruction" start time: Mar 14 12:51 GMT
 Output:
 ----------------------------------------------------------
 test_reconstruction passed
@@ -76,15 +76,15 @@ test_reconstruction passed
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"test_reconstruction" end time: Mar 12 22:30 GMT
+"test_reconstruction" end time: Mar 14 12:51 GMT
 "test_reconstruction" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 6/11 Testing: test_logdet
 6/11 Test: test_logdet
-Command: "/Users/ejallen/Desktop/c2_coursework_boss/build/test/test_logdet"
-Directory: /Users/ejallen/Desktop/c2_coursework_boss/build/test
-"test_logdet" start time: Mar 12 22:30 GMT
+Command: "/Users/ejallen/Desktop/c2_coursework/build/test/test_logdet"
+Directory: /Users/ejallen/Desktop/c2_coursework/build/test
+"test_logdet" start time: Mar 14 12:51 GMT
 Output:
 ----------------------------------------------------------
 test_logdet passed
@@ -92,15 +92,15 @@ test_logdet passed
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"test_logdet" end time: Mar 12 22:30 GMT
+"test_logdet" end time: Mar 14 12:51 GMT
 "test_logdet" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 7/11 Testing: test_generated_spd
 7/11 Test: test_generated_spd
-Command: "/Users/ejallen/Desktop/c2_coursework_boss/build/test/test_generated_spd"
-Directory: /Users/ejallen/Desktop/c2_coursework_boss/build/test
-"test_generated_spd" start time: Mar 12 22:30 GMT
+Command: "/Users/ejallen/Desktop/c2_coursework/build/test/test_generated_spd"
+Directory: /Users/ejallen/Desktop/c2_coursework/build/test
+"test_generated_spd" start time: Mar 14 12:51 GMT
 Output:
 ----------------------------------------------------------
 test_generated_spd passed
@@ -108,15 +108,15 @@ test_generated_spd passed
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"test_generated_spd" end time: Mar 12 22:30 GMT
+"test_generated_spd" end time: Mar 14 12:51 GMT
 "test_generated_spd" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 8/11 Testing: test_repeatability
 8/11 Test: test_repeatability
-Command: "/Users/ejallen/Desktop/c2_coursework_boss/build/test/test_repeatability"
-Directory: /Users/ejallen/Desktop/c2_coursework_boss/build/test
-"test_repeatability" start time: Mar 12 22:30 GMT
+Command: "/Users/ejallen/Desktop/c2_coursework/build/test/test_repeatability"
+Directory: /Users/ejallen/Desktop/c2_coursework/build/test
+"test_repeatability" start time: Mar 14 12:51 GMT
 Output:
 ----------------------------------------------------------
 test_repeatability passed
@@ -124,15 +124,15 @@ test_repeatability passed
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"test_repeatability" end time: Mar 12 22:30 GMT
+"test_repeatability" end time: Mar 14 12:51 GMT
 "test_repeatability" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 9/11 Testing: test_matrix_generation
 9/11 Test: test_matrix_generation
-Command: "/Users/ejallen/Desktop/c2_coursework_boss/build/test/test_matrix_generation"
-Directory: /Users/ejallen/Desktop/c2_coursework_boss/build/test
-"test_matrix_generation" start time: Mar 12 22:30 GMT
+Command: "/Users/ejallen/Desktop/c2_coursework/build/test/test_matrix_generation"
+Directory: /Users/ejallen/Desktop/c2_coursework/build/test
+"test_matrix_generation" start time: Mar 14 12:51 GMT
 Output:
 ----------------------------------------------------------
 test_matrix_generation passed
@@ -140,15 +140,15 @@ test_matrix_generation passed
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"test_matrix_generation" end time: Mar 12 22:30 GMT
+"test_matrix_generation" end time: Mar 14 12:51 GMT
 "test_matrix_generation" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 10/11 Testing: test_version_correctness
 10/11 Test: test_version_correctness
-Command: "/Users/ejallen/Desktop/c2_coursework_boss/build/test/test_version_correctness"
-Directory: /Users/ejallen/Desktop/c2_coursework_boss/build/test
-"test_version_correctness" start time: Mar 12 22:30 GMT
+Command: "/Users/ejallen/Desktop/c2_coursework/build/test/test_version_correctness"
+Directory: /Users/ejallen/Desktop/c2_coursework/build/test
+"test_version_correctness" start time: Mar 14 12:51 GMT
 Output:
 ----------------------------------------------------------
 test_version_correctness passed
@@ -156,24 +156,24 @@ test_version_correctness passed
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"test_version_correctness" end time: Mar 12 22:30 GMT
+"test_version_correctness" end time: Mar 14 12:51 GMT
 "test_version_correctness" time elapsed: 00:00:00
 ----------------------------------------------------------
 
 11/11 Testing: test_perf_time_output
 11/11 Test: test_perf_time_output
-Command: "/Users/ejallen/Desktop/c2_coursework_boss/build/test/test_perf_time_output" "/Users/ejallen/Desktop/c2_coursework_boss/build/performance_tests/perf_time"
-Directory: /Users/ejallen/Desktop/c2_coursework_boss/build/test
-"test_perf_time_output" start time: Mar 12 22:30 GMT
+Command: "/Users/ejallen/Desktop/c2_coursework/build/test/test_perf_time_output" "/Users/ejallen/Desktop/c2_coursework/build/run/run_cholesky"
+Directory: /Users/ejallen/Desktop/c2_coursework/build/test
+"test_perf_time_output" start time: Mar 14 12:51 GMT
 Output:
 ----------------------------------------------------------
 test_perf_time_output passed
 <end of output>
-Test time =   0.01 sec
+Test time =   0.27 sec
 ----------------------------------------------------------
 Test Passed.
-"test_perf_time_output" end time: Mar 12 22:30 GMT
+"test_perf_time_output" end time: Mar 14 12:51 GMT
 "test_perf_time_output" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Mar 12 22:30 GMT
+End testing: Mar 14 12:51 GMT

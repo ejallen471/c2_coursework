@@ -53,10 +53,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/ejallen/Desktop/c2_coursework_boss
+CMAKE_SOURCE_DIR = /Users/ejallen/Desktop/c2_coursework
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/ejallen/Desktop/c2_coursework_boss/build
+CMAKE_BINARY_DIR = /Users/ejallen/Desktop/c2_coursework/build
 
 # Include any dependencies generated for this target.
 include example/CMakeFiles/example_cholesky.dir/depend.make
@@ -73,18 +73,18 @@ example/CMakeFiles/example_cholesky.dir/codegen:
 .PHONY : example/CMakeFiles/example_cholesky.dir/codegen
 
 example/CMakeFiles/example_cholesky.dir/example_cholesky.cpp.o: example/CMakeFiles/example_cholesky.dir/flags.make
-example/CMakeFiles/example_cholesky.dir/example_cholesky.cpp.o: /Users/ejallen/Desktop/c2_coursework_boss/example/example_cholesky.cpp
+example/CMakeFiles/example_cholesky.dir/example_cholesky.cpp.o: /Users/ejallen/Desktop/c2_coursework/example/example_cholesky.cpp
 example/CMakeFiles/example_cholesky.dir/example_cholesky.cpp.o: example/CMakeFiles/example_cholesky.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object example/CMakeFiles/example_cholesky.dir/example_cholesky.cpp.o"
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build/example && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT example/CMakeFiles/example_cholesky.dir/example_cholesky.cpp.o -MF CMakeFiles/example_cholesky.dir/example_cholesky.cpp.o.d -o CMakeFiles/example_cholesky.dir/example_cholesky.cpp.o -c /Users/ejallen/Desktop/c2_coursework_boss/example/example_cholesky.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object example/CMakeFiles/example_cholesky.dir/example_cholesky.cpp.o"
+	cd /Users/ejallen/Desktop/c2_coursework/build/example && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT example/CMakeFiles/example_cholesky.dir/example_cholesky.cpp.o -MF CMakeFiles/example_cholesky.dir/example_cholesky.cpp.o.d -o CMakeFiles/example_cholesky.dir/example_cholesky.cpp.o -c /Users/ejallen/Desktop/c2_coursework/example/example_cholesky.cpp
 
 example/CMakeFiles/example_cholesky.dir/example_cholesky.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/example_cholesky.dir/example_cholesky.cpp.i"
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build/example && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ejallen/Desktop/c2_coursework_boss/example/example_cholesky.cpp > CMakeFiles/example_cholesky.dir/example_cholesky.cpp.i
+	cd /Users/ejallen/Desktop/c2_coursework/build/example && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ejallen/Desktop/c2_coursework/example/example_cholesky.cpp > CMakeFiles/example_cholesky.dir/example_cholesky.cpp.i
 
 example/CMakeFiles/example_cholesky.dir/example_cholesky.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/example_cholesky.dir/example_cholesky.cpp.s"
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build/example && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ejallen/Desktop/c2_coursework_boss/example/example_cholesky.cpp -o CMakeFiles/example_cholesky.dir/example_cholesky.cpp.s
+	cd /Users/ejallen/Desktop/c2_coursework/build/example && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ejallen/Desktop/c2_coursework/example/example_cholesky.cpp -o CMakeFiles/example_cholesky.dir/example_cholesky.cpp.s
 
 # Object files for target example_cholesky
 example_cholesky_OBJECTS = \
@@ -97,18 +97,18 @@ example/example_cholesky: example/CMakeFiles/example_cholesky.dir/example_choles
 example/example_cholesky: example/CMakeFiles/example_cholesky.dir/build.make
 example/example_cholesky: src/libmphil_dis_cholesky.a
 example/example_cholesky: example/CMakeFiles/example_cholesky.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable example_cholesky"
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build/example && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/example_cholesky.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable example_cholesky"
+	cd /Users/ejallen/Desktop/c2_coursework/build/example && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/example_cholesky.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 example/CMakeFiles/example_cholesky.dir/build: example/example_cholesky
 .PHONY : example/CMakeFiles/example_cholesky.dir/build
 
 example/CMakeFiles/example_cholesky.dir/clean:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build/example && $(CMAKE_COMMAND) -P CMakeFiles/example_cholesky.dir/cmake_clean.cmake
+	cd /Users/ejallen/Desktop/c2_coursework/build/example && $(CMAKE_COMMAND) -P CMakeFiles/example_cholesky.dir/cmake_clean.cmake
 .PHONY : example/CMakeFiles/example_cholesky.dir/clean
 
 example/CMakeFiles/example_cholesky.dir/depend:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/ejallen/Desktop/c2_coursework_boss /Users/ejallen/Desktop/c2_coursework_boss/example /Users/ejallen/Desktop/c2_coursework_boss/build /Users/ejallen/Desktop/c2_coursework_boss/build/example /Users/ejallen/Desktop/c2_coursework_boss/build/example/CMakeFiles/example_cholesky.dir/DependInfo.cmake "--color=$(COLOR)" example_cholesky
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/ejallen/Desktop/c2_coursework /Users/ejallen/Desktop/c2_coursework/example /Users/ejallen/Desktop/c2_coursework/build /Users/ejallen/Desktop/c2_coursework/build/example /Users/ejallen/Desktop/c2_coursework/build/example/CMakeFiles/example_cholesky.dir/DependInfo.cmake "--color=$(COLOR)" example_cholesky
 .PHONY : example/CMakeFiles/example_cholesky.dir/depend
 

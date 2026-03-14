@@ -1,6 +1,6 @@
 test/CMakeFiles/test_matrix_generation.dir/test_matrix_generation.cpp.o: \
-  /Users/ejallen/Desktop/c2_coursework_boss/test/test_matrix_generation.cpp \
-  /Users/ejallen/Desktop/c2_coursework_boss/utils/matrix.h \
+  /Users/ejallen/Desktop/c2_coursework/test/test_matrix_generation.cpp \
+  /Users/ejallen/Desktop/c2_coursework/utils/matrix.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cstdint \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site \
@@ -751,9 +751,9 @@ test/CMakeFiles/test_matrix_generation.dir/test_matrix_generation.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_fsfilcnt_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_nl_item.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cstdarg \
-  /Users/ejallen/Desktop/c2_coursework_boss/performance_tests/runtime_cholesky.h \
-  /Users/ejallen/Desktop/c2_coursework_boss/include/mphil_dis_cholesky.h \
-  /Users/ejallen/Desktop/c2_coursework_boss/test/test_helpers.h \
+  /Users/ejallen/Desktop/c2_coursework/performance_tests/runtime_cholesky.h \
+  /Users/ejallen/Desktop/c2_coursework/include/mphil_dis_cholesky.h \
+  /Users/ejallen/Desktop/c2_coursework/test/test_helpers.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/istream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__ostream/basic_ostream.h \

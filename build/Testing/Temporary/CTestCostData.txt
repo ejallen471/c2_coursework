@@ -1,12 +1,12 @@
-test_small_case 2 0.00172288
-test_invalid_input 2 0.00149483
-test_identity 2 0.00139065
-test_diagonal_matrix 2 0.00150035
-test_reconstruction 2 0.00124052
-test_logdet 2 0.00110502
-test_generated_spd 2 0.00122323
-test_repeatability 2 0.00114571
-test_matrix_generation 2 0.00111615
-test_version_correctness 2 0.00135333
-test_perf_time_output 2 0.00643415
+test_small_case 24 0.000128335
+test_invalid_input 24 0.000109627
+test_identity 24 0.000104877
+test_diagonal_matrix 24 8.72725e-05
+test_reconstruction 24 9.58785e-05
+test_logdet 24 9.27378e-05
+test_generated_spd 24 9.09948e-05
+test_repeatability 24 8.91458e-05
+test_matrix_generation 24 8.88594e-05
+test_version_correctness 24 7.86007e-05
+test_perf_time_output 25 0.0108174
 ---

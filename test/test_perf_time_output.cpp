@@ -46,11 +46,11 @@ int main(int argc, char* argv[])
 {
     if (argc != 2)
     {
-        std::cerr << "Usage: " << argv[0] << " <perf_time_executable>\n";
+        std::cerr << "Usage: " << argv[0] << " <run_cholesky_executable>\n";
         return 1;
     }
 
-    const std::string command = "\"" + std::string(argv[1]) + "\" baseline 16";
+    const std::string command = "\"" + std::string(argv[1]) + "\" time baseline 16";
     FILE* pipe = popen(command.c_str(), "r");
     if (pipe == nullptr)
     {
@@ -68,7 +68,7 @@ int main(int argc, char* argv[])
     const int status = pclose(pipe);
     if (status != 0)
     {
-        std::cerr << "test_perf_time_output failed: perf_time exited with status " << status
+        std::cerr << "test_perf_time_output failed: run_cholesky exited with status " << status
                   << '\n';
         return 1;
     }

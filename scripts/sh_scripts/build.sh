@@ -31,12 +31,8 @@ echo "==> Build type: ${SHARED_BUILD_TYPE}"
 # Configure a release build of the project in the shared build directory.
 cmake -S "${ROOT_DIR}" -B "${BUILD_DIR}" -DCMAKE_BUILD_TYPE="${SHARED_BUILD_TYPE}"
 
-# Build the executables used by the local and Slurm workflows.
-cmake --build "${BUILD_DIR}" --target example_cholesky perf_time perf_fixed_size_comparison perf_block_size_sweep perf_scaling --parallel
+# Build the executable used by the local and Slurm workflows.
+cmake --build "${BUILD_DIR}" --target run_cholesky --parallel
 
-# Print the key executables produced by the build.
-echo "==> Built example executable: ${BUILD_DIR}/${EXAMPLE_EXEC_REL}"
-echo "==> Built single-matrix executable: ${BUILD_DIR}/${PERF_TIME_EXEC_REL}"
-echo "==> Built fixed-size comparison executable: ${BUILD_DIR}/${PERF_FIXED_SIZE_EXEC_REL}"
-echo "==> Built block-size sweep executable: ${BUILD_DIR}/${PERF_BLOCK_SIZE_SWEEP_EXEC_REL}"
-echo "==> Built scaling executable: ${BUILD_DIR}/${PERF_SCALING_EXEC_REL}"
+# Print the key executable produced by the build.
+echo "==> Built benchmark executable: ${BUILD_DIR}/${RUN_CHOLESKY_EXEC_REL}"

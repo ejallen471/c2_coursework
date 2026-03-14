@@ -57,10 +57,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/ejallen/Desktop/c2_coursework_boss
+CMAKE_SOURCE_DIR = /Users/ejallen/Desktop/c2_coursework
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/ejallen/Desktop/c2_coursework_boss/build
+CMAKE_BINARY_DIR = /Users/ejallen/Desktop/c2_coursework/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -97,14 +97,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles /Users/ejallen/Desktop/c2_coursework_boss/build/src//CMakeFiles/progress.marks
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles 0
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles /Users/ejallen/Desktop/c2_coursework/build/src//CMakeFiles/progress.marks
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -113,22 +113,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/CMakeFiles/mphil_dis_cholesky.dir/rule:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/mphil_dis_cholesky.dir/rule
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/mphil_dis_cholesky.dir/rule
 .PHONY : src/CMakeFiles/mphil_dis_cholesky.dir/rule
 
 # Convenience name for target.
@@ -137,15 +137,231 @@ mphil_dis_cholesky: src/CMakeFiles/mphil_dis_cholesky.dir/rule
 
 # fast build rule for target.
 mphil_dis_cholesky/fast:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/build
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/build
 .PHONY : mphil_dis_cholesky/fast
+
+00_cholesky_baseline.o: 00_cholesky_baseline.cpp.o
+.PHONY : 00_cholesky_baseline.o
+
+# target to build an object file
+00_cholesky_baseline.cpp.o:
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/00_cholesky_baseline.cpp.o
+.PHONY : 00_cholesky_baseline.cpp.o
+
+00_cholesky_baseline.i: 00_cholesky_baseline.cpp.i
+.PHONY : 00_cholesky_baseline.i
+
+# target to preprocess a source file
+00_cholesky_baseline.cpp.i:
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/00_cholesky_baseline.cpp.i
+.PHONY : 00_cholesky_baseline.cpp.i
+
+00_cholesky_baseline.s: 00_cholesky_baseline.cpp.s
+.PHONY : 00_cholesky_baseline.s
+
+# target to generate assembly for a file
+00_cholesky_baseline.cpp.s:
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/00_cholesky_baseline.cpp.s
+.PHONY : 00_cholesky_baseline.cpp.s
+
+01_cholesky_lower_triangle.o: 01_cholesky_lower_triangle.cpp.o
+.PHONY : 01_cholesky_lower_triangle.o
+
+# target to build an object file
+01_cholesky_lower_triangle.cpp.o:
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/01_cholesky_lower_triangle.cpp.o
+.PHONY : 01_cholesky_lower_triangle.cpp.o
+
+01_cholesky_lower_triangle.i: 01_cholesky_lower_triangle.cpp.i
+.PHONY : 01_cholesky_lower_triangle.i
+
+# target to preprocess a source file
+01_cholesky_lower_triangle.cpp.i:
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/01_cholesky_lower_triangle.cpp.i
+.PHONY : 01_cholesky_lower_triangle.cpp.i
+
+01_cholesky_lower_triangle.s: 01_cholesky_lower_triangle.cpp.s
+.PHONY : 01_cholesky_lower_triangle.s
+
+# target to generate assembly for a file
+01_cholesky_lower_triangle.cpp.s:
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/01_cholesky_lower_triangle.cpp.s
+.PHONY : 01_cholesky_lower_triangle.cpp.s
+
+02_cholesky_upper_triangle.o: 02_cholesky_upper_triangle.cpp.o
+.PHONY : 02_cholesky_upper_triangle.o
+
+# target to build an object file
+02_cholesky_upper_triangle.cpp.o:
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/02_cholesky_upper_triangle.cpp.o
+.PHONY : 02_cholesky_upper_triangle.cpp.o
+
+02_cholesky_upper_triangle.i: 02_cholesky_upper_triangle.cpp.i
+.PHONY : 02_cholesky_upper_triangle.i
+
+# target to preprocess a source file
+02_cholesky_upper_triangle.cpp.i:
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/02_cholesky_upper_triangle.cpp.i
+.PHONY : 02_cholesky_upper_triangle.cpp.i
+
+02_cholesky_upper_triangle.s: 02_cholesky_upper_triangle.cpp.s
+.PHONY : 02_cholesky_upper_triangle.s
+
+# target to generate assembly for a file
+02_cholesky_upper_triangle.cpp.s:
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/02_cholesky_upper_triangle.cpp.s
+.PHONY : 02_cholesky_upper_triangle.cpp.s
+
+03_cholesky_contiguous_access.o: 03_cholesky_contiguous_access.cpp.o
+.PHONY : 03_cholesky_contiguous_access.o
+
+# target to build an object file
+03_cholesky_contiguous_access.cpp.o:
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/03_cholesky_contiguous_access.cpp.o
+.PHONY : 03_cholesky_contiguous_access.cpp.o
+
+03_cholesky_contiguous_access.i: 03_cholesky_contiguous_access.cpp.i
+.PHONY : 03_cholesky_contiguous_access.i
+
+# target to preprocess a source file
+03_cholesky_contiguous_access.cpp.i:
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/03_cholesky_contiguous_access.cpp.i
+.PHONY : 03_cholesky_contiguous_access.cpp.i
+
+03_cholesky_contiguous_access.s: 03_cholesky_contiguous_access.cpp.s
+.PHONY : 03_cholesky_contiguous_access.s
+
+# target to generate assembly for a file
+03_cholesky_contiguous_access.cpp.s:
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/03_cholesky_contiguous_access.cpp.s
+.PHONY : 03_cholesky_contiguous_access.cpp.s
+
+04_cholesky_cache_blocked_1.o: 04_cholesky_cache_blocked_1.cpp.o
+.PHONY : 04_cholesky_cache_blocked_1.o
+
+# target to build an object file
+04_cholesky_cache_blocked_1.cpp.o:
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/04_cholesky_cache_blocked_1.cpp.o
+.PHONY : 04_cholesky_cache_blocked_1.cpp.o
+
+04_cholesky_cache_blocked_1.i: 04_cholesky_cache_blocked_1.cpp.i
+.PHONY : 04_cholesky_cache_blocked_1.i
+
+# target to preprocess a source file
+04_cholesky_cache_blocked_1.cpp.i:
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/04_cholesky_cache_blocked_1.cpp.i
+.PHONY : 04_cholesky_cache_blocked_1.cpp.i
+
+04_cholesky_cache_blocked_1.s: 04_cholesky_cache_blocked_1.cpp.s
+.PHONY : 04_cholesky_cache_blocked_1.s
+
+# target to generate assembly for a file
+04_cholesky_cache_blocked_1.cpp.s:
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/04_cholesky_cache_blocked_1.cpp.s
+.PHONY : 04_cholesky_cache_blocked_1.cpp.s
+
+05_cholesky_cache_blocked_2.o: 05_cholesky_cache_blocked_2.cpp.o
+.PHONY : 05_cholesky_cache_blocked_2.o
+
+# target to build an object file
+05_cholesky_cache_blocked_2.cpp.o:
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/05_cholesky_cache_blocked_2.cpp.o
+.PHONY : 05_cholesky_cache_blocked_2.cpp.o
+
+05_cholesky_cache_blocked_2.i: 05_cholesky_cache_blocked_2.cpp.i
+.PHONY : 05_cholesky_cache_blocked_2.i
+
+# target to preprocess a source file
+05_cholesky_cache_blocked_2.cpp.i:
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/05_cholesky_cache_blocked_2.cpp.i
+.PHONY : 05_cholesky_cache_blocked_2.cpp.i
+
+05_cholesky_cache_blocked_2.s: 05_cholesky_cache_blocked_2.cpp.s
+.PHONY : 05_cholesky_cache_blocked_2.s
+
+# target to generate assembly for a file
+05_cholesky_cache_blocked_2.cpp.s:
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/05_cholesky_cache_blocked_2.cpp.s
+.PHONY : 05_cholesky_cache_blocked_2.cpp.s
+
+06_cholesky_openmp_1.o: 06_cholesky_openmp_1.cpp.o
+.PHONY : 06_cholesky_openmp_1.o
+
+# target to build an object file
+06_cholesky_openmp_1.cpp.o:
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/06_cholesky_openmp_1.cpp.o
+.PHONY : 06_cholesky_openmp_1.cpp.o
+
+06_cholesky_openmp_1.i: 06_cholesky_openmp_1.cpp.i
+.PHONY : 06_cholesky_openmp_1.i
+
+# target to preprocess a source file
+06_cholesky_openmp_1.cpp.i:
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/06_cholesky_openmp_1.cpp.i
+.PHONY : 06_cholesky_openmp_1.cpp.i
+
+06_cholesky_openmp_1.s: 06_cholesky_openmp_1.cpp.s
+.PHONY : 06_cholesky_openmp_1.s
+
+# target to generate assembly for a file
+06_cholesky_openmp_1.cpp.s:
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/06_cholesky_openmp_1.cpp.s
+.PHONY : 06_cholesky_openmp_1.cpp.s
+
+07_cholesky_openmp_2.o: 07_cholesky_openmp_2.cpp.o
+.PHONY : 07_cholesky_openmp_2.o
+
+# target to build an object file
+07_cholesky_openmp_2.cpp.o:
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/07_cholesky_openmp_2.cpp.o
+.PHONY : 07_cholesky_openmp_2.cpp.o
+
+07_cholesky_openmp_2.i: 07_cholesky_openmp_2.cpp.i
+.PHONY : 07_cholesky_openmp_2.i
+
+# target to preprocess a source file
+07_cholesky_openmp_2.cpp.i:
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/07_cholesky_openmp_2.cpp.i
+.PHONY : 07_cholesky_openmp_2.cpp.i
+
+07_cholesky_openmp_2.s: 07_cholesky_openmp_2.cpp.s
+.PHONY : 07_cholesky_openmp_2.s
+
+# target to generate assembly for a file
+07_cholesky_openmp_2.cpp.s:
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/07_cholesky_openmp_2.cpp.s
+.PHONY : 07_cholesky_openmp_2.cpp.s
+
+08_cholesky_openmp_3.o: 08_cholesky_openmp_3.cpp.o
+.PHONY : 08_cholesky_openmp_3.o
+
+# target to build an object file
+08_cholesky_openmp_3.cpp.o:
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/08_cholesky_openmp_3.cpp.o
+.PHONY : 08_cholesky_openmp_3.cpp.o
+
+08_cholesky_openmp_3.i: 08_cholesky_openmp_3.cpp.i
+.PHONY : 08_cholesky_openmp_3.i
+
+# target to preprocess a source file
+08_cholesky_openmp_3.cpp.i:
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/08_cholesky_openmp_3.cpp.i
+.PHONY : 08_cholesky_openmp_3.cpp.i
+
+08_cholesky_openmp_3.s: 08_cholesky_openmp_3.cpp.s
+.PHONY : 08_cholesky_openmp_3.s
+
+# target to generate assembly for a file
+08_cholesky_openmp_3.cpp.s:
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/08_cholesky_openmp_3.cpp.s
+.PHONY : 08_cholesky_openmp_3.cpp.s
 
 __/utils/matrix.o: __/utils/matrix.cpp.o
 .PHONY : __/utils/matrix.o
 
 # target to build an object file
 __/utils/matrix.cpp.o:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/__/utils/matrix.cpp.o
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/__/utils/matrix.cpp.o
 .PHONY : __/utils/matrix.cpp.o
 
 __/utils/matrix.i: __/utils/matrix.cpp.i
@@ -153,7 +369,7 @@ __/utils/matrix.i: __/utils/matrix.cpp.i
 
 # target to preprocess a source file
 __/utils/matrix.cpp.i:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/__/utils/matrix.cpp.i
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/__/utils/matrix.cpp.i
 .PHONY : __/utils/matrix.cpp.i
 
 __/utils/matrix.s: __/utils/matrix.cpp.s
@@ -161,7 +377,7 @@ __/utils/matrix.s: __/utils/matrix.cpp.s
 
 # target to generate assembly for a file
 __/utils/matrix.cpp.s:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/__/utils/matrix.cpp.s
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/__/utils/matrix.cpp.s
 .PHONY : __/utils/matrix.cpp.s
 
 __/utils/timer.o: __/utils/timer.cpp.o
@@ -169,7 +385,7 @@ __/utils/timer.o: __/utils/timer.cpp.o
 
 # target to build an object file
 __/utils/timer.cpp.o:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/__/utils/timer.cpp.o
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/__/utils/timer.cpp.o
 .PHONY : __/utils/timer.cpp.o
 
 __/utils/timer.i: __/utils/timer.cpp.i
@@ -177,7 +393,7 @@ __/utils/timer.i: __/utils/timer.cpp.i
 
 # target to preprocess a source file
 __/utils/timer.cpp.i:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/__/utils/timer.cpp.i
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/__/utils/timer.cpp.i
 .PHONY : __/utils/timer.cpp.i
 
 __/utils/timer.s: __/utils/timer.cpp.s
@@ -185,279 +401,15 @@ __/utils/timer.s: __/utils/timer.cpp.s
 
 # target to generate assembly for a file
 __/utils/timer.cpp.s:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/__/utils/timer.cpp.s
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/__/utils/timer.cpp.s
 .PHONY : __/utils/timer.cpp.s
-
-cholesky_access_pattern_aware.o: cholesky_access_pattern_aware.cpp.o
-.PHONY : cholesky_access_pattern_aware.o
-
-# target to build an object file
-cholesky_access_pattern_aware.cpp.o:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/cholesky_access_pattern_aware.cpp.o
-.PHONY : cholesky_access_pattern_aware.cpp.o
-
-cholesky_access_pattern_aware.i: cholesky_access_pattern_aware.cpp.i
-.PHONY : cholesky_access_pattern_aware.i
-
-# target to preprocess a source file
-cholesky_access_pattern_aware.cpp.i:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/cholesky_access_pattern_aware.cpp.i
-.PHONY : cholesky_access_pattern_aware.cpp.i
-
-cholesky_access_pattern_aware.s: cholesky_access_pattern_aware.cpp.s
-.PHONY : cholesky_access_pattern_aware.s
-
-# target to generate assembly for a file
-cholesky_access_pattern_aware.cpp.s:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/cholesky_access_pattern_aware.cpp.s
-.PHONY : cholesky_access_pattern_aware.cpp.s
-
-cholesky_baseline.o: cholesky_baseline.cpp.o
-.PHONY : cholesky_baseline.o
-
-# target to build an object file
-cholesky_baseline.cpp.o:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/cholesky_baseline.cpp.o
-.PHONY : cholesky_baseline.cpp.o
-
-cholesky_baseline.i: cholesky_baseline.cpp.i
-.PHONY : cholesky_baseline.i
-
-# target to preprocess a source file
-cholesky_baseline.cpp.i:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/cholesky_baseline.cpp.i
-.PHONY : cholesky_baseline.cpp.i
-
-cholesky_baseline.s: cholesky_baseline.cpp.s
-.PHONY : cholesky_baseline.s
-
-# target to generate assembly for a file
-cholesky_baseline.cpp.s:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/cholesky_baseline.cpp.s
-.PHONY : cholesky_baseline.cpp.s
-
-cholesky_blocked_vectorised.o: cholesky_blocked_vectorised.cpp.o
-.PHONY : cholesky_blocked_vectorised.o
-
-# target to build an object file
-cholesky_blocked_vectorised.cpp.o:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/cholesky_blocked_vectorised.cpp.o
-.PHONY : cholesky_blocked_vectorised.cpp.o
-
-cholesky_blocked_vectorised.i: cholesky_blocked_vectorised.cpp.i
-.PHONY : cholesky_blocked_vectorised.i
-
-# target to preprocess a source file
-cholesky_blocked_vectorised.cpp.i:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/cholesky_blocked_vectorised.cpp.i
-.PHONY : cholesky_blocked_vectorised.cpp.i
-
-cholesky_blocked_vectorised.s: cholesky_blocked_vectorised.cpp.s
-.PHONY : cholesky_blocked_vectorised.s
-
-# target to generate assembly for a file
-cholesky_blocked_vectorised.cpp.s:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/cholesky_blocked_vectorised.cpp.s
-.PHONY : cholesky_blocked_vectorised.cpp.s
-
-cholesky_cache_blocked.o: cholesky_cache_blocked.cpp.o
-.PHONY : cholesky_cache_blocked.o
-
-# target to build an object file
-cholesky_cache_blocked.cpp.o:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/cholesky_cache_blocked.cpp.o
-.PHONY : cholesky_cache_blocked.cpp.o
-
-cholesky_cache_blocked.i: cholesky_cache_blocked.cpp.i
-.PHONY : cholesky_cache_blocked.i
-
-# target to preprocess a source file
-cholesky_cache_blocked.cpp.i:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/cholesky_cache_blocked.cpp.i
-.PHONY : cholesky_cache_blocked.cpp.i
-
-cholesky_cache_blocked.s: cholesky_cache_blocked.cpp.s
-.PHONY : cholesky_cache_blocked.s
-
-# target to generate assembly for a file
-cholesky_cache_blocked.cpp.s:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/cholesky_cache_blocked.cpp.s
-.PHONY : cholesky_cache_blocked.cpp.s
-
-cholesky_inline_mirror.o: cholesky_inline_mirror.cpp.o
-.PHONY : cholesky_inline_mirror.o
-
-# target to build an object file
-cholesky_inline_mirror.cpp.o:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/cholesky_inline_mirror.cpp.o
-.PHONY : cholesky_inline_mirror.cpp.o
-
-cholesky_inline_mirror.i: cholesky_inline_mirror.cpp.i
-.PHONY : cholesky_inline_mirror.i
-
-# target to preprocess a source file
-cholesky_inline_mirror.cpp.i:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/cholesky_inline_mirror.cpp.i
-.PHONY : cholesky_inline_mirror.cpp.i
-
-cholesky_inline_mirror.s: cholesky_inline_mirror.cpp.s
-.PHONY : cholesky_inline_mirror.s
-
-# target to generate assembly for a file
-cholesky_inline_mirror.cpp.s:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/cholesky_inline_mirror.cpp.s
-.PHONY : cholesky_inline_mirror.cpp.s
-
-cholesky_loop_cleanup.o: cholesky_loop_cleanup.cpp.o
-.PHONY : cholesky_loop_cleanup.o
-
-# target to build an object file
-cholesky_loop_cleanup.cpp.o:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/cholesky_loop_cleanup.cpp.o
-.PHONY : cholesky_loop_cleanup.cpp.o
-
-cholesky_loop_cleanup.i: cholesky_loop_cleanup.cpp.i
-.PHONY : cholesky_loop_cleanup.i
-
-# target to preprocess a source file
-cholesky_loop_cleanup.cpp.i:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/cholesky_loop_cleanup.cpp.i
-.PHONY : cholesky_loop_cleanup.cpp.i
-
-cholesky_loop_cleanup.s: cholesky_loop_cleanup.cpp.s
-.PHONY : cholesky_loop_cleanup.s
-
-# target to generate assembly for a file
-cholesky_loop_cleanup.cpp.s:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/cholesky_loop_cleanup.cpp.s
-.PHONY : cholesky_loop_cleanup.cpp.s
-
-cholesky_lower_triangle_only.o: cholesky_lower_triangle_only.cpp.o
-.PHONY : cholesky_lower_triangle_only.o
-
-# target to build an object file
-cholesky_lower_triangle_only.cpp.o:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/cholesky_lower_triangle_only.cpp.o
-.PHONY : cholesky_lower_triangle_only.cpp.o
-
-cholesky_lower_triangle_only.i: cholesky_lower_triangle_only.cpp.i
-.PHONY : cholesky_lower_triangle_only.i
-
-# target to preprocess a source file
-cholesky_lower_triangle_only.cpp.i:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/cholesky_lower_triangle_only.cpp.i
-.PHONY : cholesky_lower_triangle_only.cpp.i
-
-cholesky_lower_triangle_only.s: cholesky_lower_triangle_only.cpp.s
-.PHONY : cholesky_lower_triangle_only.s
-
-# target to generate assembly for a file
-cholesky_lower_triangle_only.cpp.s:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/cholesky_lower_triangle_only.cpp.s
-.PHONY : cholesky_lower_triangle_only.cpp.s
-
-cholesky_openmp_1.o: cholesky_openmp_1.cpp.o
-.PHONY : cholesky_openmp_1.o
-
-# target to build an object file
-cholesky_openmp_1.cpp.o:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/cholesky_openmp_1.cpp.o
-.PHONY : cholesky_openmp_1.cpp.o
-
-cholesky_openmp_1.i: cholesky_openmp_1.cpp.i
-.PHONY : cholesky_openmp_1.i
-
-# target to preprocess a source file
-cholesky_openmp_1.cpp.i:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/cholesky_openmp_1.cpp.i
-.PHONY : cholesky_openmp_1.cpp.i
-
-cholesky_openmp_1.s: cholesky_openmp_1.cpp.s
-.PHONY : cholesky_openmp_1.s
-
-# target to generate assembly for a file
-cholesky_openmp_1.cpp.s:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/cholesky_openmp_1.cpp.s
-.PHONY : cholesky_openmp_1.cpp.s
-
-cholesky_openmp_2.o: cholesky_openmp_2.cpp.o
-.PHONY : cholesky_openmp_2.o
-
-# target to build an object file
-cholesky_openmp_2.cpp.o:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/cholesky_openmp_2.cpp.o
-.PHONY : cholesky_openmp_2.cpp.o
-
-cholesky_openmp_2.i: cholesky_openmp_2.cpp.i
-.PHONY : cholesky_openmp_2.i
-
-# target to preprocess a source file
-cholesky_openmp_2.cpp.i:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/cholesky_openmp_2.cpp.i
-.PHONY : cholesky_openmp_2.cpp.i
-
-cholesky_openmp_2.s: cholesky_openmp_2.cpp.s
-.PHONY : cholesky_openmp_2.s
-
-# target to generate assembly for a file
-cholesky_openmp_2.cpp.s:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/cholesky_openmp_2.cpp.s
-.PHONY : cholesky_openmp_2.cpp.s
-
-cholesky_openmp_3.o: cholesky_openmp_3.cpp.o
-.PHONY : cholesky_openmp_3.o
-
-# target to build an object file
-cholesky_openmp_3.cpp.o:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/cholesky_openmp_3.cpp.o
-.PHONY : cholesky_openmp_3.cpp.o
-
-cholesky_openmp_3.i: cholesky_openmp_3.cpp.i
-.PHONY : cholesky_openmp_3.i
-
-# target to preprocess a source file
-cholesky_openmp_3.cpp.i:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/cholesky_openmp_3.cpp.i
-.PHONY : cholesky_openmp_3.cpp.i
-
-cholesky_openmp_3.s: cholesky_openmp_3.cpp.s
-.PHONY : cholesky_openmp_3.s
-
-# target to generate assembly for a file
-cholesky_openmp_3.cpp.s:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/cholesky_openmp_3.cpp.s
-.PHONY : cholesky_openmp_3.cpp.s
-
-cholesky_vectorisation.o: cholesky_vectorisation.cpp.o
-.PHONY : cholesky_vectorisation.o
-
-# target to build an object file
-cholesky_vectorisation.cpp.o:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/cholesky_vectorisation.cpp.o
-.PHONY : cholesky_vectorisation.cpp.o
-
-cholesky_vectorisation.i: cholesky_vectorisation.cpp.i
-.PHONY : cholesky_vectorisation.i
-
-# target to preprocess a source file
-cholesky_vectorisation.cpp.i:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/cholesky_vectorisation.cpp.i
-.PHONY : cholesky_vectorisation.cpp.i
-
-cholesky_vectorisation.s: cholesky_vectorisation.cpp.s
-.PHONY : cholesky_vectorisation.s
-
-# target to generate assembly for a file
-cholesky_vectorisation.cpp.s:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/cholesky_vectorisation.cpp.s
-.PHONY : cholesky_vectorisation.cpp.s
 
 mphil_dis_cholesky.o: mphil_dis_cholesky.cpp.o
 .PHONY : mphil_dis_cholesky.o
 
 # target to build an object file
 mphil_dis_cholesky.cpp.o:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/mphil_dis_cholesky.cpp.o
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/mphil_dis_cholesky.cpp.o
 .PHONY : mphil_dis_cholesky.cpp.o
 
 mphil_dis_cholesky.i: mphil_dis_cholesky.cpp.i
@@ -465,7 +417,7 @@ mphil_dis_cholesky.i: mphil_dis_cholesky.cpp.i
 
 # target to preprocess a source file
 mphil_dis_cholesky.cpp.i:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/mphil_dis_cholesky.cpp.i
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/mphil_dis_cholesky.cpp.i
 .PHONY : mphil_dis_cholesky.cpp.i
 
 mphil_dis_cholesky.s: mphil_dis_cholesky.cpp.s
@@ -473,7 +425,7 @@ mphil_dis_cholesky.s: mphil_dis_cholesky.cpp.s
 
 # target to generate assembly for a file
 mphil_dis_cholesky.cpp.s:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/mphil_dis_cholesky.cpp.s
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/mphil_dis_cholesky.cpp.s
 .PHONY : mphil_dis_cholesky.cpp.s
 
 # Help Target
@@ -486,45 +438,39 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... mphil_dis_cholesky"
+	@echo "... 00_cholesky_baseline.o"
+	@echo "... 00_cholesky_baseline.i"
+	@echo "... 00_cholesky_baseline.s"
+	@echo "... 01_cholesky_lower_triangle.o"
+	@echo "... 01_cholesky_lower_triangle.i"
+	@echo "... 01_cholesky_lower_triangle.s"
+	@echo "... 02_cholesky_upper_triangle.o"
+	@echo "... 02_cholesky_upper_triangle.i"
+	@echo "... 02_cholesky_upper_triangle.s"
+	@echo "... 03_cholesky_contiguous_access.o"
+	@echo "... 03_cholesky_contiguous_access.i"
+	@echo "... 03_cholesky_contiguous_access.s"
+	@echo "... 04_cholesky_cache_blocked_1.o"
+	@echo "... 04_cholesky_cache_blocked_1.i"
+	@echo "... 04_cholesky_cache_blocked_1.s"
+	@echo "... 05_cholesky_cache_blocked_2.o"
+	@echo "... 05_cholesky_cache_blocked_2.i"
+	@echo "... 05_cholesky_cache_blocked_2.s"
+	@echo "... 06_cholesky_openmp_1.o"
+	@echo "... 06_cholesky_openmp_1.i"
+	@echo "... 06_cholesky_openmp_1.s"
+	@echo "... 07_cholesky_openmp_2.o"
+	@echo "... 07_cholesky_openmp_2.i"
+	@echo "... 07_cholesky_openmp_2.s"
+	@echo "... 08_cholesky_openmp_3.o"
+	@echo "... 08_cholesky_openmp_3.i"
+	@echo "... 08_cholesky_openmp_3.s"
 	@echo "... __/utils/matrix.o"
 	@echo "... __/utils/matrix.i"
 	@echo "... __/utils/matrix.s"
 	@echo "... __/utils/timer.o"
 	@echo "... __/utils/timer.i"
 	@echo "... __/utils/timer.s"
-	@echo "... cholesky_access_pattern_aware.o"
-	@echo "... cholesky_access_pattern_aware.i"
-	@echo "... cholesky_access_pattern_aware.s"
-	@echo "... cholesky_baseline.o"
-	@echo "... cholesky_baseline.i"
-	@echo "... cholesky_baseline.s"
-	@echo "... cholesky_blocked_vectorised.o"
-	@echo "... cholesky_blocked_vectorised.i"
-	@echo "... cholesky_blocked_vectorised.s"
-	@echo "... cholesky_cache_blocked.o"
-	@echo "... cholesky_cache_blocked.i"
-	@echo "... cholesky_cache_blocked.s"
-	@echo "... cholesky_inline_mirror.o"
-	@echo "... cholesky_inline_mirror.i"
-	@echo "... cholesky_inline_mirror.s"
-	@echo "... cholesky_loop_cleanup.o"
-	@echo "... cholesky_loop_cleanup.i"
-	@echo "... cholesky_loop_cleanup.s"
-	@echo "... cholesky_lower_triangle_only.o"
-	@echo "... cholesky_lower_triangle_only.i"
-	@echo "... cholesky_lower_triangle_only.s"
-	@echo "... cholesky_openmp_1.o"
-	@echo "... cholesky_openmp_1.i"
-	@echo "... cholesky_openmp_1.s"
-	@echo "... cholesky_openmp_2.o"
-	@echo "... cholesky_openmp_2.i"
-	@echo "... cholesky_openmp_2.s"
-	@echo "... cholesky_openmp_3.o"
-	@echo "... cholesky_openmp_3.i"
-	@echo "... cholesky_openmp_3.s"
-	@echo "... cholesky_vectorisation.o"
-	@echo "... cholesky_vectorisation.i"
-	@echo "... cholesky_vectorisation.s"
 	@echo "... mphil_dis_cholesky.o"
 	@echo "... mphil_dis_cholesky.i"
 	@echo "... mphil_dis_cholesky.s"
@@ -539,6 +485,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

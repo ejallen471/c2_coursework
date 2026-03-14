@@ -2,11 +2,13 @@
 
 #include <cmath>
 
+#if defined(MPHIL_HAVE_LAPACK) && MPHIL_HAVE_LAPACK
 extern "C"
 {
     void dpotrf_(const char* uplo, const int* n, double* a, const int* lda,
                  int* info); // computes the Cholesky factorisation of a SPD matrix
 }
+#endif
 
 // Function will compute the log-determinant from a matrix that has been factorised by Cholesky
 LogDetValue logdet_from_factorised_storage(const std::vector<double>& c, std::size_t n)
@@ -45,6 +47,7 @@ LogDetValue relative_difference_percent(LogDetValue value, LogDetValue reference
 // Compute the log-determinant using LAPACK - we use this as the reference value
 bool lapack_reference_logdet(std::vector<double> c, int n, LogDetValue& logdet)
 {
+#if defined(MPHIL_HAVE_LAPACK) && MPHIL_HAVE_LAPACK
     const char uplo = 'L'; // means use lower triangle
     const int lda = n;     // the leading dimension
     int info = 0;          // report sucess or failure
@@ -61,37 +64,12 @@ bool lapack_reference_logdet(std::vector<double> c, int n, LogDetValue& logdet)
     // if factorisation was sucessful, return true
     logdet = logdet_from_factorised_storage(c, n);
     return true;
-}
-
-bool parse_warmup_option(const std::string& argument, bool& run_warmup)
-{
-    if (argument == "--warmup")
-    {
-        run_warmup = true;
-        return true;
-    }
-
-    if (argument == "--no-warmup")
-    {
-        run_warmup = false;
-        return true;
-    }
-
-    if (argument == "--warmup=1" || argument == "--warmup=true" || argument == "--warmup=on" ||
-        argument == "--warmup=yes")
-    {
-        run_warmup = true;
-        return true;
-    }
-
-    if (argument == "--warmup=0" || argument == "--warmup=false" || argument == "--warmup=off" ||
-        argument == "--warmup=no")
-    {
-        run_warmup = false;
-        return true;
-    }
-
+#else
+    (void)c;
+    (void)n;
+    (void)logdet;
     return false;
+#endif
 }
 
 std::string quoted_path(const std::filesystem::path& path)

@@ -21,4 +21,4 @@ add_coursework_test(test_matrix_generation test_matrix_generation.cpp test_helpe
 add_coursework_test(test_version_correctness test_version_correctness.cpp test_helpers.cpp)
 
 add_executable(test_perf_time_output test_perf_time_output.cpp)
-add_test(NAME test_perf_time_output COMMAND test_perf_time_output $<TARGET_FILE:perf_time>)
+add_test(NAME test_perf_time_output COMMAND test_perf_time_output $<TARGET_FILE:run_cholesky>)

@@ -33,7 +33,6 @@ fi
 
 # Use the shared prebuilt project directory.
 BUILD_DIR="${SHARED_BUILD_DIR}"
-WARMUP_OPTION="$(perf_warmup_cli_arg)"
 
 # Write raw timing data to a CSV named after the optimisation method.
 RAW_CSV="${RESULTS_RAW_DIR}/${OPTIMISATION_METHOD}_matrix_size_graph.csv"
@@ -57,7 +56,7 @@ echo "==> Repeats: ${REPEATS}"
 echo "==> Sizes: ${SIZES[*]}"
 
 # Ensure the shared executable exists and was built with the optimised build type.
-ensure_shared_release_executable "${PERF_SCALING_EXEC_REL}"
+ensure_shared_release_executable "${RUN_CHOLESKY_EXEC_REL}"
 
 # Stop early with a clear error if conda is not installed or not on PATH.
 if ! command -v conda >/dev/null 2>&1; then
@@ -83,20 +82,19 @@ fi
 # Activate the conda environment used for plotting before launching the scaling driver.
 conda activate "${CONDA_ENV_NAME}"
 
-# Give matplotlib a writable cache directory, then run the scaling driver.
-# Argument 1: optimisation method to benchmark.
-# Argument 2: repeat count per matrix size.
-# Argument 3: output CSV path for raw timing data.
-# Argument 4: output directory for plots and summaries.
-# Remaining arguments: matrix sizes to sweep over.
-MPLCONFIGDIR=/tmp/mpl_perf_graph \
-"${BUILD_DIR}/${PERF_SCALING_EXEC_REL}" \
+# Run the scaling benchmark first so the raw CSV exists before plotting.
+"${BUILD_DIR}/${RUN_CHOLESKY_EXEC_REL}" \
+    scaling \
     "${OPTIMISATION_METHOD}" \
     "${REPEATS}" \
     "${RAW_CSV}" \
-    "${PLOT_DIR}" \
-    "${WARMUP_OPTION}" \
     "${SIZES[@]}"
+
+# Give matplotlib a writable cache directory, then plot from the generated CSV.
+MPLCONFIGDIR=/tmp/mpl_perf_graph \
+python3 "${ROOT_DIR}/plot/plot_metrics.py" \
+    "${RAW_CSV}" \
+    "${PLOT_DIR}"
 
 # Print the location of the raw CSV output.
 echo "==> Raw CSV: ${RAW_CSV}"

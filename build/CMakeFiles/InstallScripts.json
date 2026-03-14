@@ -1,11 +1,11 @@
 {
 	"InstallScripts" : 
 	[
-		"/Users/ejallen/Desktop/c2_coursework_boss/build/cmake_install.cmake",
-		"/Users/ejallen/Desktop/c2_coursework_boss/build/src/cmake_install.cmake",
-		"/Users/ejallen/Desktop/c2_coursework_boss/build/example/cmake_install.cmake",
-		"/Users/ejallen/Desktop/c2_coursework_boss/build/performance_tests/cmake_install.cmake",
-		"/Users/ejallen/Desktop/c2_coursework_boss/build/test/cmake_install.cmake"
+		"/Users/ejallen/Desktop/c2_coursework/build/cmake_install.cmake",
+		"/Users/ejallen/Desktop/c2_coursework/build/src/cmake_install.cmake",
+		"/Users/ejallen/Desktop/c2_coursework/build/performance_tests/cmake_install.cmake",
+		"/Users/ejallen/Desktop/c2_coursework/build/run/cmake_install.cmake",
+		"/Users/ejallen/Desktop/c2_coursework/build/test/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

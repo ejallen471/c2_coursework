@@ -1,6 +1,6 @@
 performance_tests/CMakeFiles/perf_fixed_size_comparison.dir/perf_fixed_size_comparison.cpp.o: \
-  /Users/ejallen/Desktop/c2_coursework_boss/performance_tests/perf_fixed_size_comparison.cpp \
-  /Users/ejallen/Desktop/c2_coursework_boss/utils/matrix.h \
+  /Users/ejallen/Desktop/c2_coursework/performance_tests/perf_fixed_size_comparison.cpp \
+  /Users/ejallen/Desktop/c2_coursework/utils/matrix.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cstdint \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site \
@@ -751,7 +751,7 @@ performance_tests/CMakeFiles/perf_fixed_size_comparison.dir/perf_fixed_size_comp
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_fsfilcnt_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_nl_item.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cstdarg \
-  /Users/ejallen/Desktop/c2_coursework_boss/performance_tests/perf_helpers.h \
+  /Users/ejallen/Desktop/c2_coursework/performance_tests/perf_helpers.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/filesystem \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/copy_options.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/directory_entry.h \
@@ -810,7 +810,7 @@ performance_tests/CMakeFiles/perf_fixed_size_comparison.dir/perf_fixed_size_comp
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/path_iterator.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/u8path.h \
-  /Users/ejallen/Desktop/c2_coursework_boss/performance_tests/runtime_cholesky.h \
-  /Users/ejallen/Desktop/c2_coursework_boss/include/mphil_dis_cholesky.h \
+  /Users/ejallen/Desktop/c2_coursework/performance_tests/runtime_cholesky.h \
+  /Users/ejallen/Desktop/c2_coursework/include/mphil_dis_cholesky.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/fstream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream

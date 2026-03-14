@@ -57,10 +57,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/ejallen/Desktop/c2_coursework_boss
+CMAKE_SOURCE_DIR = /Users/ejallen/Desktop/c2_coursework
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/ejallen/Desktop/c2_coursework_boss/build
+CMAKE_BINARY_DIR = /Users/ejallen/Desktop/c2_coursework/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -97,14 +97,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles /Users/ejallen/Desktop/c2_coursework_boss/build/performance_tests//CMakeFiles/progress.marks
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 performance_tests/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework_boss/build/CMakeFiles 0
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles /Users/ejallen/Desktop/c2_coursework/build/performance_tests//CMakeFiles/progress.marks
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 performance_tests/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 performance_tests/clean
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 performance_tests/clean
 .PHONY : clean
 
 # The main clean target
@@ -113,81 +113,39 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 performance_tests/preinstall
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 performance_tests/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 performance_tests/preinstall
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 performance_tests/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-performance_tests/CMakeFiles/perf_time.dir/rule:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 performance_tests/CMakeFiles/perf_time.dir/rule
-.PHONY : performance_tests/CMakeFiles/perf_time.dir/rule
+performance_tests/CMakeFiles/coursework_perf_support.dir/rule:
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 performance_tests/CMakeFiles/coursework_perf_support.dir/rule
+.PHONY : performance_tests/CMakeFiles/coursework_perf_support.dir/rule
 
 # Convenience name for target.
-perf_time: performance_tests/CMakeFiles/perf_time.dir/rule
-.PHONY : perf_time
+coursework_perf_support: performance_tests/CMakeFiles/coursework_perf_support.dir/rule
+.PHONY : coursework_perf_support
 
 # fast build rule for target.
-perf_time/fast:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/perf_time.dir/build.make performance_tests/CMakeFiles/perf_time.dir/build
-.PHONY : perf_time/fast
-
-# Convenience name for target.
-performance_tests/CMakeFiles/perf_fixed_size_comparison.dir/rule:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 performance_tests/CMakeFiles/perf_fixed_size_comparison.dir/rule
-.PHONY : performance_tests/CMakeFiles/perf_fixed_size_comparison.dir/rule
-
-# Convenience name for target.
-perf_fixed_size_comparison: performance_tests/CMakeFiles/perf_fixed_size_comparison.dir/rule
-.PHONY : perf_fixed_size_comparison
-
-# fast build rule for target.
-perf_fixed_size_comparison/fast:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/perf_fixed_size_comparison.dir/build.make performance_tests/CMakeFiles/perf_fixed_size_comparison.dir/build
-.PHONY : perf_fixed_size_comparison/fast
-
-# Convenience name for target.
-performance_tests/CMakeFiles/perf_block_size_sweep.dir/rule:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 performance_tests/CMakeFiles/perf_block_size_sweep.dir/rule
-.PHONY : performance_tests/CMakeFiles/perf_block_size_sweep.dir/rule
-
-# Convenience name for target.
-perf_block_size_sweep: performance_tests/CMakeFiles/perf_block_size_sweep.dir/rule
-.PHONY : perf_block_size_sweep
-
-# fast build rule for target.
-perf_block_size_sweep/fast:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/perf_block_size_sweep.dir/build.make performance_tests/CMakeFiles/perf_block_size_sweep.dir/build
-.PHONY : perf_block_size_sweep/fast
-
-# Convenience name for target.
-performance_tests/CMakeFiles/perf_scaling.dir/rule:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 performance_tests/CMakeFiles/perf_scaling.dir/rule
-.PHONY : performance_tests/CMakeFiles/perf_scaling.dir/rule
-
-# Convenience name for target.
-perf_scaling: performance_tests/CMakeFiles/perf_scaling.dir/rule
-.PHONY : perf_scaling
-
-# fast build rule for target.
-perf_scaling/fast:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/perf_scaling.dir/build.make performance_tests/CMakeFiles/perf_scaling.dir/build
-.PHONY : perf_scaling/fast
+coursework_perf_support/fast:
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/coursework_perf_support.dir/build.make performance_tests/CMakeFiles/coursework_perf_support.dir/build
+.PHONY : coursework_perf_support/fast
 
 perf_block_size_sweep.o: perf_block_size_sweep.cpp.o
 .PHONY : perf_block_size_sweep.o
 
 # target to build an object file
 perf_block_size_sweep.cpp.o:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/perf_block_size_sweep.dir/build.make performance_tests/CMakeFiles/perf_block_size_sweep.dir/perf_block_size_sweep.cpp.o
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/coursework_perf_support.dir/build.make performance_tests/CMakeFiles/coursework_perf_support.dir/perf_block_size_sweep.cpp.o
 .PHONY : perf_block_size_sweep.cpp.o
 
 perf_block_size_sweep.i: perf_block_size_sweep.cpp.i
@@ -195,7 +153,7 @@ perf_block_size_sweep.i: perf_block_size_sweep.cpp.i
 
 # target to preprocess a source file
 perf_block_size_sweep.cpp.i:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/perf_block_size_sweep.dir/build.make performance_tests/CMakeFiles/perf_block_size_sweep.dir/perf_block_size_sweep.cpp.i
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/coursework_perf_support.dir/build.make performance_tests/CMakeFiles/coursework_perf_support.dir/perf_block_size_sweep.cpp.i
 .PHONY : perf_block_size_sweep.cpp.i
 
 perf_block_size_sweep.s: perf_block_size_sweep.cpp.s
@@ -203,7 +161,7 @@ perf_block_size_sweep.s: perf_block_size_sweep.cpp.s
 
 # target to generate assembly for a file
 perf_block_size_sweep.cpp.s:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/perf_block_size_sweep.dir/build.make performance_tests/CMakeFiles/perf_block_size_sweep.dir/perf_block_size_sweep.cpp.s
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/coursework_perf_support.dir/build.make performance_tests/CMakeFiles/coursework_perf_support.dir/perf_block_size_sweep.cpp.s
 .PHONY : perf_block_size_sweep.cpp.s
 
 perf_fixed_size_comparison.o: perf_fixed_size_comparison.cpp.o
@@ -211,7 +169,7 @@ perf_fixed_size_comparison.o: perf_fixed_size_comparison.cpp.o
 
 # target to build an object file
 perf_fixed_size_comparison.cpp.o:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/perf_fixed_size_comparison.dir/build.make performance_tests/CMakeFiles/perf_fixed_size_comparison.dir/perf_fixed_size_comparison.cpp.o
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/coursework_perf_support.dir/build.make performance_tests/CMakeFiles/coursework_perf_support.dir/perf_fixed_size_comparison.cpp.o
 .PHONY : perf_fixed_size_comparison.cpp.o
 
 perf_fixed_size_comparison.i: perf_fixed_size_comparison.cpp.i
@@ -219,7 +177,7 @@ perf_fixed_size_comparison.i: perf_fixed_size_comparison.cpp.i
 
 # target to preprocess a source file
 perf_fixed_size_comparison.cpp.i:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/perf_fixed_size_comparison.dir/build.make performance_tests/CMakeFiles/perf_fixed_size_comparison.dir/perf_fixed_size_comparison.cpp.i
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/coursework_perf_support.dir/build.make performance_tests/CMakeFiles/coursework_perf_support.dir/perf_fixed_size_comparison.cpp.i
 .PHONY : perf_fixed_size_comparison.cpp.i
 
 perf_fixed_size_comparison.s: perf_fixed_size_comparison.cpp.s
@@ -227,7 +185,7 @@ perf_fixed_size_comparison.s: perf_fixed_size_comparison.cpp.s
 
 # target to generate assembly for a file
 perf_fixed_size_comparison.cpp.s:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/perf_fixed_size_comparison.dir/build.make performance_tests/CMakeFiles/perf_fixed_size_comparison.dir/perf_fixed_size_comparison.cpp.s
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/coursework_perf_support.dir/build.make performance_tests/CMakeFiles/coursework_perf_support.dir/perf_fixed_size_comparison.cpp.s
 .PHONY : perf_fixed_size_comparison.cpp.s
 
 perf_helpers.o: perf_helpers.cpp.o
@@ -235,10 +193,7 @@ perf_helpers.o: perf_helpers.cpp.o
 
 # target to build an object file
 perf_helpers.cpp.o:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/perf_time.dir/build.make performance_tests/CMakeFiles/perf_time.dir/perf_helpers.cpp.o
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/perf_fixed_size_comparison.dir/build.make performance_tests/CMakeFiles/perf_fixed_size_comparison.dir/perf_helpers.cpp.o
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/perf_block_size_sweep.dir/build.make performance_tests/CMakeFiles/perf_block_size_sweep.dir/perf_helpers.cpp.o
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/perf_scaling.dir/build.make performance_tests/CMakeFiles/perf_scaling.dir/perf_helpers.cpp.o
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/coursework_perf_support.dir/build.make performance_tests/CMakeFiles/coursework_perf_support.dir/perf_helpers.cpp.o
 .PHONY : perf_helpers.cpp.o
 
 perf_helpers.i: perf_helpers.cpp.i
@@ -246,10 +201,7 @@ perf_helpers.i: perf_helpers.cpp.i
 
 # target to preprocess a source file
 perf_helpers.cpp.i:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/perf_time.dir/build.make performance_tests/CMakeFiles/perf_time.dir/perf_helpers.cpp.i
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/perf_fixed_size_comparison.dir/build.make performance_tests/CMakeFiles/perf_fixed_size_comparison.dir/perf_helpers.cpp.i
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/perf_block_size_sweep.dir/build.make performance_tests/CMakeFiles/perf_block_size_sweep.dir/perf_helpers.cpp.i
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/perf_scaling.dir/build.make performance_tests/CMakeFiles/perf_scaling.dir/perf_helpers.cpp.i
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/coursework_perf_support.dir/build.make performance_tests/CMakeFiles/coursework_perf_support.dir/perf_helpers.cpp.i
 .PHONY : perf_helpers.cpp.i
 
 perf_helpers.s: perf_helpers.cpp.s
@@ -257,10 +209,7 @@ perf_helpers.s: perf_helpers.cpp.s
 
 # target to generate assembly for a file
 perf_helpers.cpp.s:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/perf_time.dir/build.make performance_tests/CMakeFiles/perf_time.dir/perf_helpers.cpp.s
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/perf_fixed_size_comparison.dir/build.make performance_tests/CMakeFiles/perf_fixed_size_comparison.dir/perf_helpers.cpp.s
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/perf_block_size_sweep.dir/build.make performance_tests/CMakeFiles/perf_block_size_sweep.dir/perf_helpers.cpp.s
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/perf_scaling.dir/build.make performance_tests/CMakeFiles/perf_scaling.dir/perf_helpers.cpp.s
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/coursework_perf_support.dir/build.make performance_tests/CMakeFiles/coursework_perf_support.dir/perf_helpers.cpp.s
 .PHONY : perf_helpers.cpp.s
 
 perf_scaling.o: perf_scaling.cpp.o
@@ -268,7 +217,7 @@ perf_scaling.o: perf_scaling.cpp.o
 
 # target to build an object file
 perf_scaling.cpp.o:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/perf_scaling.dir/build.make performance_tests/CMakeFiles/perf_scaling.dir/perf_scaling.cpp.o
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/coursework_perf_support.dir/build.make performance_tests/CMakeFiles/coursework_perf_support.dir/perf_scaling.cpp.o
 .PHONY : perf_scaling.cpp.o
 
 perf_scaling.i: perf_scaling.cpp.i
@@ -276,7 +225,7 @@ perf_scaling.i: perf_scaling.cpp.i
 
 # target to preprocess a source file
 perf_scaling.cpp.i:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/perf_scaling.dir/build.make performance_tests/CMakeFiles/perf_scaling.dir/perf_scaling.cpp.i
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/coursework_perf_support.dir/build.make performance_tests/CMakeFiles/coursework_perf_support.dir/perf_scaling.cpp.i
 .PHONY : perf_scaling.cpp.i
 
 perf_scaling.s: perf_scaling.cpp.s
@@ -284,7 +233,7 @@ perf_scaling.s: perf_scaling.cpp.s
 
 # target to generate assembly for a file
 perf_scaling.cpp.s:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/perf_scaling.dir/build.make performance_tests/CMakeFiles/perf_scaling.dir/perf_scaling.cpp.s
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/coursework_perf_support.dir/build.make performance_tests/CMakeFiles/coursework_perf_support.dir/perf_scaling.cpp.s
 .PHONY : perf_scaling.cpp.s
 
 perf_time.o: perf_time.cpp.o
@@ -292,7 +241,7 @@ perf_time.o: perf_time.cpp.o
 
 # target to build an object file
 perf_time.cpp.o:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/perf_time.dir/build.make performance_tests/CMakeFiles/perf_time.dir/perf_time.cpp.o
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/coursework_perf_support.dir/build.make performance_tests/CMakeFiles/coursework_perf_support.dir/perf_time.cpp.o
 .PHONY : perf_time.cpp.o
 
 perf_time.i: perf_time.cpp.i
@@ -300,7 +249,7 @@ perf_time.i: perf_time.cpp.i
 
 # target to preprocess a source file
 perf_time.cpp.i:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/perf_time.dir/build.make performance_tests/CMakeFiles/perf_time.dir/perf_time.cpp.i
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/coursework_perf_support.dir/build.make performance_tests/CMakeFiles/coursework_perf_support.dir/perf_time.cpp.i
 .PHONY : perf_time.cpp.i
 
 perf_time.s: perf_time.cpp.s
@@ -308,7 +257,7 @@ perf_time.s: perf_time.cpp.s
 
 # target to generate assembly for a file
 perf_time.cpp.s:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/perf_time.dir/build.make performance_tests/CMakeFiles/perf_time.dir/perf_time.cpp.s
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f performance_tests/CMakeFiles/coursework_perf_support.dir/build.make performance_tests/CMakeFiles/coursework_perf_support.dir/perf_time.cpp.s
 .PHONY : perf_time.cpp.s
 
 # Help Target
@@ -320,10 +269,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... perf_block_size_sweep"
-	@echo "... perf_fixed_size_comparison"
-	@echo "... perf_scaling"
-	@echo "... perf_time"
+	@echo "... coursework_perf_support"
 	@echo "... perf_block_size_sweep.o"
 	@echo "... perf_block_size_sweep.i"
 	@echo "... perf_block_size_sweep.s"
@@ -350,6 +296,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/ejallen/Desktop/c2_coursework_boss/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

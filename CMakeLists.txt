@@ -34,8 +34,8 @@ endif()
 include(CTest)
 
 add_subdirectory(src)
-add_subdirectory(example)
 add_subdirectory(performance_tests)
+add_subdirectory(run)
 
 if(BUILD_TESTING)
     add_subdirectory(test)
