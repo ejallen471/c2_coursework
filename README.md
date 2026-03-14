@@ -1,6 +1,6 @@
-# Single Run
+# Fixed-Size Comparison
 
-This workflow runs one optimisation for one matrix size.
+This workflow runs all implemented single-threaded optimisations on one matrix size and writes a CSV.
 
 Build first:
 
@@ -8,36 +8,20 @@ Build first:
 bash scripts/sh_scripts/build.sh
 ```
 
-Run without CSV:
+Run directly:
 
 ```bash
-./build/run/run_cholesky time baseline 512
-```
-
-Run and write one-row CSV (Choose one of the following):
-
-```bash
-./build/run/run_cholesky time baseline 1000 results/raw/single_run_baseline_n1000.csv
-./build/run/run_cholesky time lower_triangle 1000 results/raw/single_run_lower_triangle_n1000.csv
-./build/run/run_cholesky time upper_triangle 1000 results/raw/single_run_upper_triangle_n1000.csv
-./build/run/run_cholesky time contiguous_access 1000 results/raw/single_run_contiguous_access_n1000.csv
-./build/run/run_cholesky time cache_blocked_1 1000 results/raw/single_run_cache_blocked_1_n1000.csv
-./build/run/run_cholesky time cache_blocked_2 1000 results/raw/single_run_cache_blocked_2_n1000.csv
+./build/run/run_cholesky fixed-size 2000 3 results/raw/fixed_size_comparison_n2000_raw.csv
 ```
 
 Arguments:
 
 ```text
-./build/run/run_cholesky time <optimisation> <matrix_size> [raw_csv_file_name]
+./build/run/run_cholesky fixed-size <matrix_size> <repeats> <raw_csv>
 ```
 
-Optimisation Choices:
+Output:
 
-```text
-baseline
-lower_triangle
-upper_triangle
-contiguous_access
-cache_blocked_1
-cache_blocked_2
-```
+- raw CSV with one row per optimisation per repeat
+- speedup versus baseline
+- log-determinant comparison fields
