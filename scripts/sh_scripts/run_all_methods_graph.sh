@@ -42,14 +42,14 @@ OPTIMISATION_METHODS=(
 # Use the shared prebuilt project directory.
 BUILD_DIR="${SHARED_BUILD_DIR}"
 
-# Store all-method raw CSV files in a dedicated subdirectory.
-RAW_COMPARISON_DIR="${RESULTS_RAW_DIR}/all_methods_graph"
+# Store one combined raw CSV for the whole workflow.
+RAW_CSV="${RESULTS_RAW_DIR}/all_methods_graph.csv"
 
-# Store per-method and combined figures in a dedicated comparison directory.
+# Store the combined comparison figures in one directory.
 COMPARISON_FIG_DIR="${RESULTS_FIG_DIR}/all_methods_graph"
 
 # Ensure the output directories exist.
-mkdir -p "${RAW_COMPARISON_DIR}" "${COMPARISON_FIG_DIR}"
+mkdir -p "${RESULTS_RAW_DIR}" "${COMPARISON_FIG_DIR}"
 
 # Print the requested run configuration.
 echo "==> All-method matrix size comparison"
@@ -84,13 +84,16 @@ fi
 # Activate the plotting environment before running the scaling driver and comparison plotter.
 conda activate "${CONDA_ENV_NAME}"
 
-# Collect the generated raw CSV files so the combined comparison plotter can consume them.
-RAW_CSVS=()
+# Build temporary per-method CSVs, merge them into one combined raw CSV, then remove the
+# intermediates so the user is left with one CSV for the whole workflow.
+TEMP_RAW_DIR="$(mktemp -d "${TMPDIR:-/tmp}/all_methods_graph.XXXXXX")"
+trap 'rm -rf "${TEMP_RAW_DIR}"' EXIT
+
+FIRST_CSV=1
 
 # Run the scaling benchmark once per implementation.
 for OPTIMISATION_METHOD in "${OPTIMISATION_METHODS[@]}"; do
-    RAW_CSV="${RAW_COMPARISON_DIR}/${OPTIMISATION_METHOD}.csv"
-    PLOT_DIR="${COMPARISON_FIG_DIR}/${OPTIMISATION_METHOD}"
+    METHOD_RAW_CSV="${TEMP_RAW_DIR}/${OPTIMISATION_METHOD}.csv"
 
     echo "==> Running ${OPTIMISATION_METHOD}"
 
@@ -98,23 +101,23 @@ for OPTIMISATION_METHOD in "${OPTIMISATION_METHODS[@]}"; do
         scaling \
         "${OPTIMISATION_METHOD}" \
         "${REPEATS}" \
-        "${RAW_CSV}" \
+        "${METHOD_RAW_CSV}" \
         "${SIZES[@]}"
 
-    MPLCONFIGDIR=/tmp/mpl_perf_graph \
-    python3 "${ROOT_DIR}/plot/plot_metrics.py" \
-        "${RAW_CSV}" \
-        "${PLOT_DIR}"
-
-    RAW_CSVS+=("${RAW_CSV}")
+    if [ "${FIRST_CSV}" -eq 1 ]; then
+        cp "${METHOD_RAW_CSV}" "${RAW_CSV}"
+        FIRST_CSV=0
+    else
+        tail -n +2 "${METHOD_RAW_CSV}" >> "${RAW_CSV}"
+    fi
 done
 
-# Generate the combined comparison figures and summary tables from all raw CSV files.
+# Generate the combined comparison figures from the one merged raw CSV.
 MPLCONFIGDIR=/tmp/mpl_perf_graph \
 python3 "${ROOT_DIR}/plot/plot_comparison_metrics.py" \
-    "${COMPARISON_FIG_DIR}/combined" \
-    "${RAW_CSVS[@]}"
+    "${COMPARISON_FIG_DIR}" \
+    "${RAW_CSV}"
 
-# Print the output locations for the combined report-ready plots.
-echo "==> Raw CSV directory: ${RAW_COMPARISON_DIR}"
-echo "==> Combined plot directory: ${COMPARISON_FIG_DIR}/combined"
+# Print the output locations for the report-ready plots.
+echo "==> Raw CSV: ${RAW_CSV}"
+echo "==> Plot directory: ${COMPARISON_FIG_DIR}"

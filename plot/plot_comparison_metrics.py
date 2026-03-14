@@ -1,8 +1,7 @@
-"""Generate cross-implementation comparison plots from multiple benchmark CSV files.
+"""Generate cross-implementation comparison plots from one or more benchmark CSV files.
 
-This module combines the raw CSV files emitted by ``perf_scaling`` for several
-optimisations, writes processed summary tables, and creates report-ready plots
-that compare runtime and speedup.
+This module reads raw CSV data emitted by ``perf_scaling`` for several
+optimisations and creates report-ready plots that compare runtime and speedup.
 """
 
 from __future__ import annotations
@@ -19,15 +18,14 @@ plt.style.use(STYLE_FILE)
 
 
 class ComparisonPlotter:
-    """Create cross-implementation summaries and plots from multiple raw CSV files."""
+    """Create cross-implementation plots from one or more raw CSV files."""
 
     def __init__(self, input_csvs: list[str | Path], output_dir: str | Path) -> None:
         """Load and validate several raw benchmark CSV files.
 
         Args:
             input_csvs: Paths to the raw CSV files produced by ``perf_scaling``.
-            output_dir: Directory where summary CSV files and comparison plots
-                should be written.
+            output_dir: Directory where comparison plots should be written.
         """
         self.input_csvs = [Path(path) for path in input_csvs]
         self.output_dir = Path(output_dir)
@@ -83,11 +81,6 @@ class ComparisonPlotter:
         plt.savefig(self.output_dir / filename, dpi=200)
         plt.close()
 
-    def export_summary_csv(self) -> None:
-        """Write the processed summary table and combined raw CSV to disk."""
-        self.df.to_csv(self.output_dir / "combined_raw.csv", index=False)
-        self.summary.to_csv(self.output_dir / "summary_by_method_and_n.csv", index=False)
-
     def runtime_vs_n_by_method(self) -> None:
         """Plot median runtime against matrix size for each implementation."""
         plt.figure(figsize=(8, 5.5))
@@ -137,7 +130,6 @@ class ComparisonPlotter:
 
     def plot_all(self) -> None:
         """Run the full comparison plotting pipeline."""
-        self.export_summary_csv()
         self.runtime_vs_n_by_method()
         self.speedup_vs_n()
 

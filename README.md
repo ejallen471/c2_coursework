@@ -1,6 +1,6 @@
-# One Method Across Multiple Sizes
+# All Methods Across Multiple Sizes
 
-This workflow runs one optimisation across many matrix sizes and produces both a CSV and plots.
+This workflow runs all single-threaded methods across many matrix sizes and creates one combined comparison plot.
 
 Build first:
 
@@ -8,36 +8,25 @@ Build first:
 bash scripts/sh_scripts/build.sh
 ```
 
-Use the shell script:
+Run:
 
 ```bash
-bash scripts/sh_scripts/run_matrix_size_graph.sh baseline 3 100 1000 1500 2000
+bash scripts/sh_scripts/run_all_methods_graph.sh 3 2000 4000 6000
 ```
 
-What it does:
+Outputs:
 
-- runs `run_cholesky scaling`
-- writes a raw CSV to `results/raw/`
-- generates plots in `results/figures/`
+- one combined raw CSV in `results/raw/`
+- one combined plot directory in `results/figures/all_methods_graph/`
 
-Expected outputs:
+Expected files:
 
-- `results/raw/<optimisation>_matrix_size_graph.csv`
-  Raw timing data with one row per matrix size and repeat.
-- `results/figures/<optimisation>_matrix_size_graph/summary_by_n.csv`
-  Aggregated statistics by matrix size, including mean, median, standard deviation, and `T(n)/n^3`.
-- `results/figures/<optimisation>_matrix_size_graph/runtime_vs_n.png`
-  A log-log runtime scaling plot showing how execution time grows with matrix size.
-- `results/figures/<optimisation>_matrix_size_graph/big_o_check.png`
-  A `T(n)/n^3` plot used to check whether the measured scaling is approximately cubic. 
-
-Note these graphs are meant to show long term behaviour therefore a wide range of plotting values is best
-
-Direct benchmark command without plotting:
-
-```bash
-./build/run/run_cholesky scaling baseline 5 results/raw/baseline_matrix_size_graph.csv 3 100 1000 1500 2000
-```
+- `results/raw/all_methods_graph.csv`
+  One combined raw dataset containing all methods, all requested matrix sizes, and all repeats.
+- `results/figures/all_methods_graph/runtime_vs_n_by_method.png`
+  One comparison plot with all methods shown together as runtime-vs-size curves.
+- `results/figures/all_methods_graph/speedup_vs_baseline.png`
+  One comparison plot showing each method's speedup relative to baseline across matrix sizes.
 
 
 Optimisation Choices:
