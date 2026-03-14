@@ -28,8 +28,11 @@ Expected outputs:
   Aggregated statistics by matrix size, including mean, median, standard deviation, and `T(n)/n^3`.
 - `results/figures/<optimisation>_matrix_size_graph/runtime_vs_n.png`
   A log-log runtime scaling plot showing how execution time grows with matrix size.
-- `results/figures/<optimisation>_matrix_size_graph/big_o_check.png`
-  A `T(n)/n^3` plot used to check whether the measured scaling is approximately cubic. 
+- `results/figures/<optimisation>_matrix_size_graph/cubic_scaling_check.png`
+  A normalised log-log scaling plot with an `n^3` reference line used to check whether the measured growth is approximately cubic.
+
+Note:
+- the plots include error bars when repeats are greater than 1
 
 Note these graphs are meant to show long term behaviour therefore a wide range of plotting values is best
 

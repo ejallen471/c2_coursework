@@ -15,6 +15,7 @@ external libraries.
 
 #include <algorithm>
 #include <cmath>
+#include <cstddef>
 
 namespace
 {
@@ -61,16 +62,7 @@ namespace
                 const double *row_s = c + s * n;
                 const double coeff = row_s[p];
 
-                std::size_t j = jj;
-                for (; j + 3 < jend; j += 4)
-                {
-                    row_p[j + 0] -= coeff * row_s[j + 0];
-                    row_p[j + 1] -= coeff * row_s[j + 1];
-                    row_p[j + 2] -= coeff * row_s[j + 2];
-                    row_p[j + 3] -= coeff * row_s[j + 3];
-                }
-
-                for (; j < jend; ++j)
+                for (std::size_t j = jj; j < jend; ++j)
                 {
                     row_p[j] -= coeff * row_s[j];
                 }
@@ -78,16 +70,7 @@ namespace
 
             const double inv_diag = 1.0 / row_p[p];
 
-            std::size_t j = jj;
-            for (; j + 3 < jend; j += 4)
-            {
-                row_p[j + 0] *= inv_diag;
-                row_p[j + 1] *= inv_diag;
-                row_p[j + 2] *= inv_diag;
-                row_p[j + 3] *= inv_diag;
-            }
-
-            for (; j < jend; ++j)
+            for (std::size_t j = jj; j < jend; ++j)
             {
                 row_p[j] *= inv_diag;
             }
@@ -104,33 +87,8 @@ namespace
         for (std::size_t i = ii; i < iend; ++i)
         {
             double *row_i = c + i * n;
-            std::size_t j = i;
 
-            for (; j + 3 < iend; j += 4)
-            {
-                double sum0 = 0.0;
-                double sum1 = 0.0;
-                double sum2 = 0.0;
-                double sum3 = 0.0;
-
-                for (std::size_t p = k; p < kend; ++p)
-                {
-                    const double *row_p = c + p * n;
-                    const double upi = row_p[i];
-
-                    sum0 += upi * row_p[j + 0];
-                    sum1 += upi * row_p[j + 1];
-                    sum2 += upi * row_p[j + 2];
-                    sum3 += upi * row_p[j + 3];
-                }
-
-                row_i[j + 0] -= sum0;
-                row_i[j + 1] -= sum1;
-                row_i[j + 2] -= sum2;
-                row_i[j + 3] -= sum3;
-            }
-
-            for (; j < iend; ++j)
+            for (std::size_t j = i; j < iend; ++j)
             {
                 double sum = 0.0;
 
@@ -157,33 +115,8 @@ namespace
         for (std::size_t i = ii; i < iend; ++i)
         {
             double *row_i = c + i * n;
-            std::size_t j = jj;
 
-            for (; j + 3 < jend; j += 4)
-            {
-                double sum0 = 0.0;
-                double sum1 = 0.0;
-                double sum2 = 0.0;
-                double sum3 = 0.0;
-
-                for (std::size_t p = k; p < kend; ++p)
-                {
-                    const double *row_p = c + p * n;
-                    const double upi = row_p[i];
-
-                    sum0 += upi * row_p[j + 0];
-                    sum1 += upi * row_p[j + 1];
-                    sum2 += upi * row_p[j + 2];
-                    sum3 += upi * row_p[j + 3];
-                }
-
-                row_i[j + 0] -= sum0;
-                row_i[j + 1] -= sum1;
-                row_i[j + 2] -= sum2;
-                row_i[j + 3] -= sum3;
-            }
-
-            for (; j < jend; ++j)
+            for (std::size_t j = jj; j < jend; ++j)
             {
                 double sum = 0.0;
 

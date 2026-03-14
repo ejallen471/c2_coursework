@@ -9,6 +9,7 @@ add_library(mphil_dis_cholesky
     06_cholesky_openmp_1.cpp
     07_cholesky_openmp_2.cpp
     08_cholesky_openmp_3.cpp
+    09_cholesky_openmp_4.cpp
     ${PROJECT_SOURCE_DIR}/utils/timer.cpp
     ${PROJECT_SOURCE_DIR}/utils/matrix.cpp
 )

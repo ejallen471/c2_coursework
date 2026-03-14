@@ -22,7 +22,7 @@ LogDetValue logdet_from_factorised_storage(const std::vector<double>& c, std::si
     for (std::size_t i = 0; i < n; ++i)
     {
         const std::size_t index = i * n + i;
-        sum += std::logl(static_cast<LogDetValue>(c[index]));
+        sum += std::log(static_cast<LogDetValue>(c[index]));
     }
 
     return 2.0L * sum;

@@ -7,11 +7,12 @@ enum class CholeskyVersion
     LowerTriangleOnly,
     UpperTriangle,
     ContiguousAccess,
-    CacheBlocked,
-    BlockedOptimal,
+    cacheBlockedOne,
+    cacheBlockedTwo,
     OpenMP1,
     OpenMP2,
-    OpenMP3
+    OpenMP3,
+    OpenMP4
 };
 
 double timed_cholesky_factorisation(double* c, int n);

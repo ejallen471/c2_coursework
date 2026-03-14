@@ -356,6 +356,30 @@ mphil_dis_cholesky/fast:
 	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/08_cholesky_openmp_3.cpp.s
 .PHONY : 08_cholesky_openmp_3.cpp.s
 
+09_cholesky_openmp_4.o: 09_cholesky_openmp_4.cpp.o
+.PHONY : 09_cholesky_openmp_4.o
+
+# target to build an object file
+09_cholesky_openmp_4.cpp.o:
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/09_cholesky_openmp_4.cpp.o
+.PHONY : 09_cholesky_openmp_4.cpp.o
+
+09_cholesky_openmp_4.i: 09_cholesky_openmp_4.cpp.i
+.PHONY : 09_cholesky_openmp_4.i
+
+# target to preprocess a source file
+09_cholesky_openmp_4.cpp.i:
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/09_cholesky_openmp_4.cpp.i
+.PHONY : 09_cholesky_openmp_4.cpp.i
+
+09_cholesky_openmp_4.s: 09_cholesky_openmp_4.cpp.s
+.PHONY : 09_cholesky_openmp_4.s
+
+# target to generate assembly for a file
+09_cholesky_openmp_4.cpp.s:
+	cd /Users/ejallen/Desktop/c2_coursework/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/09_cholesky_openmp_4.cpp.s
+.PHONY : 09_cholesky_openmp_4.cpp.s
+
 __/utils/matrix.o: __/utils/matrix.cpp.o
 .PHONY : __/utils/matrix.o
 
@@ -465,6 +489,9 @@ help:
 	@echo "... 08_cholesky_openmp_3.o"
 	@echo "... 08_cholesky_openmp_3.i"
 	@echo "... 08_cholesky_openmp_3.s"
+	@echo "... 09_cholesky_openmp_4.o"
+	@echo "... 09_cholesky_openmp_4.i"
+	@echo "... 09_cholesky_openmp_4.s"
 	@echo "... __/utils/matrix.o"
 	@echo "... __/utils/matrix.i"
 	@echo "... __/utils/matrix.s"

@@ -6,7 +6,5 @@ CXX_DEFINES = -DMPHIL_HAVE_LAPACK=1 -DMPHIL_HAVE_OPENMP=0
 
 CXX_INCLUDES = -I/Users/ejallen/Desktop/c2_coursework/src -I/Users/ejallen/Desktop/c2_coursework/performance_tests -I/Users/ejallen/Desktop/c2_coursework/include -I/Users/ejallen/Desktop/c2_coursework/utils -F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks
 
-CXX_FLAGSarm64 = -O3 -DNDEBUG -std=c++17 -arch arm64
-
-CXX_FLAGS = -O3 -DNDEBUG -std=c++17 -arch arm64
+CXX_FLAGS = -O3 -DNDEBUG -std=c++17
 

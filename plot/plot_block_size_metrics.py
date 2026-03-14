@@ -15,7 +15,7 @@ plt.style.use(STYLE_FILE)
 class BlockSizePlotter:
     """Create summary tables and plots from one block-size sweep CSV."""
 
-    def __init__(self, input_csv: str | Path, output_dir: str | Path):
+    def __init__(self, input_csv, output_dir):
         self.input_csv = Path(input_csv)
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
@@ -23,7 +23,7 @@ class BlockSizePlotter:
         self.df = pd.read_csv(self.input_csv)
         self._validate_columns()
 
-    def _validate_columns(self) -> None:
+    def _validate_columns(self):
         required_columns = {
             "optimisation",
             "n",
@@ -41,7 +41,7 @@ class BlockSizePlotter:
             missing_str = ", ".join(sorted(missing_columns))
             raise ValueError(f"Missing required CSV columns: {missing_str}")
 
-    def export_summary_csv(self) -> pd.DataFrame:
+    def export_summary_csv(self):
         summary = self.df.groupby(["optimisation", "block_size"], as_index=False).agg(
             elapsed_median=("elapsed_seconds", "median"),
             elapsed_mean=("elapsed_seconds", "mean"),
@@ -56,7 +56,7 @@ class BlockSizePlotter:
         summary.to_csv(self.output_dir / "summary_by_block_size.csv", index=False)
         return summary
 
-    def runtime_vs_block_size(self, summary: pd.DataFrame) -> None:
+    def runtime_vs_block_size(self, summary):
         plt.figure(figsize=(7, 5))
 
         for optimisation, group in summary.groupby("optimisation"):
@@ -79,7 +79,7 @@ class BlockSizePlotter:
         plt.savefig(self.output_dir / "runtime_vs_block_size.png", dpi=200)
         plt.close()
 
-    def speedup_vs_block_size(self, summary: pd.DataFrame) -> None:
+    def speedup_vs_block_size(self, summary):
         plt.figure(figsize=(7, 5))
 
         for optimisation, group in summary.groupby("optimisation"):
@@ -102,13 +102,13 @@ class BlockSizePlotter:
         plt.savefig(self.output_dir / "speedup_vs_block_size.png", dpi=200)
         plt.close()
 
-    def plot_all(self) -> None:
+    def plot_all(self):
         summary = self.export_summary_csv()
         self.runtime_vs_block_size(summary)
         self.speedup_vs_block_size(summary)
 
 
-def main() -> None:
+def main():
     if len(sys.argv) != 3:
         raise SystemExit(
             "Usage: python plot/plot_block_size_metrics.py <input_csv> <output_dir>"

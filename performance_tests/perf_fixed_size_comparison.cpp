@@ -37,8 +37,8 @@ const std::vector<CholeskyVersion>& single_thread_versions()
         CholeskyVersion::LowerTriangleOnly,
         CholeskyVersion::UpperTriangle,
         CholeskyVersion::ContiguousAccess,
-        CholeskyVersion::CacheBlocked,
-        CholeskyVersion::BlockedOptimal,
+        CholeskyVersion::cacheBlockedOne,
+        CholeskyVersion::cacheBlockedTwo,
     };
 
     return versions;

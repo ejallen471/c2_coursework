@@ -212,10 +212,24 @@ src/CMakeFiles/mphil_dis_cholesky.dir/08_cholesky_openmp_3.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mphil_dis_cholesky.dir/08_cholesky_openmp_3.cpp.s"
 	cd /Users/ejallen/Desktop/c2_coursework/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ejallen/Desktop/c2_coursework/src/08_cholesky_openmp_3.cpp -o CMakeFiles/mphil_dis_cholesky.dir/08_cholesky_openmp_3.cpp.s
 
+src/CMakeFiles/mphil_dis_cholesky.dir/09_cholesky_openmp_4.cpp.o: src/CMakeFiles/mphil_dis_cholesky.dir/flags.make
+src/CMakeFiles/mphil_dis_cholesky.dir/09_cholesky_openmp_4.cpp.o: /Users/ejallen/Desktop/c2_coursework/src/09_cholesky_openmp_4.cpp
+src/CMakeFiles/mphil_dis_cholesky.dir/09_cholesky_openmp_4.cpp.o: src/CMakeFiles/mphil_dis_cholesky.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/CMakeFiles/mphil_dis_cholesky.dir/09_cholesky_openmp_4.cpp.o"
+	cd /Users/ejallen/Desktop/c2_coursework/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/mphil_dis_cholesky.dir/09_cholesky_openmp_4.cpp.o -MF CMakeFiles/mphil_dis_cholesky.dir/09_cholesky_openmp_4.cpp.o.d -o CMakeFiles/mphil_dis_cholesky.dir/09_cholesky_openmp_4.cpp.o -c /Users/ejallen/Desktop/c2_coursework/src/09_cholesky_openmp_4.cpp
+
+src/CMakeFiles/mphil_dis_cholesky.dir/09_cholesky_openmp_4.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/mphil_dis_cholesky.dir/09_cholesky_openmp_4.cpp.i"
+	cd /Users/ejallen/Desktop/c2_coursework/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ejallen/Desktop/c2_coursework/src/09_cholesky_openmp_4.cpp > CMakeFiles/mphil_dis_cholesky.dir/09_cholesky_openmp_4.cpp.i
+
+src/CMakeFiles/mphil_dis_cholesky.dir/09_cholesky_openmp_4.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mphil_dis_cholesky.dir/09_cholesky_openmp_4.cpp.s"
+	cd /Users/ejallen/Desktop/c2_coursework/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ejallen/Desktop/c2_coursework/src/09_cholesky_openmp_4.cpp -o CMakeFiles/mphil_dis_cholesky.dir/09_cholesky_openmp_4.cpp.s
+
 src/CMakeFiles/mphil_dis_cholesky.dir/__/utils/timer.cpp.o: src/CMakeFiles/mphil_dis_cholesky.dir/flags.make
 src/CMakeFiles/mphil_dis_cholesky.dir/__/utils/timer.cpp.o: /Users/ejallen/Desktop/c2_coursework/utils/timer.cpp
 src/CMakeFiles/mphil_dis_cholesky.dir/__/utils/timer.cpp.o: src/CMakeFiles/mphil_dis_cholesky.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/CMakeFiles/mphil_dis_cholesky.dir/__/utils/timer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object src/CMakeFiles/mphil_dis_cholesky.dir/__/utils/timer.cpp.o"
 	cd /Users/ejallen/Desktop/c2_coursework/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/mphil_dis_cholesky.dir/__/utils/timer.cpp.o -MF CMakeFiles/mphil_dis_cholesky.dir/__/utils/timer.cpp.o.d -o CMakeFiles/mphil_dis_cholesky.dir/__/utils/timer.cpp.o -c /Users/ejallen/Desktop/c2_coursework/utils/timer.cpp
 
 src/CMakeFiles/mphil_dis_cholesky.dir/__/utils/timer.cpp.i: cmake_force
@@ -229,7 +243,7 @@ src/CMakeFiles/mphil_dis_cholesky.dir/__/utils/timer.cpp.s: cmake_force
 src/CMakeFiles/mphil_dis_cholesky.dir/__/utils/matrix.cpp.o: src/CMakeFiles/mphil_dis_cholesky.dir/flags.make
 src/CMakeFiles/mphil_dis_cholesky.dir/__/utils/matrix.cpp.o: /Users/ejallen/Desktop/c2_coursework/utils/matrix.cpp
 src/CMakeFiles/mphil_dis_cholesky.dir/__/utils/matrix.cpp.o: src/CMakeFiles/mphil_dis_cholesky.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object src/CMakeFiles/mphil_dis_cholesky.dir/__/utils/matrix.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object src/CMakeFiles/mphil_dis_cholesky.dir/__/utils/matrix.cpp.o"
 	cd /Users/ejallen/Desktop/c2_coursework/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/mphil_dis_cholesky.dir/__/utils/matrix.cpp.o -MF CMakeFiles/mphil_dis_cholesky.dir/__/utils/matrix.cpp.o.d -o CMakeFiles/mphil_dis_cholesky.dir/__/utils/matrix.cpp.o -c /Users/ejallen/Desktop/c2_coursework/utils/matrix.cpp
 
 src/CMakeFiles/mphil_dis_cholesky.dir/__/utils/matrix.cpp.i: cmake_force
@@ -252,6 +266,7 @@ mphil_dis_cholesky_OBJECTS = \
 "CMakeFiles/mphil_dis_cholesky.dir/06_cholesky_openmp_1.cpp.o" \
 "CMakeFiles/mphil_dis_cholesky.dir/07_cholesky_openmp_2.cpp.o" \
 "CMakeFiles/mphil_dis_cholesky.dir/08_cholesky_openmp_3.cpp.o" \
+"CMakeFiles/mphil_dis_cholesky.dir/09_cholesky_openmp_4.cpp.o" \
 "CMakeFiles/mphil_dis_cholesky.dir/__/utils/timer.cpp.o" \
 "CMakeFiles/mphil_dis_cholesky.dir/__/utils/matrix.cpp.o"
 
@@ -268,11 +283,12 @@ src/libmphil_dis_cholesky.a: src/CMakeFiles/mphil_dis_cholesky.dir/05_cholesky_c
 src/libmphil_dis_cholesky.a: src/CMakeFiles/mphil_dis_cholesky.dir/06_cholesky_openmp_1.cpp.o
 src/libmphil_dis_cholesky.a: src/CMakeFiles/mphil_dis_cholesky.dir/07_cholesky_openmp_2.cpp.o
 src/libmphil_dis_cholesky.a: src/CMakeFiles/mphil_dis_cholesky.dir/08_cholesky_openmp_3.cpp.o
+src/libmphil_dis_cholesky.a: src/CMakeFiles/mphil_dis_cholesky.dir/09_cholesky_openmp_4.cpp.o
 src/libmphil_dis_cholesky.a: src/CMakeFiles/mphil_dis_cholesky.dir/__/utils/timer.cpp.o
 src/libmphil_dis_cholesky.a: src/CMakeFiles/mphil_dis_cholesky.dir/__/utils/matrix.cpp.o
 src/libmphil_dis_cholesky.a: src/CMakeFiles/mphil_dis_cholesky.dir/build.make
 src/libmphil_dis_cholesky.a: src/CMakeFiles/mphil_dis_cholesky.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX static library libmphil_dis_cholesky.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX static library libmphil_dis_cholesky.a"
 	cd /Users/ejallen/Desktop/c2_coursework/build/src && $(CMAKE_COMMAND) -P CMakeFiles/mphil_dis_cholesky.dir/cmake_clean_target.cmake
 	cd /Users/ejallen/Desktop/c2_coursework/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mphil_dis_cholesky.dir/link.txt --verbose=$(VERBOSE)
 

@@ -1127,12 +1127,12 @@ CMakeFiles/ContinuousSubmit.dir/clean:
 src/CMakeFiles/mphil_dis_cholesky.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=7,8,9,10,11,12,13,14,15,16,17,18,19 "Built target mphil_dis_cholesky"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=7,8,9,10,11,12,13,14,15,16,17,18,19,20 "Built target mphil_dis_cholesky"
 .PHONY : src/CMakeFiles/mphil_dis_cholesky.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/mphil_dis_cholesky.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 14
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/mphil_dis_cholesky.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/mphil_dis_cholesky.dir/rule
@@ -1144,7 +1144,7 @@ mphil_dis_cholesky: src/CMakeFiles/mphil_dis_cholesky.dir/rule
 # codegen rule for target.
 src/CMakeFiles/mphil_dis_cholesky.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/mphil_dis_cholesky.dir/build.make src/CMakeFiles/mphil_dis_cholesky.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=7,8,9,10,11,12,13,14,15,16,17,18,19 "Finished codegen for target mphil_dis_cholesky"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=7,8,9,10,11,12,13,14,15,16,17,18,19,20 "Finished codegen for target mphil_dis_cholesky"
 .PHONY : src/CMakeFiles/mphil_dis_cholesky.dir/codegen
 
 # clean rule for target.
@@ -1164,7 +1164,7 @@ performance_tests/CMakeFiles/coursework_perf_support.dir/all: src/CMakeFiles/mph
 
 # Build rule for subdir invocation for target.
 performance_tests/CMakeFiles/coursework_perf_support.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 19
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 20
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 performance_tests/CMakeFiles/coursework_perf_support.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 0
 .PHONY : performance_tests/CMakeFiles/coursework_perf_support.dir/rule
@@ -1192,12 +1192,12 @@ run/CMakeFiles/run_cholesky.dir/all: src/CMakeFiles/mphil_dis_cholesky.dir/all
 run/CMakeFiles/run_cholesky.dir/all: performance_tests/CMakeFiles/coursework_perf_support.dir/all
 	$(MAKE) $(MAKESILENT) -f run/CMakeFiles/run_cholesky.dir/build.make run/CMakeFiles/run_cholesky.dir/depend
 	$(MAKE) $(MAKESILENT) -f run/CMakeFiles/run_cholesky.dir/build.make run/CMakeFiles/run_cholesky.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=20,21 "Built target run_cholesky"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=21,22 "Built target run_cholesky"
 .PHONY : run/CMakeFiles/run_cholesky.dir/all
 
 # Build rule for subdir invocation for target.
 run/CMakeFiles/run_cholesky.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 21
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 22
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run/CMakeFiles/run_cholesky.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 0
 .PHONY : run/CMakeFiles/run_cholesky.dir/rule
@@ -1209,7 +1209,7 @@ run_cholesky: run/CMakeFiles/run_cholesky.dir/rule
 # codegen rule for target.
 run/CMakeFiles/run_cholesky.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f run/CMakeFiles/run_cholesky.dir/build.make run/CMakeFiles/run_cholesky.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=20,21 "Finished codegen for target run_cholesky"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=21,22 "Finished codegen for target run_cholesky"
 .PHONY : run/CMakeFiles/run_cholesky.dir/codegen
 
 # clean rule for target.
@@ -1224,12 +1224,12 @@ run/CMakeFiles/run_cholesky.dir/clean:
 test/CMakeFiles/test_small_case.dir/all: src/CMakeFiles/mphil_dis_cholesky.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_small_case.dir/build.make test/CMakeFiles/test_small_case.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_small_case.dir/build.make test/CMakeFiles/test_small_case.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=47,48,49 "Built target test_small_case"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=48,49,50 "Built target test_small_case"
 .PHONY : test/CMakeFiles/test_small_case.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_small_case.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_small_case.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_small_case.dir/rule
@@ -1241,7 +1241,7 @@ test_small_case: test/CMakeFiles/test_small_case.dir/rule
 # codegen rule for target.
 test/CMakeFiles/test_small_case.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_small_case.dir/build.make test/CMakeFiles/test_small_case.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=47,48,49 "Finished codegen for target test_small_case"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=48,49,50 "Finished codegen for target test_small_case"
 .PHONY : test/CMakeFiles/test_small_case.dir/codegen
 
 # clean rule for target.
@@ -1256,12 +1256,12 @@ test/CMakeFiles/test_small_case.dir/clean:
 test/CMakeFiles/test_invalid_input.dir/all: src/CMakeFiles/mphil_dis_cholesky.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_invalid_input.dir/build.make test/CMakeFiles/test_invalid_input.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_invalid_input.dir/build.make test/CMakeFiles/test_invalid_input.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=31,32 "Built target test_invalid_input"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=32,33 "Built target test_invalid_input"
 .PHONY : test/CMakeFiles/test_invalid_input.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_invalid_input.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_invalid_input.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_invalid_input.dir/rule
@@ -1273,7 +1273,7 @@ test_invalid_input: test/CMakeFiles/test_invalid_input.dir/rule
 # codegen rule for target.
 test/CMakeFiles/test_invalid_input.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_invalid_input.dir/build.make test/CMakeFiles/test_invalid_input.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=31,32 "Finished codegen for target test_invalid_input"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=32,33 "Finished codegen for target test_invalid_input"
 .PHONY : test/CMakeFiles/test_invalid_input.dir/codegen
 
 # clean rule for target.
@@ -1288,12 +1288,12 @@ test/CMakeFiles/test_invalid_input.dir/clean:
 test/CMakeFiles/test_identity.dir/all: src/CMakeFiles/mphil_dis_cholesky.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_identity.dir/build.make test/CMakeFiles/test_identity.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_identity.dir/build.make test/CMakeFiles/test_identity.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=28,29,30 "Built target test_identity"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=29,30,31 "Built target test_identity"
 .PHONY : test/CMakeFiles/test_identity.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_identity.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_identity.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_identity.dir/rule
@@ -1305,7 +1305,7 @@ test_identity: test/CMakeFiles/test_identity.dir/rule
 # codegen rule for target.
 test/CMakeFiles/test_identity.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_identity.dir/build.make test/CMakeFiles/test_identity.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=28,29,30 "Finished codegen for target test_identity"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=29,30,31 "Finished codegen for target test_identity"
 .PHONY : test/CMakeFiles/test_identity.dir/codegen
 
 # clean rule for target.
@@ -1320,12 +1320,12 @@ test/CMakeFiles/test_identity.dir/clean:
 test/CMakeFiles/test_diagonal_matrix.dir/all: src/CMakeFiles/mphil_dis_cholesky.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_diagonal_matrix.dir/build.make test/CMakeFiles/test_diagonal_matrix.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_diagonal_matrix.dir/build.make test/CMakeFiles/test_diagonal_matrix.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=22,23,24 "Built target test_diagonal_matrix"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=23,24,25 "Built target test_diagonal_matrix"
 .PHONY : test/CMakeFiles/test_diagonal_matrix.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_diagonal_matrix.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_diagonal_matrix.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_diagonal_matrix.dir/rule
@@ -1337,7 +1337,7 @@ test_diagonal_matrix: test/CMakeFiles/test_diagonal_matrix.dir/rule
 # codegen rule for target.
 test/CMakeFiles/test_diagonal_matrix.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_diagonal_matrix.dir/build.make test/CMakeFiles/test_diagonal_matrix.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=22,23,24 "Finished codegen for target test_diagonal_matrix"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=23,24,25 "Finished codegen for target test_diagonal_matrix"
 .PHONY : test/CMakeFiles/test_diagonal_matrix.dir/codegen
 
 # clean rule for target.
@@ -1352,12 +1352,12 @@ test/CMakeFiles/test_diagonal_matrix.dir/clean:
 test/CMakeFiles/test_reconstruction.dir/all: src/CMakeFiles/mphil_dis_cholesky.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_reconstruction.dir/build.make test/CMakeFiles/test_reconstruction.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_reconstruction.dir/build.make test/CMakeFiles/test_reconstruction.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=41,42,43 "Built target test_reconstruction"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=42,43,44 "Built target test_reconstruction"
 .PHONY : test/CMakeFiles/test_reconstruction.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_reconstruction.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_reconstruction.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_reconstruction.dir/rule
@@ -1369,7 +1369,7 @@ test_reconstruction: test/CMakeFiles/test_reconstruction.dir/rule
 # codegen rule for target.
 test/CMakeFiles/test_reconstruction.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_reconstruction.dir/build.make test/CMakeFiles/test_reconstruction.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=41,42,43 "Finished codegen for target test_reconstruction"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=42,43,44 "Finished codegen for target test_reconstruction"
 .PHONY : test/CMakeFiles/test_reconstruction.dir/codegen
 
 # clean rule for target.
@@ -1384,12 +1384,12 @@ test/CMakeFiles/test_reconstruction.dir/clean:
 test/CMakeFiles/test_logdet.dir/all: src/CMakeFiles/mphil_dis_cholesky.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_logdet.dir/build.make test/CMakeFiles/test_logdet.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_logdet.dir/build.make test/CMakeFiles/test_logdet.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=33,34,35 "Built target test_logdet"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=34,35,36 "Built target test_logdet"
 .PHONY : test/CMakeFiles/test_logdet.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_logdet.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_logdet.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_logdet.dir/rule
@@ -1401,7 +1401,7 @@ test_logdet: test/CMakeFiles/test_logdet.dir/rule
 # codegen rule for target.
 test/CMakeFiles/test_logdet.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_logdet.dir/build.make test/CMakeFiles/test_logdet.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=33,34,35 "Finished codegen for target test_logdet"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=34,35,36 "Finished codegen for target test_logdet"
 .PHONY : test/CMakeFiles/test_logdet.dir/codegen
 
 # clean rule for target.
@@ -1416,12 +1416,12 @@ test/CMakeFiles/test_logdet.dir/clean:
 test/CMakeFiles/test_generated_spd.dir/all: src/CMakeFiles/mphil_dis_cholesky.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_generated_spd.dir/build.make test/CMakeFiles/test_generated_spd.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_generated_spd.dir/build.make test/CMakeFiles/test_generated_spd.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=25,26,27 "Built target test_generated_spd"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=26,27,28 "Built target test_generated_spd"
 .PHONY : test/CMakeFiles/test_generated_spd.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_generated_spd.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_generated_spd.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_generated_spd.dir/rule
@@ -1433,7 +1433,7 @@ test_generated_spd: test/CMakeFiles/test_generated_spd.dir/rule
 # codegen rule for target.
 test/CMakeFiles/test_generated_spd.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_generated_spd.dir/build.make test/CMakeFiles/test_generated_spd.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=25,26,27 "Finished codegen for target test_generated_spd"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=26,27,28 "Finished codegen for target test_generated_spd"
 .PHONY : test/CMakeFiles/test_generated_spd.dir/codegen
 
 # clean rule for target.
@@ -1448,12 +1448,12 @@ test/CMakeFiles/test_generated_spd.dir/clean:
 test/CMakeFiles/test_repeatability.dir/all: src/CMakeFiles/mphil_dis_cholesky.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_repeatability.dir/build.make test/CMakeFiles/test_repeatability.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_repeatability.dir/build.make test/CMakeFiles/test_repeatability.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=44,45,46 "Built target test_repeatability"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=45,46,47 "Built target test_repeatability"
 .PHONY : test/CMakeFiles/test_repeatability.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_repeatability.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_repeatability.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_repeatability.dir/rule
@@ -1465,7 +1465,7 @@ test_repeatability: test/CMakeFiles/test_repeatability.dir/rule
 # codegen rule for target.
 test/CMakeFiles/test_repeatability.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_repeatability.dir/build.make test/CMakeFiles/test_repeatability.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=44,45,46 "Finished codegen for target test_repeatability"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=45,46,47 "Finished codegen for target test_repeatability"
 .PHONY : test/CMakeFiles/test_repeatability.dir/codegen
 
 # clean rule for target.
@@ -1480,12 +1480,12 @@ test/CMakeFiles/test_repeatability.dir/clean:
 test/CMakeFiles/test_matrix_generation.dir/all: src/CMakeFiles/mphil_dis_cholesky.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_matrix_generation.dir/build.make test/CMakeFiles/test_matrix_generation.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_matrix_generation.dir/build.make test/CMakeFiles/test_matrix_generation.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=36,37,38 "Built target test_matrix_generation"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=37,38,39 "Built target test_matrix_generation"
 .PHONY : test/CMakeFiles/test_matrix_generation.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_matrix_generation.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_matrix_generation.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_matrix_generation.dir/rule
@@ -1497,7 +1497,7 @@ test_matrix_generation: test/CMakeFiles/test_matrix_generation.dir/rule
 # codegen rule for target.
 test/CMakeFiles/test_matrix_generation.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_matrix_generation.dir/build.make test/CMakeFiles/test_matrix_generation.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=36,37,38 "Finished codegen for target test_matrix_generation"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=37,38,39 "Finished codegen for target test_matrix_generation"
 .PHONY : test/CMakeFiles/test_matrix_generation.dir/codegen
 
 # clean rule for target.
@@ -1512,12 +1512,12 @@ test/CMakeFiles/test_matrix_generation.dir/clean:
 test/CMakeFiles/test_version_correctness.dir/all: src/CMakeFiles/mphil_dis_cholesky.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_version_correctness.dir/build.make test/CMakeFiles/test_version_correctness.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_version_correctness.dir/build.make test/CMakeFiles/test_version_correctness.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=50,51,52 "Built target test_version_correctness"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=51,52,53 "Built target test_version_correctness"
 .PHONY : test/CMakeFiles/test_version_correctness.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/test_version_correctness.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_version_correctness.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/test_version_correctness.dir/rule
@@ -1529,7 +1529,7 @@ test_version_correctness: test/CMakeFiles/test_version_correctness.dir/rule
 # codegen rule for target.
 test/CMakeFiles/test_version_correctness.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_version_correctness.dir/build.make test/CMakeFiles/test_version_correctness.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=50,51,52 "Finished codegen for target test_version_correctness"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=51,52,53 "Finished codegen for target test_version_correctness"
 .PHONY : test/CMakeFiles/test_version_correctness.dir/codegen
 
 # clean rule for target.
@@ -1544,7 +1544,7 @@ test/CMakeFiles/test_version_correctness.dir/clean:
 test/CMakeFiles/test_perf_time_output.dir/all:
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_perf_time_output.dir/build.make test/CMakeFiles/test_perf_time_output.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_perf_time_output.dir/build.make test/CMakeFiles/test_perf_time_output.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=39,40 "Built target test_perf_time_output"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=40,41 "Built target test_perf_time_output"
 .PHONY : test/CMakeFiles/test_perf_time_output.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1561,7 +1561,7 @@ test_perf_time_output: test/CMakeFiles/test_perf_time_output.dir/rule
 # codegen rule for target.
 test/CMakeFiles/test_perf_time_output.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_perf_time_output.dir/build.make test/CMakeFiles/test_perf_time_output.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=39,40 "Finished codegen for target test_perf_time_output"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build/CMakeFiles --progress-num=40,41 "Finished codegen for target test_perf_time_output"
 .PHONY : test/CMakeFiles/test_perf_time_output.dir/codegen
 
 # clean rule for target.

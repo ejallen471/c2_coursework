@@ -68,8 +68,8 @@ int main()
                                         CholeskyVersion::LowerTriangleOnly,
                                         CholeskyVersion::UpperTriangle,
                                         CholeskyVersion::ContiguousAccess,
-                                        CholeskyVersion::CacheBlocked,
-                                        CholeskyVersion::BlockedOptimal};
+                                        CholeskyVersion::cacheBlockedOne,
+                                        CholeskyVersion::cacheBlockedTwo};
 
     MatrixGenerationOptions options;
     options.seed = 20260310ULL;
@@ -121,27 +121,24 @@ int main()
         }
 
 #if defined(MPHIL_HAVE_OPENMP) && MPHIL_HAVE_OPENMP
-        if (!check_version_against_baseline(CholeskyVersion::OpenMP1, original, baseline_factor, n))
+        const CholeskyVersion openmp_versions[] = {CholeskyVersion::OpenMP1,
+                                                   CholeskyVersion::OpenMP2,
+                                                   CholeskyVersion::OpenMP3,
+                                                   CholeskyVersion::OpenMP4};
+
+        for (const CholeskyVersion version : openmp_versions)
         {
-            return 1;
+            if (!check_version_against_baseline(version, original, baseline_factor, n))
+            {
+                return 1;
+            }
         }
 #else
-        std::vector<double> current = original;
-        const double elapsed = run_cholesky_version(current.data(), n, CholeskyVersion::OpenMP1);
-        if (elapsed != -4.0)
-        {
-            std::cerr << "test_version_correctness failed: expected placeholder return code -4 for "
-                      << optimisation_name(CholeskyVersion::OpenMP1) << ", got " << elapsed
-                      << '\n';
-            return 1;
-        }
-#endif
-    }
-
-    {
         std::vector<double> matrix = make_identity_matrix(2);
-        const CholeskyVersion openmp_versions[] = {CholeskyVersion::OpenMP2,
-                                                   CholeskyVersion::OpenMP3};
+        const CholeskyVersion openmp_versions[] = {CholeskyVersion::OpenMP1,
+                                                   CholeskyVersion::OpenMP2,
+                                                   CholeskyVersion::OpenMP3,
+                                                   CholeskyVersion::OpenMP4};
 
         for (const CholeskyVersion version : openmp_versions)
         {
@@ -155,6 +152,7 @@ int main()
                 return 1;
             }
         }
+#endif
     }
 
     std::cout << "test_version_correctness passed\n";

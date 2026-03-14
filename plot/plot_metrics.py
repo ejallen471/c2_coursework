@@ -1,10 +1,4 @@
-"""
-Generate summary CSV files and scaling plots from Cholesky benchmark output.
-
-This module reads the raw CSV produced by the C++ benchmark drivers, validates
-that the expected benchmark columns are present, and writes processed summary
-data plus a small set of report-ready plots.
-"""
+"""Generate summary CSV files and scaling plots from Cholesky benchmark output."""
 
 import sys
 from pathlib import Path
@@ -27,7 +21,7 @@ class PerformancePlotter:
     ``time_over_n3``.
     """
 
-    def __init__(self, input_csv: str | Path, output_dir: str | Path):
+    def __init__(self, input_csv, output_dir):
         """
         Initialise the plotter, create the output directory, and load the CSV.
 
@@ -79,9 +73,6 @@ class PerformancePlotter:
             elapsed_mean=("elapsed_seconds", "mean"),
             elapsed_std=("elapsed_seconds", "std"),
             elapsed_min=("elapsed_seconds", "min"),
-            time_over_n3_median=("time_over_n3", "median"),
-            time_over_n3_mean=("time_over_n3", "mean"),
-            time_over_n3_std=("time_over_n3", "std"),
             logdet_mean=("logdet", "mean"),
             logdet_std=("logdet", "std"),
         )
@@ -128,34 +119,51 @@ class PerformancePlotter:
         plt.savefig(self.output_dir / "runtime_vs_n.png", dpi=200)
         plt.close()
 
-    def big_o_check(self):
-        """
-        Plot ``T(n) / n^3`` as an empirical cubic-scaling check.
-
-        If the implementation is behaving like dense cubic-time Cholesky, this
-        quantity should remain roughly flat as ``n`` grows.
-        """
+    def cubic_scaling_check(self):
+        """Plot normalised runtime growth against a cubic reference on log-log axes."""
         summary = self.df.groupby("n", as_index=False).agg(
-            time_over_n3_median=("time_over_n3", "median"),
-            time_over_n3_std=("time_over_n3", "std"),
+            elapsed_median=("elapsed_seconds", "median"),
+            elapsed_std=("elapsed_seconds", "std"),
+        )
+
+        reference_n = summary["n"].iloc[0]
+        reference_time = summary["elapsed_median"].iloc[0]
+        normalised_runtime = summary["elapsed_median"] / reference_time
+        normalised_std = (
+            normalised_runtime
+            * summary["elapsed_std"].fillna(0.0)
+            / summary["elapsed_median"]
         )
 
         plt.figure(figsize=(7, 5))
         plt.errorbar(
-            summary["n"],
-            summary["time_over_n3_median"],
-            yerr=summary["time_over_n3_std"].fillna(0.0),
+            summary["n"] / reference_n,
+            normalised_runtime,
+            yerr=normalised_std.fillna(0.0),
             marker="o",
             capsize=4,
-            label=r"Median $T(n)/n^3$ ± 1 std. dev.",
+            label="Median runtime ± 1 std. dev.",
         )
-        plt.xlabel("Matrix size n")
-        plt.ylabel(r"Median runtime / $n^3$")
-        plt.title("Empirical cubic-scaling check")
+        x_values = (summary["n"] / reference_n).tolist()
+        y_values = [x * x * x for x in x_values]
+        plt.plot(
+            x_values,
+            y_values,
+            linestyle="--",
+            color="black",
+            linewidth=1.2,
+            label=r"$n^3$ reference",
+        )
+        plt.xscale("log")
+        plt.yscale("log")
+        plt.xlabel(r"Normalised matrix size $n / n_0$")
+        plt.ylabel(r"Normalised runtime $T(n) / T(n_0)$")
+        plt.title("Cubic scaling check on log-log axes")
         plt.grid(True, which="major", axis="both")
+        plt.minorticks_off()
         plt.legend()
         plt.tight_layout()
-        plt.savefig(self.output_dir / "big_o_check.png", dpi=200)
+        plt.savefig(self.output_dir / "cubic_scaling_check.png", dpi=200)
         plt.close()
 
     def plot_all(self):
@@ -164,9 +172,13 @@ class PerformancePlotter:
         This writes ``summary_by_n.csv`` plus the main runtime and scaling
         figures into :attr:`output_dir`.
         """
+        legacy_plot = self.output_dir / "big_o_check.png"
+        if legacy_plot.exists():
+            legacy_plot.unlink()
+
         self.export_summary_csv()
         self.runtime_vs_n()
-        self.big_o_check()
+        self.cubic_scaling_check()
 
 
 def main():

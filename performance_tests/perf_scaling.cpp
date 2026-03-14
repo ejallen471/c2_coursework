@@ -29,60 +29,60 @@ perf_scaling.cpp does the following
 
 namespace
 {
-// Compute the mean
-double mean(const std::vector<double>& values)
-{
-    if (values.empty())
+    // Compute the mean
+    double mean(const std::vector<double> &values)
     {
-        return 0.0;
+        if (values.empty())
+        {
+            return 0.0;
+        }
+
+        const double sum = std::accumulate(values.begin(), values.end(), 0.0);
+        return sum / static_cast<double>(values.size());
     }
 
-    const double sum = std::accumulate(values.begin(), values.end(), 0.0);
-    return sum / static_cast<double>(values.size());
-}
-
-// Compute the median
-double median(std::vector<double> values)
-{
-    if (values.empty())
+    // Compute the median
+    double median(std::vector<double> values)
     {
-        return 0.0;
+        if (values.empty())
+        {
+            return 0.0;
+        }
+
+        std::sort(values.begin(), values.end());
+
+        // handle even list length case
+        const std::size_t n = values.size();
+        if (n % 2 == 1)
+        {
+            return values[n / 2];
+        }
+
+        return 0.5 * (values[n / 2 - 1] + values[n / 2]);
     }
 
-    std::sort(values.begin(), values.end());
-
-    // handle even list length case
-    const std::size_t n = values.size();
-    if (n % 2 == 1)
+    // Calculate the standard deviation
+    double standard_deviation(const std::vector<double> &values)
     {
-        return values[n / 2];
+        if (values.size() < 2)
+        {
+            return 0.0;
+        }
+
+        const double mu = mean(values);
+        double sum_sq = 0.0;
+
+        for (const double x : values)
+        {
+            const double diff = x - mu;
+            sum_sq += diff * diff;
+        }
+
+        return std::sqrt(sum_sq / static_cast<double>(values.size()));
     }
-
-    return 0.5 * (values[n / 2 - 1] + values[n / 2]);
-}
-
-// Calculate the standard deviation
-double standard_deviation(const std::vector<double>& values)
-{
-    if (values.size() < 2)
-    {
-        return 0.0;
-    }
-
-    const double mu = mean(values);
-    double sum_sq = 0.0;
-
-    for (const double x : values)
-    {
-        const double diff = x - mu;
-        sum_sq += diff * diff;
-    }
-
-    return std::sqrt(sum_sq / static_cast<double>(values.size()));
-}
 } // End namespace
 
-int run_scaling_mode(int argc, char* argv[])
+int run_scaling_mode(int argc, char *argv[])
 {
     if (argc < 5)
     {
@@ -154,16 +154,16 @@ int run_scaling_mode(int argc, char* argv[])
     {
         const std::size_t n = static_cast<std::size_t>(n_input); // cast to std::size_t
 
-        const std::vector<double> original = make_generated_spd_matrix(n_input);
+        const std::vector<double> original_matrix = make_generated_spd_matrix(n_input);
 
         std::vector<double> elapsed_values;
         elapsed_values.reserve(static_cast<std::size_t>(repeats));
 
-        // Time repeated runs from the same original matrix so only the Cholesky version changes.
+        // Time repeated runs from the a copy of the original matrix so only the Cholesky version changes.
         for (int repeat = 0; repeat < repeats; ++repeat)
         {
-            std::vector<double> working = original;
-            const double elapsed = run_cholesky_version(working.data(), n, version);
+            std::vector<double> working_matrix = original_matrix;
+            const double elapsed = run_cholesky_version(working_matrix.data(), n, version);
 
             if (elapsed < 0.0)
             {
@@ -176,9 +176,9 @@ int run_scaling_mode(int argc, char* argv[])
 
             // Emit enough derived metrics to support later plotting and scaling analysis from CSV
             // alone.
-            const LogDetValue logdet = logdet_from_factorised_storage(working, n);
+            const LogDetValue logdet = logdet_from_factorised_storage(working_matrix, n);
             const double time_over_n3 = elapsed /
-                (static_cast<double>(n) * static_cast<double>(n) * static_cast<double>(n));
+                                        (static_cast<double>(n) * static_cast<double>(n) * static_cast<double>(n));
 
             raw_csv << tag << ',' << n << ',' << repeat << ',' << elapsed << ',' << logdet << ','
                     << time_over_n3 << '\n';

@@ -1,5 +1,5 @@
 /*
-In this implementation we perform a cache-blocked Cholesky decomposition with added optimisations.
+In this implementation we perform a cache-blocked Cholesky decomposition with explicit unrolling.
 
 The matrix is processed in diagonal blocks. For each block we:
 1. Factorise the diagonal block

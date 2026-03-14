@@ -3,7 +3,7 @@ Parallelise with cache blocking
 
 At a high level, our steps are
 1. build several pivot rows (serial)
-2. finish those rows (parallel)
+2. finish those rows (serial)
 3. use them to update the rest of the matrix (parallel)
 
 */
@@ -18,56 +18,58 @@ At a high level, our steps are
 void cholesky_openmp_3(double *c, std::size_t n, std::size_t block_size)
 {
 
-    // Move through the matrix one diagonal block at a time.
+    // Move across the matrix block by block.
     for (std::size_t k = 0; k < n; k += block_size)
     {
-        // End of the current block - For the last block, kend may be smaller than k + B.
+        // End index of the current block.
         const std::size_t kend = std::min(k + block_size, n);
 
         /*
-        PART 1: Factorise the first diagonal block A
 
-        This is ordinary unblocked Cholesky, but restricted to the
-        current diagonal block only.
+        PART 1 — Factorise the diagonal block
 
-        After this part, the small diagonal block has been turned into
-        the corresponding upper-triangular Cholesky factor.
+        This is just a small Cholesky decomposition performed on
+        the current block.
 
-        Example idea for a 3x3 diagonal block:
+        Example if B = 3:
 
-            before:
-                [ A00 A01 A02 ]
-                [ A01 A11 A12 ]
-                [ A02 A12 A22 ]
+        Before:
 
-            after:
-                [ r00 r01 r02 ]
-                [  0  r11 r12 ]
-                [  0   0  r22 ]
+        | A00 A01 A02 |
+        | A01 A11 A12 |
+        | A02 A12 A22 |
 
-        Only the upper triangle is used during the factorisation.
+        After:
+
+        | r00 r01 r02 |
+        |  0  r11 r12 |
+        |  0   0  r22 |
+
+        This part is kept SERIAL because:
+        - the block is small
+        - pivots depend on earlier pivots
+        - parallel overhead would dominate
         */
+
         for (std::size_t p = k; p < kend; ++p)
         {
-            // Pointer to row p.
+            // Pointer to row p
             double *row_p = c + p * n;
 
-            // Compute the diagonal entry of the factor.
+            // Compute the diagonal element
             const double diag = std::sqrt(row_p[p]);
             row_p[p] = diag;
 
-            // Reciprocal used to scale the rest of the row in the block.
             const double inv_diag = 1.0 / diag;
 
-            // Scale the part of row p that lies inside the current block.
-            // This completes row p within the diagonal block.
+            // Scale the remainder of the row within the block
             for (std::size_t j = p + 1; j < kend; ++j)
             {
                 row_p[j] *= inv_diag;
             }
 
-            // Update the remaining rows of the block using row p.
-            for (std::size_t j = p + 1; j < kend; ++j) // restrict to upper portion of the matrix
+            // Update the rest of the block using this pivot row
+            for (std::size_t j = p + 1; j < kend; ++j)
             {
                 double *row_j = c + j * n;
                 const double cpj = row_p[j];
@@ -80,90 +82,85 @@ void cholesky_openmp_3(double *c, std::size_t n, std::size_t block_size)
         }
 
         /*
-        PART 2: Compute the block row to the right
+        PART 2 — Compute the block row to the right
 
-        The diagonal block is now factorised, but the rows in this block
-        are not yet complete across the whole matrix.
+        We now extend the rows of the factorised block across the
+        remaining columns of the matrix.
 
-        This step fills the entries to the right of the block, so that
-        rows k..kend-1 become fully computed.
+        This computes entries:
 
-        For each row p in the block, and for each column j to the right,
-        subtract contributions from earlier rows in the same block, then
-        divide by the diagonal value.
+        rows k..kend-1
+        columns kend..n-1
 
-        This version parallelises over j (columns to the right) for each
-        fixed p.
+        After this step the rows of the block are fully complete.
 
-        The iterations are independent because:
-        - each thread writes to a different c[p*n + j]
-        - all threads only read previously computed values
+        Example:
+
+        | r00 r01 r02 | r03 r04 r05 |
+        |  0  r11 r12 | r13 r14 r15 |
+        |  0   0  r22 | r23 r24 r25 |
+
+        This version keeps this step SERIAL.
         */
+
         for (std::size_t p = k; p < kend; ++p)
         {
             const double diag = c[p * n + p];
 
-#pragma omp parallel for schedule(static)
             for (std::size_t j = kend; j < n; ++j)
             {
-
-                // Start from the current matrix value.
                 double sum = c[p * n + j];
 
-                // Subtract the contributions from earlier rows in this block.
-                //
-                // Once rows k..p-1 are known, they contribute to row p.
+                // Subtract contributions from earlier rows in the block
                 for (std::size_t s = k; s < p; ++s)
                 {
                     sum -= c[s * n + p] * c[s * n + j];
                 }
 
-                // Divide by the diagonal entry of row p to complete c[p, j].
+                // Finish the computation of this element
                 c[p * n + j] = sum / diag;
             }
         }
 
         /*
-        PART 3: Update the trailing matrix
+        PART 3 — Update the trailing matrix
 
-        Now that the current block rows are complete, use them to update
-        the bottom-right trailing matrix.
+        Now we update the bottom-right region:
 
-        In block notation:
-            A22 <- A22 - A12^T * A12
+        A22 ← A22 − R12ᵀ R12
 
-        Each iteration of j updates one destination row of the trailing
-        upper triangle, so parallelising over j is safe:
-        - different threads write to different rows
-        - all threads read the already computed block row A12
+        This uses the completed block rows to update the rest of the
+        matrix.
 
-        Work here is restricted to the upper triangle by starting i at j.
+        This is the MOST EXPENSIVE part of the algorithm.
+
+        Each iteration of j updates one destination row of A22.
+
+        Because each thread works on different rows, the work is safe
+        to parallelise.
         */
+
 #pragma omp parallel for schedule(static)
         for (std::size_t j = kend; j < n; ++j)
         {
-
-            // Pointer to destination row j.
+            // Pointer to row j of the matrix
             double *row_j = c + j * n;
 
-            // Update the upper-triangular part of row j.
             for (std::size_t i = j; i < n; ++i)
             {
                 double sum = 0.0;
 
-                // Accumulate the contribution from every row p in the
-                // completed block k..kend-1.
+                // Accumulate contributions from each row in the block
                 for (std::size_t p = k; p < kend; ++p)
                 {
                     sum += c[p * n + j] * c[p * n + i];
                 }
 
-                // Apply the block update.
                 row_j[i] -= sum;
             }
         }
     }
 
-    // We computed the upper triangle only, thus now have to reflect
-    cholesky_detail::mirror_upper_to_lower(c, n);
+    // Copy the computed upper triangle into the lower triangle
+    cholesky_detail::mirror_upper_to_lower(c, static_cast<int>(n));
 }

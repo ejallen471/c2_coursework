@@ -62,14 +62,14 @@ inline bool parse_optimisation_name(const std::string& input, CholeskyVersion& v
     if (name == "cache_blocked_1" || name == "cacheblocked_1" ||
         name == "cache_blocked1" || name == "cacheblocked1")
     {
-        version = CholeskyVersion::CacheBlocked;
+        version = CholeskyVersion::cacheBlockedOne;
         return true;
     }
 
     if (name == "cache_blocked_2" || name == "cacheblocked_2" ||
         name == "cache_blocked2" || name == "cacheblocked2")
     {
-        version = CholeskyVersion::BlockedOptimal;
+        version = CholeskyVersion::cacheBlockedTwo;
         return true;
     }
 
@@ -88,6 +88,12 @@ inline bool parse_optimisation_name(const std::string& input, CholeskyVersion& v
     if (name == "openmp3")
     {
         version = CholeskyVersion::OpenMP3;
+        return true;
+    }
+
+    if (name == "openmp4")
+    {
+        version = CholeskyVersion::OpenMP4;
         return true;
     }
 
@@ -110,10 +116,10 @@ inline const char* optimisation_name(CholeskyVersion version)
     case CholeskyVersion::ContiguousAccess:
         return "contiguous_access";
 
-    case CholeskyVersion::CacheBlocked:
+    case CholeskyVersion::cacheBlockedOne:
         return "cache_blocked_1";
 
-    case CholeskyVersion::BlockedOptimal:
+    case CholeskyVersion::cacheBlockedTwo:
         return "cache_blocked_2";
 
     case CholeskyVersion::OpenMP1:
@@ -124,6 +130,9 @@ inline const char* optimisation_name(CholeskyVersion version)
 
     case CholeskyVersion::OpenMP3:
         return "openmp3";
+
+    case CholeskyVersion::OpenMP4:
+        return "openmp4";
     }
 
     return "unknown";
