@@ -1,1 +1,0 @@
-/usr/bin/c++ -O3 -DNDEBUG -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/test_identity.dir/test_identity.cpp.o CMakeFiles/test_identity.dir/test_helpers.cpp.o -o test_identity  ../src/libmphil_dis_cholesky.a

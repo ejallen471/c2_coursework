@@ -1,1 +1,0 @@
-/usr/bin/c++ -O3 -DNDEBUG -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/test_reconstruction.dir/test_reconstruction.cpp.o CMakeFiles/test_reconstruction.dir/test_helpers.cpp.o -o test_reconstruction  ../src/libmphil_dis_cholesky.a

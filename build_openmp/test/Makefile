@@ -267,6 +267,20 @@ test_version_correctness/fast:
 .PHONY : test_version_correctness/fast
 
 # Convenience name for target.
+test/CMakeFiles/test_runtime_name_parsing.dir/rule:
+	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_runtime_name_parsing.dir/rule
+.PHONY : test/CMakeFiles/test_runtime_name_parsing.dir/rule
+
+# Convenience name for target.
+test_runtime_name_parsing: test/CMakeFiles/test_runtime_name_parsing.dir/rule
+.PHONY : test_runtime_name_parsing
+
+# fast build rule for target.
+test_runtime_name_parsing/fast:
+	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_runtime_name_parsing.dir/build.make test/CMakeFiles/test_runtime_name_parsing.dir/build
+.PHONY : test_runtime_name_parsing/fast
+
+# Convenience name for target.
 test/CMakeFiles/test_perf_time_output.dir/rule:
 	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_perf_time_output.dir/rule
 .PHONY : test/CMakeFiles/test_perf_time_output.dir/rule
@@ -544,6 +558,30 @@ test_repeatability.cpp.s:
 	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_repeatability.dir/build.make test/CMakeFiles/test_repeatability.dir/test_repeatability.cpp.s
 .PHONY : test_repeatability.cpp.s
 
+test_runtime_name_parsing.o: test_runtime_name_parsing.cpp.o
+.PHONY : test_runtime_name_parsing.o
+
+# target to build an object file
+test_runtime_name_parsing.cpp.o:
+	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_runtime_name_parsing.dir/build.make test/CMakeFiles/test_runtime_name_parsing.dir/test_runtime_name_parsing.cpp.o
+.PHONY : test_runtime_name_parsing.cpp.o
+
+test_runtime_name_parsing.i: test_runtime_name_parsing.cpp.i
+.PHONY : test_runtime_name_parsing.i
+
+# target to preprocess a source file
+test_runtime_name_parsing.cpp.i:
+	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_runtime_name_parsing.dir/build.make test/CMakeFiles/test_runtime_name_parsing.dir/test_runtime_name_parsing.cpp.i
+.PHONY : test_runtime_name_parsing.cpp.i
+
+test_runtime_name_parsing.s: test_runtime_name_parsing.cpp.s
+.PHONY : test_runtime_name_parsing.s
+
+# target to generate assembly for a file
+test_runtime_name_parsing.cpp.s:
+	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_runtime_name_parsing.dir/build.make test/CMakeFiles/test_runtime_name_parsing.dir/test_runtime_name_parsing.cpp.s
+.PHONY : test_runtime_name_parsing.cpp.s
+
 test_small_case.o: test_small_case.cpp.o
 .PHONY : test_small_case.o
 
@@ -610,6 +648,7 @@ help:
 	@echo "... test_perf_time_output"
 	@echo "... test_reconstruction"
 	@echo "... test_repeatability"
+	@echo "... test_runtime_name_parsing"
 	@echo "... test_small_case"
 	@echo "... test_version_correctness"
 	@echo "... test_diagonal_matrix.o"
@@ -642,6 +681,9 @@ help:
 	@echo "... test_repeatability.o"
 	@echo "... test_repeatability.i"
 	@echo "... test_repeatability.s"
+	@echo "... test_runtime_name_parsing.o"
+	@echo "... test_runtime_name_parsing.i"
+	@echo "... test_runtime_name_parsing.s"
 	@echo "... test_small_case.o"
 	@echo "... test_small_case.i"
 	@echo "... test_small_case.s"

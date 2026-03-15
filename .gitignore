@@ -1,0 +1,35 @@
+.DS_Store
+
+# CMake and local build trees
+/build/
+/build_openmp/
+/build_openmp_local/
+/cmake-build-*/
+/CMakeFiles/
+/CMakeCache.txt
+/compile_commands.json
+/Testing/
+/Makefile
+/cmake_install.cmake
+
+# Generated benchmark outputs
+/results/raw/
+/results/figures/
+/results_local/
+/results_csd3/
+/logs/
+/slurm-*.out
+/slurm-*.err
+
+# Python cache and local environments
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+/venvs/
+
+# Editor / OS files
+.vscode/
+.idea/

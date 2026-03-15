@@ -229,6 +229,12 @@
 },
 {
   "directory": "/Users/ejallen/Desktop/c2_coursework/build_openmp/test",
+  "command": "/opt/homebrew/opt/llvm/bin/clang++ -DMPHIL_HAVE_OPENMP=1 -I/Users/ejallen/Desktop/c2_coursework/src -I/Users/ejallen/Desktop/c2_coursework/performance_tests -I/Users/ejallen/Desktop/c2_coursework/include -I/Users/ejallen/Desktop/c2_coursework/utils -O3 -DNDEBUG -std=c++17 -arch arm64 -fopenmp=libomp -o CMakeFiles/test_runtime_name_parsing.dir/test_runtime_name_parsing.cpp.o -c /Users/ejallen/Desktop/c2_coursework/test/test_runtime_name_parsing.cpp",
+  "file": "/Users/ejallen/Desktop/c2_coursework/test/test_runtime_name_parsing.cpp",
+  "output": "test/CMakeFiles/test_runtime_name_parsing.dir/test_runtime_name_parsing.cpp.o"
+},
+{
+  "directory": "/Users/ejallen/Desktop/c2_coursework/build_openmp/test",
   "command": "/opt/homebrew/opt/llvm/bin/clang++   -O3 -DNDEBUG -std=c++17 -arch arm64 -o CMakeFiles/test_perf_time_output.dir/test_perf_time_output.cpp.o -c /Users/ejallen/Desktop/c2_coursework/test/test_perf_time_output.cpp",
   "file": "/Users/ejallen/Desktop/c2_coursework/test/test_perf_time_output.cpp",
   "output": "test/CMakeFiles/test_perf_time_output.dir/test_perf_time_output.cpp.o"

@@ -43,7 +43,7 @@ ensure_release_executable_in_build() {
 
     if [ ! -x "${exec_path}" ] || [ "${configured_build_type}" != "${SHARED_BUILD_TYPE}" ]; then
         echo "==> Ensuring ${SHARED_BUILD_TYPE} build in ${build_dir}"
-        "${build_script}"
+        bash "${build_script}"
     fi
 
     if [ ! -x "${exec_path}" ]; then

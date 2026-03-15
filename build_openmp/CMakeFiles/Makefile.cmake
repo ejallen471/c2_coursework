@@ -115,5 +115,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "test/CMakeFiles/test_repeatability.dir/DependInfo.cmake"
   "test/CMakeFiles/test_matrix_generation.dir/DependInfo.cmake"
   "test/CMakeFiles/test_version_correctness.dir/DependInfo.cmake"
+  "test/CMakeFiles/test_runtime_name_parsing.dir/DependInfo.cmake"
   "test/CMakeFiles/test_perf_time_output.dir/DependInfo.cmake"
   )

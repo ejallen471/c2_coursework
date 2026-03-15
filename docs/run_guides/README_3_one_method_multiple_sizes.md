@@ -8,6 +8,12 @@ Build first:
 bash scripts/sh_scripts/build.sh
 ```
 
+For plotting locally, make sure your Python environment has:
+
+```bash
+pip install -r requirements-plot.txt
+```
+
 Use the shell script:
 
 ```bash

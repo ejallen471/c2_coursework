@@ -1,5 +1,7 @@
 #include <cstdio>
 #include <cstdlib>
+#include <filesystem>
+#include <fstream>
 #include <iostream>
 #include <map>
 #include <sstream>
@@ -50,7 +52,12 @@ int main(int argc, char* argv[])
         return 1;
     }
 
-    const std::string command = "\"" + std::string(argv[1]) + "\" time baseline 16";
+    const std::filesystem::path csv_path =
+        std::filesystem::temp_directory_path() / "test_perf_time_output.csv";
+    std::filesystem::remove(csv_path);
+
+    const std::string command =
+        "\"" + std::string(argv[1]) + "\" time baseline 16 \"" + csv_path.string() + "\"";
     FILE* pipe = popen(command.c_str(), "r");
     if (pipe == nullptr)
     {
@@ -84,6 +91,12 @@ int main(int argc, char* argv[])
     if (fields.count("n") == 0 || fields.at("n") != "16")
     {
         std::cerr << "test_perf_time_output failed: missing or wrong n field\n";
+        return 1;
+    }
+
+    if (fields.count("raw_csv") == 0 || fields.at("raw_csv") != "\"" + csv_path.string() + "\"")
+    {
+        std::cerr << "test_perf_time_output failed: missing or wrong raw_csv field\n";
         return 1;
     }
 
@@ -133,6 +146,35 @@ int main(int argc, char* argv[])
         std::cerr << "test_perf_time_output failed: unavailable reference should also report unavailable difference\n";
         return 1;
     }
+
+    std::ifstream csv_file(csv_path);
+    if (!csv_file)
+    {
+        std::cerr << "test_perf_time_output failed: CSV output file was not created\n";
+        return 1;
+    }
+
+    std::string header;
+    std::string row;
+    if (!std::getline(csv_file, header) || !std::getline(csv_file, row))
+    {
+        std::cerr << "test_perf_time_output failed: CSV output did not contain two lines\n";
+        return 1;
+    }
+
+    if (header != "optimisation,n,elapsed_seconds,logdet_library,logdet_factor,relative_difference_percent")
+    {
+        std::cerr << "test_perf_time_output failed: unexpected CSV header\n";
+        return 1;
+    }
+
+    if (row.rfind("baseline,16,", 0) != 0)
+    {
+        std::cerr << "test_perf_time_output failed: unexpected CSV data row\n";
+        return 1;
+    }
+
+    std::filesystem::remove(csv_path);
 
     std::cout << "test_perf_time_output passed\n";
     return 0;

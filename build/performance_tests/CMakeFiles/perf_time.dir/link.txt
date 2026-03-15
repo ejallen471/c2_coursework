@@ -1,1 +1,0 @@
-/usr/bin/c++ -O3 -DNDEBUG -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/perf_time.dir/perf_time.cpp.o CMakeFiles/perf_time.dir/perf_helpers.cpp.o -o perf_time  ../src/libmphil_dis_cholesky.a -framework Accelerate -lm -ldl

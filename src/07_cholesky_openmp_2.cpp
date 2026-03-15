@@ -32,26 +32,37 @@ void cholesky_openmp_2(double *c, std::size_t n)
         // Use one reciprocal rather than repeated division
         const double inv_diag = 1.0 / diag;
 
-        // Finish the pivot row
 #pragma omp parallel for schedule(static)
+        /*
+        OPENMP: Divide work across threads
+
+        Each iteration scales one independent entry of the pivot row by
+        the same reciprocal, thus the work per iteaction is essentially the same therefore static
+        scheduling, to minimise overhead
+
+        */
         for (std::ptrdiff_t j = static_cast<std::ptrdiff_t>(start);
              j < static_cast<std::ptrdiff_t>(n);
              ++j)
         {
-            row_p[static_cast<std::size_t>(j)] *= inv_diag;
+            row_p[j] *= inv_diag;
         }
 
-        // Update the trailing upper triangle
 #pragma omp parallel for schedule(static)
+        /*
+        Each iteration updates one row of the remaining upper triangle using the
+        completed pivot row.
+
+        Static scheduling reduces the overhead and the actual work does not change much moving downwards
+        */
         for (std::ptrdiff_t j = static_cast<std::ptrdiff_t>(start);
              j < static_cast<std::ptrdiff_t>(n);
              ++j)
         {
-            const std::size_t j_index = static_cast<std::size_t>(j);
-            double *row_j = c + j_index * n;
-            const double cpj = row_p[j_index];
+            double *row_j = c + j * n;
+            const double cpj = row_p[j];
 
-            for (std::size_t i = j_index; i < n; ++i)
+            for (std::size_t i = j; i < n; ++i)
             {
                 row_j[i] -= cpj * row_p[i];
             }

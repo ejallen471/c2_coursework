@@ -189,6 +189,7 @@ test/all: test/CMakeFiles/test_generated_spd.dir/all
 test/all: test/CMakeFiles/test_repeatability.dir/all
 test/all: test/CMakeFiles/test_matrix_generation.dir/all
 test/all: test/CMakeFiles/test_version_correctness.dir/all
+test/all: test/CMakeFiles/test_runtime_name_parsing.dir/all
 test/all: test/CMakeFiles/test_perf_time_output.dir/all
 .PHONY : test/all
 
@@ -203,6 +204,7 @@ test/codegen: test/CMakeFiles/test_generated_spd.dir/codegen
 test/codegen: test/CMakeFiles/test_repeatability.dir/codegen
 test/codegen: test/CMakeFiles/test_matrix_generation.dir/codegen
 test/codegen: test/CMakeFiles/test_version_correctness.dir/codegen
+test/codegen: test/CMakeFiles/test_runtime_name_parsing.dir/codegen
 test/codegen: test/CMakeFiles/test_perf_time_output.dir/codegen
 .PHONY : test/codegen
 
@@ -221,6 +223,7 @@ test/clean: test/CMakeFiles/test_generated_spd.dir/clean
 test/clean: test/CMakeFiles/test_repeatability.dir/clean
 test/clean: test/CMakeFiles/test_matrix_generation.dir/clean
 test/clean: test/CMakeFiles/test_version_correctness.dir/clean
+test/clean: test/CMakeFiles/test_runtime_name_parsing.dir/clean
 test/clean: test/CMakeFiles/test_perf_time_output.dir/clean
 .PHONY : test/clean
 
@@ -1224,7 +1227,7 @@ run/CMakeFiles/run_cholesky.dir/clean:
 test/CMakeFiles/test_small_case.dir/all: src/CMakeFiles/mphil_dis_cholesky.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_small_case.dir/build.make test/CMakeFiles/test_small_case.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_small_case.dir/build.make test/CMakeFiles/test_small_case.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build_openmp/CMakeFiles --progress-num=48,49,50 "Built target test_small_case"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build_openmp/CMakeFiles --progress-num=50,51,52 "Built target test_small_case"
 .PHONY : test/CMakeFiles/test_small_case.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1241,7 +1244,7 @@ test_small_case: test/CMakeFiles/test_small_case.dir/rule
 # codegen rule for target.
 test/CMakeFiles/test_small_case.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_small_case.dir/build.make test/CMakeFiles/test_small_case.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build_openmp/CMakeFiles --progress-num=48,49,50 "Finished codegen for target test_small_case"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build_openmp/CMakeFiles --progress-num=50,51,52 "Finished codegen for target test_small_case"
 .PHONY : test/CMakeFiles/test_small_case.dir/codegen
 
 # clean rule for target.
@@ -1512,7 +1515,7 @@ test/CMakeFiles/test_matrix_generation.dir/clean:
 test/CMakeFiles/test_version_correctness.dir/all: src/CMakeFiles/mphil_dis_cholesky.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_version_correctness.dir/build.make test/CMakeFiles/test_version_correctness.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_version_correctness.dir/build.make test/CMakeFiles/test_version_correctness.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build_openmp/CMakeFiles --progress-num=51,52,53 "Built target test_version_correctness"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build_openmp/CMakeFiles --progress-num=53,54,55 "Built target test_version_correctness"
 .PHONY : test/CMakeFiles/test_version_correctness.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1529,13 +1532,45 @@ test_version_correctness: test/CMakeFiles/test_version_correctness.dir/rule
 # codegen rule for target.
 test/CMakeFiles/test_version_correctness.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_version_correctness.dir/build.make test/CMakeFiles/test_version_correctness.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build_openmp/CMakeFiles --progress-num=51,52,53 "Finished codegen for target test_version_correctness"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build_openmp/CMakeFiles --progress-num=53,54,55 "Finished codegen for target test_version_correctness"
 .PHONY : test/CMakeFiles/test_version_correctness.dir/codegen
 
 # clean rule for target.
 test/CMakeFiles/test_version_correctness.dir/clean:
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_version_correctness.dir/build.make test/CMakeFiles/test_version_correctness.dir/clean
 .PHONY : test/CMakeFiles/test_version_correctness.dir/clean
+
+#=============================================================================
+# Target rules for target test/CMakeFiles/test_runtime_name_parsing.dir
+
+# All Build rule for target.
+test/CMakeFiles/test_runtime_name_parsing.dir/all: src/CMakeFiles/mphil_dis_cholesky.dir/all
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_runtime_name_parsing.dir/build.make test/CMakeFiles/test_runtime_name_parsing.dir/depend
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_runtime_name_parsing.dir/build.make test/CMakeFiles/test_runtime_name_parsing.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build_openmp/CMakeFiles --progress-num=48,49 "Built target test_runtime_name_parsing"
+.PHONY : test/CMakeFiles/test_runtime_name_parsing.dir/all
+
+# Build rule for subdir invocation for target.
+test/CMakeFiles/test_runtime_name_parsing.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build_openmp/CMakeFiles 16
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_runtime_name_parsing.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ejallen/Desktop/c2_coursework/build_openmp/CMakeFiles 0
+.PHONY : test/CMakeFiles/test_runtime_name_parsing.dir/rule
+
+# Convenience name for target.
+test_runtime_name_parsing: test/CMakeFiles/test_runtime_name_parsing.dir/rule
+.PHONY : test_runtime_name_parsing
+
+# codegen rule for target.
+test/CMakeFiles/test_runtime_name_parsing.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_runtime_name_parsing.dir/build.make test/CMakeFiles/test_runtime_name_parsing.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/ejallen/Desktop/c2_coursework/build_openmp/CMakeFiles --progress-num=48,49 "Finished codegen for target test_runtime_name_parsing"
+.PHONY : test/CMakeFiles/test_runtime_name_parsing.dir/codegen
+
+# clean rule for target.
+test/CMakeFiles/test_runtime_name_parsing.dir/clean:
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_runtime_name_parsing.dir/build.make test/CMakeFiles/test_runtime_name_parsing.dir/clean
+.PHONY : test/CMakeFiles/test_runtime_name_parsing.dir/clean
 
 #=============================================================================
 # Target rules for target test/CMakeFiles/test_perf_time_output.dir

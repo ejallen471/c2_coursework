@@ -5,7 +5,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "${SCRIPT_DIR}/common_run_config.sh"
 
-MATRIX_SIZE="${1:-2000}"
+MATRIX_SIZE="${1:-5000}"
 REPEATS="${2:-1}"
 OPENMP_THREADS="${OPENMP_THREADS:-${SLURM_CPUS_PER_TASK:-8}}"
 RAW_CSV="${3:-${RESULTS_RAW_DIR}/openmp_fixed_size_comparison_n${MATRIX_SIZE}.csv}"

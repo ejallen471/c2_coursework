@@ -24,5 +24,7 @@ add_test(test_matrix_generation "/Users/ejallen/Desktop/c2_coursework/build_open
 set_tests_properties(test_matrix_generation PROPERTIES  _BACKTRACE_TRIPLES "/Users/ejallen/Desktop/c2_coursework/test/CMakeLists.txt;9;add_test;/Users/ejallen/Desktop/c2_coursework/test/CMakeLists.txt;20;add_coursework_test;/Users/ejallen/Desktop/c2_coursework/test/CMakeLists.txt;0;")
 add_test(test_version_correctness "/Users/ejallen/Desktop/c2_coursework/build_openmp/test/test_version_correctness")
 set_tests_properties(test_version_correctness PROPERTIES  _BACKTRACE_TRIPLES "/Users/ejallen/Desktop/c2_coursework/test/CMakeLists.txt;9;add_test;/Users/ejallen/Desktop/c2_coursework/test/CMakeLists.txt;21;add_coursework_test;/Users/ejallen/Desktop/c2_coursework/test/CMakeLists.txt;0;")
+add_test(test_runtime_name_parsing "/Users/ejallen/Desktop/c2_coursework/build_openmp/test/test_runtime_name_parsing")
+set_tests_properties(test_runtime_name_parsing PROPERTIES  _BACKTRACE_TRIPLES "/Users/ejallen/Desktop/c2_coursework/test/CMakeLists.txt;9;add_test;/Users/ejallen/Desktop/c2_coursework/test/CMakeLists.txt;22;add_coursework_test;/Users/ejallen/Desktop/c2_coursework/test/CMakeLists.txt;0;")
 add_test(test_perf_time_output "/Users/ejallen/Desktop/c2_coursework/build_openmp/test/test_perf_time_output" "/Users/ejallen/Desktop/c2_coursework/build_openmp/run/run_cholesky")
-set_tests_properties(test_perf_time_output PROPERTIES  _BACKTRACE_TRIPLES "/Users/ejallen/Desktop/c2_coursework/test/CMakeLists.txt;24;add_test;/Users/ejallen/Desktop/c2_coursework/test/CMakeLists.txt;0;")
+set_tests_properties(test_perf_time_output PROPERTIES  _BACKTRACE_TRIPLES "/Users/ejallen/Desktop/c2_coursework/test/CMakeLists.txt;25;add_test;/Users/ejallen/Desktop/c2_coursework/test/CMakeLists.txt;0;")

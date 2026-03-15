@@ -132,6 +132,14 @@ int main()
             {
                 return 1;
             }
+
+            CholeskyVersion parsed;
+            if (!parse_optimisation_name(optimisation_name(version), parsed) || parsed != version)
+            {
+                std::cerr << "test_version_correctness failed: name round-trip failed for "
+                          << optimisation_name(version) << '\n';
+                return 1;
+            }
         }
 #else
         std::vector<double> matrix = make_identity_matrix(2);
@@ -149,6 +157,14 @@ int main()
             {
                 std::cerr << "test_version_correctness failed: expected placeholder return code -4 for "
                           << optimisation_name(version) << ", got " << elapsed << '\n';
+                return 1;
+            }
+
+            CholeskyVersion parsed;
+            if (!parse_optimisation_name(optimisation_name(version), parsed) || parsed != version)
+            {
+                std::cerr << "test_version_correctness failed: name round-trip failed for "
+                          << optimisation_name(version) << '\n';
                 return 1;
             }
         }

@@ -1,11 +1,9 @@
 /*
-Parallelise with cache blocking
+Parallelise with cache blocking with added optimisations
 
-At a high level, our steps are
-1. build several pivot rows (serial)
-2. finish those rows (parallel in columns)
-3. use them to update the rest of the matrix (parallel) - outer product updates
-
+1. Factorise the diagonal block (serial)
+2. Compute teh block row to the right (serial)
+3. Update the trailing matrix using that block row - this is done in parallel
 */
 
 #include "cholesky_helpers.h"
@@ -14,60 +12,40 @@ At a high level, our steps are
 #include <algorithm>
 #include <cmath>
 #include <cstddef>
+#include <vector>
 
-void cholesky_openmp_4(double *c, std::size_t n, std::size_t block_size)
+namespace // anonymous namespace - everything inside is only visible in this source file
 {
 
-    // Move through the matrix one diagonal block at a time.
-    for (std::size_t k = 0; k < n; k += block_size)
+    // store the tile indices in one struct
+    struct TileRange
     {
-        // End of the current block - For the last block, kend may be smaller than k + B.
-        const std::size_t kend = std::min(k + block_size, n);
+        std::size_t row_begin;
+        std::size_t row_end;
+        std::size_t col_begin;
+        std::size_t col_end;
+        bool diagonal;
+    };
 
-        /*
-        PART 1: Factorise the first diagonal block A
-
-        This is ordinary unblocked Cholesky, but restricted to the
-        current diagonal block only.
-
-        After this part, the small diagonal block has been turned into
-        the corresponding upper-triangular Cholesky factor.
-
-        Example idea for a 3x3 diagonal block:
-
-            before:
-                [ A00 A01 A02 ]
-                [ A01 A11 A12 ]
-                [ A02 A12 A22 ]
-
-            after:
-                [ r00 r01 r02 ]
-                [  0  r11 r12 ]
-                [  0   0  r22 ]
-
-        Only the upper triangle is used during the factorisation.
-        */
+    // Function to factorise the current diagonal block
+    void factor_diagonal_block(double *c, std::size_t n, std::size_t k, std::size_t kend)
+    {
+        // Loop through the rows of the diagonal block one by one
         for (std::size_t p = k; p < kend; ++p)
         {
-            // Pointer to row p.
+            // Point to the start of row p
             double *row_p = c + p * n;
 
-            // Compute the diagonal entry of the factor.
             const double diag = std::sqrt(row_p[p]);
             row_p[p] = diag;
-
-            // Reciprocal used to scale the rest of the row in the block.
             const double inv_diag = 1.0 / diag;
 
-            // Scale the part of row p that lies inside the current block.
-            // This completes row p within the diagonal block.
             for (std::size_t j = p + 1; j < kend; ++j)
             {
                 row_p[j] *= inv_diag;
             }
 
-            // Update the remaining rows of the block using row p.
-            for (std::size_t j = p + 1; j < kend; ++j) // restrict to upper portion of the matrix
+            for (std::size_t j = p + 1; j < kend; ++j)
             {
                 double *row_j = c + j * n;
                 const double cpj = row_p[j];
@@ -78,92 +56,197 @@ void cholesky_openmp_4(double *c, std::size_t n, std::size_t block_size)
                 }
             }
         }
+    }
 
-        /*
-        PART 2: Compute the block row to the right
-
-        The diagonal block is now factorised, but the rows in this block
-        are not yet complete across the whole matrix.
-
-        This step fills the entries to the right of the block, so that
-        rows k..kend-1 become fully computed.
-
-        For each row p in the block, and for each column j to the right,
-        subtract contributions from earlier rows in the same block, then
-        divide by the diagonal value.
-
-        This version parallelises over j (columns to the right) for each
-        fixed p.
-
-        The iterations are independent because:
-        - each thread writes to a different c[p*n + j]
-        - all threads only read previously computed values
-        */
+    // Compute the tile of the panel to the right of the current diagonal block
+    void solve_panel_tile(double *c, std::size_t n, std::size_t k, std::size_t kend,
+                          std::size_t jj, std::size_t jend)
+    {
+        // Loop through rows of the diagonal block
         for (std::size_t p = k; p < kend; ++p)
         {
-            const double diag = c[p * n + p];
+            double *row_p = c + p * n;
+            const double inv_diag = 1.0 / row_p[p];
 
-#pragma omp parallel for schedule(static)
-            for (std::size_t j = kend; j < n; ++j)
+            for (std::size_t j = jj; j < jend; ++j)
             {
+                double sum = row_p[j];
 
-                // Start from the current matrix value.
-                double sum = c[p * n + j];
-
-                // Subtract the contributions from earlier rows in this block.
-                //
-                // Once rows k..p-1 are known, they contribute to row p.
+                // Subtract contributions from the outer product
                 for (std::size_t s = k; s < p; ++s)
                 {
-                    sum -= c[s * n + p] * c[s * n + j];
+                    const double *row_s = c + s * n;
+                    sum -= row_s[p] * row_s[j];
                 }
 
-                // Divide by the diagonal entry of row p to complete c[p, j].
-                c[p * n + j] = sum / diag;
-            }
-        }
-
-        /*
-        PART 3: Update the trailing matrix
-
-        Now that the current block rows are complete, use them to update
-        the bottom-right trailing matrix.
-
-        In block notation:
-            A22 <- A22 - A12^T * A12
-
-        Each iteration of j updates one destination row of the trailing
-        upper triangle, so parallelising over j is safe:
-        - different threads write to different rows
-        - all threads read the already computed block row A12
-
-        Work here is restricted to the upper triangle by starting i at j.
-        */
-#pragma omp parallel for schedule(static)
-        for (std::size_t j = kend; j < n; ++j)
-        {
-
-            // Pointer to destination row j.
-            double *row_j = c + j * n;
-
-            // Update the upper-triangular part of row j.
-            for (std::size_t i = j; i < n; ++i)
-            {
-                double sum = 0.0;
-
-                // Accumulate the contribution from every row p in the
-                // completed block k..kend-1.
-                for (std::size_t p = k; p < kend; ++p)
-                {
-                    sum += c[p * n + j] * c[p * n + i];
-                }
-
-                // Apply the block update.
-                row_j[i] -= sum;
+                row_p[j] = sum * inv_diag;
             }
         }
     }
 
-    // We computed the upper triangle only, thus now have to reflect
+    // Update one diagonal tile in the trailing submatrix
+    void update_diagonal_tile(double *c, std::size_t n, std::size_t k, std::size_t kend,
+                              std::size_t ii, std::size_t iend)
+    {
+        for (std::size_t p = k; p < kend; ++p)
+        {
+            const double *row_p = c + p * n;
+
+            for (std::size_t i = ii; i < iend; ++i)
+            {
+                double *row_i = c + i * n;
+                const double cpi = row_p[i];
+
+                for (std::size_t j = i; j < iend; ++j)
+                {
+                    row_i[j] -= cpi * row_p[j];
+                }
+            }
+        }
+    }
+
+    // Update the off-diagonal tiles in the trailing submatrix
+    void update_offdiagonal_tile(double *c, std::size_t n, std::size_t k, std::size_t kend,
+                                 std::size_t ii, std::size_t iend,
+                                 std::size_t jj, std::size_t jend)
+    {
+        for (std::size_t p = k; p < kend; ++p)
+        {
+            const double *row_p = c + p * n;
+
+            for (std::size_t i = ii; i < iend; ++i)
+            {
+                double *row_i = c + i * n;
+                const double cpi = row_p[i];
+
+                for (std::size_t j = jj; j < jend; ++j)
+                {
+                    row_i[j] -= cpi * row_p[j];
+                }
+            }
+        }
+    }
+} // end of namespace
+
+void cholesky_openmp_4(double *c, std::size_t n, std::size_t block_size)
+{
+    // Precompute the maximum tile count
+    const std::size_t max_trailing_tiles =
+        (n == 0) ? 0 : ((n + block_size - 1) / block_size);
+
+    std::vector<TileRange> panel_tiles;
+    std::vector<TileRange> trailing_tiles;
+
+    // Reserve memory so the vectors do not keep reallocating
+    panel_tiles.reserve(max_trailing_tiles);
+    trailing_tiles.reserve(max_trailing_tiles * (max_trailing_tiles + 1) / 2);
+
+    // Move block by block along the diagonal
+    for (std::size_t k = 0; k < n; k += block_size)
+    {
+        const std::size_t kend = std::min(k + block_size, n);
+
+        factor_diagonal_block(c, n, k, kend);
+
+        panel_tiles.clear();
+        for (std::size_t jj = kend; jj < n; jj += block_size)
+        {
+            panel_tiles.push_back({k, kend, jj, std::min(jj + block_size, n), false});
+        }
+
+        // Sovle the panel, if the tile is less than two, the overhead from parallelising is not worth it
+        if (panel_tiles.size() < 2)
+        {
+            for (const TileRange &tile : panel_tiles)
+            {
+                solve_panel_tile(c, n, k, kend, tile.col_begin, tile.col_end);
+            }
+        }
+        else
+        {
+#pragma omp parallel for schedule(static)
+            /*
+            Parallelise the panel-tile solves.
+
+            Static scheduling is used because these iterations have similar cost, so
+            threads can be given fixed chunks with low scheduling overhead.
+            */
+            // Loop over tile indices
+            for (std::ptrdiff_t tile_index = 0;
+                 tile_index < static_cast<std::ptrdiff_t>(panel_tiles.size());
+                 ++tile_index)
+            {
+                // Each thread gets one panel tile and solves it
+                const TileRange &tile = panel_tiles[static_cast<std::size_t>(tile_index)];
+                solve_panel_tile(c, n, k, kend, tile.col_begin, tile.col_end);
+            }
+        }
+
+        trailing_tiles.clear(); // Clear the old trailing tiles
+
+        // For each tile row in the trailing matrix
+        for (std::size_t ii = kend; ii < n; ii += block_size)
+        {
+            // First add its diagonal tile
+            const std::size_t iend = std::min(ii + block_size, n);
+            trailing_tiles.push_back({ii, iend, ii, iend, true});
+
+            // Then add the off-diagonal tiles to the right of that diagonal tile
+            for (std::size_t jj = ii + block_size; jj < n; jj += block_size)
+            {
+                trailing_tiles.push_back({ii, iend, jj, std::min(jj + block_size, n), false});
+            }
+        }
+
+        // Update the trailing tiles
+        if (trailing_tiles.size() < 4) // if very few, do serially
+        {
+            for (const TileRange &tile : trailing_tiles)
+            {
+                if (tile.diagonal)
+                {
+                    update_diagonal_tile(c, n, k, kend, tile.row_begin, tile.row_end);
+                }
+                else
+                {
+                    update_offdiagonal_tile(
+                        c, n, k, kend, tile.row_begin, tile.row_end, tile.col_begin, tile.col_end);
+                }
+            }
+        }
+        else
+        {
+
+#pragma omp parallel for schedule(guided)
+            /*
+            Parallelise the trailing tile updates across threads.
+
+            Here, we have guided scheduling because the tile updates are not all the same cost.
+
+            In guided scheduling, OpenMP starts by giving threads larger chunks of work,
+            then gradually reduces the chunk size as the loop progresses. T
+            */
+
+            // parallel loop over trailing tile list
+            for (std::ptrdiff_t tile_index = 0;
+                 tile_index < static_cast<std::ptrdiff_t>(trailing_tiles.size());
+                 ++tile_index)
+            {
+                const TileRange &tile = trailing_tiles[static_cast<std::size_t>(tile_index)];
+
+                // Update upper triangle only if it is a diagonal trailing tile
+                if (tile.diagonal)
+                {
+                    update_diagonal_tile(c, n, k, kend, tile.row_begin, tile.row_end);
+                }
+                else // update the whole off-diagonal tile
+                {
+                    update_offdiagonal_tile(
+                        c, n, k, kend, tile.row_begin, tile.row_end, tile.col_begin, tile.col_end);
+                }
+            }
+        }
+    }
+
     cholesky_detail::mirror_upper_to_lower(c, n);
 }

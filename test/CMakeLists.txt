@@ -19,6 +19,7 @@ add_coursework_test(test_generated_spd test_generated_spd.cpp test_helpers.cpp)
 add_coursework_test(test_repeatability test_repeatability.cpp test_helpers.cpp)
 add_coursework_test(test_matrix_generation test_matrix_generation.cpp test_helpers.cpp)
 add_coursework_test(test_version_correctness test_version_correctness.cpp test_helpers.cpp)
+add_coursework_test(test_runtime_name_parsing test_runtime_name_parsing.cpp)
 
 add_executable(test_perf_time_output test_perf_time_output.cpp)
 add_test(NAME test_perf_time_output COMMAND test_perf_time_output $<TARGET_FILE:run_cholesky>)

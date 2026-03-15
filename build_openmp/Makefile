@@ -660,6 +660,19 @@ test_version_correctness/fast:
 .PHONY : test_version_correctness/fast
 
 #=============================================================================
+# Target rules for targets named test_runtime_name_parsing
+
+# Build rule for target.
+test_runtime_name_parsing: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_runtime_name_parsing
+.PHONY : test_runtime_name_parsing
+
+# fast build rule for target.
+test_runtime_name_parsing/fast:
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_runtime_name_parsing.dir/build.make test/CMakeFiles/test_runtime_name_parsing.dir/build
+.PHONY : test_runtime_name_parsing/fast
+
+#=============================================================================
 # Target rules for targets named test_perf_time_output
 
 # Build rule for target.
@@ -721,6 +734,7 @@ help:
 	@echo "... test_perf_time_output"
 	@echo "... test_reconstruction"
 	@echo "... test_repeatability"
+	@echo "... test_runtime_name_parsing"
 	@echo "... test_small_case"
 	@echo "... test_version_correctness"
 .PHONY : help

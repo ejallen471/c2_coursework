@@ -4,13 +4,9 @@ Here we parallelise without cache blocking.
 At a high level, our steps are
 1. build one pivot row (serial)
 2. finish that row (serial) - scale by reciprocal of pivot
-3. use it to update the rest of the matrix (parallel) - outer product update
+3. use it to update the rest of the matrix (parallel) - outer product update - row by row
 
-Single-thread improvements used here:
-- cache pointer to pivot row
-- replace repeated division by multiplication with reciprocal
-- avoid parallelising the light row-scaling step
-- use std::size_t consistently
+We also include Single-thread improvements from earlier iterations
 */
 
 #include "cholesky_helpers.h"
@@ -38,7 +34,18 @@ void cholesky_openmp_1(double *c, std::size_t n)
         }
 
         // Update trailing upper triangle in parallel
+
 #pragma omp parallel for schedule(static)
+        /*
+        Update the trailing upper triangle in parallel, one row at a time.
+
+        We use static scheduling because each iteration works on one row of
+        the remaining upper triangle and the amount of work is fairly regular
+        for a fixed pivot p.
+
+        Note we tried both static and (dynamic, 1) however no benefit was seen
+        */
+
         for (std::ptrdiff_t j = static_cast<std::ptrdiff_t>(start);
              j < static_cast<std::ptrdiff_t>(n);
              ++j)

@@ -51,6 +51,7 @@
 /Users/ejallen/Desktop/c2_coursework/build_openmp/test/CMakeFiles/test_repeatability.dir
 /Users/ejallen/Desktop/c2_coursework/build_openmp/test/CMakeFiles/test_matrix_generation.dir
 /Users/ejallen/Desktop/c2_coursework/build_openmp/test/CMakeFiles/test_version_correctness.dir
+/Users/ejallen/Desktop/c2_coursework/build_openmp/test/CMakeFiles/test_runtime_name_parsing.dir
 /Users/ejallen/Desktop/c2_coursework/build_openmp/test/CMakeFiles/test_perf_time_output.dir
 /Users/ejallen/Desktop/c2_coursework/build_openmp/test/CMakeFiles/test.dir
 /Users/ejallen/Desktop/c2_coursework/build_openmp/test/CMakeFiles/edit_cache.dir
