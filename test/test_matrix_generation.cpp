@@ -1,3 +1,8 @@
+/**
+ * @file test_matrix_generation.cpp
+ * @brief Validates matrix generator options, reproducibility, and SPD preservation.
+ */
+
 #include "matrix.h"
 #include "runtime_cholesky.h"
 #include "test_helpers.h"
@@ -8,35 +13,6 @@
 
 namespace
 {
-bool matrix_is_strictly_diagonally_dominant(const std::vector<double>& a, int n)
-{
-    for (int i = 0; i < n; ++i)
-    {
-        double offdiag_abs_sum = 0.0;
-
-        for (int j = 0; j < n; ++j)
-        {
-            if (i == j)
-            {
-                continue;
-            }
-
-            offdiag_abs_sum += std::fabs(
-                a[static_cast<std::size_t>(i) * static_cast<std::size_t>(n) +
-                  static_cast<std::size_t>(j)]);
-        }
-
-        const double diag =
-            a[static_cast<std::size_t>(i) * static_cast<std::size_t>(n) + static_cast<std::size_t>(i)];
-        if (!(diag > offdiag_abs_sum))
-        {
-            return false;
-        }
-    }
-
-    return true;
-}
-
 bool generator_settings_preserve_spd(const MatrixGenerationOptions& options, int n)
 {
     const std::vector<double> original = make_generated_spd_matrix(n, options);
@@ -47,23 +23,9 @@ bool generator_settings_preserve_spd(const MatrixGenerationOptions& options, int
         return false;
     }
 
-    if (!matrix_is_symmetric(original, n, 0.0, 0.0))
+    if (!matrix_satisfies_generated_spd_conditions(original, n))
     {
-        std::cerr << "test_matrix_generation failed: generated matrix is not symmetric for n=" << n
-                  << '\n';
-        return false;
-    }
-
-    if (!diagonal_is_positive(original, n))
-    {
-        std::cerr << "test_matrix_generation failed: generated matrix has non-positive diagonal for n="
-                  << n << '\n';
-        return false;
-    }
-
-    if (!matrix_is_strictly_diagonally_dominant(original, n))
-    {
-        std::cerr << "test_matrix_generation failed: strict diagonal dominance theorem condition failed for n="
+        std::cerr << "test_matrix_generation failed: generated matrix did not satisfy the SPD construction checks for n="
                   << n << '\n';
         return false;
     }

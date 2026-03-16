@@ -1,3 +1,8 @@
+/**
+ * @file test_identity.cpp
+ * @brief Checks that the identity matrix is preserved by factorisation.
+ */
+
 #include "mphil_dis_cholesky.h"
 #include "test_helpers.h"
 

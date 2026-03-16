@@ -5,18 +5,19 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
-#SBATCH --mem=80G
-#SBATCH --time=15:00:00
-#SBATCH --output=slurm-%x-%j.out
-#SBATCH --error=slurm-%x-%j.err
+#SBATCH --time=1:00:00
+#SBATCH --output=logs/single_thread_fixed_size_comparison/slurm-%x-%j.out
+#SBATCH --error=logs/single_thread_fixed_size_comparison/slurm-%x-%j.err
 
 set -eo pipefail
 
 ROOT_DIR="${SLURM_SUBMIT_DIR:-$(pwd)}"
 cd "${ROOT_DIR}"
 
-MATRIX_SIZE="${1:-50000}"
+MATRIX_SIZE="${1:-5000}"
 REPEATS="${2:-1}"
+shift $(( $# >= 2 ? 2 : $# ))
+METHODS=("$@")
 
 mkdir -p results/raw
 
@@ -32,4 +33,5 @@ bash scripts/sh_scripts/build.sh
     fixed-size \
     "${MATRIX_SIZE}" \
     "${REPEATS}" \
-    "results/raw/fixed_size_comparison_n${MATRIX_SIZE}_raw.csv"
+    "results/raw/fixed_size_comparison_n${MATRIX_SIZE}_raw.csv" \
+    "${METHODS[@]}"

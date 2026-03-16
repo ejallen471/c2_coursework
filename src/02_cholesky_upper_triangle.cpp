@@ -1,3 +1,8 @@
+/**
+ * @file 02_cholesky_upper_triangle.cpp
+ * @brief Single-threaded upper-triangular Cholesky factorisation mirrored into full storage.
+ */
+
 /*
 In this implementation we exploit symmetry and factorise a single triangle only.
 

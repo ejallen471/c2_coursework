@@ -1,3 +1,8 @@
+/**
+ * @file 09_cholesky_openmp_4.cpp
+ * @brief Blocked OpenMP Cholesky implementation driven by explicit tile work lists.
+ */
+
 /*
 Parallelise with cache blocking with added optimisations
 

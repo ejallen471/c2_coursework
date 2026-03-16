@@ -1,3 +1,8 @@
+/**
+ * @file timer.cpp
+ * @brief Steady-clock timing helper used by the benchmark code.
+ */
+
 #include "timer.h"
 #include <chrono>
 

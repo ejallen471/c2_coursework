@@ -5,18 +5,94 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "${SCRIPT_DIR}/common_run_config.sh"
 
-REPEATS="${1:-3}"
+print_usage() {
+    cat <<'EOF'
+Usage:
+  bash scripts/sh_scripts/run_openmp_methods_graph.sh [repeats] [n1 n2 ...]
+  bash scripts/sh_scripts/run_openmp_methods_graph.sh [repeats] --methods <method1> [method2 ...] --sizes <n1> [n2 ...]
+
+Examples:
+  bash scripts/sh_scripts/run_openmp_methods_graph.sh 3 512 1024 2000 4096
+  bash scripts/sh_scripts/run_openmp_methods_graph.sh 3 --methods openmp1 openmp2 openmp3 openmp4 --sizes 256 384 512 768 1000 1500 2000 3000 4000
+EOF
+}
+
+DEFAULT_REPEATS=3
+DEFAULT_SIZES=(512 1024 2048 4096)
+DEFAULT_METHODS=(baseline openmp1 openmp2 openmp3 openmp4)
+
+REPEATS="${DEFAULT_REPEATS}"
 OPENMP_THREADS="${OPENMP_THREADS:-${SLURM_CPUS_PER_TASK:-8}}"
 
-shift $(( $# >= 1 ? 1 : $# ))
-
-if [ "$#" -eq 0 ]; then
-    SIZES=(512 1024 2048 4096)
-else
-    SIZES=("$@")
+if [ "$#" -gt 0 ]; then
+    case "$1" in
+        --help|-h)
+            print_usage
+            exit 0
+            ;;
+        --methods|--sizes)
+            ;;
+        *)
+            REPEATS="$1"
+            shift
+            ;;
+    esac
 fi
 
-METHODS=(baseline openmp1 openmp2 openmp3 openmp4)
+METHODS=("${DEFAULT_METHODS[@]}")
+SIZES=()
+USED_METHOD_FLAG=0
+USED_SIZE_FLAG=0
+
+while [ "$#" -gt 0 ]; do
+    case "$1" in
+        --help|-h)
+            print_usage
+            exit 0
+            ;;
+        --methods)
+            USED_METHOD_FLAG=1
+            METHODS=()
+            shift
+
+            while [ "$#" -gt 0 ] && [ "$1" != "--sizes" ] && [ "$1" != "--methods" ]; do
+                METHODS+=("$1")
+                shift
+            done
+            ;;
+        --sizes)
+            USED_SIZE_FLAG=1
+            SIZES=()
+            shift
+
+            while [ "$#" -gt 0 ] && [ "$1" != "--methods" ] && [ "$1" != "--sizes" ]; do
+                SIZES+=("$1")
+                shift
+            done
+            ;;
+        *)
+            if [ "${USED_METHOD_FLAG}" -eq 0 ] && [ "${USED_SIZE_FLAG}" -eq 0 ]; then
+                SIZES+=("$1")
+                shift
+            else
+                echo "Error: unexpected argument '$1'" >&2
+                print_usage >&2
+                exit 1
+            fi
+            ;;
+    esac
+done
+
+if [ "${#METHODS[@]}" -eq 0 ]; then
+    echo "Error: at least one OpenMP optimisation method must be provided." >&2
+    print_usage >&2
+    exit 1
+fi
+
+if [ "${#SIZES[@]}" -eq 0 ]; then
+    SIZES=("${DEFAULT_SIZES[@]}")
+fi
+
 BUILD_DIR="${OPENMP_BUILD_DIR}"
 RAW_CSV="${RESULTS_RAW_DIR}/openmp_methods_graph.csv"
 PLOT_DIR="${RESULTS_FIG_DIR}/openmp_methods_graph"

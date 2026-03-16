@@ -9,28 +9,21 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Load shared project paths and executable locations.
 source "${SCRIPT_DIR}/common_run_config.sh"
 
-# Read the repeat count from the first argument, defaulting to 3 so the full
-# all-method sweep stays within the 5-hour wall-clock cap on CSD3.
-REPEATS="${1:-3}"
+print_usage() {
+    cat <<'EOF'
+Usage:
+  bash scripts/sh_scripts/run_all_methods_graph.sh [repeats] [n1 n2 ...]
+  bash scripts/sh_scripts/run_all_methods_graph.sh [repeats] --methods <method1> [method2 ...] --sizes <n1> [n2 ...]
 
-# Allow the plotting conda environment name to be overridden by the caller.
-CONDA_ENV_NAME="${CONDA_ENV_NAME:-coursework-plot}"
+Examples:
+  bash scripts/sh_scripts/run_all_methods_graph.sh 3 2000 4000 6000
+  bash scripts/sh_scripts/run_all_methods_graph.sh 3 --methods lower_triangle upper_triangle contiguous_access cache_blocked_1 cache_blocked_2 --sizes 256 384 512 768 1000 1500 2000
+EOF
+}
 
-# Store the project-level conda environment definition file.
-ENV_FILE="${ROOT_DIR}/environment.yml"
-
-# Drop the first argument so any remaining arguments can be treated as matrix sizes.
-shift $(( $# >= 1 ? 1 : $# ))
-
-# If the caller did not provide sizes, use a default sweep that is large enough to show trends.
-if [ "$#" -eq 0 ]; then
-    SIZES=(2000 4000 6000 8000 10000)
-else
-    SIZES=("$@")
-fi
-
-# Benchmark the currently implemented single-threaded methods.
-OPTIMISATION_METHODS=(
+DEFAULT_REPEATS=3
+DEFAULT_SIZES=(2000 4000 6000 8000 10000)
+DEFAULT_METHODS=(
     baseline
     lower_triangle
     upper_triangle
@@ -38,6 +31,77 @@ OPTIMISATION_METHODS=(
     cache_blocked_1
     cache_blocked_2
 )
+
+REPEATS="${DEFAULT_REPEATS}"
+
+if [ "$#" -gt 0 ]; then
+    case "$1" in
+        --help|-h)
+            print_usage
+            exit 0
+            ;;
+        --methods|--sizes)
+            ;;
+        *)
+            REPEATS="$1"
+            shift
+            ;;
+    esac
+fi
+
+OPTIMISATION_METHODS=("${DEFAULT_METHODS[@]}")
+SIZES=()
+USED_METHOD_FLAG=0
+USED_SIZE_FLAG=0
+
+while [ "$#" -gt 0 ]; do
+    case "$1" in
+        --help|-h)
+            print_usage
+            exit 0
+            ;;
+        --methods)
+            USED_METHOD_FLAG=1
+            OPTIMISATION_METHODS=()
+            shift
+
+            while [ "$#" -gt 0 ] && [ "$1" != "--sizes" ] && [ "$1" != "--methods" ]; do
+                OPTIMISATION_METHODS+=("$1")
+                shift
+            done
+            ;;
+        --sizes)
+            USED_SIZE_FLAG=1
+            SIZES=()
+            shift
+
+            while [ "$#" -gt 0 ] && [ "$1" != "--methods" ] && [ "$1" != "--sizes" ]; do
+                SIZES+=("$1")
+                shift
+            done
+            ;;
+        *)
+            if [ "${USED_METHOD_FLAG}" -eq 0 ] && [ "${USED_SIZE_FLAG}" -eq 0 ]; then
+                SIZES+=("$1")
+                shift
+            else
+                echo "Error: unexpected argument '$1'" >&2
+                print_usage >&2
+                exit 1
+            fi
+            ;;
+    esac
+done
+
+if [ "${#OPTIMISATION_METHODS[@]}" -eq 0 ]; then
+    echo "Error: at least one optimisation method must be provided." >&2
+    print_usage >&2
+    exit 1
+fi
+
+if [ "${#SIZES[@]}" -eq 0 ]; then
+    SIZES=("${DEFAULT_SIZES[@]}")
+fi
 
 # Use the shared prebuilt project directory.
 BUILD_DIR="${SHARED_BUILD_DIR}"
@@ -59,30 +123,7 @@ echo "==> Methods: ${OPTIMISATION_METHODS[*]}"
 
 # Ensure the shared executable exists and was built with the optimised build type.
 ensure_shared_release_executable "${RUN_CHOLESKY_EXEC_REL}"
-
-# Stop early with a clear error if conda is not installed or not on PATH.
-if ! command -v conda >/dev/null 2>&1; then
-    echo "Error: conda is required for plotting but was not found on PATH." >&2
-    exit 1
-fi
-
-# Stop early with a clear error if the project environment file is missing.
-if [ ! -f "${ENV_FILE}" ]; then
-    echo "Error: missing conda environment file: ${ENV_FILE}" >&2
-    exit 1
-fi
-
-# Load conda into this non-interactive shell.
-source "$(conda info --base)/etc/profile.d/conda.sh"
-
-# Create the plotting environment from environment.yml if it does not already exist.
-if ! conda env list | awk 'NF && $1 !~ /^#/ { print $1 }' | grep -Fxq "${CONDA_ENV_NAME}"; then
-    echo "==> Creating conda environment: ${CONDA_ENV_NAME}"
-    conda env create --yes -n "${CONDA_ENV_NAME}" -f "${ENV_FILE}"
-fi
-
-# Activate the plotting environment before running the scaling driver and comparison plotter.
-conda activate "${CONDA_ENV_NAME}"
+PLOT_PYTHON="$(resolve_plot_python)"
 
 # Build temporary per-method CSVs, merge them into one combined raw CSV, then remove the
 # intermediates so the user is left with one CSV for the whole workflow.
@@ -114,7 +155,7 @@ done
 
 # Generate the combined comparison figures from the one merged raw CSV.
 MPLCONFIGDIR=/tmp/mpl_perf_graph \
-python3 "${ROOT_DIR}/plot/plot_comparison_metrics.py" \
+"${PLOT_PYTHON}" "${ROOT_DIR}/plot/plot_comparison_metrics.py" \
     "${COMPARISON_FIG_DIR}" \
     "${RAW_CSV}"
 

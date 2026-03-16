@@ -1,3 +1,8 @@
+/**
+ * @file runtime_cholesky.h
+ * @brief Helpers for mapping user-facing optimisation names to runtime implementations.
+ */
+
 #ifndef RUNTIME_CHOLESKY_H
 #define RUNTIME_CHOLESKY_H
 
@@ -7,6 +12,11 @@
 #include <cctype>
 #include <string>
 
+/**
+ * @brief Normalises a user-supplied optimisation name for lookup.
+ * @param name Raw optimisation name copied by value.
+ * @return Lower-cased name with spaces and hyphens converted to underscores.
+ */
 inline std::string normalise_optimisation_name(std::string name)
 {
     std::transform(name.begin(),
@@ -25,6 +35,12 @@ inline std::string normalise_optimisation_name(std::string name)
     return name;
 }
 
+/**
+ * @brief Parses a user-facing optimisation label into a `CholeskyVersion`.
+ * @param input Raw optimisation name.
+ * @param version Output parameter populated when parsing succeeds.
+ * @return `true` when the input maps to a known implementation.
+ */
 inline bool parse_optimisation_name(const std::string& input, CholeskyVersion& version)
 {
     const std::string name = normalise_optimisation_name(input);
@@ -100,6 +116,11 @@ inline bool parse_optimisation_name(const std::string& input, CholeskyVersion& v
     return false;
 }
 
+/**
+ * @brief Returns the canonical command-line name for a Cholesky implementation.
+ * @param version Implementation identifier.
+ * @return Canonical lower-case name understood by the benchmark drivers.
+ */
 inline const char* optimisation_name(CholeskyVersion version)
 {
     switch (version)
@@ -138,6 +159,13 @@ inline const char* optimisation_name(CholeskyVersion version)
     return "unknown";
 }
 
+/**
+ * @brief Runs the selected implementation through the timed library entry point.
+ * @param c Pointer to row-major matrix storage.
+ * @param n Matrix dimension.
+ * @param version Implementation to execute.
+ * @return Elapsed time in seconds, or a negative error code on failure.
+ */
 inline double run_cholesky_version(double* c, int n, CholeskyVersion version)
 {
     return timed_cholesky_factorisation_versioned(c, n, version);

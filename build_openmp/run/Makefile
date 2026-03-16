@@ -140,6 +140,44 @@ run_cholesky/fast:
 	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f run/CMakeFiles/run_cholesky.dir/build.make run/CMakeFiles/run_cholesky.dir/build
 .PHONY : run_cholesky/fast
 
+# Convenience name for target.
+run/CMakeFiles/compare_matrix_generators.dir/rule:
+	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run/CMakeFiles/compare_matrix_generators.dir/rule
+.PHONY : run/CMakeFiles/compare_matrix_generators.dir/rule
+
+# Convenience name for target.
+compare_matrix_generators: run/CMakeFiles/compare_matrix_generators.dir/rule
+.PHONY : compare_matrix_generators
+
+# fast build rule for target.
+compare_matrix_generators/fast:
+	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f run/CMakeFiles/compare_matrix_generators.dir/build.make run/CMakeFiles/compare_matrix_generators.dir/build
+.PHONY : compare_matrix_generators/fast
+
+compare_matrix_generators.o: compare_matrix_generators.cpp.o
+.PHONY : compare_matrix_generators.o
+
+# target to build an object file
+compare_matrix_generators.cpp.o:
+	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f run/CMakeFiles/compare_matrix_generators.dir/build.make run/CMakeFiles/compare_matrix_generators.dir/compare_matrix_generators.cpp.o
+.PHONY : compare_matrix_generators.cpp.o
+
+compare_matrix_generators.i: compare_matrix_generators.cpp.i
+.PHONY : compare_matrix_generators.i
+
+# target to preprocess a source file
+compare_matrix_generators.cpp.i:
+	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f run/CMakeFiles/compare_matrix_generators.dir/build.make run/CMakeFiles/compare_matrix_generators.dir/compare_matrix_generators.cpp.i
+.PHONY : compare_matrix_generators.cpp.i
+
+compare_matrix_generators.s: compare_matrix_generators.cpp.s
+.PHONY : compare_matrix_generators.s
+
+# target to generate assembly for a file
+compare_matrix_generators.cpp.s:
+	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f run/CMakeFiles/compare_matrix_generators.dir/build.make run/CMakeFiles/compare_matrix_generators.dir/compare_matrix_generators.cpp.s
+.PHONY : compare_matrix_generators.cpp.s
+
 run_cholesky.o: run_cholesky.cpp.o
 .PHONY : run_cholesky.o
 
@@ -173,7 +211,11 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... compare_matrix_generators"
 	@echo "... run_cholesky"
+	@echo "... compare_matrix_generators.o"
+	@echo "... compare_matrix_generators.i"
+	@echo "... compare_matrix_generators.s"
 	@echo "... run_cholesky.o"
 	@echo "... run_cholesky.i"
 	@echo "... run_cholesky.s"

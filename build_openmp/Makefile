@@ -530,6 +530,19 @@ run_cholesky/fast:
 .PHONY : run_cholesky/fast
 
 #=============================================================================
+# Target rules for targets named compare_matrix_generators
+
+# Build rule for target.
+compare_matrix_generators: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 compare_matrix_generators
+.PHONY : compare_matrix_generators
+
+# fast build rule for target.
+compare_matrix_generators/fast:
+	$(MAKE) $(MAKESILENT) -f run/CMakeFiles/compare_matrix_generators.dir/build.make run/CMakeFiles/compare_matrix_generators.dir/build
+.PHONY : compare_matrix_generators/fast
+
+#=============================================================================
 # Target rules for targets named test_small_case
 
 # Build rule for target.
@@ -619,6 +632,19 @@ test_generated_spd: cmake_check_build_system
 test_generated_spd/fast:
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_generated_spd.dir/build.make test/CMakeFiles/test_generated_spd.dir/build
 .PHONY : test_generated_spd/fast
+
+#=============================================================================
+# Target rules for targets named test_coursework_brief_matrix
+
+# Build rule for target.
+test_coursework_brief_matrix: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_coursework_brief_matrix
+.PHONY : test_coursework_brief_matrix
+
+# fast build rule for target.
+test_coursework_brief_matrix/fast:
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_coursework_brief_matrix.dir/build.make test/CMakeFiles/test_coursework_brief_matrix.dir/build
+.PHONY : test_coursework_brief_matrix/fast
 
 #=============================================================================
 # Target rules for targets named test_repeatability
@@ -722,9 +748,11 @@ help:
 	@echo "... NightlySubmit"
 	@echo "... NightlyTest"
 	@echo "... NightlyUpdate"
+	@echo "... compare_matrix_generators"
 	@echo "... coursework_perf_support"
 	@echo "... mphil_dis_cholesky"
 	@echo "... run_cholesky"
+	@echo "... test_coursework_brief_matrix"
 	@echo "... test_diagonal_matrix"
 	@echo "... test_generated_spd"
 	@echo "... test_identity"

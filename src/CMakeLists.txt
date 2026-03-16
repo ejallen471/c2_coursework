@@ -23,7 +23,4 @@ target_include_directories(mphil_dis_cholesky
 find_package(OpenMP QUIET)
 if(OpenMP_CXX_FOUND)
     target_link_libraries(mphil_dis_cholesky PUBLIC OpenMP::OpenMP_CXX)
-    target_compile_definitions(mphil_dis_cholesky PUBLIC MPHIL_HAVE_OPENMP=1)
-else()
-    target_compile_definitions(mphil_dis_cholesky PUBLIC MPHIL_HAVE_OPENMP=0)
 endif()

@@ -1,122 +1,158 @@
-# OpenMP Workflows
+# C2 Coursework
 
-These workflows use the OpenMP-enabled build in `build_openmp/`.
+This project benchmarks several Cholesky factorisation implementations for dense symmetric positive definite matrices. It includes single-threaded variants, cache-blocked variants, and OpenMP variants, together with local shell workflows, CSD3 Slurm workflows, CSV output, and plotting scripts.
 
-Build first:
+---
+## Features
+
+- Multiple Cholesky implementations in C++
+- Unified benchmark runner with `time`, `fixed-size`, `scaling`, and `block-size-sweep` modes
+- Local shell workflows for single-thread and OpenMP experiments
+- CSV outputs for benchmarking and correctness checks
+- Python plotting scripts for scaling, speedup, and block-size analysis
+- Tests for correctness, parsing, matrix generation, and runner output
+
+---
+## Installation
+
+Build the standard single-thread executable:
+
+```bash
+bash scripts/sh_scripts/build.sh
+```
+
+Build the OpenMP executable:
 
 ```bash
 bash scripts/sh_scripts/build_openmp.sh
 ```
 
-For plotting locally, make sure your Python environment has:
+For plotting locally, create a Python environment and install:
 
 ```bash
+python3 -m venv .venv
+source .venv/bin/activate
 pip install -r requirements-plot.txt
 ```
 
-## 1. Fixed-Size Comparison
+---
+## Testing
 
-This workflow runs:
+Build scripts compile the test executables, but they do not run the tests automatically.
 
-- `baseline` with `OMP_NUM_THREADS=1`
-- `openmp1`
-- `openmp2`
-- `openmp3`
-- `openmp4`
-
-at one matrix size, then writes one combined CSV.
-
-Run:
+Run the standard test suite with:
 
 ```bash
-OPENMP_THREADS=8 bash scripts/sh_scripts/run_openmp_fixed_size_comparison.sh 2000 1
+bash scripts/sh_scripts/build.sh
+ctest --test-dir build --output-on-failure
 ```
 
-Arguments:
-
-```text
-bash scripts/sh_scripts/run_openmp_fixed_size_comparison.sh <matrix_size> <repeats> [raw_csv]
-```
-
-Expected output:
-
-- `results/raw/openmp_fixed_size_comparison_n2000.csv`
-  One row per method and repeat, with:
-  `optimisation,n,repeat,elapsed_seconds,speedup_factor_vs_baseline,logdet_library,logdet_factor,relative_difference_percent`
-
-Notes:
-
-- `OPENMP_THREADS` controls the thread count for `openmp1` to `openmp4`
-- `baseline` is always run with one thread for a fair single-thread reference
-
-## 2. Matrix-Size Scaling
-
-This workflow runs:
-
-- `baseline` with `OMP_NUM_THREADS=1`
-- `openmp1`
-- `openmp2`
-- `openmp3`
-- `openmp4`
-
-across several matrix sizes and generates combined comparison plots.
-
-Run:
+Run the OpenMP-enabled test suite with:
 
 ```bash
-OPENMP_THREADS=8 bash scripts/sh_scripts/run_openmp_methods_graph.sh 3 512 1024 2000 4096
+bash scripts/sh_scripts/build_openmp.sh
+ctest --test-dir build_openmp --output-on-failure
 ```
 
-Arguments:
+--- 
+## Usage
 
-```text
-bash scripts/sh_scripts/run_openmp_methods_graph.sh <repeats> <n1> [n2 ...]
-```
+The main local workflows are:
 
-Expected outputs:
+- Single-thread fixed-size comparison  
+  Run all single-thread implementations at one matrix size and write one comparison CSV.
+  Command:
+  ```bash
+  ./build/run/run_cholesky fixed-size <matrix_size> <repeats> <raw_csv>
+  ```
+  Example:
+  ```bash
+  ./build/run/run_cholesky fixed-size 2000 3 results/raw/fixed_size_comparison_n2000_raw.csv
+  ```
 
-- `results/raw/openmp_methods_graph.csv`
-  Raw timing data for all requested methods, matrix sizes, and repeats.
-- `results/figures/openmp_methods_graph/runtime_vs_n_by_method.png`
-  Log-log runtime plot comparing `baseline` and all OpenMP methods.
-- `results/figures/openmp_methods_graph/speedup_vs_baseline.png`
-  Speedup relative to the single-thread baseline as matrix size changes.
-- `results/figures/openmp_methods_graph/cubic_scaling_check_by_method.png`
-  Normalised log-log scaling plot with an `n^3` reference line.
+- Single-thread one-method scaling  
+  Run one single-thread implementation across several matrix sizes and generate plots.
+  Command:
+  ```bash
+  bash scripts/sh_scripts/run_matrix_size_graph.sh <optimisation> <repeats> <n1> [n2 ...]
+  ```
+  Example:
+  ```bash
+  bash scripts/sh_scripts/run_matrix_size_graph.sh baseline 5 64 128 256 512 1024
+  ```
 
-Notes:
+- Single-thread block-size sweep  
+  Sweep the block size for one blocked single-thread implementation and generate plots.
+  Command:
+  ```bash
+  bash scripts/sh_scripts/run_block_size_sweep.sh <optimisation> <matrix_size> <repeats> <block_size1> [block_size2 ...]
+  ```
+  Example:
+  ```bash
+  bash scripts/sh_scripts/run_block_size_sweep.sh cache_blocked_1 1000 5 16 24 32 48 64
+  ```
 
-- the plots include error bars when repeats are greater than 1
-- `OPENMP_THREADS` controls the thread count for the OpenMP methods only
-- `baseline` is kept single-threaded throughout
+- OpenMP fixed-size comparison  
+  Run the selected OpenMP fixed-size methods at one matrix size, then write one comparison CSV.
+  Command:
+  ```bash
+  OPENMP_THREADS=<threads> bash scripts/sh_scripts/run_openmp_fixed_size_comparison.sh <matrix_size> <repeats> [raw_csv] [--methods <method1> [method2 ...]]
+  ```
+  Example:
+  ```bash
+  OPENMP_THREADS=8 bash scripts/sh_scripts/run_openmp_fixed_size_comparison.sh 2000 1
+  ```
 
-## 3. Thread-Count Sweep
+- OpenMP matrix-size scaling  
+  Run `baseline` and all OpenMP implementations across several matrix sizes and generate comparison plots.
+  Command:
+  ```bash
+  OPENMP_THREADS=<threads> bash scripts/sh_scripts/run_openmp_methods_graph.sh <repeats> <n1> [n2 ...]
+  ```
+  Example:
+  ```bash
+  OPENMP_THREADS=8 bash scripts/sh_scripts/run_openmp_methods_graph.sh 3 512 1024 2000 4096
+  ```
 
-This workflow measures how the OpenMP methods scale with thread count at one fixed matrix size.
+- OpenMP thread-count sweep  
+  Run the OpenMP implementations at one matrix size across several thread counts and generate a thread-scaling plot.
+  Command:
+  ```bash
+  bash scripts/sh_scripts/run_openmp_thread_count_sweep.sh <matrix_size> <repeats> <threads1> [threads2 ...]
+  ```
+  Example:
+  ```bash
+  bash scripts/sh_scripts/run_openmp_thread_count_sweep.sh 2000 3 1 2 4 8
+  ```
 
-Run:
+For a direct single run without a wrapper, you can still call the benchmark runner itself:
 
+Command:
 ```bash
-bash scripts/sh_scripts/run_openmp_thread_count_sweep.sh 2000 3 1 2 4 8
+./build/run/run_cholesky time <optimisation> <matrix_size> [raw_csv]
 ```
 
-Arguments:
-
-```text
-bash scripts/sh_scripts/run_openmp_thread_count_sweep.sh <matrix_size> <repeats> <threads1> [threads2 ...]
+Example:
+```bash
+./build/run/run_cholesky time baseline 512
 ```
 
-Expected outputs:
+---
+## Report
 
-- `results/raw/openmp_thread_count_sweep_n2000.csv`
-  Raw timing data for `baseline` and all OpenMP methods across the requested thread counts.
-- `results/figures/openmp_thread_count_sweep_n2000/summary_by_threads.csv`
-  Aggregated summary by method and thread count.
-- `results/figures/openmp_thread_count_sweep_n2000/speedup_vs_thread_count.png`
-  Speedup relative to each method's own 1-thread performance.
+A write up of our investigation and results can be found in report/c2_report.pdf
 
-Notes:
 
-- `baseline` is included as a 1-thread reference row in the raw CSV
-- the plot focuses on `openmp1` to `openmp4`
-- the plot includes error bars when repeats are greater than 1
+---
+## Documentation
+
+
+---
+## Contributing
+
+
+---
+## License
+
+---
+## AI Declaration

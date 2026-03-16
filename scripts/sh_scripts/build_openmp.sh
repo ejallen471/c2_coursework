@@ -9,10 +9,25 @@ BUILD_DIR="${OPENMP_BUILD_DIR}"
 
 mkdir -p "${BUILD_DIR}"
 
+# Initialise the module command in non-interactive batch shells when available.
+if [ -f /etc/profile.d/modules.sh ]; then
+    . /etc/profile.d/modules.sh
+fi
+
 if type module >/dev/null 2>&1; then
     module purge
+
+    if [ "${SLURM_JOB_PARTITION:-${SLURM_PARTITION:-}}" = "icelake" ]; then
+        module load rhel8/default-icl
+    fi
+
     module load cmake
     module load gcc
+fi
+
+# Keep the build parallelism inside the CPU allocation when running under Slurm.
+if [ -n "${SLURM_CPUS_PER_TASK:-}" ]; then
+    export CMAKE_BUILD_PARALLEL_LEVEL="${CMAKE_BUILD_PARALLEL_LEVEL:-${SLURM_CPUS_PER_TASK}}"
 fi
 
 echo "==> OpenMP project build"
@@ -38,6 +53,6 @@ else
     cmake -S "${ROOT_DIR}" -B "${BUILD_DIR}" -DCMAKE_BUILD_TYPE="${SHARED_BUILD_TYPE}"
 fi
 
-cmake --build "${BUILD_DIR}" --target run_cholesky --parallel
+cmake --build "${BUILD_DIR}" --target run_cholesky compare_matrix_generators --parallel
 
 echo "==> Built OpenMP benchmark executable: ${BUILD_DIR}/${RUN_CHOLESKY_EXEC_REL}"

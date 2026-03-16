@@ -1,3 +1,8 @@
+/**
+ * @file test_logdet.cpp
+ * @brief Verifies log-determinant recovery from factorised storage.
+ */
+
 #include "mphil_dis_cholesky.h"
 #include "test_helpers.h"
 

@@ -1,3 +1,8 @@
+/**
+ * @file 05_cholesky_cache_blocked_2.cpp
+ * @brief Second cache-blocked single-threaded Cholesky implementation with loop unrolling.
+ */
+
 /*
 In this implementation we perform a cache-blocked Cholesky decomposition with explicit unrolling.
 

@@ -29,7 +29,7 @@ double run_baseline(double* c, std::size_t n)
     return t1 - t0;
 }
 
-// Run the blocked variant (same as above except only the blocked optimisations)
+// Run one blocked variant with the requested block size.
 double run_blocked_variant(const std::string& optimisation, double* c, std::size_t n,
                            int block_size)
 {
@@ -43,6 +43,14 @@ double run_blocked_variant(const std::string& optimisation, double* c, std::size
     {
         cholesky_cache_blocked_2(c, n, static_cast<std::size_t>(block_size));
     }
+    else if (optimisation == "openmp3")
+    {
+        cholesky_openmp_3(c, n, static_cast<std::size_t>(block_size));
+    }
+    else if (optimisation == "openmp4")
+    {
+        cholesky_openmp_4(c, n, static_cast<std::size_t>(block_size));
+    }
     else
     {
         return -1.0;
@@ -54,8 +62,13 @@ double run_blocked_variant(const std::string& optimisation, double* c, std::size
 
 const std::vector<std::string>& blocked_optimisations()
 {
-    // Return the list of blocked Cholesky algorithms names that the should be tested
-    static const std::vector<std::string> names = {"cache_blocked_1", "cache_blocked_2"};
+    // Return the blocked variants that accept an explicit block-size parameter.
+    static const std::vector<std::string> names = {
+        "cache_blocked_1",
+        "cache_blocked_2",
+        "openmp3",
+        "openmp4",
+    };
     return names;
 }
 
@@ -74,6 +87,18 @@ bool parse_blocked_optimisation(const std::string& input, std::string& optimisat
         name == "cache_blocked2" || name == "cacheblocked2")
     {
         optimisation = "cache_blocked_2";
+        return true;
+    }
+
+    if (name == "openmp3")
+    {
+        optimisation = "openmp3";
+        return true;
+    }
+
+    if (name == "openmp4")
+    {
+        optimisation = "openmp4";
         return true;
     }
 

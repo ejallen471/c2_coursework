@@ -1,3 +1,8 @@
+/**
+ * @file run_cholesky.cpp
+ * @brief Command-line entry point for the benchmark modes.
+ */
+
 #include "perf_modes.h"
 
 #include <iostream>
@@ -10,7 +15,7 @@ void print_usage(const char* program_name)
     std::cerr << "Usage:\n"
               << "  " << program_name << " time <optimisation> <n> [raw_csv]\n"
               << "  " << program_name
-              << " fixed-size <n> <repeats> <raw_csv>\n"
+              << " fixed-size <n> <repeats> <raw_csv> [method1 method2 ...]\n"
               << "  " << program_name
               << " scaling <optimisation> <repeats> <raw_csv> <n1> [n2 ...]\n"
               << "  " << program_name

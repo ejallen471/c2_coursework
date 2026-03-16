@@ -1,3 +1,8 @@
+/**
+ * @file 06_cholesky_openmp_1.cpp
+ * @brief OpenMP Cholesky implementation with parallel trailing-row updates.
+ */
+
 /*
 Here we parallelise without cache blocking.
 

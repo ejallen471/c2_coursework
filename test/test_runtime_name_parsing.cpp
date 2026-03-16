@@ -1,3 +1,8 @@
+/**
+ * @file test_runtime_name_parsing.cpp
+ * @brief Verifies parsing and round-tripping of runtime optimisation names.
+ */
+
 #include "runtime_cholesky.h"
 
 #include <iostream>

@@ -1,3 +1,8 @@
+/**
+ * @file test_small_case.cpp
+ * @brief Checks small worked examples against known Cholesky factors.
+ */
+
 #include "mphil_dis_cholesky.h"
 #include "test_helpers.h"
 

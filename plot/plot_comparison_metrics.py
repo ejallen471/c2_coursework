@@ -27,6 +27,7 @@ class ComparisonPlotter:
 
         self.df = pd.concat((pd.read_csv(path) for path in self.input_csvs), ignore_index=True)
         self._validate_columns()
+        self.has_baseline = "baseline" in set(self.df["tag"])
         self.summary = self._build_summary()
 
     def _validate_columns(self):
@@ -55,6 +56,12 @@ class ComparisonPlotter:
             logdet_mean=("logdet", "mean"),
             logdet_std=("logdet", "std"),
         )
+
+        if not self.has_baseline:
+            summary["speedup_median"] = float("nan")
+            summary["speedup_mean"] = float("nan")
+            summary["speedup_std"] = float("nan")
+            return summary
 
         baseline_runs = self.df.loc[
             self.df["tag"] == "baseline", ["n", "repeat", "elapsed_seconds"]
@@ -89,7 +96,7 @@ class ComparisonPlotter:
                 ordered["n"],
                 ordered["elapsed_median"],
                 yerr=ordered["elapsed_std"].fillna(0.0),
-                marker="o",
+                marker="s",
                 capsize=3,
                 label=tag,
             )
@@ -106,6 +113,10 @@ class ComparisonPlotter:
 
     def speedup_vs_n(self):
         """Plot median speedup relative to the baseline implementation."""
+        if not self.has_baseline:
+            print("Skipping speedup plot because baseline data is not present.")
+            return
+
         plt.figure(figsize=(8, 5.5))
 
         for tag, group in self.summary.groupby("tag"):
@@ -114,7 +125,7 @@ class ComparisonPlotter:
                 ordered["n"],
                 ordered["speedup_median"],
                 yerr=ordered["speedup_std"].fillna(0.0),
-                marker="o",
+                marker="s",
                 capsize=3,
                 label=tag,
             )
@@ -148,7 +159,7 @@ class ComparisonPlotter:
                 ordered["n"] / reference_n,
                 normalised_runtime,
                 yerr=normalised_std.fillna(0.0),
-                marker="o",
+                marker="s",
                 capsize=3,
                 label=tag,
             )
@@ -182,6 +193,10 @@ class ComparisonPlotter:
         legacy_plot = self.output_dir / "big_o_check_by_method.png"
         if legacy_plot.exists():
             legacy_plot.unlink()
+
+        speedup_plot = self.output_dir / "speedup_vs_baseline.png"
+        if speedup_plot.exists() and not self.has_baseline:
+            speedup_plot.unlink()
 
         self.runtime_vs_n_by_method()
         self.speedup_vs_n()

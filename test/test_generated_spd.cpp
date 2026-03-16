@@ -1,3 +1,8 @@
+/**
+ * @file test_generated_spd.cpp
+ * @brief Validates generated SPD matrices and their reconstructions after factorisation.
+ */
+
 #include "mphil_dis_cholesky.h"
 #include "test_helpers.h"
 
@@ -11,6 +16,13 @@ int main()
     for (const int n : sizes)
     {
         const std::vector<double> original = make_generated_spd_matrix(n);
+
+        if (!matrix_satisfies_generated_spd_conditions(original, n))
+        {
+            std::cerr << "test_generated_spd failed SPD construction checks for n = " << n << '\n';
+            return 1;
+        }
+
         std::vector<double> c = original;
 
         const double elapsed = timed_cholesky_factorisation(c.data(), n);

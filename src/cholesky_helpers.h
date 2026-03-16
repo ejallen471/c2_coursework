@@ -1,10 +1,24 @@
+/**
+ * @file cholesky_helpers.h
+ * @brief Internal helpers for restoring mirrored matrix storage after factorisation.
+ */
+
 #ifndef CHOLESKY_HELPERS_H
 #define CHOLESKY_HELPERS_H
 
 #include <cstddef>
 
+/**
+ * @namespace cholesky_detail
+ * @brief Internal routines shared by Cholesky implementations.
+ */
 namespace cholesky_detail
 {
+    /**
+     * @brief Copies the computed lower triangle into the upper triangle.
+     * @param c Pointer to row-major matrix storage.
+     * @param n Matrix dimension.
+     */
     inline void mirror_lower_to_upper(double *c, std::size_t n)
     {
         for (std::size_t i = 0; i < n; ++i)
@@ -19,6 +33,11 @@ namespace cholesky_detail
         }
     }
 
+    /**
+     * @brief Copies the computed upper triangle into the lower triangle.
+     * @param c Pointer to row-major matrix storage.
+     * @param n Matrix dimension.
+     */
     inline void mirror_upper_to_lower(double *c, std::size_t n)
     {
 

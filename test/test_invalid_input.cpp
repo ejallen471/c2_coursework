@@ -1,3 +1,8 @@
+/**
+ * @file test_invalid_input.cpp
+ * @brief Exercises the public timing entry point with invalid inputs.
+ */
+
 #include "mphil_dis_cholesky.h"
 
 #include <iostream>

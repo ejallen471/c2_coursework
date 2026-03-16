@@ -1,3 +1,8 @@
+/**
+ * @file 01_cholesky_lower_triangle.cpp
+ * @brief Single-threaded lower-triangular Cholesky factorisation mirrored into full storage.
+ */
+
 /*
 In this implementation we exploit symmetry and factorise a single triangle only.
 

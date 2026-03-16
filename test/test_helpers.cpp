@@ -1,3 +1,8 @@
+/**
+ * @file test_helpers.cpp
+ * @brief Shared helper implementations used by the unit tests.
+ */
+
 #include "test_helpers.h"
 
 #include <algorithm>

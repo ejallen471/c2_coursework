@@ -1,3 +1,8 @@
+/**
+ * @file test_repeatability.cpp
+ * @brief Confirms repeated factorisations of the same input produce identical output.
+ */
+
 #include "mphil_dis_cholesky.h"
 #include "test_helpers.h"
 

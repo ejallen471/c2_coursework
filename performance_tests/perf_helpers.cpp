@@ -1,5 +1,11 @@
+/**
+ * @file perf_helpers.cpp
+ * @brief Implementations of benchmark-reporting and validation helpers.
+ */
+
 #include "perf_helpers.h"
 
+#include <algorithm>
 #include <cmath>
 
 #if defined(MPHIL_HAVE_LAPACK) && MPHIL_HAVE_LAPACK
@@ -42,6 +48,59 @@ LogDetValue relative_difference_percent(LogDetValue value, LogDetValue reference
     }
 
     return 100.0L * std::fabs(value - reference) / scale;
+}
+
+std::vector<double> reconstruct_from_factorised_storage(const std::vector<double>& c, std::size_t n)
+{
+    std::vector<double> a(n * n, 0.0);
+
+    for (std::size_t i = 0; i < n; ++i)
+    {
+        for (std::size_t j = 0; j < n; ++j)
+        {
+            LogDetValue sum = 0.0L;
+            const std::size_t kmax = std::min(i, j);
+
+            for (std::size_t k = 0; k <= kmax; ++k)
+            {
+                sum += static_cast<LogDetValue>(c[i * n + k]) *
+                       static_cast<LogDetValue>(c[j * n + k]);
+            }
+
+            a[i * n + j] = static_cast<double>(sum);
+        }
+    }
+
+    return a;
+}
+
+double relative_frobenius_error(const std::vector<double>& actual,
+                                const std::vector<double>& reference)
+{
+    if (actual.size() != reference.size() || actual.empty())
+    {
+        return std::numeric_limits<double>::infinity();
+    }
+
+    long double numerator_sum = 0.0L;
+    long double denominator_sum = 0.0L;
+
+    for (std::size_t i = 0; i < actual.size(); ++i)
+    {
+        const long double diff =
+            static_cast<long double>(actual[i]) - static_cast<long double>(reference[i]);
+        numerator_sum += diff * diff;
+
+        const long double ref = static_cast<long double>(reference[i]);
+        denominator_sum += ref * ref;
+    }
+
+    if (denominator_sum == 0.0L)
+    {
+        return (numerator_sum == 0.0L) ? 0.0 : std::numeric_limits<double>::infinity();
+    }
+
+    return static_cast<double>(std::sqrt(numerator_sum / denominator_sum));
 }
 
 // Compute the log-determinant using LAPACK - we use this as the reference value

@@ -13,10 +13,6 @@
 /cmake_install.cmake
 
 # Generated benchmark outputs
-/results/raw/
-/results/figures/
-/results_local/
-/results_csd3/
 /logs/
 /slurm-*.out
 /slurm-*.err

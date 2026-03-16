@@ -5,10 +5,9 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=16
-#SBATCH --mem=32G
 #SBATCH --time=04:00:00
-#SBATCH --output=slurm-%x-%j.out
-#SBATCH --error=slurm-%x-%j.err
+#SBATCH --output=logs/openMP_threads/slurm-%x-%j.out
+#SBATCH --error=logs/openMP_threads/slurm-%x-%j.err
 
 set -euo pipefail
 

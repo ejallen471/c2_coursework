@@ -1,3 +1,8 @@
+/**
+ * @file 03_cholesky_contiguous_access.cpp
+ * @brief Single-threaded Cholesky variant organised for contiguous row-major updates.
+ */
+
 /*
 In this implementation, we focus on memory locality and cache behaviour.
 

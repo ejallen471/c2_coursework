@@ -96,7 +96,7 @@ class PerformancePlotter:
             summary["n"],
             summary["elapsed_median"],
             yerr=summary["elapsed_std"].fillna(0.0),
-            marker="o",
+            marker="s",
             capsize=4,
             label="Median runtime ± 1 std. dev.",
         )
@@ -140,7 +140,7 @@ class PerformancePlotter:
             summary["n"] / reference_n,
             normalised_runtime,
             yerr=normalised_std.fillna(0.0),
-            marker="o",
+            marker="s",
             capsize=4,
             label="Median runtime ± 1 std. dev.",
         )

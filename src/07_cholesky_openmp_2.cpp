@@ -1,3 +1,8 @@
+/**
+ * @file 07_cholesky_openmp_2.cpp
+ * @brief OpenMP Cholesky implementation with parallel row scaling and updates.
+ */
+
 /*
 Here we parallelise without cache blocking.
 

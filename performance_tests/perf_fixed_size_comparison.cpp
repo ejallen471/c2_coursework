@@ -14,6 +14,7 @@
 #include <fstream>
 #include <iomanip>
 #include <iostream>
+#include <limits>
 #include <string>
 #include <vector>
 
@@ -43,13 +44,56 @@ const std::vector<CholeskyVersion>& single_thread_versions()
 
     return versions;
 }
+
+bool is_single_thread_version(CholeskyVersion version)
+{
+    return std::find(single_thread_versions().begin(), single_thread_versions().end(), version) !=
+        single_thread_versions().end();
+}
+
+bool parse_selected_single_thread_versions(int argc,
+                                           char* argv[],
+                                           int start_index,
+                                           std::vector<CholeskyVersion>& versions)
+{
+    if (argc <= start_index)
+    {
+        versions.assign(single_thread_versions().begin(), single_thread_versions().end());
+        return true;
+    }
+
+    for (int argi = start_index; argi < argc; ++argi)
+    {
+        CholeskyVersion version;
+        if (!parse_optimisation_name(argv[argi], version))
+        {
+            std::cerr << "Error: unknown optimisation '" << argv[argi] << "'\n";
+            return false;
+        }
+
+        if (!is_single_thread_version(version))
+        {
+            std::cerr << "Error: optimisation '" << argv[argi]
+                      << "' is not available in single-thread fixed-size mode\n";
+            return false;
+        }
+
+        if (std::find(versions.begin(), versions.end(), version) == versions.end())
+        {
+            versions.push_back(version);
+        }
+    }
+
+    return !versions.empty();
+}
 } // End namespace
 
 int run_fixed_size_comparison_mode(int argc, char* argv[])
 {
     if (argc < 4) // expects exactly four arguments else error
     {
-        std::cerr << "Usage: " << argv[0] << " <n> <repeats> <raw_csv>\n";
+        std::cerr << "Usage: " << argv[0]
+                  << " <n> <repeats> <raw_csv> [method1 method2 ...]\n";
         return 1;
     }
 
@@ -76,6 +120,12 @@ int run_fixed_size_comparison_mode(int argc, char* argv[])
         std::filesystem::create_directories(raw_csv_path.parent_path());
     }
 
+    std::vector<CholeskyVersion> selected_versions;
+    if (!parse_selected_single_thread_versions(argc, argv, 4, selected_versions))
+    {
+        return 1;
+    }
+
     // generate test matrix  - this matrix is used by all matrices
     const std::vector<double> original_matrix = make_generated_spd_matrix(n_input);
     std::vector<double> LAPACK_matrix = original_matrix;
@@ -90,10 +140,10 @@ int run_fixed_size_comparison_mode(int argc, char* argv[])
 
     // Prepare the storage for results
     std::vector<MethodResult> results;
-    results.reserve(single_thread_versions().size());
+    results.reserve(selected_versions.size());
 
     // Loop over all Cholesky methods
-    for (const CholeskyVersion version : single_thread_versions())
+    for (const CholeskyVersion version : selected_versions)
     {
         // Create results container (structure to store the results for this method)
         MethodResult result;
@@ -132,11 +182,7 @@ int run_fixed_size_comparison_mode(int argc, char* argv[])
     const auto baseline_it =
         std::find_if(results.begin(), results.end(), [](const MethodResult& result)
                      { return result.version == CholeskyVersion::Baseline; });
-    if (baseline_it == results.end())
-    {
-        std::cerr << "Error: baseline result missing from fixed-size comparison\n";
-        return 1;
-    }
+    const bool have_baseline = baseline_it != results.end();
 
     // Open CSV file
     std::ofstream raw_csv(raw_csv_path);
@@ -157,7 +203,9 @@ int run_fixed_size_comparison_mode(int argc, char* argv[])
         for (std::size_t repeat = 0; repeat < result.elapsed_values.size(); ++repeat)
         {
             const double elapsed = result.elapsed_values[repeat];
-            const double speedup_factor = baseline_it->elapsed_values[repeat] / elapsed;
+            const double speedup_factor = have_baseline
+                ? baseline_it->elapsed_values[repeat] / elapsed
+                : std::numeric_limits<double>::quiet_NaN();
 
             raw_csv << optimisation_name(result.version) << ',' << n << ',' << repeat << ','
                     << elapsed << ',' << speedup_factor << ',' << logdet_library << ','

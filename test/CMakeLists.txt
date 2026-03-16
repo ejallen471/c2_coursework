@@ -16,6 +16,7 @@ add_coursework_test(test_diagonal_matrix test_diagonal_matrix.cpp test_helpers.c
 add_coursework_test(test_reconstruction test_reconstruction.cpp test_helpers.cpp)
 add_coursework_test(test_logdet test_logdet.cpp test_helpers.cpp)
 add_coursework_test(test_generated_spd test_generated_spd.cpp test_helpers.cpp)
+add_coursework_test(test_coursework_brief_matrix test_coursework_brief_matrix.cpp test_helpers.cpp)
 add_coursework_test(test_repeatability test_repeatability.cpp test_helpers.cpp)
 add_coursework_test(test_matrix_generation test_matrix_generation.cpp test_helpers.cpp)
 add_coursework_test(test_version_correctness test_version_correctness.cpp test_helpers.cpp)

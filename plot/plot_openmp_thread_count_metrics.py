@@ -87,7 +87,7 @@ class OpenMPThreadCountPlotter:
                 ordered["threads"],
                 ordered["speedup_median"],
                 yerr=ordered["speedup_std"].fillna(0.0),
-                marker="o",
+                marker="s",
                 capsize=4,
                 label=tag,
             )

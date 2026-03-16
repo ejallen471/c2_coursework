@@ -1,3 +1,8 @@
+/**
+ * @file test_version_correctness.cpp
+ * @brief Compares every implementation against the baseline factorisation output.
+ */
+
 #include "matrix.h"
 #include "runtime_cholesky.h"
 #include "test_helpers.h"
@@ -120,7 +125,6 @@ int main()
             return 1;
         }
 
-#if defined(MPHIL_HAVE_OPENMP) && MPHIL_HAVE_OPENMP
         const CholeskyVersion openmp_versions[] = {CholeskyVersion::OpenMP1,
                                                    CholeskyVersion::OpenMP2,
                                                    CholeskyVersion::OpenMP3,
@@ -141,34 +145,6 @@ int main()
                 return 1;
             }
         }
-#else
-        std::vector<double> matrix = make_identity_matrix(2);
-        const CholeskyVersion openmp_versions[] = {CholeskyVersion::OpenMP1,
-                                                   CholeskyVersion::OpenMP2,
-                                                   CholeskyVersion::OpenMP3,
-                                                   CholeskyVersion::OpenMP4};
-
-        for (const CholeskyVersion version : openmp_versions)
-        {
-            std::vector<double> current = matrix;
-            const double elapsed = run_cholesky_version(current.data(), 2, version);
-
-            if (elapsed != -4.0)
-            {
-                std::cerr << "test_version_correctness failed: expected placeholder return code -4 for "
-                          << optimisation_name(version) << ", got " << elapsed << '\n';
-                return 1;
-            }
-
-            CholeskyVersion parsed;
-            if (!parse_optimisation_name(optimisation_name(version), parsed) || parsed != version)
-            {
-                std::cerr << "test_version_correctness failed: name round-trip failed for "
-                          << optimisation_name(version) << '\n';
-                return 1;
-            }
-        }
-#endif
     }
 
     std::cout << "test_version_correctness passed\n";

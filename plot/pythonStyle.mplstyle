@@ -14,7 +14,7 @@ xtick.labelsize: 14
 ytick.labelsize: 14
 
 lines.linewidth: 2.5
-lines.markersize: 12
+lines.markersize: 5
 lines.markeredgewidth: 0
 
 legend.fancybox: True

@@ -14,12 +14,6 @@ OPTIMISATION_METHOD="${1:-baseline}"
 # Read the number of repeats from the second argument, defaulting to 15.
 REPEATS="${2:-15}"
 
-# Allow the plotting conda environment name to be overridden by the caller.
-CONDA_ENV_NAME="${CONDA_ENV_NAME:-coursework-plot}"
-
-# Store the project-level conda environment definition file.
-ENV_FILE="${ROOT_DIR}/environment.yml"
-
 # Drop the first two arguments so any remaining arguments can be treated as matrix sizes.
 shift $(( $# >= 2 ? 2 : $# ))
 
@@ -57,30 +51,7 @@ echo "==> Sizes: ${SIZES[*]}"
 
 # Ensure the shared executable exists and was built with the optimised build type.
 ensure_shared_release_executable "${RUN_CHOLESKY_EXEC_REL}"
-
-# Stop early with a clear error if conda is not installed or not on PATH.
-if ! command -v conda >/dev/null 2>&1; then
-    echo "Error: conda is required for plotting but was not found on PATH." >&2
-    exit 1
-fi
-
-# Stop early with a clear error if the project environment file is missing.
-if [ ! -f "${ENV_FILE}" ]; then
-    echo "Error: missing conda environment file: ${ENV_FILE}" >&2
-    exit 1
-fi
-
-# Load conda into this non-interactive shell so plotting can run with matplotlib available.
-source "$(conda info --base)/etc/profile.d/conda.sh"
-
-# If the plotting environment does not exist yet, create it from environment.yml.
-if ! conda env list | awk 'NF && $1 !~ /^#/ { print $1 }' | grep -Fxq "${CONDA_ENV_NAME}"; then
-    echo "==> Creating conda environment: ${CONDA_ENV_NAME}"
-    conda env create --yes -n "${CONDA_ENV_NAME}" -f "${ENV_FILE}"
-fi
-
-# Activate the conda environment used for plotting before launching the scaling driver.
-conda activate "${CONDA_ENV_NAME}"
+PLOT_PYTHON="$(resolve_plot_python)"
 
 # Run the scaling benchmark first so the raw CSV exists before plotting.
 "${BUILD_DIR}/${RUN_CHOLESKY_EXEC_REL}" \
@@ -92,7 +63,7 @@ conda activate "${CONDA_ENV_NAME}"
 
 # Give matplotlib a writable cache directory, then plot from the generated CSV.
 MPLCONFIGDIR=/tmp/mpl_perf_graph \
-python3 "${ROOT_DIR}/plot/plot_metrics.py" \
+"${PLOT_PYTHON}" "${ROOT_DIR}/plot/plot_metrics.py" \
     "${RAW_CSV}" \
     "${PLOT_DIR}"
 

@@ -16,15 +16,7 @@ pip install -r requirements-plot.txt
 
 ## 1. Fixed-Size Comparison
 
-This workflow runs:
-
-- `baseline` with `OMP_NUM_THREADS=1`
-- `openmp1`
-- `openmp2`
-- `openmp3`
-- `openmp4`
-
-at one matrix size, then writes one combined CSV.
+This workflow runs the selected OpenMP fixed-size methods at one matrix size, then writes one combined CSV.
 
 Run:
 
@@ -32,10 +24,20 @@ Run:
 OPENMP_THREADS=8 bash scripts/sh_scripts/run_openmp_fixed_size_comparison.sh 2000 1
 ```
 
+Run a subset of methods:
+
+```bash
+OPENMP_THREADS=32 bash scripts/sh_scripts/run_openmp_fixed_size_comparison.sh \
+  20000 \
+  3 \
+  results/raw/openmp_fixed_size_comparison_n20000.csv \
+  --methods openmp1 openmp2 openmp3 openmp4
+```
+
 Arguments:
 
 ```text
-bash scripts/sh_scripts/run_openmp_fixed_size_comparison.sh <matrix_size> <repeats> [raw_csv]
+bash scripts/sh_scripts/run_openmp_fixed_size_comparison.sh <matrix_size> <repeats> [raw_csv] [--methods <method1> [method2 ...]]
 ```
 
 Expected output:
@@ -47,7 +49,9 @@ Expected output:
 Notes:
 
 - `OPENMP_THREADS` controls the thread count for `openmp1` to `openmp4`
-- `baseline` is always run with one thread for a fair single-thread reference
+- valid method names are `baseline`, `openmp1`, `openmp2`, `openmp3`, and `openmp4`
+- `baseline` is always run with one thread when it is included
+- if `baseline` is omitted, the CSV is still written but `speedup_factor_vs_baseline` is `nan`
 
 ## 2. Matrix-Size Scaling
 
@@ -67,10 +71,20 @@ Run:
 OPENMP_THREADS=8 bash scripts/sh_scripts/run_openmp_methods_graph.sh 3 512 1024 2000 4096
 ```
 
+Run a selected subset of methods:
+
+```bash
+OPENMP_THREADS=8 bash scripts/sh_scripts/run_openmp_methods_graph.sh \
+  3 \
+  --methods openmp1 openmp2 openmp3 openmp4 \
+  --sizes 256 512 1000 2000 4000 8000 12000 16000 20000
+```
+
 Arguments:
 
 ```text
 bash scripts/sh_scripts/run_openmp_methods_graph.sh <repeats> <n1> [n2 ...]
+bash scripts/sh_scripts/run_openmp_methods_graph.sh <repeats> --methods <method1> [method2 ...] --sizes <n1> [n2 ...]
 ```
 
 Expected outputs:
@@ -80,7 +94,7 @@ Expected outputs:
 - `results/figures/openmp_methods_graph/runtime_vs_n_by_method.png`
   Log-log runtime plot comparing `baseline` and all OpenMP methods.
 - `results/figures/openmp_methods_graph/speedup_vs_baseline.png`
-  Speedup relative to the single-thread baseline as matrix size changes.
+  Speedup relative to the single-thread baseline as matrix size changes, when `baseline` is included.
 - `results/figures/openmp_methods_graph/cubic_scaling_check_by_method.png`
   Normalised log-log scaling plot with an `n^3` reference line.
 
@@ -89,6 +103,7 @@ Notes:
 - the plots include error bars when repeats are greater than 1
 - `OPENMP_THREADS` controls the thread count for the OpenMP methods only
 - `baseline` is kept single-threaded throughout
+- if `baseline` is omitted from `--methods`, the runtime and cubic-scaling plots are still produced, but the speedup plot is skipped
 
 ## 3. Thread-Count Sweep
 
@@ -109,7 +124,7 @@ bash scripts/sh_scripts/run_openmp_thread_count_sweep.sh <matrix_size> <repeats>
 Expected outputs:
 
 - `results/raw/openmp_thread_count_sweep_n2000.csv`
-  Raw timing data for `baseline` and all OpenMP methods across the requested thread counts.
+  Raw timing data for `openmp1` to `openmp4` across the requested thread counts.
 - `results/figures/openmp_thread_count_sweep_n2000/summary_by_threads.csv`
   Aggregated summary by method and thread count.
 - `results/figures/openmp_thread_count_sweep_n2000/speedup_vs_thread_count.png`
@@ -117,6 +132,6 @@ Expected outputs:
 
 Notes:
 
-- `baseline` is included as a 1-thread reference row in the raw CSV
 - the plot focuses on `openmp1` to `openmp4`
+- include a `1`-thread run if you want the speedup plot, because speedup is measured relative to each method's own 1-thread timing
 - the plot includes error bars when repeats are greater than 1

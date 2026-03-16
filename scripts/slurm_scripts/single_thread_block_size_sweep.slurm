@@ -5,10 +5,9 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
-#SBATCH --mem=24G
 #SBATCH --time=04:00:00
-#SBATCH --output=slurm-%x-%j.out
-#SBATCH --error=slurm-%x-%j.err
+#SBATCH --output=logs/single_thread_block_size_sweep/slurm-%x-%j.out
+#SBATCH --error=logs/single_thread_block_size_sweep/slurm-%x-%j.err
 
 set -euo pipefail
 

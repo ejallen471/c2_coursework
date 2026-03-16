@@ -1,3 +1,8 @@
+/**
+ * @file test_perf_time_output.cpp
+ * @brief Verifies the command-line output and CSV generation of `run_cholesky time`.
+ */
+
 #include <cstdio>
 #include <cstdlib>
 #include <filesystem>

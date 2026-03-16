@@ -225,6 +225,20 @@ test_generated_spd/fast:
 .PHONY : test_generated_spd/fast
 
 # Convenience name for target.
+test/CMakeFiles/test_coursework_brief_matrix.dir/rule:
+	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_coursework_brief_matrix.dir/rule
+.PHONY : test/CMakeFiles/test_coursework_brief_matrix.dir/rule
+
+# Convenience name for target.
+test_coursework_brief_matrix: test/CMakeFiles/test_coursework_brief_matrix.dir/rule
+.PHONY : test_coursework_brief_matrix
+
+# fast build rule for target.
+test_coursework_brief_matrix/fast:
+	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_coursework_brief_matrix.dir/build.make test/CMakeFiles/test_coursework_brief_matrix.dir/build
+.PHONY : test_coursework_brief_matrix/fast
+
+# Convenience name for target.
 test/CMakeFiles/test_repeatability.dir/rule:
 	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test_repeatability.dir/rule
 .PHONY : test/CMakeFiles/test_repeatability.dir/rule
@@ -294,6 +308,30 @@ test_perf_time_output/fast:
 	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_perf_time_output.dir/build.make test/CMakeFiles/test_perf_time_output.dir/build
 .PHONY : test_perf_time_output/fast
 
+test_coursework_brief_matrix.o: test_coursework_brief_matrix.cpp.o
+.PHONY : test_coursework_brief_matrix.o
+
+# target to build an object file
+test_coursework_brief_matrix.cpp.o:
+	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_coursework_brief_matrix.dir/build.make test/CMakeFiles/test_coursework_brief_matrix.dir/test_coursework_brief_matrix.cpp.o
+.PHONY : test_coursework_brief_matrix.cpp.o
+
+test_coursework_brief_matrix.i: test_coursework_brief_matrix.cpp.i
+.PHONY : test_coursework_brief_matrix.i
+
+# target to preprocess a source file
+test_coursework_brief_matrix.cpp.i:
+	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_coursework_brief_matrix.dir/build.make test/CMakeFiles/test_coursework_brief_matrix.dir/test_coursework_brief_matrix.cpp.i
+.PHONY : test_coursework_brief_matrix.cpp.i
+
+test_coursework_brief_matrix.s: test_coursework_brief_matrix.cpp.s
+.PHONY : test_coursework_brief_matrix.s
+
+# target to generate assembly for a file
+test_coursework_brief_matrix.cpp.s:
+	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_coursework_brief_matrix.dir/build.make test/CMakeFiles/test_coursework_brief_matrix.dir/test_coursework_brief_matrix.cpp.s
+.PHONY : test_coursework_brief_matrix.cpp.s
+
 test_diagonal_matrix.o: test_diagonal_matrix.cpp.o
 .PHONY : test_diagonal_matrix.o
 
@@ -353,6 +391,7 @@ test_helpers.cpp.o:
 	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_reconstruction.dir/build.make test/CMakeFiles/test_reconstruction.dir/test_helpers.cpp.o
 	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_logdet.dir/build.make test/CMakeFiles/test_logdet.dir/test_helpers.cpp.o
 	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_generated_spd.dir/build.make test/CMakeFiles/test_generated_spd.dir/test_helpers.cpp.o
+	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_coursework_brief_matrix.dir/build.make test/CMakeFiles/test_coursework_brief_matrix.dir/test_helpers.cpp.o
 	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_repeatability.dir/build.make test/CMakeFiles/test_repeatability.dir/test_helpers.cpp.o
 	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_matrix_generation.dir/build.make test/CMakeFiles/test_matrix_generation.dir/test_helpers.cpp.o
 	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_version_correctness.dir/build.make test/CMakeFiles/test_version_correctness.dir/test_helpers.cpp.o
@@ -369,6 +408,7 @@ test_helpers.cpp.i:
 	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_reconstruction.dir/build.make test/CMakeFiles/test_reconstruction.dir/test_helpers.cpp.i
 	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_logdet.dir/build.make test/CMakeFiles/test_logdet.dir/test_helpers.cpp.i
 	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_generated_spd.dir/build.make test/CMakeFiles/test_generated_spd.dir/test_helpers.cpp.i
+	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_coursework_brief_matrix.dir/build.make test/CMakeFiles/test_coursework_brief_matrix.dir/test_helpers.cpp.i
 	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_repeatability.dir/build.make test/CMakeFiles/test_repeatability.dir/test_helpers.cpp.i
 	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_matrix_generation.dir/build.make test/CMakeFiles/test_matrix_generation.dir/test_helpers.cpp.i
 	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_version_correctness.dir/build.make test/CMakeFiles/test_version_correctness.dir/test_helpers.cpp.i
@@ -385,6 +425,7 @@ test_helpers.cpp.s:
 	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_reconstruction.dir/build.make test/CMakeFiles/test_reconstruction.dir/test_helpers.cpp.s
 	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_logdet.dir/build.make test/CMakeFiles/test_logdet.dir/test_helpers.cpp.s
 	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_generated_spd.dir/build.make test/CMakeFiles/test_generated_spd.dir/test_helpers.cpp.s
+	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_coursework_brief_matrix.dir/build.make test/CMakeFiles/test_coursework_brief_matrix.dir/test_helpers.cpp.s
 	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_repeatability.dir/build.make test/CMakeFiles/test_repeatability.dir/test_helpers.cpp.s
 	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_matrix_generation.dir/build.make test/CMakeFiles/test_matrix_generation.dir/test_helpers.cpp.s
 	cd /Users/ejallen/Desktop/c2_coursework/build_openmp && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test_version_correctness.dir/build.make test/CMakeFiles/test_version_correctness.dir/test_helpers.cpp.s
@@ -639,6 +680,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... test_coursework_brief_matrix"
 	@echo "... test_diagonal_matrix"
 	@echo "... test_generated_spd"
 	@echo "... test_identity"
@@ -651,6 +693,9 @@ help:
 	@echo "... test_runtime_name_parsing"
 	@echo "... test_small_case"
 	@echo "... test_version_correctness"
+	@echo "... test_coursework_brief_matrix.o"
+	@echo "... test_coursework_brief_matrix.i"
+	@echo "... test_coursework_brief_matrix.s"
 	@echo "... test_diagonal_matrix.o"
 	@echo "... test_diagonal_matrix.i"
 	@echo "... test_diagonal_matrix.s"

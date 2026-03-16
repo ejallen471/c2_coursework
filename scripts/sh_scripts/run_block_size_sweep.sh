@@ -8,9 +8,6 @@ source "${SCRIPT_DIR}/common_run_config.sh"
 OPTIMISATION_METHOD="${1:-cache_blocked_1}"
 MATRIX_SIZE="${2:-5000}"
 REPEATS="${3:-5}"
-
-CONDA_ENV_NAME="${CONDA_ENV_NAME:-coursework-plot}"
-ENV_FILE="${ROOT_DIR}/environment.yml"
 BUILD_DIR="${SHARED_BUILD_DIR}"
 
 case "${OPTIMISATION_METHOD}" in
@@ -55,25 +52,7 @@ echo "==> Repeats: ${REPEATS}"
 echo "==> Block sizes: ${BLOCK_SIZES[*]}"
 
 ensure_shared_release_executable "${RUN_CHOLESKY_EXEC_REL}"
-
-if ! command -v conda >/dev/null 2>&1; then
-    echo "Error: conda is required for plotting but was not found on PATH." >&2
-    exit 1
-fi
-
-if [ ! -f "${ENV_FILE}" ]; then
-    echo "Error: missing conda environment file: ${ENV_FILE}" >&2
-    exit 1
-fi
-
-source "$(conda info --base)/etc/profile.d/conda.sh"
-
-if ! conda env list | awk 'NF && $1 !~ /^#/ { print $1 }' | grep -Fxq "${CONDA_ENV_NAME}"; then
-    echo "==> Creating conda environment: ${CONDA_ENV_NAME}"
-    conda env create --yes -n "${CONDA_ENV_NAME}" -f "${ENV_FILE}"
-fi
-
-conda activate "${CONDA_ENV_NAME}"
+PLOT_PYTHON="$(resolve_plot_python)"
 
 # Run the block-size sweep first so the raw CSV exists before plotting.
 "${BUILD_DIR}/${RUN_CHOLESKY_EXEC_REL}" \
@@ -85,7 +64,7 @@ conda activate "${CONDA_ENV_NAME}"
     "${BLOCK_SIZES[@]}"
 
 MPLCONFIGDIR=/tmp/mpl_perf_graph \
-python3 "${ROOT_DIR}/plot/plot_block_size_metrics.py" \
+"${PLOT_PYTHON}" "${ROOT_DIR}/plot/plot_block_size_metrics.py" \
     "${RAW_CSV}" \
     "${PLOT_DIR}"
 

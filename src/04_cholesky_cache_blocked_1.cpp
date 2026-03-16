@@ -1,3 +1,8 @@
+/**
+ * @file 04_cholesky_cache_blocked_1.cpp
+ * @brief First cache-blocked single-threaded Cholesky implementation.
+ */
+
 /*
 In this implementation, we focus on cache blocking while factorising only one triangle.
 

@@ -16,7 +16,7 @@ else
     THREAD_COUNTS=("$@")
 fi
 
-METHODS=(baseline openmp1 openmp2 openmp3 openmp4)
+METHODS=(openmp1 openmp2 openmp3 openmp4)
 BUILD_DIR="${OPENMP_BUILD_DIR}"
 RAW_CSV="${RESULTS_RAW_DIR}/openmp_thread_count_sweep_n${MATRIX_SIZE}.csv"
 PLOT_DIR="${RESULTS_FIG_DIR}/openmp_thread_count_sweep_n${MATRIX_SIZE}"
@@ -41,18 +41,7 @@ trap 'rm -rf "${TEMP_RAW_DIR}"' EXIT
 
 echo "tag,n,threads,repeat,elapsed_seconds,logdet,time_over_n3" > "${RAW_CSV}"
 
-BASELINE_RAW_CSV="${TEMP_RAW_DIR}/baseline.csv"
-OMP_NUM_THREADS=1 "${BUILD_DIR}/${RUN_CHOLESKY_EXEC_REL}" \
-    scaling \
-    baseline \
-    "${REPEATS}" \
-    "${BASELINE_RAW_CSV}" \
-    "${MATRIX_SIZE}"
-
-tail -n +2 "${BASELINE_RAW_CSV}" | \
-    awk -F, 'BEGIN{OFS=","} {print $1,$2,1,$3,$4,$5,$6}' >> "${RAW_CSV}"
-
-for METHOD in openmp1 openmp2 openmp3 openmp4; do
+for METHOD in "${METHODS[@]}"; do
     for THREADS in "${THREAD_COUNTS[@]}"; do
         METHOD_RAW_CSV="${TEMP_RAW_DIR}/${METHOD}_${THREADS}.csv"
 

@@ -1,3 +1,8 @@
+/**
+ * @file test_reconstruction.cpp
+ * @brief Checks that a factorised matrix reconstructs to the original SPD input.
+ */
+
 #include "mphil_dis_cholesky.h"
 #include "test_helpers.h"
 

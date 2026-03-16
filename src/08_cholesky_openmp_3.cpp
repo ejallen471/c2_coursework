@@ -1,3 +1,8 @@
+/**
+ * @file 08_cholesky_openmp_3.cpp
+ * @brief Blocked OpenMP Cholesky implementation with dynamic tile scheduling.
+ */
+
 /*
 Here we use blocks throughout, we still have the same following steps
 

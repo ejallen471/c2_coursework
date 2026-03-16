@@ -1,3 +1,8 @@
+/**
+ * @file 00_cholesky_baseline.cpp
+ * @brief Baseline dense Cholesky factorisation that updates the full matrix in place.
+ */
+
 #include "cholesky_versions.h"
 #include <cmath>
 

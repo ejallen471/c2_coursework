@@ -1,3 +1,8 @@
+/**
+ * @file test_diagonal_matrix.cpp
+ * @brief Checks that the baseline factorisation handles diagonal SPD matrices exactly.
+ */
+
 #include "mphil_dis_cholesky.h"
 #include "test_helpers.h"
 

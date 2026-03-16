@@ -65,7 +65,7 @@ class BlockSizePlotter:
                 group["block_size"],
                 group["elapsed_median"],
                 yerr=group["elapsed_std"].fillna(0.0),
-                marker="o",
+                marker="s",
                 capsize=4,
                 label=optimisation,
             )
@@ -88,7 +88,7 @@ class BlockSizePlotter:
                 group["block_size"],
                 group["speedup_median"],
                 yerr=group["speedup_std"].fillna(0.0),
-                marker="o",
+                marker="s",
                 capsize=4,
                 label=optimisation,
             )
