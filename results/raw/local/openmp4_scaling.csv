@@ -1,0 +1,5 @@
+tag,n,repeat,elapsed_seconds,logdet_library,logdet_factor,relative_difference_percent
+openmp4,256,0,0.0076318340143188834,unavailable,unavailable,unavailable
+openmp4,512,0,0.0097629170631989837,unavailable,unavailable,unavailable
+openmp4,1000,0,0.018850540975108743,unavailable,unavailable,unavailable
+openmp4,2000,0,0.068006459041498601,unavailable,unavailable,unavailable

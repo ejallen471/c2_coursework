@@ -32,7 +32,8 @@ bool matrix_is_strictly_diagonally_dominant(const std::vector<double>& a, int n)
  * @brief Verifies the structural conditions imposed by the generated SPD matrix builder.
  * @param a Row-major matrix storage.
  * @param n Matrix dimension.
- * @return `true` when the matrix is square, symmetric, positive on the diagonal, and diagonally dominant.
+ * @return `true` when the matrix is square, symmetric, positive on the diagonal, and diagonally
+ * dominant.
  */
 bool matrix_satisfies_generated_spd_conditions(const std::vector<double>& a, int n);
 

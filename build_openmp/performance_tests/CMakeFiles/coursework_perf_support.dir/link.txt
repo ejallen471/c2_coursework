@@ -1,2 +1,0 @@
-/opt/anaconda3/bin/ar qc libcoursework_perf_support.a CMakeFiles/coursework_perf_support.dir/perf_time.cpp.o CMakeFiles/coursework_perf_support.dir/perf_fixed_size_comparison.cpp.o CMakeFiles/coursework_perf_support.dir/perf_block_size_sweep.cpp.o CMakeFiles/coursework_perf_support.dir/perf_scaling.cpp.o CMakeFiles/coursework_perf_support.dir/perf_helpers.cpp.o
-/opt/homebrew/opt/llvm/bin/llvm-ranlib libcoursework_perf_support.a

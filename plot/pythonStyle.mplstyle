@@ -13,9 +13,10 @@ axes.labelsize: 18
 xtick.labelsize: 14
 ytick.labelsize: 14
 
-lines.linewidth: 2.5
-lines.markersize: 5
-lines.markeredgewidth: 0
+lines.linewidth: 0.9
+lines.markersize: 3
+lines.markeredgewidth: 1.0
+errorbar.capsize: 2
 
 legend.fancybox: True
 legend.framealpha: 0.9
@@ -45,3 +46,6 @@ patch.linewidth: 1
 patch.facecolor: 0,0.196078,0.372549
 patch.edgecolor: white
 patch.antialiased: True
+
+# cholesky.errorbar.linewidth: 0.3
+# cholesky.errorbar.capthick: 0.3

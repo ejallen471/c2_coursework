@@ -1,0 +1,124 @@
+{
+  "version": 4,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 23,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "base-release",
+      "hidden": true,
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "ENABLE_NATIVE_TUNING": "ON",
+        "BUILD_TESTING": "ON",
+        "ENABLE_DOXYGEN": "ON"
+      }
+    },
+    {
+      "name": "linux-release",
+      "inherits": "base-release"
+    },
+    {
+      "name": "linux-release-no-tests",
+      "inherits": "linux-release",
+      "cacheVariables": {
+        "BUILD_TESTING": "OFF",
+        "ENABLE_DOXYGEN": "OFF"
+      }
+    },
+    {
+      "name": "macos-release",
+      "inherits": "base-release",
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "$env{LLVM_PREFIX}/bin/clang",
+        "CMAKE_CXX_COMPILER": "$env{LLVM_PREFIX}/bin/clang++",
+        "CMAKE_AR": "$env{LLVM_PREFIX}/bin/llvm-ar",
+        "CMAKE_RANLIB": "$env{LLVM_PREFIX}/bin/llvm-ranlib",
+        "CMAKE_PREFIX_PATH": "$env{LLVM_PREFIX};$env{LIBOMP_PREFIX}"
+      }
+    },
+    {
+      "name": "macos-release-no-tests",
+      "inherits": "macos-release",
+      "cacheVariables": {
+        "BUILD_TESTING": "OFF",
+        "ENABLE_DOXYGEN": "OFF"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "linux-benchmark",
+      "configurePreset": "linux-release",
+      "targets": [
+        "run_cholesky"
+      ]
+    },
+    {
+      "name": "linux-benchmark-no-tests",
+      "configurePreset": "linux-release-no-tests",
+      "targets": [
+        "run_cholesky"
+      ]
+    },
+    {
+      "name": "linux-all",
+      "configurePreset": "linux-release"
+    },
+    {
+      "name": "macos-benchmark",
+      "configurePreset": "macos-release",
+      "targets": [
+        "run_cholesky"
+      ]
+    },
+    {
+      "name": "macos-all",
+      "configurePreset": "macos-release"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "linux-test-fast",
+      "configurePreset": "linux-release",
+      "output": {
+        "outputOnFailure": true
+      },
+      "filter": {
+        "exclude": {
+          "label": "integration|plot"
+        }
+      }
+    },
+    {
+      "name": "linux-test-full",
+      "configurePreset": "linux-release",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "macos-test-fast",
+      "configurePreset": "macos-release",
+      "output": {
+        "outputOnFailure": true
+      },
+      "filter": {
+        "exclude": {
+          "label": "integration|plot"
+        }
+      }
+    },
+    {
+      "name": "macos-test-full",
+      "configurePreset": "macos-release",
+      "output": {
+        "outputOnFailure": true
+      }
+    }
+  ]
+}

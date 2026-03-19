@@ -1,14 +1,18 @@
 /**
  * @file timer.h
- * @brief Minimal wall-clock timing utility used by the benchmark drivers.
+ * @brief Helper for measuring elapsed time.
  */
 
 #ifndef TIMER_H
 #define TIMER_H
 
 /**
- * @brief Returns a monotonic wall-clock timestamp in seconds.
- * @return Seconds since the steady clock epoch.
+ * @brief Get the current time from a steady (monotonic) clock.
+ *
+ * This is used for timing code.
+ * but differences between two calls give elapsed time in seconds.
+ *
+ * @return Current time in seconds.
  */
 double wall_time_seconds();
 

@@ -1,7 +1,12 @@
 .DS_Store
+cmake_test_discovery_*.json
+Thumbs.db
+ehthumbs.db
+._*
 
 # CMake and local build trees
 /build/
+/build/test/gtest_discovery/
 /build_openmp/
 /build_openmp_local/
 /cmake-build-*/

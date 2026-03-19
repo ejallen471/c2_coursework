@@ -1,15 +1,16 @@
-find_package(LAPACK QUIET)
+find_package(LAPACK REQUIRED)
 
 add_library(
     coursework_perf_support
-    perf_time.cpp
-    perf_fixed_size_comparison.cpp
-    perf_block_size_sweep.cpp
-    perf_scaling.cpp
+    01_perf_method_compare.cpp
+    02_perf_thread_count_sweep.cpp
+    03_perf_block_size_sweep.cpp
+    04_perf_matrix_size_sweep.cpp
     perf_helpers.cpp
+    runtime_cholesky.cpp
 )
 
-target_link_libraries(coursework_perf_support PUBLIC mphil_dis_cholesky)
+target_link_libraries(coursework_perf_support PUBLIC cholesky_decomposition)
 
 target_include_directories(coursework_perf_support
     PUBLIC
@@ -22,9 +23,4 @@ if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND CMAKE_CXX_COMPILER_VERSION VERSION_L
     target_link_libraries(coursework_perf_support PUBLIC stdc++fs)
 endif()
 
-if(LAPACK_FOUND)
-    target_link_libraries(coursework_perf_support PUBLIC ${LAPACK_LIBRARIES})
-    target_compile_definitions(coursework_perf_support PUBLIC MPHIL_HAVE_LAPACK=1)
-else()
-    target_compile_definitions(coursework_perf_support PUBLIC MPHIL_HAVE_LAPACK=0)
-endif()
+target_link_libraries(coursework_perf_support PUBLIC ${LAPACK_LIBRARIES})

@@ -34,24 +34,28 @@ void cholesky_lower_triangle(double *c, const std::size_t n)
     // Loop over the pivots (diagonals).
     for (std::size_t p = 0; p < n; ++p)
     {
+        double *row_p = c + p * n;
+
         // Read the current diagonal element, take the square root and store in place.
-        const double diag = std::sqrt(c[p * n + p]);
-        c[p * n + p] = diag;
+        const double diag = std::sqrt(row_p[p]);
+        row_p[p] = diag;
 
         // Scale the active column below the pivot.
         for (std::size_t i = p + 1; i < n; ++i)
         {
-            c[i * n + p] /= diag;
+            double *row_i = c + i * n;
+            row_i[p] /= diag;
         }
 
         // Update only the lower triangle of the trailing submatrix.
         for (std::size_t i = p + 1; i < n; ++i)
         {
-            const double cip = c[i * n + p];
+            double *row_i = c + i * n;
+            const double cip = row_i[p];
 
             for (std::size_t j = p + 1; j <= i; ++j)
             {
-                c[i * n + j] -= cip * c[j * n + p];
+                row_i[j] -= cip * c[j * n + p];
             }
         }
     }

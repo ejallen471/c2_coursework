@@ -1,26 +1,103 @@
-function(add_coursework_test test_name)
-    add_executable(${test_name} ${ARGN})
-    target_link_libraries(${test_name} PRIVATE mphil_dis_cholesky)
-    target_include_directories(${test_name}
+find_package(Python3 COMPONENTS Interpreter REQUIRED)
+find_package(GTest REQUIRED)
+include(GoogleTest)
+
+add_library(coursework_test_support
+    test_suite_helpers.cpp
+)
+
+target_link_libraries(coursework_test_support PUBLIC coursework_perf_support)
+target_include_directories(coursework_test_support
+    PUBLIC
+        ${PROJECT_SOURCE_DIR}/src
+        ${PROJECT_SOURCE_DIR}/performance_tests
+        ${CMAKE_CURRENT_SOURCE_DIR}
+)
+target_compile_definitions(coursework_test_support
+    PUBLIC
+        COURSEWORK_SOURCE_ROOT="${PROJECT_SOURCE_DIR}"
+        COURSEWORK_BINARY_ROOT="${PROJECT_BINARY_DIR}"
+        COURSEWORK_PYTHON_EXECUTABLE="${Python3_EXECUTABLE}"
+)
+
+set(COURSEWORK_GTEST_BINARY_DIRECTORY
+    "${CMAKE_CURRENT_BINARY_DIR}/gtest_discovery")
+set(COURSEWORK_GTEST_WORKING_DIRECTORY
+    "${COURSEWORK_GTEST_BINARY_DIRECTORY}/runtime")
+file(MAKE_DIRECTORY "${COURSEWORK_GTEST_WORKING_DIRECTORY}")
+
+function(add_coursework_gtest target_name labels)
+    add_executable(${target_name} ${ARGN})
+    target_link_libraries(
+        ${target_name}
+        PRIVATE
+            coursework_test_support
+            GTest::gtest_main
+    )
+    target_include_directories(${target_name}
         PRIVATE
             ${PROJECT_SOURCE_DIR}/src
             ${PROJECT_SOURCE_DIR}/performance_tests
+            ${PROJECT_SOURCE_DIR}/test
     )
-    add_test(NAME ${test_name} COMMAND ${test_name})
+    set_target_properties(${target_name} PROPERTIES
+        BUILD_RPATH "$<TARGET_FILE_DIR:GTest::gtest_main>;$<TARGET_FILE_DIR:GTest::gtest>"
+        RUNTIME_OUTPUT_DIRECTORY "${COURSEWORK_GTEST_BINARY_DIRECTORY}"
+    )
+
+    gtest_discover_tests(
+        ${target_name}
+        TEST_PREFIX "${target_name}."
+        WORKING_DIRECTORY ${COURSEWORK_GTEST_WORKING_DIRECTORY}
+        DISCOVERY_MODE POST_BUILD
+        PROPERTIES LABELS "${labels}"
+    )
 endfunction()
 
-add_coursework_test(test_small_case test_small_case.cpp test_helpers.cpp)
-add_coursework_test(test_invalid_input test_invalid_input.cpp)
-add_coursework_test(test_identity test_identity.cpp test_helpers.cpp)
-add_coursework_test(test_diagonal_matrix test_diagonal_matrix.cpp test_helpers.cpp)
-add_coursework_test(test_reconstruction test_reconstruction.cpp test_helpers.cpp)
-add_coursework_test(test_logdet test_logdet.cpp test_helpers.cpp)
-add_coursework_test(test_generated_spd test_generated_spd.cpp test_helpers.cpp)
-add_coursework_test(test_coursework_brief_matrix test_coursework_brief_matrix.cpp test_helpers.cpp)
-add_coursework_test(test_repeatability test_repeatability.cpp test_helpers.cpp)
-add_coursework_test(test_matrix_generation test_matrix_generation.cpp test_helpers.cpp)
-add_coursework_test(test_version_correctness test_version_correctness.cpp test_helpers.cpp)
-add_coursework_test(test_runtime_name_parsing test_runtime_name_parsing.cpp)
+add_coursework_gtest(
+    coursework_unit_gtests
+    "unit"
+    ${PROJECT_SOURCE_DIR}/test/test_unit_gtest.cpp
+)
 
-add_executable(test_perf_time_output test_perf_time_output.cpp)
-add_test(NAME test_perf_time_output COMMAND test_perf_time_output $<TARGET_FILE:run_cholesky>)
+add_coursework_gtest(
+    coursework_correctness_gtests
+    "correctness"
+    ${PROJECT_SOURCE_DIR}/test/test_correctness_gtest.cpp
+)
+
+add_coursework_gtest(
+    coursework_openmp_gtests
+    "openmp"
+    ${PROJECT_SOURCE_DIR}/test/test_openmp_gtest.cpp
+)
+
+add_coursework_gtest(
+    coursework_regression_gtests
+    "regression"
+    ${PROJECT_SOURCE_DIR}/test/test_regression_gtest.cpp
+)
+
+add_coursework_gtest(
+    coursework_integration_cpp_gtests
+    "integration"
+    ${PROJECT_SOURCE_DIR}/test/test_integration_gtest.cpp
+)
+
+add_coursework_gtest(
+    coursework_cli_gtests
+    "integration"
+    ${PROJECT_SOURCE_DIR}/test/test_cli_gtest.cpp
+)
+
+add_coursework_gtest(
+    coursework_csv_contract_gtests
+    "integration"
+    ${PROJECT_SOURCE_DIR}/test/test_csv_contract_gtest.cpp
+)
+
+add_coursework_gtest(
+    coursework_plot_gtests
+    "plot"
+    ${PROJECT_SOURCE_DIR}/test/test_plot_gtest.cpp
+)

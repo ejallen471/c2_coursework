@@ -1,0 +1,14 @@
+tag,n,repeat,elapsed_seconds,logdet_library,logdet_factor,relative_difference_percent
+cache_blocked_2,1000,0,0.02446670806966722,unavailable,unavailable,unavailable
+cache_blocked_2,2000,0,0.18747595802415162,unavailable,unavailable,unavailable
+cache_blocked_2,3000,0,0.64040854200720787,unavailable,unavailable,unavailable
+cache_blocked_2,4000,0,1.6582855420419946,unavailable,unavailable,unavailable
+cache_blocked_2,5000,0,3.3296115420525894,unavailable,unavailable,unavailable
+cache_blocked_2,6000,0,5.424784415983595,unavailable,unavailable,unavailable
+cache_blocked_2,7000,0,10.118017749977298,unavailable,unavailable,unavailable
+cache_blocked_2,8000,0,14.202527457964607,unavailable,unavailable,unavailable
+cache_blocked_2,9000,0,19.542190208099782,unavailable,unavailable,unavailable
+cache_blocked_2,10000,0,24.261742000002414,unavailable,unavailable,unavailable
+cache_blocked_2,11000,0,35.380687917000614,unavailable,unavailable,unavailable
+cache_blocked_2,12000,0,46.017342584091239,unavailable,unavailable,unavailable
+cache_blocked_2,13000,0,54.718220292008482,unavailable,unavailable,unavailable

@@ -34,25 +34,27 @@ void cholesky_upper_triangle(double *c, const std::size_t n)
     // Loop over the pivots (diagonals)
     for (std::size_t p = 0; p < n; ++p)
     {
+        double *row_p = c + p * n;
 
         // Read the current diagonal element, take the square root and store in placee
-        const double diag = std::sqrt(c[p * n + p]);
-        c[p * n + p] = diag;
+        const double diag = std::sqrt(row_p[p]);
+        row_p[p] = diag;
 
         // Scale the active row to the right of the pivot.
         for (std::size_t j = p + 1; j < n; ++j)
         {
-            c[p * n + j] /= diag;
+            row_p[j] /= diag;
         }
 
         // Update only the upper triangle of the trailing submatrix.
         for (std::size_t j = p + 1; j < n; ++j)
         {
-            const double cpj = c[p * n + j];
+            double *row_j = c + j * n;
+            const double cpj = row_p[j];
 
             for (std::size_t i = j; i < n; ++i)
             {
-                c[j * n + i] -= cpj * c[p * n + i];
+                row_j[i] -= cpj * row_p[i];
             }
         }
     }

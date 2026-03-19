@@ -1,1 +1,0 @@
-/opt/homebrew/opt/llvm/bin/clang++ -O3 -DNDEBUG -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/test_version_correctness.dir/test_version_correctness.cpp.o CMakeFiles/test_version_correctness.dir/test_helpers.cpp.o -o test_version_correctness  ../src/libmphil_dis_cholesky.a /opt/homebrew/Cellar/llvm/22.1.1/lib/libomp.dylib
