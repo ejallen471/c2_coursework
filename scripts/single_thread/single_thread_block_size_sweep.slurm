@@ -24,8 +24,8 @@ ROOT_DIR="${SLURM_SUBMIT_DIR:-$(pwd)}"
 cd "${ROOT_DIR}"
 
 # Benchmark settings.
-MATRIX_SIZE="${MATRIX_SIZE:-2000}"
-REPEATS="${REPEATS:-3}"
+MATRIX_SIZE="${MATRIX_SIZE:-1000}"
+REPEATS="${REPEATS:-5}"
 
 # Single-thread blocked methods to compare.
 METHODS=(

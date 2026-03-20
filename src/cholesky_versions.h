@@ -129,8 +129,9 @@ void cholesky_openmp_tile_list_parallel(double *c, std::size_t n, std::size_t bl
  *
  * @details This task-based variant keeps the panel work serial and represents the trailing update
  * as a dependency-managed task graph so different tiles can proceed as soon as their inputs exist.
+ * The function returns `0` on success and `1` if it detects a non-positive pivot.
  */
-void cholesky_openmp_task_dag_blocked(double *c, std::size_t n, std::size_t block_size);
+int cholesky_openmp_task_dag_blocked(double *c, std::size_t n, std::size_t block_size);
 
 /** @} */
 

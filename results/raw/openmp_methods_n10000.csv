@@ -1,3 +1,0 @@
-method,n,repeat,elapsed_seconds,speedup_factor_vs_baseline,logdet_library,logdet_factor,relative_difference_percent
-openmp_task_dag_blocked,7000,0,2.6580576251726598,,,,
-openmp_row_parallel_unblocked,7000,0,12.472190000116825,,,,

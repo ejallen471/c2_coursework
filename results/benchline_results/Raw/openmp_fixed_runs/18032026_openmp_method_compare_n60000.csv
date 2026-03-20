@@ -1,0 +1,8 @@
+optimisation,n,repeat,elapsed_seconds,speedup_factor_vs_baseline
+openmp_row_parallel_unblocked,60000,0,4877.46156900000278256
+openmp_tile_parallel_blocked,60000,0,301.199269065997214057
+openmp_block_row_parallel,60000,0,481.348107771999821125
+openmp_tile_list_parallel,60000,0,773.456936778999988746
+openmp_task_dag_blocked,60000,0,191.99042726900006528
+
+

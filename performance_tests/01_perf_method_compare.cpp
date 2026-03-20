@@ -344,7 +344,7 @@ int run_fixed_size_comparison_mode(int argc, char* argv[])
     // run baseline first
     if (have_baseline)
     {
-        run_repeated_benchmark_case(
+        if (!run_repeated_benchmark_case(
             input.original_matrix,
             n,
             repeats,
@@ -360,7 +360,10 @@ int run_fixed_size_comparison_mode(int argc, char* argv[])
                     make_method_compare_csv_row(CholeskyVersion::Baseline, n, r, t, true, 1.0, c),
                     std::cerr,
                     "baseline");
-            });
+            }))
+        {
+            return 1;
+        }
     }
 
     //  run other methods
@@ -371,7 +374,7 @@ int run_fixed_size_comparison_mode(int argc, char* argv[])
 
         std::vector<double> times;
 
-        run_repeated_benchmark_case(
+        if (!run_repeated_benchmark_case(
             input.original_matrix,
             n,
             repeats,
@@ -379,8 +382,13 @@ int run_fixed_size_comparison_mode(int argc, char* argv[])
             times,
             [&](std::vector<double>& mat, int)
             {
+                const int effective_block_size =
+                    (block_sizes_by_version.count(version) != 0)
+                        ? block_sizes_by_version.at(version)
+                        : block_size;
+
                 return run_cholesky_version_configured(
-                    mat.data(), n, version, thread_count, block_size);
+                    mat.data(), n, version, thread_count, effective_block_size);
             },
             [&](int r, double t, const CorrectnessResult& c)
             {
@@ -390,7 +398,10 @@ int run_fixed_size_comparison_mode(int argc, char* argv[])
                     make_method_compare_csv_row(version, n, r, t, have_baseline, speedup, c),
                     std::cerr,
                     optimisation_name(version));
-            });
+            }))
+        {
+            return 1;
+        }
     }
 
     print_successful_csv_writes(std::cout, csv_session);

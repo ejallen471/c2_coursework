@@ -14,6 +14,7 @@ xtick.labelsize: 14
 ytick.labelsize: 14
 
 lines.linewidth: 0.9
+lines.marker: x
 lines.markersize: 3
 lines.markeredgewidth: 1.0
 errorbar.capsize: 2
@@ -49,3 +50,5 @@ patch.antialiased: True
 
 # cholesky.errorbar.linewidth: 0.3
 # cholesky.errorbar.capthick: 0.3
+# cholesky.highlight.markersize: 7
+# cholesky.highlight.markeredgewidth: 1.8

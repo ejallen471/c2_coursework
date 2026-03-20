@@ -1,3 +1,0 @@
-method,n,repeat,elapsed_seconds,logdet_library,logdet_factor,relative_difference_percent
-cholesky_blocked_tile_kernels_unrolled,256,0,0.0011615830007940531,,,
-cholesky_blocked_tile_kernels_unrolled,512,0,0.0050411659758538008,,,

@@ -13,6 +13,8 @@
 
 namespace
 {
+    constexpr double kInternalKernelFailureCode = -4.0;
+
     /**
      * @brief Measure the runtime of one factorisation callable.
      *
@@ -167,10 +169,13 @@ double timed_cholesky_factorisation_versioned_configured(double *c,
     case CholeskyVersion::OpenMPTaskDAGBlocked:
         // Dispatch to the task-DAG OpenMP kernel with a runtime-resolved block size because
         // task granularity directly controls both dependency overhead and available parallelism.
-        return time_factorisation([&]() {
-            cholesky_openmp_task_dag_blocked(
-                c, matrix_size, blocked_block_size_for(version, options));
-        });
+        {
+            const double t0 = wall_time_seconds();
+            const int status =
+                cholesky_openmp_task_dag_blocked(c, matrix_size, blocked_block_size_for(version, options));
+            const double t1 = wall_time_seconds();
+            return (status == 0) ? (t1 - t0) : kInternalKernelFailureCode;
+        }
     }
 
     return -3.0;

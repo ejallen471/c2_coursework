@@ -1,0 +1,7 @@
+optimisation,n,repeat,elapsed_seconds,speedup_factor_vs_baseline,logdet_library,logdet_factor,relative_difference_percent
+openmp_row_parallel_unblocked,30000,0,600.11436299799970584,,,,
+openmp_block_row_parallel,30000,0,75.3677827130013611168,,,,
+openmp_tile_list_parallel,30000,0,123.726419257000088692,,,,
+openmp_task_dag_blocked,30000,0,27.3702160739994724281,,,,
+openmp_tile_parallel_blocked,30000,0,29.5139157940066070296,,,,
+

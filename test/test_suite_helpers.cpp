@@ -32,6 +32,8 @@
 
 namespace
 {
+constexpr double kInternalKernelFailureCode = -4.0;
+
 /**
  * @brief Measure the runtime of one test helper callable.
  *
@@ -614,9 +616,13 @@ double run_version_with_block_size(std::vector<double>& matrix,
         });
 
     case CholeskyVersion::OpenMPTaskDAGBlocked:
-        return time_factorisation([&]() {
-            cholesky_openmp_task_dag_blocked(matrix.data(), matrix_size, block_size_value);
-        });
+        {
+            const double t0 = wall_time_seconds();
+            const int status =
+                cholesky_openmp_task_dag_blocked(matrix.data(), matrix_size, block_size_value);
+            const double t1 = wall_time_seconds();
+            return (status == 0) ? (t1 - t0) : kInternalKernelFailureCode;
+        }
 
     default:
         return run_version_default(matrix, n, version);

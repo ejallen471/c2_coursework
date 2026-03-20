@@ -63,3 +63,20 @@ TEST(RegressionSuite, InvalidAliasesRemainRejected)
     EXPECT_FALSE(parse_optimisation_name("openmp6", parsed));
     EXPECT_FALSE(parse_optimisation_name("not_a_method", parsed));
 }
+
+TEST(RegressionSuite, TaskDagKernelFailurePropagatesAsNegativeTimingCode)
+{
+    std::vector<double> matrix = {
+        1.0, 2.0,
+        2.0, 1.0,
+    };
+
+    CholeskyRuntimeOptions options;
+    options.block_size = 1;
+    options.thread_count = 1;
+
+    const double elapsed = timed_cholesky_factorisation_versioned_configured(
+        matrix.data(), 2, CholeskyVersion::OpenMPTaskDAGBlocked, options);
+
+    EXPECT_LT(elapsed, 0.0);
+}

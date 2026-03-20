@@ -40,7 +40,7 @@ METHODS=(
 # Matrix sizes to test.
 # Start with a tiny case, then sweep up to 10000.
 SIZES=(100)
-for ((n = 500; n <= 10000; n += 500)); do
+for ((n = 1; n <= 10000; n += 500)); do
     SIZES+=("${n}")
 done
 

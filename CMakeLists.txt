@@ -46,6 +46,7 @@ include(CTest)
 add_subdirectory(src)
 add_subdirectory(performance_tests)
 add_subdirectory(run)
+add_subdirectory(example)
 
 if(BUILD_TESTING)
     add_subdirectory(test)

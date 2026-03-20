@@ -149,3 +149,30 @@ TEST(PlotSuite, ThreadCountPlotRunsAndAvoidsDeprecatedSpeedupPlots)
     EXPECT_FALSE(directory_contains_prefix(output_dir, "speedup"));
     EXPECT_NE(plot_result.stdout_text.find("Successful and saved in"), std::string::npos);
 }
+
+TEST(PlotSuite, ThreadCountPlotInfersOutputDirectoryWhenOmitted)
+{
+    const ScopedTemporaryDirectory temp_dir("plot-thread-count-auto-output");
+    const std::filesystem::path raw_csv = temp_dir.path() / "thread_count.csv";
+    const std::filesystem::path output_dir = temp_dir.path() / "figures";
+
+    const CommandResult benchmark_result = run_benchmark(
+        {"thread-count-sweep",
+         "16",
+         "1",
+         raw_csv.string(),
+         "--threads",
+         "1",
+         "2",
+         "--block-size",
+         "4",
+         "--methods",
+         "openmp_row_parallel_unblocked",
+         "openmp_tile_parallel_blocked"});
+    ASSERT_EQ(benchmark_result.exit_code, 0) << benchmark_result.stderr_text;
+
+    const CommandResult plot_result = run_plot_command({"thread-count", raw_csv.string()});
+    EXPECT_TRUE(std::filesystem::is_directory(output_dir));
+    EXPECT_TRUE(std::filesystem::exists(output_dir / "runtime_vs_thread_count.png"));
+    EXPECT_NE(plot_result.stdout_text.find("Successful and saved in"), std::string::npos);
+}

@@ -67,13 +67,11 @@ Outputs:
 ./build/run/run_cholesky \
   method-compare \
   5000 \
-  5 \
+  1 \
   results/raw/openmp_fixed_size_comparison_n5000.csv \
-  baseline openmp_row_parallel_unblocked openmp_tile_parallel_blocked openmp_block_row_parallel openmp_tile_list_parallel openmp_task_dag_blocked \
+  openmp_block_row_parallel openmp_tile_list_parallel \
   --threads 10 \
-  --block-size 16 \
-  --block-size-for openmp_tile_list_parallel=64 \
-  --block-size-for openmp_task_dag_blocked=128 \
+  --block-size-for openmp_block_row_parallel=192 openmp_tile_list_parallel=128\
   --correctness
 ```
 

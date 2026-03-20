@@ -52,15 +52,13 @@ This structure is preserved across all implementations, including the optimised 
 
 An additional advantage of this formulation is that the factorisation can be performed in place. The original matrix storage is reused to store the result, meaning memory usage remains constant. This becomes particularly important for large matrices.
 
-Cholesky decomposition is widely studied in numerical linear algebra, with many variants such as left-looking, right-looking, and blocked algorithms designed for modern hardware (Golub & Van Loan, 2013; Higham, 2002; Dongarra et al., 1990). Readers interested in further details are encouraged to consult these references.
-
 This project implements several variations of Cholesky decomposition with the aim of improving runtime while maintaining correctness, these implementations are
 
 - [`baseline`](src/00_cholesky_baseline.cpp): simple reference version, updates both triangles, easiest to reason about  
 - [`lower_triangle`](src/01_cholesky_lower_triangle.cpp): computes the lower-triangular factor then mirrors it  
 - [`upper_triangle`](src/02_cholesky_upper_triangle.cpp): computes the upper-triangular factor then mirrors it  
 - [`contiguous_access`](src/03_cholesky_contiguous_access.cpp): single-threaded version arranged to improve memory access behaviour  
-- [`cholesky_blocked_tile_kernels`](src/04_cholesky_blocked_tile_kernels.cpp): single-threaded blocked version with explicit tile structure  
+- [`cholesky_blocked_tile_kernels`](src/04_cholesky_blocked_tile_kernels.cpp): single-threaded blocked version
 - [`cholesky_blocked_tile_kernels_unrolled`](src/05_cholesky_blocked_tile_kernels_unrolled.cpp): blocked version with manual inner-loop unrolling  
 - [`openmp_row_parallel_unblocked`](src/06_cholesky_openmp_row_parallel_unblocked.cpp): OpenMP version with row-level parallel work and no blocking  
 - [`openmp_tile_parallel_blocked`](src/07_cholesky_openmp_tile_parallel_blocked.cpp): OpenMP blocked version with tile-parallel updates  
@@ -76,12 +74,19 @@ The key features of this project are:
 - SPD matrix generation based on the Gershgorin Circle Theorem, ensuring all generated inputs are valid for Cholesky decomposition  
 - C++ implementations of multiple decomposition variants with no external dependencies (except OpenMP)  
 - A benchmarking pipeline with four modes:  
+
   1. Method comparison  
   2. Matrix size variation  
   3. OpenMP thread count sweep  
   4. Block size sweep  
 
-  Each mode optionally includes correctness checking  
+  Each mode optionally includes correctness checking, where the computed determinant is compared against a LAPACK reference. In particular, the log-determinant is evaluated as
+
+  \[
+  \log \det(A) = 2 \sum_{i=1}^{n} \log L_{ii}
+  \]
+
+  and compared with the value obtained from a LAPACK-based factorisation.
 
 - All benchmark modes output results as CSV files  
 - Plotting support for:
@@ -216,6 +221,9 @@ The key directories are:
 - `run/`  
   Command-line tool (`run_cholesky`) used to execute benchmarks  
 
+- `example/`
+  Small standalone example showing how to call the reusable C++ library directly
+
 - `test/`  
   Full GoogleTest suite covering correctness, regression, OpenMP behaviour, and integration  
 
@@ -284,6 +292,12 @@ The project provides several builds dependent on the level of testing required:
 
 Note these commands should be done in the root of the project and the default build uses compiler optimisation and native architecture tuning.
 
+The build also produces a small library-usage example:
+
+```bash
+./build/example/simple_library_usage
+```
+
 ---
 ## Running
 
@@ -308,7 +322,7 @@ In addition there is a extra utility mode:
   - `matrix-generator-compare`: compare the matrix generation paths and record correctness-style diagnostics
 
 ---
-## Example
+## Benchmark Examples
 
 Here we show two example commands, one single threaded and one multi-threaded. For further information about these
 running modes and more example commands, please see the `run_guides`:
@@ -510,6 +524,35 @@ Local runs are primarily used for development, debugging, and smaller-scale expe
 
 
 
+
+---
+## Example
+
+The repository also includes a small standalone example showing how to call the reusable C++ library directly rather than going through the benchmark command-line tool. The source file is:
+
+- `example/simple_library_usage.cpp`
+
+This example:
+
+- defines a small `3 x 3` symmetric positive definite matrix in row-major storage
+- calls `timed_cholesky_factorisation_versioned_configured(...)`
+- uses `CholeskyVersion::BlockedTileKernels`
+- prints the input matrix, the factorised in-place matrix storage, and the elapsed time
+
+To build the example:
+
+```bash
+cmake -S . -B build
+cmake --build build --target simple_library_usage --parallel
+```
+
+To run the example:
+
+```bash
+./build/example/simple_library_usage
+```
+
+The matrix is overwritten in place. In this example, the upper triangle contains the Cholesky factor `R`, so the result satisfies `A = R^T R`.
 
 ---
 ## References

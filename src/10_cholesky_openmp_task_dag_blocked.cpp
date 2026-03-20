@@ -1,11 +1,14 @@
 /**
  * @file 10_cholesky_openmp_task_dag_blocked.cpp
- * @brief Blocked OpenMP Cholesky using tasks only for trailing updates.
+ * @brief Blocked OpenMP Cholesky using a simple task-based lower-triangular DAG.
  *
  * Strategy:
- * 1. Factor diagonal block (serial)
- * 2. Solve block column below (serial)
- * 3. Update trailing matrix using parallel tasks (O(n^3) work only)
+ * 1. Solve the diagonal block
+ * 2. Solve the block column below it
+ * 3. Update the trailing matrix with tasks
+ *
+ * This version is intentionally close to the faster lower-triangular task-based code.
+ * The aim is to reduce overhead and keep the kernels simple.
  */
 
 #include "cholesky_helpers.h"
@@ -13,40 +16,23 @@
 
 #include <cmath>
 #include <cstddef>
+#include <cstdio>
 #include <memory>
 
 namespace
 {
-/**
- * @brief Return the smaller of two tile bounds.
- *
- * @param a First bound.
- * @param b Second bound.
- * @return Smaller bound.
- */
 inline std::size_t min_sz(std::size_t a, std::size_t b)
 {
     return (a < b) ? a : b;
 }
 
-/**
- * @brief Flatten a tile coordinate into a dependency-token index.
- *
- * @param r Tile row index.
- * @param c Tile column index.
- * @param nb Number of block rows or columns.
- * @return Flat dependency-token index.
- */
 inline std::size_t block_index(std::size_t r, std::size_t c, std::size_t nb)
 {
     return r * nb + c;
 }
 
 /**
- * @brief Mirror the lower triangle into the upper triangle.
- *
- * @param c Row-major matrix storage updated in place.
- * @param n Matrix dimension.
+ * @brief Mirror the computed lower triangle into the upper triangle.
  */
 void mirror_lower_to_upper(double* c, std::size_t n)
 {
@@ -62,257 +48,258 @@ void mirror_lower_to_upper(double* c, std::size_t n)
 }
 
 /**
- * @brief Factor one diagonal block in lower-triangular storage.
+ * @brief Solve one diagonal block in lower-triangular storage.
  *
- * @param c Row-major matrix storage updated in place.
- * @param n Matrix dimension.
- * @param bs Block start index.
- * @param be Block end index.
  * @return `0` on success, or `1` if a non-positive pivot is detected.
- *
- * @note The input matrix is assumed to be symmetric positive definite.
  */
-int solve_diagonal_block(double* c, std::size_t n, std::size_t bs, std::size_t be)
+int solve_diagonal_block(double* c, std::size_t n, std::size_t block_start, std::size_t block_end)
 {
-    for (std::size_t j = bs; j < be; ++j)
+    for (std::size_t j = block_start; j < block_end; ++j)
     {
         double* row_j = c + j * n;
         double diag = row_j[j];
 
-        // Ask OpenMP to vectorise the pivot correction because each subtraction is
-        // independent and the reduction safely combines the SIMD lanes into `diag`.
-#pragma omp simd reduction(- : diag)
-        for (std::size_t p = bs; p < j; ++p)
+        double diag_sum = 0.0;
+#pragma omp simd reduction(+ : diag_sum)
+        for (std::size_t p = block_start; p < j; ++p)
         {
-            diag -= row_j[p] * row_j[p];
+            diag_sum += row_j[p] * row_j[p];
         }
 
+        diag -= diag_sum;
+
         if (diag <= 0.0)
+        {
+            std::fprintf(stderr,
+                         "Error: openmp_task_dag_blocked non-positive pivot at index %zu: %.17g\n",
+                         j,
+                         diag);
             return 1;
+        }
 
         diag = std::sqrt(diag);
-        const double inv = 1.0 / diag;
+        const double inv_diag = 1.0 / diag;
         row_j[j] = diag;
 
-        for (std::size_t i = j + 1; i < be; ++i)
+        for (std::size_t i = j + 1; i < block_end; ++i)
         {
             double* row_i = c + i * n;
             double s = row_i[j];
 
-            // Ask OpenMP to vectorise the block-local forward solve because the
-            // multiply-subtract terms are independent contributions to `s`.
-#pragma omp simd reduction(- : s)
-            for (std::size_t p = bs; p < j; ++p)
+            double s_sum = 0.0;
+#pragma omp simd reduction(+ : s_sum)
+            for (std::size_t p = block_start; p < j; ++p)
             {
-                s -= row_i[p] * row_j[p];
+                s_sum += row_i[p] * row_j[p];
             }
 
-            row_i[j] = s * inv;
+            s -= s_sum;
+            row_i[j] = s * inv_diag;
         }
     }
+
     return 0;
 }
 
 /**
  * @brief Solve one block column below the active diagonal block.
- *
- * @param c Row-major matrix storage updated in place.
- * @param n Matrix dimension.
- * @param bs Block start index.
- * @param be Block end index.
- * @param rs Row-block start index.
- * @param re Row-block end index.
  */
-void solve_block_column(
-    double* c, std::size_t n, std::size_t bs, std::size_t be, std::size_t rs, std::size_t re)
+void solve_block_column(double* c,
+                        std::size_t n,
+                        std::size_t block_start,
+                        std::size_t block_end,
+                        std::size_t row_block_start,
+                        std::size_t row_block_end)
 {
-    for (std::size_t j = bs; j < be; ++j)
+    for (std::size_t j = block_start; j < block_end; ++j)
     {
         double* row_j = c + j * n;
-        const double inv = 1.0 / row_j[j];
+        const double inv_diag = 1.0 / row_j[j];
 
-        for (std::size_t i = rs; i < re; ++i)
+        for (std::size_t i = row_block_start; i < row_block_end; ++i)
         {
             double* row_i = c + i * n;
             double s = row_i[j];
 
-            // Ask OpenMP to vectorise the panel solve for the same reason: the reduction
-            // captures the independent updates over the already computed panel columns.
-#pragma omp simd reduction(- : s)
-            for (std::size_t p = bs; p < j; ++p)
+            double s_sum = 0.0;
+#pragma omp simd reduction(+ : s_sum)
+            for (std::size_t p = block_start; p < j; ++p)
             {
-                s -= row_i[p] * row_j[p];
+                s_sum += row_i[p] * row_j[p];
             }
 
-            row_i[j] = s * inv;
+            s -= s_sum;
+            row_i[j] = s * inv_diag;
         }
     }
 }
 
 /**
- * @brief Update one trailing diagonal tile in lower-triangular storage.
- *
- * @param c Row-major matrix storage updated in place.
- * @param n Matrix dimension.
- * @param bs Active block start index.
- * @param be Active block end index.
- * @param rs Tile start row.
- * @param re Tile end row.
+ * @brief Update one trailing diagonal block.
  */
-void update_diag(
-    double* c, std::size_t n, std::size_t bs, std::size_t be, std::size_t rs, std::size_t re)
+void update_trailing_diagonal_block(double* c,
+                                    std::size_t n,
+                                    std::size_t block_start,
+                                    std::size_t block_end,
+                                    std::size_t row_block_start,
+                                    std::size_t row_block_end)
 {
-    for (std::size_t i = rs; i < re; ++i)
+    for (std::size_t i = row_block_start; i < row_block_end; ++i)
     {
         double* row_i = c + i * n;
 
-        for (std::size_t j = rs; j <= i; ++j)
+        for (std::size_t j = row_block_start; j <= i; ++j)
         {
             double* row_j = c + j * n;
             double s = row_i[j];
 
-            // Ask OpenMP to vectorise the diagonal-tile update because each panel-column
-            // contribution is independent and can be folded into `s` via reduction.
-#pragma omp simd reduction(- : s)
-            for (std::size_t p = bs; p < be; ++p)
+            double s_sum = 0.0;
+#pragma omp simd reduction(+ : s_sum)
+            for (std::size_t p = block_start; p < block_end; ++p)
             {
-                s -= row_i[p] * row_j[p];
+                s_sum += row_i[p] * row_j[p];
             }
 
+            s -= s_sum;
             row_i[j] = s;
         }
     }
 }
 
 /**
- * @brief Update one trailing off-diagonal tile in lower-triangular storage.
- *
- * @param c Row-major matrix storage updated in place.
- * @param n Matrix dimension.
- * @param bs Active block start index.
- * @param be Active block end index.
- * @param rs Tile start row.
- * @param re Tile end row.
- * @param cs Tile start column.
- * @param ce Tile end column.
+ * @brief Update one trailing off-diagonal square block.
  */
-void update_offdiag(double* c,
-                    std::size_t n,
-                    std::size_t bs,
-                    std::size_t be,
-                    std::size_t rs,
-                    std::size_t re,
-                    std::size_t cs,
-                    std::size_t ce)
+void update_trailing_square_block(double* c,
+                                  std::size_t n,
+                                  std::size_t block_start,
+                                  std::size_t block_end,
+                                  std::size_t row_block_start,
+                                  std::size_t row_block_end,
+                                  std::size_t col_block_start,
+                                  std::size_t col_block_end)
 {
-    for (std::size_t i = rs; i < re; ++i)
+    for (std::size_t i = row_block_start; i < row_block_end; ++i)
     {
         double* row_i = c + i * n;
 
-        for (std::size_t j = cs; j < ce; ++j)
+        for (std::size_t j = col_block_start; j < col_block_end; ++j)
         {
             double* row_j = c + j * n;
             double s = row_i[j];
 
-            // Ask OpenMP to vectorise the off-diagonal tile update because the panel-width
-            // loop is again a pure reduction with no cross-iteration write dependency.
-#pragma omp simd reduction(- : s)
-            for (std::size_t p = bs; p < be; ++p)
+            double s_sum = 0.0;
+#pragma omp simd reduction(+ : s_sum)
+            for (std::size_t p = block_start; p < block_end; ++p)
             {
-                s -= row_i[p] * row_j[p];
+                s_sum += row_i[p] * row_j[p];
             }
 
+            s -= s_sum;
             row_i[j] = s;
         }
     }
 }
 } // namespace
 
-void cholesky_openmp_task_dag_blocked(double* c, std::size_t n, std::size_t block_size)
+int cholesky_openmp_task_dag_blocked(double* c, std::size_t n, std::size_t block_size)
 {
-    if (!c || n == 0 || block_size == 0)
-        return;
+    if (c == nullptr || n == 0 || block_size == 0)
+    {
+        return 1;
+    }
 
-    const std::size_t nb = (n + block_size - 1) / block_size;
+    const std::size_t num_blocks = (n + block_size - 1) / block_size;
 
-    // Allocate one dependency token per tile so OpenMP task dependencies can name stable
-    // memory locations and therefore serialise repeated updates to the same trailing tile.
-    std::unique_ptr<int[]> deps(new int[nb * nb]());
-    int* dep = deps.get();
+    std::unique_ptr<int[]> deps_storage(new int[num_blocks * num_blocks]());
+    int* dep_tokens = deps_storage.get();
 
-    // Share a single error flag across the task-producing thread so we stop issuing work as
-    // soon as a non-SPD pivot is detected instead of letting later tasks consume bad state.
-    int error_flag = 0;
+    int errors = 0;
 
-    // Create the OpenMP team once so one producer thread can emit tasks while the rest of the
-    // workers execute the expensive trailing updates in parallel.
 #pragma omp parallel
     {
-        // Restrict task creation to one thread because the diagonal and panel phases must
-        // remain serial, and duplicate producers would create the same tasks twice.
 #pragma omp single
         {
-            for (std::size_t b = 0; b < nb; ++b)
+            for (std::size_t block = 0; block < num_blocks; ++block)
             {
-                const std::size_t bs = b * block_size;
-                const std::size_t be = min_sz(bs + block_size, n);
+                const std::size_t block_start = block * block_size;
+                const std::size_t block_end = min_sz(block_start + block_size, n);
 
-                // 1. Diagonal (serial)
-                if (error_flag == 0)
+#pragma omp task firstprivate(block_start, block_end, block)                                       \
+    depend(inout : dep_tokens[block_index(block, block, num_blocks)]) shared(c, errors)
                 {
-                    if (solve_diagonal_block(c, n, bs, be))
-                        error_flag = 1;
+                    const int error = solve_diagonal_block(c, n, block_start, block_end);
+#pragma omp atomic update
+                    errors += error;
                 }
 
-                if (error_flag)
-                    break;
-
-                // 2. Panel (serial)
-                for (std::size_t rb = b + 1; rb < nb; ++rb)
+                for (std::size_t row_block = block + 1; row_block < num_blocks; ++row_block)
                 {
-                    const std::size_t rs = rb * block_size;
-                    const std::size_t re = min_sz(rs + block_size, n);
+                    const std::size_t row_block_start = row_block * block_size;
+                    const std::size_t row_block_end = min_sz(row_block_start + block_size, n);
 
-                    solve_block_column(c, n, bs, be, rs, re);
-                }
-
-                // 3. Trailing updates (tasks only)
-                for (std::size_t rb = b + 1; rb < nb; ++rb)
-                {
-                    const std::size_t rs = rb * block_size;
-                    const std::size_t re = min_sz(rs + block_size, n);
-
-                    // Emit one task per diagonal trailing tile and depend on that tile's token
-                    // so updates from successive panels are applied in the correct order.
-#pragma omp task firstprivate(bs, be, rs, re, rb) depend(inout : dep[block_index(rb, rb, nb)])
+#pragma omp task firstprivate(                                                                     \
+        block_start, block_end, row_block_start, row_block_end, block, row_block)                  \
+    depend(in : dep_tokens[block_index(block, block, num_blocks)])                                 \
+    depend(inout : dep_tokens[block_index(row_block, block, num_blocks)]) shared(c, errors)
                     {
-                        update_diag(c, n, bs, be, rs, re);
+                        solve_block_column(
+                            c, n, block_start, block_end, row_block_start, row_block_end);
+                    }
+                }
+
+                for (std::size_t row_block = block + 1; row_block < num_blocks; ++row_block)
+                {
+                    const std::size_t row_block_start = row_block * block_size;
+                    const std::size_t row_block_end = min_sz(row_block_start + block_size, n);
+
+#pragma omp task firstprivate(                                                                     \
+        block_start, block_end, row_block_start, row_block_end, block, row_block)                  \
+    depend(in : dep_tokens[block_index(row_block, block, num_blocks)])                             \
+    depend(inout : dep_tokens[block_index(row_block, row_block, num_blocks)]) shared(c, errors)
+                    {
+                        update_trailing_diagonal_block(
+                            c, n, block_start, block_end, row_block_start, row_block_end);
                     }
 
-                    for (std::size_t cb = b + 1; cb < rb; ++cb)
+                    for (std::size_t col_block = block + 1; col_block < row_block; ++col_block)
                     {
-                        const std::size_t cs = cb * block_size;
-                        const std::size_t ce = min_sz(cs + block_size, n);
+                        const std::size_t col_block_start = col_block * block_size;
+                        const std::size_t col_block_end = min_sz(col_block_start + block_size, n);
 
-                        // Emit one task per off-diagonal trailing tile and reuse the tile token
-                        // to prevent multiple tasks from racing on the same output tile.
-#pragma omp task firstprivate(bs, be, rs, re, cs, ce, rb, cb)                                      \
-    depend(inout : dep[block_index(rb, cb, nb)])
+#pragma omp task firstprivate(block_start,                                                         \
+                                  block_end,                                                       \
+                                  row_block_start,                                                 \
+                                  row_block_end,                                                   \
+                                  col_block_start,                                                 \
+                                  col_block_end,                                                   \
+                                  block,                                                           \
+                                  row_block,                                                       \
+                                  col_block)                                                       \
+    depend(in : dep_tokens[block_index(row_block, block, num_blocks)],                             \
+               dep_tokens[block_index(col_block, block, num_blocks)])                              \
+    depend(inout : dep_tokens[block_index(row_block, col_block, num_blocks)]) shared(c, errors)
                         {
-                            update_offdiag(c, n, bs, be, rs, re, cs, ce);
+                            update_trailing_square_block(c,
+                                                         n,
+                                                         block_start,
+                                                         block_end,
+                                                         row_block_start,
+                                                         row_block_end,
+                                                         col_block_start,
+                                                         col_block_end);
                         }
                     }
                 }
-
-                // Wait for all updates generated from this panel before moving to the next
-                // diagonal block, because the next panel depends on those updated tiles.
-#pragma omp taskwait
             }
+
+#pragma omp taskwait
         }
     }
 
-    // Mirror the completed lower triangle only after the OpenMP region has finished so the
-    // symmetric copy cannot race with any outstanding update task.
-    if (error_flag == 0)
+    if (errors == 0)
+    {
         mirror_lower_to_upper(c, n);
+    }
+
+    return errors;
 }

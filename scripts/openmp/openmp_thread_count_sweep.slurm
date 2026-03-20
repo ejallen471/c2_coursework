@@ -6,7 +6,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=76
 #SBATCH --hint=nomultithread
-#SBATCH --time=12:00:00
+#SBATCH --time=02:00:00
 #SBATCH --output=logs/openmp/slurm-%x-%j.out
 #SBATCH --error=logs/openmp/slurm-%x-%j.err
 
@@ -30,11 +30,11 @@ REPEATS="${REPEATS:-3}"
 
 # Methods to include in the thread-count sweep.
 METHODS=(
-    openmp_row_parallel_unblocked
-    openmp_tile_parallel_blocked
-    openmp_block_row_parallel
-    openmp_tile_list_parallel
     openmp_task_dag_blocked
+    # openmp_row_parallel_unblocked
+    # openmp_tile_parallel_blocked
+    # openmp_block_row_parallel
+    # openmp_tile_list_parallel  
 )
 
 # Sweep from 1 thread up to the full Slurm allocation.
