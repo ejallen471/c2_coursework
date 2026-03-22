@@ -530,7 +530,7 @@ Local runs are primarily used for development, debugging, and smaller-scale expe
 
 The repository also includes a small standalone example showing how to call the reusable C++ library directly rather than going through the benchmark command-line tool. The source file is:
 
-- `example/simple_library_usage.cpp`
+- `example/example.cpp`
 
 This example:
 

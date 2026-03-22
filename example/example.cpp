@@ -1,5 +1,5 @@
 /**
- * @file simple_library_usage.cpp
+ * @file example.cpp
  * @brief Small example showing how to call the public Cholesky library API.
  */
 
@@ -34,9 +34,15 @@ int main()
 {
     // A small symmetric positive definite matrix stored in row-major order.
     std::vector<double> matrix = {
-        4.0,  12.0, -16.0,
-        12.0, 37.0, -43.0,
-        -16.0, -43.0, 98.0,
+        4.0,
+        12.0,
+        -16.0,
+        12.0,
+        37.0,
+        -43.0,
+        -16.0,
+        -43.0,
+        98.0,
     };
 
     const int n = 3;
@@ -49,10 +55,7 @@ int main()
     options.thread_count = 1;
 
     const double elapsed = timed_cholesky_factorisation_versioned_configured(
-        matrix.data(),
-        n,
-        CholeskyVersion::BlockedTileKernels,
-        options);
+        matrix.data(), n, CholeskyVersion::BlockedTileKernels, options);
 
     if (elapsed < 0.0)
     {

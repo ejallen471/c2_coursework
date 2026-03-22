@@ -7,8 +7,6 @@
  * 2. Solve the block column below it
  * 3. Update the trailing matrix with tasks
  *
- * This version is intentionally close to the faster lower-triangular task-based code.
- * The aim is to reduce overhead and keep the kernels simple.
  */
 
 #include "cholesky_helpers.h"
